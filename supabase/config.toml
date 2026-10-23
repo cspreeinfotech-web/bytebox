@@ -51,3 +51,6 @@ enabled = false
 
 [functions.upi-webhook]
 verify_jwt = false
+
+[functions.play-report]
+verify_jwt = false
