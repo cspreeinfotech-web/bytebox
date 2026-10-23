@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../services/session.dart';
+import 'content/explore_screen.dart';
+import 'content/feed_channels_screens.dart';
+import 'plans_screen.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 
@@ -34,10 +37,10 @@ class _HomeShellState extends State<HomeShell> with WidgetsBindingObserver {
 
   Widget _tab(int i) => switch (i) {
         0 => const _Placeholder('Cloud', Icons.cloud_outlined),
-        1 => const _Placeholder('Feed', Icons.dynamic_feed_outlined),
-        2 => const _Placeholder('Explore', Icons.explore_outlined),
-        3 => const _Placeholder('Channels', Icons.video_library_outlined),
-        _ => const _Placeholder('Plans', Icons.workspace_premium_outlined),
+        1 => const FeedScreen(),
+        2 => const ExploreScreen(),
+        3 => const ChannelsScreen(),
+        _ => const PlansScreen(asTab: true),
       };
 
   @override
