@@ -41,7 +41,7 @@ jobs:
         if: failure()
         run: |
           [ -f "$RUNNER_TEMP/ci.log" ] || exit 0
-          msg=$(grep -iE -B3 -A8 'error|failed|warning' "$RUNNER_TEMP/ci.log" | tail -n 150)
-          [ -z "$msg" ] && msg=$(tail -n 80 "$RUNNER_TEMP/ci.log")
+          msg=$(grep -iE -B3 -A8 'error|failed|warning' "$RUNNER_TEMP/ci.log" | tail -n 150 || true)
+          [ -z "$msg" ] && msg=$(tail -n 80 "$RUNNER_TEMP/ci.log" || true)
           msg="${msg//'%'/'%25'}"; msg="${msg//$'\r'/}"; msg="${msg//$'\n'/'%0A'}"
           echo "::error title=CI log tail::$msg"
