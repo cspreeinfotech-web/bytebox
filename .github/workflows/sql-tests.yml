@@ -1,0 +1,39 @@
+name: sql-tests
+
+on:
+  pull_request:
+    paths: ["supabase/**", ".github/workflows/sql-tests.yml"]
+  push:
+    branches: [main]
+    paths: ["supabase/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: sql-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Start local Supabase (applies all migrations)
+        run: supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,mailpit,postgres-meta
+      - name: Run SQL tests
+        env:
+          PGPASSWORD: postgres
+        run: |
+          set -e
+          for f in supabase/tests/*.sql; do
+            echo "::group::$f"
+            psql "postgresql://postgres@127.0.0.1:54322/postgres" -v ON_ERROR_STOP=1 -q -f "$f"
+            echo "::endgroup::"
+          done
+      - name: Lint database (security advisories)
+        run: supabase db lint --level error
+      - if: always()
+        run: supabase stop --no-backup
