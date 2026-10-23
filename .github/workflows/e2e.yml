@@ -1,0 +1,146 @@
+name: e2e
+
+# Seeds labelled demo data, runs the app on Android emulators (phone + 7" + 10" tablets),
+# captures the E2E evidence + Play screenshots, commits them to the PR branch, then removes the demo data.
+on:
+  pull_request:
+    paths: ["tools/e2e/**", "mobile/integration_test/**", ".github/workflows/e2e.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: e2e
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: "3.47.7"
+  ADS_REFERRER: "utm_source=meta&utm_medium=paid_social&utm_campaign=apk_download"
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    outputs:
+      password: ${{ steps.seed.outputs.DEMO_PASSWORD }}
+      viewer: ${{ steps.seed.outputs.DEMO_VIEWER_EMAIL }}
+      title: ${{ steps.seed.outputs.DEMO_PREMIUM_TITLE }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && pip install -q pillow
+      - name: Service key (Management API, never printed)
+        env:
+          TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+        run: |
+          key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
+            | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
+          echo "::add-mask::$key"
+          echo "SERVICE_KEY=$key" >> "$GITHUB_ENV"
+      - id: seed
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        run: |
+          python3 tools/e2e/seed.py clean
+          python3 tools/e2e/seed.py seed | tee -a "$GITHUB_OUTPUT"
+
+  run:
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { device: phone, profile: pixel_6, flavor: direct }
+          - { device: phone, profile: pixel_6, flavor: play }
+          - { device: tablet7, profile: "Nexus 7 2013", flavor: play }
+          - { device: tablet10, profile: pixel_tablet, flavor: play }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with: { distribution: temurin, java-version: "21", cache: gradle, cache-dependency-path: "mobile/android/**/*.gradle*" }
+      - uses: subosito/flutter-action@v2
+        with: { flutter-version: "${{ env.FLUTTER_VERSION }}", channel: stable, cache: true }
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - name: Prepare
+        working-directory: mobile
+        run: |
+          flutter pub get
+          dart run flutter_launcher_icons
+          dart run flutter_native_splash:create
+      - name: Run on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: ${{ matrix.profile }}
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          working-directory: mobile
+          script: >-
+            flutter drive --driver=test_driver/integration_test.dart --target=integration_test/e2e_test.dart
+            --flavor ${{ matrix.flavor }} -d emulator-5554
+            --dart-define=SUPABASE_URL=$SUPABASE_URL --dart-define=SUPABASE_PUBLISHABLE_KEY=$SUPABASE_KEY
+            --dart-define=DEMO_VIEWER_EMAIL=${{ needs.seed.outputs.viewer }}
+            --dart-define=DEMO_PASSWORD=${{ needs.seed.outputs.password }}
+            --dart-define=SHOT_PREFIX=${{ matrix.device }}
+            ${{ matrix.flavor == 'play' && '--dart-define=PLAY_STORE=true --dart-define=ANDROID_APP_ID=com.bytebox.play' || format('--dart-define=APK_REFERRER={0} --dart-define=ANDROID_APP_ID=com.bytebox.app', env.ADS_REFERRER) }}
+            2>&1 | tee ../e2e-${{ matrix.device }}-${{ matrix.flavor }}.log; exit ${PIPESTATUS[0]}
+      - name: Report failure
+        if: failure()
+        run: |
+          f=$(ls e2e-*.log 2>/dev/null | head -1); [ -n "$f" ] || exit 0
+          msg=$(grep -iE -B3 -A10 'error|exception|failed|timed out' "$f" | tail -n 120 || true)
+          [ -z "$msg" ] && msg=$(tail -n 80 "$f")
+          msg="${msg//'%'/'%25'}"; msg="${msg//$'\n'/'%0A'}"; echo "::error title=e2e ${{ matrix.device }}/${{ matrix.flavor }}::$msg"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shots-${{ matrix.device }}-${{ matrix.flavor }}
+          path: mobile/build/screenshots/*.png
+          if-no-files-found: ignore
+
+  publish:
+    needs: [seed, run]
+    if: always() && needs.seed.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/download-artifact@v4
+        with: { path: raw, pattern: "shots-*", merge-multiple: true }
+      - run: pip install -q pillow
+      - name: Frame screenshots
+        run: ls raw 2>/dev/null && python3 tools/e2e/frame.py raw || echo "no screenshots"
+      - name: Commit screenshots to the branch
+        if: needs.run.result == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/store docs/e2e
+          git diff --cached --quiet || git commit -m "E2E: screenshots from emulator run [skip ci]"
+          git push
+      - name: Service key
+        if: always()
+        env:
+          TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+        run: |
+          key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
+            | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
+          echo "::add-mask::$key"
+          echo "SERVICE_KEY=$key" >> "$GITHUB_ENV"
+      - name: Remove demo data
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        run: python3 tools/e2e/seed.py clean
