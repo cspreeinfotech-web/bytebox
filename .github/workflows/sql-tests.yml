@@ -51,4 +51,8 @@ jobs:
           shopt -s nullglob
           files=(supabase/functions/*/index.ts)
           [ ${#files[@]} -eq 0 ] && exit 0
-          deno check "${files[@]}"
+          deno check "${files[@]}" 2>&1 | tee "$RUNNER_TEMP/deno.log"; rc=${PIPESTATUS[0]}
+          if [ $rc -ne 0 ]; then
+            msg=$(grep -v '^Download' "$RUNNER_TEMP/deno.log" | tail -n 60 || true)
+            msg="${msg//'%'/'%25'}"; msg="${msg//$'\n'/'%0A'}"; echo "::error title=deno check::$msg"; exit $rc
+          fi

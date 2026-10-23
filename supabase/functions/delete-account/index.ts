@@ -1,7 +1,7 @@
 // Deletes the calling user's account: storage objects (cloud + own channels' media),
 // own channels/posts, then the auth user (rows cascade). Payment orders are kept
 // (user_id becomes NULL). Refuses for the last owner.
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient, type SupabaseClient } from "npm:@supabase/supabase-js@2";
 
 const cors = {
   "access-control-allow-origin": "*",
@@ -11,7 +11,8 @@ const cors = {
 const json = (status: number, body: unknown) =>
   new Response(JSON.stringify(body), { status, headers: { ...cors, "content-type": "application/json" } });
 
-async function removePrefix(admin: ReturnType<typeof createClient>, bucket: string, prefix: string) {
+// deno-lint-ignore no-explicit-any
+async function removePrefix(admin: SupabaseClient<any, any, any>, bucket: string, prefix: string) {
   for (let round = 0; round < 50; round++) {
     const { data, error } = await admin.storage.from(bucket).list(prefix, { limit: 1000 });
     if (error || !data || data.length === 0) return;
