@@ -22,6 +22,14 @@ jobs:
             cd mobile && flutter pub add supabase_flutter shared_preferences uuid package_info_plus device_info_plus url_launcher video_player file_picker path_provider share_plus google_fonts flutter_launcher_icons flutter_native_splash mime intl open_filex video_thumbnail image_picker --dry-run >/dev/null 2>&1 || true
             flutter --version --machine > ../flutter-version.json
           fi
+      - name: Resolve dependencies
+        working-directory: mobile
+        run: |
+          if [ -f .pub-add ]; then
+            flutter pub add supabase_flutter shared_preferences uuid url_launcher video_player file_picker path_provider google_fonts intl
+            flutter pub add --dev flutter_launcher_icons flutter_native_splash
+            rm .pub-add
+          fi
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
