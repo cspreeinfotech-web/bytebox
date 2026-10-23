@@ -167,7 +167,7 @@ select tests.login(:'fu');
 set role authenticated;
 select tests.ok(public.quota_bytes() = 16106127360, '15 GB in free mode');
 select tests.ok(not public.is_premium_user(), 'organic w/o approval not premium');
-select tests.throws($q$select public.create_payment_order('trial')$q$, 'not needed');
+select tests.throws($q$select public.create_payment_order('trial')$q$, 'free right now');
 select tests.ok(public.request_full_access() = 'pending', 'request full access');
 reset role;
 select tests.login(:'owner_id');

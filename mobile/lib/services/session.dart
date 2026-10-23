@@ -45,7 +45,8 @@ class AppSession extends ChangeNotifier {
   Map<String, dynamic> status = {};
   bool freeMode = false;
   bool playBilling = false; // User Choice Billing (Play build) — server flag, OFF by default
-  List<Map<String, dynamic>> plans = [];
+  /// Bumped whenever plans, app mode or payment settings change on the server (Realtime).
+  int settingsVersion = 0;
   RealtimeChannel? _live;
 
   /// Hooks run after boot and after every account switch (e.g. pending UPI result retry).
@@ -91,7 +92,7 @@ class AppSession extends ChangeNotifier {
         await db.auth.signInAnonymously();
       }
       await _recordInstall();
-      await Future.wait([refresh(), _loadMode(), loadPlans(), _loadConsent()]);
+      await Future.wait([refresh(), _loadMode(), _loadConsent()]);
       _subscribeLive();
       await _runHooks();
       ready = true;
@@ -141,12 +142,6 @@ class AppSession extends ChangeNotifier {
     playBilling = row?['play_billing_enabled'] == true;
   }
 
-  Future<void> loadPlans() async {
-    final rows = await db.from('plans').select().eq('active', true).order('position');
-    plans = List<Map<String, dynamic>>.from(rows);
-    notifyListeners();
-  }
-
   Future<void> _loadConsent() async {
     final local = prefs.getBool('consent_${AppConfig.consentVersion}_${user?.id}') ?? false;
     if (local) {
@@ -178,19 +173,35 @@ class AppSession extends ChangeNotifier {
           event: PostgresChangeEvent.all,
           schema: 'public',
           table: 'app_mode',
-          callback: (_) async {
-            await _loadMode();
-            await refresh();
-          },
+          callback: (_) => _settingsChanged(),
         )
         .onPostgresChanges(
           event: PostgresChangeEvent.all,
           schema: 'public',
           table: 'plans',
-          callback: (_) => loadPlans(),
+          callback: (_) => _settingsChanged(),
+        )
+        .onPostgresChanges(
+          event: PostgresChangeEvent.all,
+          schema: 'public',
+          table: 'settings_version',
+          callback: (_) => _settingsChanged(),
         )
         .subscribe();
   }
+
+  Future<void> _settingsChanged() async {
+    settingsVersion++;
+    try {
+      await _loadMode();
+      await refresh();
+    } catch (_) {
+      notifyListeners();
+    }
+  }
+
+  bool get paymentsAvailable => status['payments_available'] == true;
+  String get freePlansFor => (status['free_plans_for'] as String?) ?? 'none';
 
   // --------------------------------------------------------------------- auth
   /// Guest → account keeps the SAME user id (and attribution).

@@ -3,20 +3,24 @@ import 'package:flutter/material.dart';
 import '../config.dart';
 import '../services/native.dart';
 import '../services/payments.dart';
+import '../services/plan_logic.dart';
+import '../services/plans_service.dart';
 import '../services/session.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/plan_card.dart';
 import 'login_screen.dart';
 import 'payment_screens.dart';
 import 'profile_screen.dart';
 
-/// Opens Plans; resolves true when a purchase activated Premium.
+/// Opens Plans; resolves true when a purchase or free claim activated Premium.
 Future<bool> openPlans(BuildContext context) async {
   final r = await Navigator.of(context).push<bool>(MaterialPageRoute(builder: (_) => const PlansScreen()));
   return r == true;
 }
 
-/// Plans screen. Also the Profile tab (asTab) — profile page opens from the account icon.
+/// Plans screen (also the Profile tab). Everything shown comes from plans_for_me() and refreshes on open,
+/// pull-to-refresh, app resume and every Realtime change of plans / app mode / payment settings.
 class PlansScreen extends StatefulWidget {
   const PlansScreen({super.key, this.asTab = false});
   final bool asTab;
@@ -24,81 +28,135 @@ class PlansScreen extends StatefulWidget {
   State<PlansScreen> createState() => _PlansScreenState();
 }
 
-class _PlansScreenState extends State<PlansScreen> {
-  String? _selected;
-  bool _opening = false;
+class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
+  List<Json> _plans = [];
+  Json? _selected;
+  bool _loading = true;
+  bool _busy = false;
+  String? _error;
+  int _seenVersion = -1;
 
   @override
   void initState() {
     super.initState();
-    session.addListener(_changed);
+    WidgetsBinding.instance.addObserver(this);
+    session.addListener(_sessionChanged);
+    _seenVersion = session.settingsVersion;
+    _load();
     session.refresh().catchError((_) {});
   }
 
   @override
   void dispose() {
-    session.removeListener(_changed);
+    WidgetsBinding.instance.removeObserver(this);
+    session.removeListener(_sessionChanged);
     super.dispose();
   }
 
-  void _changed() {
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) _load(quiet: true);
+  }
+
+  void _sessionChanged() {
     if (!mounted) return;
-    if (_selected != null && !session.plans.any((p) => p['code'] == _selected)) _selected = null;
+    if (session.settingsVersion != _seenVersion) {
+      _seenVersion = session.settingsVersion;
+      _load(quiet: true);
+    }
     setState(() {});
   }
 
-  String get _buttonLabel {
-    if (_opening) return 'Opening UPI…';
-    if (_selected == null) return 'Select a plan';
-    return session.isGuest ? 'Next' : 'Continue to payment';
+  Future<void> _load({bool quiet = false}) async {
+    if (!quiet) setState(() => _loading = true);
+    try {
+      final fresh = await PlansService.plansForMe();
+      if (!mounted) return;
+      final r = PlanLogic.reconcile(_selected, fresh);
+      setState(() {
+        _plans = fresh;
+        _selected = r.selected;
+        _error = null;
+      });
+      if (r.notice != null) showSnack(context, r.notice!);
+    } catch (e) {
+      if (mounted) setState(() => _error = friendlyError(e));
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
   }
 
   Future<void> _continue() async {
-    if (_selected == null) return;
+    final plan = _selected;
+    if (plan == null) return;
     if (session.isGuest) {
-      final ok = await requireLogin(context, message: 'Log in or create an account to buy a plan.');
-      if (!ok || !mounted) return; // after login we come back here with the plan selected and continue
+      final ok = await requireLogin(context, message: 'Log in or create an account to get this plan.');
+      if (!ok || !mounted) return;
+      // Back with the same plan selected: refresh (eligibility may differ for this account) and continue.
+      await _load(quiet: true);
+      if (!mounted || _selected == null) return;
     }
-    if (AppConfig.playStore) {
-      // User Choice Billing (India): the user picks Google Play or UPI.
-      final choice = await showModalBottomSheet<String>(
-        context: context,
-        builder: (c) => SafeArea(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            const ListTile(title: Text('Choose how to pay', style: TextStyle(fontWeight: FontWeight.w700))),
-            ListTile(leading: const Icon(Icons.shop_outlined), title: const Text('Pay with Google Play'),
-                onTap: () => Navigator.pop(c, 'play')),
-            ListTile(leading: const Icon(Icons.account_balance_outlined), title: const Text('Pay with UPI'),
-                onTap: () => Navigator.pop(c, 'upi')),
-          ]),
-        ),
-      );
-      if (choice == null || !mounted) return;
-      if (choice == 'play') {
-        showSnack(context, 'Google Play billing is not available in this version yet. Please use UPI.');
-        return;
-      }
+    final current = _selected!;
+    if (!PlanLogic.canContinue(plan: current, playStore: AppConfig.playStore, busy: false)) return;
+    if (current['pay_mode'] == 'free') {
+      await _claimFree(current);
+    } else {
+      await _payUpi(current);
     }
-    setState(() => _opening = true);
+  }
+
+  Future<void> _claimFree(Json plan) async {
+    setState(() => _busy = true);
     try {
-      final order = await Payments.createOrder(_selected!);
+      final r = await PlansService.claimFree((plan['id'] as num).toInt());
+      await session.refresh();
       if (!mounted) return;
-      // Same-plan open order that's already being verified → show its status instead of paying again.
+      await Navigator.of(context).push(MaterialPageRoute(builder: (_) => FreeClaimSuccessScreen(result: r)));
+      if (mounted && !widget.asTab) Navigator.pop(context, true);
+    } catch (e) {
+      if (mounted) showSnack(context, friendlyError(e), error: true);
+      _load(quiet: true);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  Future<void> _payUpi(Json plan) async {
+    setState(() => _busy = true);
+    try {
+      final order = await Payments.createOrder((plan['id'] as num).toInt());
+      if (!mounted) return;
+      final notice = PlanLogic.priceNotice(plan, order);
+      if (notice != null) {
+        final go = await showDialog<bool>(
+          context: context,
+          builder: (c) => AlertDialog(
+            title: Text(notice),
+            content: Text('${order['plan_name']} is now ₹${order['price_inr']} for ${order['duration_days']} days.'),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Cancel')),
+              FilledButton(onPressed: () => Navigator.pop(c, true), child: const Text('Continue')),
+            ],
+          ),
+        );
+        _load(quiet: true);
+        if (go != true || !mounted) return;
+      }
       if (order['reused'] == true && order['status'] == 'pending') {
-        setState(() => _opening = false);
         await _openStatus('${order['order_id']}');
         return;
       }
-      final result = await Payments.pay(order);
+      final result = await Payments.pay(order); // UPI ID / payee come from the order, never cached
       if (!mounted) return;
-      setState(() => _opening = false);
+      setState(() => _busy = false);
       await _openStatus('${result['order_id']}');
     } on UpiLaunchException catch (e) {
       if (mounted) showSnack(context, e.noUpiApp ? 'No UPI app found' : e.message, error: true);
     } catch (e) {
       if (mounted) showSnack(context, friendlyError(e), error: true);
+      _load(quiet: true);
     } finally {
-      if (mounted) setState(() => _opening = false);
+      if (mounted) setState(() => _busy = false);
     }
   }
 
@@ -119,7 +177,7 @@ class _PlansScreenState extends State<PlansScreen> {
         text: '${plan['name']} active until ${formatDate(plan['ends_at'] as String?)}',
       );
     }
-    if (order != null && !session.noPayments) {
+    if (order != null && !session.freeMode && !AppConfig.playStore) {
       return _Banner(
         color: AppColors.warning,
         icon: Icons.hourglass_top,
@@ -132,15 +190,17 @@ class _PlansScreenState extends State<PlansScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final free = session.noPayments;
+    final freeMode = session.freeMode;
     final perks = const ['Full premium videos', '2 TB cloud storage', 'Downloads', 'Early access to new channels'];
+    final anyFree = PlanLogic.anyFree(_plans);
+    final unavailable = _plans.isNotEmpty && _plans.every((p) => p['pay_mode'] == 'unavailable');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: !widget.asTab,
         title: const Text('Premium'),
         actions: [
           IconButton(
-            tooltip: 'Profile',
+            tooltip: 'Account',
             icon: const Icon(Icons.account_circle_outlined, size: 28),
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ProfileScreen())),
           ),
@@ -149,17 +209,16 @@ class _PlansScreenState extends State<PlansScreen> {
       body: RefreshIndicator(
         onRefresh: () async {
           await session.refresh();
-          await session.loadPlans();
+          await _load(quiet: true);
         },
         child: ListView(padding: const EdgeInsets.fromLTRB(16, 4, 16, 120), children: [
           _banner(),
+          if (!freeMode && anyFree)
+            const _Banner(color: AppColors.success, icon: Icons.card_giftcard, text: 'Plans are free for you for a limited time'),
           Container(
             margin: const EdgeInsets.only(top: 8),
             padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              gradient: AppColors.premiumGradient,
-              borderRadius: BorderRadius.circular(AppRadius.card),
-            ),
+            decoration: BoxDecoration(gradient: AppColors.premiumGradient, borderRadius: BorderRadius.circular(AppRadius.card)),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Row(children: [
                 Icon(Icons.workspace_premium, color: AppColors.premium, size: 30),
@@ -180,75 +239,86 @@ class _PlansScreenState extends State<PlansScreen> {
             ]),
           ),
           const SizedBox(height: 18),
-          if (free) const FreeAccountCard() else ..._planCards(),
+          if (freeMode || AppConfig.playStore) ...[const FreeAccountCard(), const SizedBox(height: 18)],
+          if (!freeMode) ..._planCards(unavailable),
         ]),
       ),
-      bottomNavigationBar: free
+      bottomNavigationBar: freeMode || _plans.isEmpty
           ? null
           : SafeArea(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
                 child: GradientButton(
-                  label: _buttonLabel,
-                  busy: false,
-                  onPressed: _selected == null || _opening ? null : _continue,
+                  label: PlanLogic.buttonLabel(
+                      plan: _selected, isGuest: session.isGuest, playStore: AppConfig.playStore, busy: _busy),
+                  onPressed: PlanLogic.canContinue(plan: _selected, playStore: AppConfig.playStore, busy: _busy)
+                      ? _continue
+                      : null,
                 ),
               ),
             ),
     );
   }
 
-  List<Widget> _planCards() {
-    if (session.plans.isEmpty) return [const EmptyState(text: 'No plans available right now')];
+  List<Widget> _planCards(bool unavailable) {
+    if (_loading && _plans.isEmpty) {
+      return const [Padding(padding: EdgeInsets.all(32), child: Center(child: CircularProgressIndicator()))];
+    }
+    if (_error != null && _plans.isEmpty) return [ErrorRetry(message: _error!, onRetry: _load)];
+    if (_plans.isEmpty) return [const EmptyState(text: 'No plans available right now')];
     return [
       RadioGroup<String>(
-        groupValue: _selected,
-        onChanged: (v) => setState(() => _selected = v),
+        groupValue: _selected == null ? null : '${_selected!['id']}',
+        onChanged: (v) => setState(() => _selected = _plans.firstWhere((p) => '${p['id']}' == v)),
         child: Column(children: [
-          for (final p in session.plans)
+          for (final p in _plans)
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(AppRadius.card),
-                onTap: () => setState(() => _selected = '${p['code']}'),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 150),
-                  padding: const EdgeInsets.fromLTRB(4, 12, 16, 12),
-                  decoration: BoxDecoration(
-                    color: AppColors.surface,
-                    borderRadius: BorderRadius.circular(AppRadius.card),
-                    border: Border.all(
-                      color: _selected == p['code'] ? AppColors.primary : AppColors.outline,
-                      width: _selected == p['code'] ? 2 : 1,
-                    ),
-                  ),
-                  child: Row(children: [
-                    Radio<String>(value: '${p['code']}'),
-                    Expanded(
-                      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                        Row(children: [
-                          Text('${p['name']}', style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
-                          if (p['badge'] != null) ...[
-                            const SizedBox(width: 8),
-                            StatusPill('${p['badge']}', color: AppColors.accent),
-                          ],
-                        ]),
-                        Text(durationLabel((p['duration_days'] as num).toInt()),
-                            style: const TextStyle(color: AppColors.textMuted, fontSize: 13)),
-                      ]),
-                    ),
-                    Text('₹ ${p['price_inr']}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
-                  ]),
-                ),
+              child: PlanCard(
+                plan: p,
+                playStore: AppConfig.playStore,
+                selected: _selected?['id'] == p['id'],
+                onTap: () => setState(() => _selected = p),
               ),
             ),
         ]),
       ),
       const SizedBox(height: 4),
-      const Text('Pay securely with any UPI app. Your plan starts as soon as the payment is confirmed.',
-          textAlign: TextAlign.center, style: TextStyle(color: AppColors.textMuted, fontSize: 12)),
+      Text(
+        unavailable
+            ? 'Payments are paused. Please try again later.'
+            : AppConfig.playStore
+                ? 'Paid plans are not available in this version.'
+                : 'Pay securely with any UPI app. Your plan starts as soon as the payment is confirmed.',
+        textAlign: TextAlign.center,
+        style: const TextStyle(color: AppColors.textMuted, fontSize: 12),
+      ),
     ];
   }
+}
+
+/// Shown after a successful free claim.
+class FreeClaimSuccessScreen extends StatelessWidget {
+  const FreeClaimSuccessScreen({super.key, required this.result});
+  final Json result;
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(automaticallyImplyLeading: false),
+        body: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            const Icon(Icons.celebration, size: 80, color: AppColors.success),
+            const SizedBox(height: 16),
+            Text('Your ${result['plan_name']} is active until ${formatDate(result['ends_at'] as String?)}',
+                textAlign: TextAlign.center, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 8),
+            const Text('Enjoy full premium videos, 2 TB cloud and downloads.',
+                textAlign: TextAlign.center, style: TextStyle(color: AppColors.textMuted)),
+            const SizedBox(height: 28),
+            GradientButton(label: 'Done', onPressed: () => Navigator.pop(context)),
+          ]),
+        ),
+      );
 }
 
 class _Banner extends StatelessWidget {
