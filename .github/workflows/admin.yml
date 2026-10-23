@@ -1,0 +1,47 @@
+name: admin
+
+on:
+  pull_request:
+    paths: ["admin/**", ".github/workflows/admin.yml"]
+  push:
+    branches: [main]
+    paths: ["admin/**", ".github/workflows/admin.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: admin-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: admin
+        shell: bash
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL || 'https://example.supabase.co' }}
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_ci' }}
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Install
+        run: (npm ci 2>/dev/null || npm install --no-audit --no-fund) 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: Lint
+        run: npm run lint 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: Build
+        run: npm run build 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: Type-check
+        run: npm run typecheck 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: Report failure log as annotation
+        if: failure()
+        run: |
+          [ -f "$RUNNER_TEMP/ci.log" ] || exit 0
+          msg=$(grep -iE -B3 -A8 'error|failed|warning' "$RUNNER_TEMP/ci.log" | tail -n 150 || true)
+          [ -z "$msg" ] && msg=$(tail -n 80 "$RUNNER_TEMP/ci.log" || true)
+          msg="${msg//'%'/'%25'}"; msg="${msg//$'\r'/}"; msg="${msg//$'\n'/'%0A'}"
+          echo "::error title=CI log tail::$msg"
