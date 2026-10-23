@@ -13,7 +13,7 @@ class AppConfig {
   static const playStore = bool.fromEnvironment('PLAY_STORE');
   static const androidAppId = String.fromEnvironment('ANDROID_APP_ID', defaultValue: 'com.bytebox.app');
 
-  static const websiteUrl = String.fromEnvironment('WEBSITE_URL', defaultValue: 'https://bytebox.vercel.app');
+  static const websiteUrl = String.fromEnvironment('WEBSITE_URL', defaultValue: 'https://bytebox-ejim.vercel.app');
   static const supportEmail = String.fromEnvironment('SUPPORT_EMAIL', defaultValue: 'cs.preeinfotech@gmail.com');
 
   static String get loginCallback => '$androidAppId://login-callback';

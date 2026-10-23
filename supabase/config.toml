@@ -33,7 +33,7 @@ file_size_limit = "50MiB"
 
 [auth]
 enabled = true
-site_url = "https://bytebox.vercel.app"
+site_url = "https://bytebox-ejim.vercel.app"
 additional_redirect_urls = ["com.bytebox.app://login-callback", "com.bytebox.play://login-callback"]
 jwt_expiry = 3600
 enable_signup = true
