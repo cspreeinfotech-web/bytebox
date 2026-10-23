@@ -20,7 +20,7 @@ flutter build apk --debug --target=integration_test/e2e_test.dart "${build_args[
 pkill -f KotlinCompileDaemon 2>/dev/null || true
 free -m || true
 APK=$(ls build/app/outputs/flutter-apk/app-$FLAVOR-debug.apk)
-args+=(--use-application-binary "$APK")
+args+=(--use-application-binary "$APK" --no-enable-impeller)  # Impeller GLES crashes the emulator GPU
 # Only the pixel_tablet emulator image is stable on CI runners; phone/7" layouts are produced by
 # resizing its display (a real phone-sized screen and density for the app).
 case "$DEVICE" in
