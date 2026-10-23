@@ -1,0 +1,22 @@
+11:32:53 MemTotal: 4008128 kB MemFree: 287504 kB MemAvailable: 2415160 kB 
+11:33:03 MemTotal: 4008128 kB MemFree: 269020 kB MemAvailable: 2134696 kB 
+11:33:13 MemTotal: 4008128 kB MemFree: 272068 kB MemAvailable: 2022364 kB 
+11:33:23 MemTotal: 4008128 kB MemFree: 278728 kB MemAvailable: 1880504 kB 
+11:33:33 MemTotal: 4008128 kB MemFree: 276128 kB MemAvailable: 1800372 kB 
+11:33:43 MemTotal: 4008128 kB MemFree: 313328 kB MemAvailable: 1822272 kB 
+11:33:53 MemTotal: 4008128 kB MemFree: 255620 kB MemAvailable: 1821488 kB 
+11:34:03 MemTotal: 4008128 kB MemFree: 269616 kB MemAvailable: 1804256 kB 
+11:34:14 MemTotal: 4008128 kB MemFree: 288128 kB MemAvailable: 1809448 kB 
+11:34:24 MemTotal: 4008128 kB MemFree: 266720 kB MemAvailable: 1791020 kB 
+11:34:34 MemTotal: 4008128 kB MemFree: 256604 kB MemAvailable: 1808432 kB 
+11:34:44 MemTotal: 4008128 kB MemFree: 279780 kB MemAvailable: 1814164 kB 
+11:34:54 MemTotal: 4008128 kB MemFree: 255212 kB MemAvailable: 1791896 kB 
+11:35:04 MemTotal: 4008128 kB MemFree: 263088 kB MemAvailable: 1799196 kB 
+11:35:14 MemTotal: 4008128 kB MemFree: 303024 kB MemAvailable: 1843472 kB 
+11:35:24 MemTotal: 4008128 kB MemFree: 301088 kB MemAvailable: 1841644 kB 
+11:35:34 MemTotal: 4008128 kB MemFree: 295712 kB MemAvailable: 1839372 kB 
+11:35:44 MemTotal: 4008128 kB MemFree: 294352 kB MemAvailable: 1837988 kB 
+11:35:54 MemTotal: 4008128 kB MemFree: 295316 kB MemAvailable: 1839020 kB 
+11:36:04 MemTotal: 4008128 kB MemFree: 295628 kB MemAvailable: 1838332 kB 
+11:36:14 MemTotal: 4008128 kB MemFree: 266596 kB MemAvailable: 1741884 kB 
+11:36:24 
