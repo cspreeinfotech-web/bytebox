@@ -24,7 +24,7 @@ After adding the Supabase secrets, run **Actions → supabase-deploy → Run wor
 ## 2. Supabase Auth settings (Dashboard → Authentication)
 - **Sign In / Providers → Allow anonymous sign-ins: ON** (guest accounts).
 - **Email provider: ON.** "Confirm email": OFF gives the instant guest → account upgrade the app expects. If you turn it ON, users must click the email link before their email/password works.
-- **URL Configuration → Redirect URLs:** add `com.bytebox.app://login-callback` and `com.bytebox.play://login-callback`. Site URL: the Vercel website URL once deployed.
+- **URL Configuration → Redirect URLs:** add `com.bytebox.app://login-callback` and `com.bytebox.play://login-callback`. Site URL: `https://bytebox-ejim.vercel.app` (set automatically by the deploy workflow).
 - Google provider: leave OFF for now — the app shows "Google sign-in is coming soon".
 
 ## 3. Make yourself the owner
@@ -35,3 +35,8 @@ insert into public.admins (user_id, role)
 select id, 'owner' from auth.users where email = 'cs.preeinfotech@gmail.com'
 on conflict (user_id) do update set role = 'owner';
 ```
+
+## 4. Website + admin (Vercel)
+- Project `bytebox-ejim` (root directory `admin`) → **https://bytebox-ejim.vercel.app**; every merge to `main` deploys.
+- Admin panel: **https://bytebox-ejim.vercel.app/admin** (sign in with your owner account).
+- Ads download page for Meta ads: **https://bytebox-ejim.vercel.app/d**
