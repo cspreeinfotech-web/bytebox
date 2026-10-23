@@ -21,7 +21,7 @@ jobs:
       SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
       PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check secrets
         run: |
           for v in SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD PROJECT_REF; do
@@ -34,6 +34,20 @@ jobs:
         run: supabase link --project-ref "$PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
       - name: Push migrations
         run: supabase db push --password "$SUPABASE_DB_PASSWORD" --include-all
+      - name: Auth settings (guest sign-in, redirect URLs, instant email accounts)
+        run: |
+          code=$(curl -sS -o "$RUNNER_TEMP/auth.json" -w '%{http_code}' -X PATCH \
+            "https://api.supabase.com/v1/projects/$PROJECT_REF/config/auth" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" -H "Content-Type: application/json" \
+            -d '{"external_anonymous_users_enabled": true,
+                 "external_email_enabled": true,
+                 "mailer_autoconfirm": true,
+                 "uri_allow_list": "com.bytebox.app://login-callback,com.bytebox.play://login-callback"}')
+          if [ "$code" -lt 200 ] || [ "$code" -ge 300 ]; then
+            echo "::error title=Auth settings::HTTP $code $(head -c 500 "$RUNNER_TEMP/auth.json")"; exit 1
+          fi
+          echo "Auth settings applied."
+
       - name: Deploy Edge Functions
         run: |
           shopt -s nullglob
