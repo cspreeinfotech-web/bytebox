@@ -1,0 +1,43 @@
+name: supabase-deploy
+
+# Applies new migrations and Edge Functions to the hosted project.
+# Never runs `db reset`. Requires the SUPABASE_* repository secrets.
+on:
+  push:
+    branches: [main]
+    paths: ["supabase/**", ".github/workflows/supabase-deploy.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: supabase-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check secrets
+        run: |
+          for v in SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD PROJECT_REF; do
+            if [ -z "${!v}" ]; then echo "::error::Missing secret for $v (see docs/setup.md)"; exit 1; fi
+          done
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Link project
+        run: supabase link --project-ref "$PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
+      - name: Push migrations
+        run: supabase db push --password "$SUPABASE_DB_PASSWORD" --include-all
+      - name: Deploy Edge Functions
+        run: |
+          shopt -s nullglob
+          for d in supabase/functions/*/; do
+            name=$(basename "$d"); [ "$name" = "_shared" ] && continue
+            supabase functions deploy "$name" --project-ref "$PROJECT_REF" --use-api
+          done
