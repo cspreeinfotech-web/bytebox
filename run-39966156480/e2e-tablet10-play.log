@@ -98,75 +98,95 @@ Preparing "Install CMake 3.22.1 v.3.22.1".
 Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
 "Install CMake 3.22.1 v.3.22.1" complete.
 "Install CMake 3.22.1 v.3.22.1" finished.
-Running Gradle task 'assemblePlayDebug'...                        212.1s
+Running Gradle task 'assemblePlayDebug'...                        207.9s
 ✓ Built build/app/outputs/flutter-apk/app-play-debug.apk
-Installing build/app/outputs/flutter-apk/app-play-debug.apk...        649ms
-I/Choreographer( 7768): Skipped 47 frames!  The application may be doing too much work on its main thread.
-D/FlutterJNI( 7768): Sending viewport metrics to the engine.
-I/om.bytebox.play( 7768): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
-VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:44457/ustgsd82GfA=/
-VMServiceFlutterDriver: Isolate found with number: 8822066153484931
-VMServiceFlutterDriver: Isolate 8822066153484931 is runnable.
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...        738ms
+I/Choreographer( 6675): Skipped 50 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 6675): Sending viewport metrics to the engine.
+I/om.bytebox.play( 6675): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:40027/LjrFZRoMR_g=/
+VMServiceFlutterDriver: Isolate found with number: 6091616926345567
+VMServiceFlutterDriver: Isolate 6091616926345567 is runnable.
 VMServiceFlutterDriver: Isolate is paused at start.
 VMServiceFlutterDriver: Attempting to resume isolate
-I/flutter ( 7768): 00:00 +0: Bytebox end-to-end
+I/flutter ( 6675): 00:00 +0: Bytebox end-to-end
 VMServiceFlutterDriver: Connected to Flutter application.
-I/flutter ( 7768): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
-D/ProfileInstaller( 7768): Installing profile for com.bytebox.play
-D/EGL_emulation( 7768): app_time_stats: avg=293.79ms min=207.78ms max=318.61ms count=5
-D/EGL_emulation( 7768): app_time_stats: avg=351.41ms min=314.90ms max=420.22ms count=3
-W/OnBackInvokedCallback( 7768): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 7768): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 6675): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+I/Choreographer( 6675): Skipped 30 frames!  The application may be doing too much work on its main thread.
+D/ProfileInstaller( 6675): Installing profile for com.bytebox.play
+D/EGL_emulation( 6675): app_time_stats: avg=637.08ms min=177.33ms max=2024.57ms count=5
+D/EGL_emulation( 6675): app_time_stats: avg=316.51ms min=315.95ms max=316.91ms count=4
 VMServiceFlutterDriver: request_data message is taking a long time to complete...
-D/EGL_emulation( 7768): app_time_stats: avg=121.29ms min=30.66ms max=288.15ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=2755.04ms min=51.73ms max=5458.36ms count=2
-D/EGL_emulation( 7768): app_time_stats: avg=384.80ms min=113.89ms max=1188.41ms count=4
-D/EGL_emulation( 7768): app_time_stats: avg=2162.19ms min=2162.19ms max=2162.19ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=265.40ms min=32.78ms max=550.66ms count=5
-W/OnBackInvokedCallback( 7768): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 7768): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-W/InputMethodManager( 7768): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{b7485ff VFE...... .F....ID 0,0-2560,1480 #1} is not served.
-W/InputMethodManager( 7768): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{b7485ff VFE...... .F....ID 0,0-2560,1480 #1} is not served.
-I/AssistStructure( 7768): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
-D/EGL_emulation( 7768): app_time_stats: avg=1167.02ms min=1167.02ms max=1167.02ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=132.57ms min=59.01ms max=277.14ms count=8
-W/InputMethodManager( 7768): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{b7485ff VFE...... .F...... 0,0-2560,1480 #1 aid=1073741824} is not served.
-W/InputMethodManager( 7768): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{b7485ff VFE...... .F...... 0,0-2560,1480 #1 aid=1073741824} is not served.
-I/AssistStructure( 7768): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
-D/EGL_emulation( 7768): app_time_stats: avg=154.44ms min=40.85ms max=319.10ms count=7
-D/EGL_emulation( 7768): app_time_stats: avg=316.60ms min=315.84ms max=318.02ms count=4
-D/EGL_emulation( 7768): app_time_stats: avg=354.03ms min=315.00ms max=392.63ms count=3
-D/EGL_emulation( 7768): app_time_stats: avg=125.29ms min=114.63ms max=167.16ms count=8
-D/EGL_emulation( 7768): app_time_stats: avg=116.72ms min=112.68ms max=121.30ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.62ms min=114.18ms max=119.40ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.69ms min=113.27ms max=121.81ms count=9
-I/om.bytebox.play( 7768): NativeAlloc concurrent copying GC freed 8451(479KB) AllocSpace objects, 13(820KB) LOS objects, 49% free, 2672KB/5345KB, paused 5.217ms,9us total 40.249ms
-D/EGL_emulation( 7768): app_time_stats: avg=7992.48ms min=7992.48ms max=7992.48ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=260.04ms min=64.98ms max=741.46ms count=4
-D/EGL_emulation( 7768): app_time_stats: avg=104.40ms min=64.25ms max=119.13ms count=10
-D/EGL_emulation( 7768): app_time_stats: avg=116.49ms min=112.69ms max=124.09ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=3832.92ms min=3832.92ms max=3832.92ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=169.47ms min=113.99ms max=586.41ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=115.54ms min=25.75ms max=368.49ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=2444.35ms min=2444.35ms max=2444.35ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=156.93ms min=112.58ms max=439.50ms count=8
-D/EGL_emulation( 7768): app_time_stats: avg=104.81ms min=64.20ms max=123.94ms count=10
-D/EGL_emulation( 7768): app_time_stats: avg=2075.95ms min=2075.95ms max=2075.95ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=144.76ms min=26.91ms max=394.46ms count=7
-D/EGL_emulation( 7768): app_time_stats: avg=106.55ms min=24.44ms max=189.81ms count=11
-D/EGL_emulation( 7768): app_time_stats: avg=112.41ms min=84.15ms max=119.38ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.49ms min=113.46ms max=120.02ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.56ms min=114.06ms max=119.47ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=5291.69ms min=5291.69ms max=5291.69ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=125.00ms min=27.82ms max=358.06ms count=8
-D/EGL_emulation( 7768): app_time_stats: avg=116.09ms min=28.27ms max=153.87ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.77ms min=110.14ms max=121.44ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.24ms min=109.76ms max=121.71ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=116.59ms min=113.17ms max=126.35ms count=9
-D/EGL_emulation( 7768): app_time_stats: avg=5309.09ms min=5309.09ms max=5309.09ms count=1
-D/EGL_emulation( 7768): app_time_stats: avg=157.72ms min=113.75ms max=403.45ms count=7
-I/flutter ( 7768): 00:36 +1: (tearDownAll)
-I/flutter ( 7768): 00:37 +2: All tests passed!
+W/OnBackInvokedCallback( 6675): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 6675): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 6675): app_time_stats: avg=180.05ms min=40.27ms max=422.05ms count=6
+I/flutter ( 6675): E2E_SHOT:tablet10_e2e-01-consent
+D/EGL_emulation( 6675): app_time_stats: avg=114.07ms min=105.51ms max=121.52ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=119.24ms min=96.68ms max=144.07ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=115.61ms min=106.99ms max=117.80ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=228.53ms min=115.46ms max=785.58ms count=6
+D/EGL_emulation( 6675): app_time_stats: avg=5267.76ms min=43.30ms max=10492.23ms count=2
+D/EGL_emulation( 6675): app_time_stats: avg=293.75ms min=37.96ms max=384.87ms count=4
+W/OnBackInvokedCallback( 6675): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 6675): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 6675): app_time_stats: avg=170.76ms min=75.32ms max=322.01ms count=6
+W/InputMethodManager( 6675): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{3883749 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+W/InputMethodManager( 6675): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{3883749 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+D/EGL_emulation( 6675): app_time_stats: avg=1451.01ms min=1451.01ms max=1451.01ms count=1
+I/AssistStructure( 6675): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
+W/InputMethodManager( 6675): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{3883749 VFE...... .F...... 0,0-2560,1480 #1 aid=1073741824} is not served.
+W/InputMethodManager( 6675): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{3883749 VFE...... .F...... 0,0-2560,1480 #1 aid=1073741824} is not served.
+I/AssistStructure( 6675): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+D/EGL_emulation( 6675): app_time_stats: avg=165.20ms min=46.75ms max=340.31ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=315.43ms min=313.02ms max=316.34ms count=4
+D/EGL_emulation( 6675): app_time_stats: avg=262.68ms min=127.44ms max=405.00ms count=4
+D/EGL_emulation( 6675): app_time_stats: avg=116.36ms min=112.27ms max=120.86ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=116.87ms min=107.21ms max=124.04ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=116.22ms min=99.21ms max=136.47ms count=9
+I/flutter ( 6675): E2E_SHOT:tablet10_6-profile
+D/EGL_emulation( 6675): app_time_stats: avg=118.25ms min=113.94ms max=127.83ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=119.11ms min=93.10ms max=176.99ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=114.65ms min=105.90ms max=120.30ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=171.19ms min=112.04ms max=491.98ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=116.84ms min=69.93ms max=133.11ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=118.19ms min=102.08ms max=145.33ms count=9
+I/flutter ( 6675): E2E_SHOT:tablet10_2-plans
+D/EGL_emulation( 6675): app_time_stats: avg=117.68ms min=111.41ms max=126.69ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=141.04ms min=105.26ms max=215.24ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=129.93ms min=112.85ms max=197.82ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=122.27ms min=103.44ms max=191.77ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=164.79ms min=35.83ms max=385.29ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=119.77ms min=108.91ms max=138.45ms count=9
+I/flutter ( 6675): E2E_SHOT:tablet10_1-cloud
+D/EGL_emulation( 6675): app_time_stats: avg=117.80ms min=95.41ms max=137.31ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=116.27ms min=112.89ms max=118.40ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=116.47ms min=114.48ms max=118.54ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=119.74ms min=62.27ms max=185.62ms count=9
+I/flutter ( 6675): E2E_SHOT:tablet10_3-explore
+D/EGL_emulation( 6675): app_time_stats: avg=127.13ms min=100.56ms max=196.09ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=148.29ms min=120.85ms max=183.99ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=138.62ms min=108.24ms max=211.05ms count=7
+D/EGL_emulation( 6675): app_time_stats: avg=136.97ms min=108.08ms max=195.26ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=108.52ms min=61.69ms max=141.36ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=110.88ms min=98.56ms max=135.30ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=119.39ms min=114.38ms max=133.88ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=132.23ms min=107.44ms max=260.66ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=133.40ms min=63.26ms max=298.77ms count=8
+I/flutter ( 6675): E2E_SHOT:tablet10_5-channels
+D/EGL_emulation( 6675): app_time_stats: avg=116.37ms min=69.79ms max=148.47ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=110.13ms min=91.50ms max=125.13ms count=10
+D/EGL_emulation( 6675): app_time_stats: avg=114.18ms min=105.75ms max=118.42ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=107.06ms min=41.52ms max=203.97ms count=10
+D/EGL_emulation( 6675): app_time_stats: avg=120.86ms min=76.78ms max=159.35ms count=9
+D/EGL_emulation( 6675): app_time_stats: avg=134.85ms min=126.73ms max=146.67ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=129.34ms min=98.47ms max=197.83ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=132.02ms min=85.68ms max=195.65ms count=8
+I/flutter ( 6675): E2E_SHOT:tablet10_4-feed
+D/EGL_emulation( 6675): app_time_stats: avg=165.59ms min=100.20ms max=261.53ms count=6
+D/EGL_emulation( 6675): app_time_stats: avg=123.17ms min=78.44ms max=177.18ms count=8
+D/EGL_emulation( 6675): app_time_stats: avg=123.95ms min=103.08ms max=165.93ms count=8
+I/flutter ( 6675): 00:58 +1: (tearDownAll)
+I/flutter ( 6675): 00:58 +2: All tests passed!
 All tests passed.
 adb uninstall failed: ProcessException: Process exited abnormally with exit code 1:
 Failure [DELETE_FAILED_INTERNAL_ERROR]

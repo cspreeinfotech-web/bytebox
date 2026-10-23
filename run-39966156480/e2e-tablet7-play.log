@@ -98,29 +98,33 @@ Preparing "Install CMake 3.22.1 v.3.22.1".
 Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
 "Install CMake 3.22.1 v.3.22.1" complete.
 "Install CMake 3.22.1 v.3.22.1" finished.
-Running Gradle task 'assemblePlayDebug'...                        191.1s
+Running Gradle task 'assemblePlayDebug'...                        203.0s
 ✓ Built build/app/outputs/flutter-apk/app-play-debug.apk
-Installing build/app/outputs/flutter-apk/app-play-debug.apk...        668ms
-I/Choreographer( 7282): Skipped 47 frames!  The application may be doing too much work on its main thread.
-D/FlutterJNI( 7282): Sending viewport metrics to the engine.
-I/om.bytebox.play( 7282): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
-VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:34879/2V8C9PeYr58=/
-VMServiceFlutterDriver: Isolate found with number: 746997195307871
-VMServiceFlutterDriver: Isolate 746997195307871 is runnable.
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...        802ms
+D/HostConnection( 7193): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+I/Choreographer( 7193): Skipped 36 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 7193): Sending viewport metrics to the engine.
+I/om.bytebox.play( 7193): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:41885/60TjRb7G4mc=/
+VMServiceFlutterDriver: Isolate found with number: 292770016436915
+VMServiceFlutterDriver: Isolate 292770016436915 is runnable.
 VMServiceFlutterDriver: Isolate is paused at start.
 VMServiceFlutterDriver: Attempting to resume isolate
-I/flutter ( 7282): 00:00 +0: Bytebox end-to-end
+I/flutter ( 7193): 00:00 +0: Bytebox end-to-end
 VMServiceFlutterDriver: Connected to Flutter application.
-I/flutter ( 7282): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
-D/ProfileInstaller( 7282): Installing profile for com.bytebox.play
-D/EGL_emulation( 7282): app_time_stats: avg=298.33ms min=193.02ms max=349.24ms count=5
+I/flutter ( 7193): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+I/Choreographer( 7193): Skipped 31 frames!  The application may be doing too much work on its main thread.
+D/ProfileInstaller( 7193): Installing profile for com.bytebox.play
+D/EGL_emulation( 7193): app_time_stats: avg=563.79ms min=199.28ms max=1570.48ms count=5
+D/EGL_emulation( 7193): app_time_stats: avg=321.16ms min=315.31ms max=329.93ms count=4
 VMServiceFlutterDriver: request_data message is taking a long time to complete...
-D/EGL_emulation( 7282): app_time_stats: avg=339.16ms min=314.06ms max=407.32ms count=4
-W/OnBackInvokedCallback( 7282): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 7282): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-D/EGL_emulation( 7282): app_time_stats: avg=120.42ms min=17.35ms max=278.37ms count=9
-D/EGL_emulation( 7282): app_time_stats: avg=2890.55ms min=102.74ms max=5678.36ms count=2
-D/EGL_emulation( 7282): app_time_stats: avg=337.04ms min=115.84ms max=994.98ms count=4
+W/OnBackInvokedCallback( 7193): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7193): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 7193): app_time_stats: avg=353.55ms min=321.66ms max=416.90ms count=3
+D/EGL_emulation( 7193): app_time_stats: avg=101.33ms min=20.82ms max=121.72ms count=10
+I/flutter ( 7193): E2E_SHOT:tablet7_e2e-01-consent
+D/EGL_emulation( 7193): app_time_stats: avg=116.61ms min=111.47ms max=128.46ms count=9
+D/EGL_emulation( 7193): app_time_stats: avg=116.69ms min=114.68ms max=120.48ms count=9
 Unhandled exception:
 DriverError: Failed to fulfill RequestData due to remote error
 Original error: ext.flutter.driver: (112) Service has disappeared

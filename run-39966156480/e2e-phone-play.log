@@ -1,4 +1,4 @@
-Running Gradle task 'assembleDirectDebug'...                    
+Running Gradle task 'assemblePlayDebug'...                      
 Loading package information...                                                  
 Loading local repository...                                                     
 [                                       ] 3% Loading local repository...        
@@ -98,26 +98,28 @@ Preparing "Install CMake 3.22.1 v.3.22.1".
 Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
 "Install CMake 3.22.1 v.3.22.1" complete.
 "Install CMake 3.22.1 v.3.22.1" finished.
-Running Gradle task 'assembleDirectDebug'...                      203.5s
-✓ Built build/app/outputs/flutter-apk/app-direct-debug.apk
-Installing build/app/outputs/flutter-apk/app-direct-debug.apk...        634ms
-I/Choreographer( 7618): Skipped 47 frames!  The application may be doing too much work on its main thread.
-D/FlutterJNI( 7618): Sending viewport metrics to the engine.
-I/com.bytebox.app( 7618): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
-VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:43425/66deMvDFVvQ=/
-VMServiceFlutterDriver: Isolate found with number: 7782318303624471
-VMServiceFlutterDriver: Isolate 7782318303624471 is runnable.
+Running Gradle task 'assemblePlayDebug'...                        152.9s
+✓ Built build/app/outputs/flutter-apk/app-play-debug.apk
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...      1,301ms
+D/HostConnection( 7240): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+I/Choreographer( 7240): Skipped 33 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 7240): Sending viewport metrics to the engine.
+I/om.bytebox.play( 7240): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:37329/eu5G7ZEki9s=/
+VMServiceFlutterDriver: Isolate found with number: 2658856422956391
+VMServiceFlutterDriver: Isolate 2658856422956391 is runnable.
 VMServiceFlutterDriver: Isolate is paused at start.
 VMServiceFlutterDriver: Attempting to resume isolate
-I/flutter ( 7618): 00:00 +0: Bytebox end-to-end
+I/flutter ( 7240): 00:00 +0: Bytebox end-to-end
 VMServiceFlutterDriver: Connected to Flutter application.
-I/flutter ( 7618): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
-D/ProfileInstaller( 7618): Installing profile for com.bytebox.app
-D/EGL_emulation( 7618): app_time_stats: avg=289.04ms min=198.93ms max=316.97ms count=5
-W/OnBackInvokedCallback( 7618): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 7618): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-D/EGL_emulation( 7618): app_time_stats: avg=349.64ms min=316.52ms max=412.25ms count=3
+I/flutter ( 7240): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/ProfileInstaller( 7240): Installing profile for com.bytebox.play
+D/EGL_emulation( 7240): app_time_stats: avg=496.64ms min=212.93ms max=1317.68ms count=5
+D/EGL_emulation( 7240): app_time_stats: avg=320.89ms min=316.38ms max=332.96ms count=4
 VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/EGL_emulation( 7240): app_time_stats: avg=333.87ms min=315.76ms max=385.56ms count=4
+W/OnBackInvokedCallback( 7240): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7240): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
 Unhandled exception:
 DriverError: Failed to fulfill RequestData due to remote error
 Original error: ext.flutter.driver: (112) Service has disappeared
