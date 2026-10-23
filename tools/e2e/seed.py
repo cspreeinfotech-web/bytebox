@@ -143,7 +143,10 @@ def clean():
         if cloud:
             req("DELETE", "/storage/v1/object/cloud", {"prefixes": [c["storage_key"] for c in cloud]})
         rest("DELETE", "channels", query=f"?owner_id=eq.{uid}")
-        rest("DELETE", "meta_events", query=f"?user_id=eq.{uid}")
+        try:
+            rest("DELETE", "meta_events", query=f"?user_id=eq.{uid}")
+        except SystemExit:
+            pass  # table exists only after Stage 8 is deployed
         rest("DELETE", "payment_orders", query=f"?user_id=eq.{uid}")
         req("DELETE", f"/auth/v1/admin/users/{uid}")
     print(f"removed {len(demo)} demo users")
