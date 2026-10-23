@@ -69,11 +69,12 @@ class _PaymentStatusScreenState extends State<PaymentStatusScreen> with WidgetsB
   }
 
   Future<void> _payAgain() async {
+    final planId = (_order?['plan_id'] as num?)?.toInt();
     final code = _order?['plan_code'] as String?;
-    if (code == null) return;
+    if (planId == null && code == null) return;
     setState(() => _paying = true);
     try {
-      final order = await Payments.createOrder(code);
+      final order = planId != null ? await Payments.createOrder(planId) : await Payments.createOrderByCode(code!);
       final r = await Payments.pay(order);
       if (!mounted) return;
       if (r['order_id'] != widget.orderId) {
