@@ -21,13 +21,22 @@ env:
 jobs:
   seed:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     outputs:
       password: ${{ steps.seed.outputs.DEMO_PASSWORD }}
       viewer: ${{ steps.seed.outputs.DEMO_VIEWER_EMAIL }}
       title: ${{ steps.seed.outputs.DEMO_PREMIUM_TITLE }}
     steps:
       - uses: actions/checkout@v5
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && pip install -q pillow
+      - name: Tools (ffmpeg, pillow)
+        timeout-minutes: 6
+        run: |
+          for i in 1 2 3; do
+            timeout 150 bash -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null' && break
+            echo "apt attempt $i timed out/failed, retrying"; sleep 5
+          done
+          command -v ffmpeg
+          pip install -q pillow
       - name: Service key (Management API, never printed)
         env:
           TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
