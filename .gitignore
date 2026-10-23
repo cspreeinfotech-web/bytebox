@@ -1,0 +1,32 @@
+# Secrets — never commit
+*.jks
+*.keystore
+key.properties
+.env
+.env.*
+!.env.example
+
+# Supabase
+supabase/.branches
+supabase/.temp
+
+# Node / Next
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.vercel
+
+# Flutter / Android
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/release/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
