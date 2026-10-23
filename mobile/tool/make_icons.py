@@ -1,81 +1,78 @@
-"""Generates Bytebox brand PNGs (theme A · Royal Violet).
+"""Builds every Bytebox icon/splash PNG from the brand artwork (assets/brand/bytebox-icon-source.png).
 
-Outputs into assets/icon/: icon.png (full), foreground.png (adaptive, safe-zone padded),
-monochrome.png, splash.png, plus docs/store/icon-512.png when run from repo root.
-Run: python3 mobile/tool/make_icons.py  (needs Pillow + Poppins-Bold.ttf in assets/fonts)
+Outputs (assets/icon/): icon.png (legacy, full artwork with wordmark), foreground.png (adaptive:
+cloud + box mark only, inside the 66 % safe zone), background.png (navy), monochrome.png, splash.png;
+plus docs/store/icon-512.png and admin/public/icon.png.
+Run: python3 mobile/tool/make_icons.py
 """
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+REPO = os.path.dirname(ROOT)
+SRC = os.path.join(ROOT, "assets", "brand", "bytebox-icon-source.png")
 OUT = os.path.join(ROOT, "assets", "icon")
-FONT = os.path.join(ROOT, "assets", "fonts", "Poppins-Bold.ttf")
-PRIMARY, ACCENT, BG = (0x7C, 0x5C, 0xFF), (0xFF, 0x5C, 0xA8), (0x0A, 0x0A, 0x14)
-S = 2048  # supersampled canvas
+NAVY = (5, 10, 26)
 
 
-def gradient(size, a=PRIMARY, b=ACCENT):
-    img = Image.new("RGB", (size, size))
-    px = img.load()
-    for y in range(size):
-        for x in range(size):
-            t = (x + y) / (2 * (size - 1))
-            px[x, y] = tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
-    return img
+def square_artwork():
+    """Rounded square from the source, flattened onto navy so corners are full-bleed."""
+    src = Image.open(SRC).convert("RGB")
+    mask = src.convert("L").point(lambda v: 255 if v < 235 else 0)
+    box = mask.getbbox()
+    art = src.crop(box)
+    m = mask.crop(box)
+    sq = Image.new("RGB", art.size, NAVY)
+    sq.paste(art, (0, 0), m)
+    return sq
 
 
-def mark_mask(size):
-    """White mark: cloud with a bold 'B' monogram and a play triangle knocked out."""
-    m = Image.new("L", (size, size), 0)
-    d = ImageDraw.Draw(m)
-    u = size / 1000
-    # cloud body
-    for cx, cy, r in [(330, 560, 165), (500, 470, 225), (680, 560, 170)]:
-        d.ellipse([(cx - r) * u, (cy - r) * u, (cx + r) * u, (cy + r) * u], fill=255)
-    d.rounded_rectangle([170 * u, 560 * u, 850 * u, 760 * u], radius=100 * u, fill=255)
-    # knock out 'B'
-    font = ImageFont.truetype(FONT, int(330 * u))
-    bbox = d.textbbox((0, 0), "B", font=font)
-    w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    bx, by = 400 * u, 610 * u
-    d.text((bx - w / 2 - bbox[0], by - h / 2 - bbox[1]), "B", font=font, fill=0)
-    # knock out play triangle
-    tx, ty, ts = 640 * u, 610 * u, 105 * u
-    d.polygon([(tx - ts * 0.55, ty - ts), (tx - ts * 0.55, ty + ts), (tx + ts, ty)], fill=0)
-    return m
+def mark(sq):
+    """Cloud + box (no wordmark) with alpha derived from distance to the navy background."""
+    w, h = sq.size
+    crop = sq.crop((int(w * 0.18), int(h * 0.12), int(w * 0.84), int(h * 0.66)))
+    rgba = crop.convert("RGBA")
+    px = rgba.load()
+    for y in range(crop.height):
+        for x in range(crop.width):
+            r, g, b, _ = px[x, y]
+            d = max(abs(r - NAVY[0]), abs(g - NAVY[1]), abs(b - NAVY[2]))
+            px[x, y] = (r, g, b, max(0, min(255, int((d - 18) * 4))))
+    return rgba
 
 
-def compose(size, mark_scale, rounded):
-    big = gradient(S // 4).resize((S, S), Image.BICUBIC).convert("RGBA")
-    mask = mark_mask(int(S * mark_scale))
-    layer = Image.new("L", (S, S), 0)
-    off = (S - mask.size[0]) // 2
-    layer.paste(mask, (off, off))
-    white = Image.new("RGBA", (S, S), (255, 255, 255, 255))
-    big.paste(white, (0, 0), layer)
-    if rounded:
-        r = Image.new("L", (S, S), 0)
-        ImageDraw.Draw(r).rounded_rectangle([0, 0, S, S], radius=int(S * 0.22), fill=255)
-        big.putalpha(r)
-    return big.resize((size, size), Image.LANCZOS)
+def on_canvas(img, size, fraction, bg=None):
+    canvas = Image.new("RGBA", (size, size), bg or (0, 0, 0, 0))
+    scale = size * fraction / max(img.size)
+    im = img.resize((int(img.width * scale), int(img.height * scale)), Image.LANCZOS)
+    canvas.paste(im, ((size - im.width) // 2, (size - im.height) // 2), im)
+    return canvas
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    compose(1024, 0.92, False).save(os.path.join(OUT, "icon.png"))
-    # adaptive foreground: transparent background, mark inside 66% safe zone
-    fg_mask = mark_mask(int(S * 0.62))
-    fg = Image.new("RGBA", (S, S), (0, 0, 0, 0))
-    off = (S - fg_mask.size[0]) // 2
-    fg.paste(Image.new("RGBA", fg_mask.size, (255, 255, 255, 255)), (off, off), fg_mask)
-    fg.resize((1024, 1024), Image.LANCZOS).save(os.path.join(OUT, "foreground.png"))
-    fg.resize((1024, 1024), Image.LANCZOS).save(os.path.join(OUT, "monochrome.png"))
-    gradient(1024).save(os.path.join(OUT, "background.png"))
-    compose(768, 0.92, True).save(os.path.join(OUT, "splash.png"))
-    store = os.path.join(os.path.dirname(ROOT), "docs", "store")
+    sq = square_artwork()
+    full = sq.resize((1024, 1024), Image.LANCZOS)
+    full.save(os.path.join(OUT, "icon.png"))
+    Image.new("RGB", (1024, 1024), NAVY).save(os.path.join(OUT, "background.png"))
+    m = mark(sq)
+    on_canvas(m, 1024, 0.62).save(os.path.join(OUT, "foreground.png"))
+    mono = m.copy()
+    white = Image.new("RGBA", mono.size, (255, 255, 255, 255))
+    white.putalpha(mono.getchannel("A"))
+    on_canvas(white, 1024, 0.62).save(os.path.join(OUT, "monochrome.png"))
+    rounded = full.convert("RGBA")
+    rm = Image.new("L", rounded.size, 0)
+    ImageDraw.Draw(rm).rounded_rectangle([0, 0, 1024, 1024], radius=230, fill=255)
+    rounded.putalpha(rm)
+    rounded.resize((768, 768), Image.LANCZOS).save(os.path.join(OUT, "splash.png"))
+    store = os.path.join(REPO, "docs", "store")
     os.makedirs(store, exist_ok=True)
-    compose(512, 0.92, False).convert("RGB").save(os.path.join(store, "icon-512.png"))
+    full.resize((512, 512), Image.LANCZOS).save(os.path.join(store, "icon-512.png"))
+    pub = os.path.join(REPO, "admin", "public")
+    os.makedirs(pub, exist_ok=True)
+    rounded.resize((512, 512), Image.LANCZOS).save(os.path.join(pub, "icon.png"))
 
 
 if __name__ == "__main__":

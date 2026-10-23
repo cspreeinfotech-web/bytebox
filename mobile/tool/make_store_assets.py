@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FONTS = os.path.join(ROOT, "mobile", "assets", "fonts")
 OUT = os.path.join(ROOT, "docs", "store")
-P, A, BG = (0x7C, 0x5C, 0xFF), (0xFF, 0x5C, 0xA8), (0x0A, 0x0A, 0x14)
+P, A, BG = (0x1E, 0x8C, 0xFF), (0x19, 0xD3, 0xFF), (0x05, 0x0A, 0x1A)
 
 
 def lerp(a, b, t):
