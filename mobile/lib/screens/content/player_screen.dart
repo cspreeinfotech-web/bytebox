@@ -64,9 +64,12 @@ class _PlayerScreenState extends State<PlayerScreen> {
         Content.recordView(widget.postId!);
       }
     } catch (e) {
-      if (mounted) setState(() => _error = friendlyError(e).contains('Object not found') || '$e'.contains('400')
-          ? 'This video is not available for your account.'
-          : 'Could not play this video. Check your connection and retry.');
+      final denied = friendlyError(e).contains('Object not found') || '$e'.contains('400');
+      if (mounted) {
+        setState(() => _error = denied
+            ? 'This video is not available for your account.'
+            : 'Could not play this video. Check your connection and retry.');
+      }
     }
   }
 
