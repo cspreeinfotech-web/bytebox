@@ -167,3 +167,15 @@ export async function removeAdmin(form: FormData) {
   if (error) back("/admin/admins", { err: error.message });
   back("/admin/admins", { ok: "Admin removed." });
 }
+
+// ---------------- meta
+export async function configureMeta(form: FormData) {
+  await rpc("/admin/meta", "admin_meta_configure", {
+    p_pixel_id: s(form, "pixel_id"), p_token: s(form, "token"), p_test_event_code: s(form, "test_event_code"),
+    p_graph_version: s(form, "graph_version"), p_enabled: s(form, "enabled") === "on",
+  }, "Meta settings saved.");
+}
+
+export async function sendMetaTest() {
+  await rpc("/admin/meta", "admin_meta_test_event", {}, "Test event queued — it is sent within a minute.");
+}
