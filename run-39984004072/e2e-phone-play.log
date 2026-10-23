@@ -1,0 +1,90 @@
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...        963ms
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+I/om.bytebox.play( 7159): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:36237/PAF8v9Jke8M=/
+VMServiceFlutterDriver: Isolate found with number: 1055436915701091
+VMServiceFlutterDriver: Isolate 1055436915701091 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 7159): 00:00 +0: Bytebox end-to-end
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter ( 7159): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/EGL_emulation( 7159): app_time_stats: avg=402.06ms min=178.71ms max=811.49ms count=5
+D/ProfileInstaller( 7159): Installing profile for com.bytebox.play
+D/EGL_emulation( 7159): app_time_stats: avg=311.65ms min=303.17ms max=316.64ms count=4
+W/OnBackInvokedCallback( 7159): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7159): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 7159): app_time_stats: avg=163.64ms min=19.51ms max=383.41ms count=6
+I/flutter ( 7159): E2E_SHOT:phone_e2e-01-consent
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/EGL_emulation( 7159): app_time_stats: avg=116.89ms min=111.41ms max=120.07ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=119.16ms min=71.01ms max=175.58ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.11ms min=111.92ms max=118.78ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=145.17ms min=23.60ms max=491.38ms count=10
+D/EGL_emulation( 7159): app_time_stats: avg=4521.36ms min=51.98ms max=8990.74ms count=2
+W/OnBackInvokedCallback( 7159): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7159): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 7159): app_time_stats: avg=151.43ms min=38.48ms max=378.56ms count=7
+D/InputMethodManager( 7159): showSoftInput() view=io.flutter.embedding.android.FlutterView{79c0d1d VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputMethodManager( 7159): showSoftInput() view=io.flutter.embedding.android.FlutterView{79c0d1d VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 7159): app_time_stats: avg=1234.15ms min=1234.15ms max=1234.15ms count=1
+I/AssistStructure( 7159): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
+D/InputMethodManager( 7159): showSoftInput() view=io.flutter.embedding.android.FlutterView{79c0d1d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputMethodManager( 7159): showSoftInput() view=io.flutter.embedding.android.FlutterView{79c0d1d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/AssistStructure( 7159): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+D/EGL_emulation( 7159): app_time_stats: avg=96.87ms min=33.21ms max=299.80ms count=13
+D/InsetsController( 7159): show(ime(), fromIme=true)
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/EGL_emulation( 7159): app_time_stats: avg=1537.32ms min=1537.32ms max=1537.32ms count=1
+D/EGL_emulation( 7159): app_time_stats: avg=362.63ms min=292.39ms max=409.72ms count=3
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/FlutterJNI( 7159): Sending viewport metrics to the engine.
+D/EGL_emulation( 7159): app_time_stats: avg=219.25ms min=115.10ms max=579.19ms count=5
+D/EGL_emulation( 7159): app_time_stats: avg=116.45ms min=112.65ms max=120.30ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.83ms min=110.38ms max=120.28ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.56ms min=112.47ms max=119.96ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_6-profile
+D/EGL_emulation( 7159): app_time_stats: avg=117.09ms min=109.90ms max=121.43ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.45ms min=113.80ms max=118.37ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.38ms min=112.66ms max=117.96ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=99.11ms min=16.55ms max=164.61ms count=10
+D/EGL_emulation( 7159): app_time_stats: avg=116.63ms min=111.03ms max=121.26ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.62ms min=112.61ms max=120.01ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_2-plans
+D/EGL_emulation( 7159): app_time_stats: avg=117.24ms min=103.18ms max=128.55ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.21ms min=113.39ms max=118.82ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.46ms min=112.42ms max=122.14ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=126.39ms min=11.73ms max=295.08ms count=8
+D/EGL_emulation( 7159): app_time_stats: avg=117.73ms min=111.32ms max=126.10ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_1-cloud
+D/EGL_emulation( 7159): app_time_stats: avg=116.75ms min=111.86ms max=119.52ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.65ms min=113.83ms max=120.04ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=117.06ms min=112.57ms max=121.24ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=121.37ms min=27.03ms max=360.36ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_3-explore
+D/EGL_emulation( 7159): app_time_stats: avg=121.04ms min=112.09ms max=149.71ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.25ms min=109.43ms max=120.66ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.60ms min=114.56ms max=118.76ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=100.77ms min=9.29ms max=141.85ms count=11
+D/EGL_emulation( 7159): app_time_stats: avg=118.69ms min=115.92ms max=134.51ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.64ms min=116.09ms max=117.23ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.67ms min=114.86ms max=119.85ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.69ms min=115.56ms max=118.10ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_5-channels
+D/EGL_emulation( 7159): app_time_stats: avg=116.61ms min=112.72ms max=119.83ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.65ms min=115.24ms max=118.13ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.82ms min=115.67ms max=118.55ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=90.32ms min=6.53ms max=148.24ms count=12
+D/EGL_emulation( 7159): app_time_stats: avg=116.65ms min=114.00ms max=120.31ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.69ms min=114.58ms max=119.20ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=118.71ms min=112.47ms max=136.20ms count=9
+I/flutter ( 7159): E2E_SHOT:phone_4-feed
+D/EGL_emulation( 7159): app_time_stats: avg=116.41ms min=112.76ms max=122.15ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=116.67ms min=114.14ms max=118.59ms count=9
+D/EGL_emulation( 7159): app_time_stats: avg=117.16ms min=114.57ms max=121.84ms count=9
+I/flutter ( 7159): 00:52 +1: (tearDownAll)
+I/flutter ( 7159): 00:52 +2: All tests passed!
+All tests passed.

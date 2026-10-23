@@ -1,0 +1,7 @@
+16:14:54 host:9613MB-avail guest: MemTotal: 4008128 kB MemFree: 321412 kB MemAvailable: 1728800 kB 
+16:15:04 host:9302MB-avail guest: MemTotal: 4008128 kB MemFree: 275600 kB MemAvailable: 1668068 kB 
+16:15:14 host:9352MB-avail guest: MemTotal: 4008128 kB MemFree: 288124 kB MemAvailable: 1607768 kB 
+16:15:24 host:9360MB-avail guest: MemTotal: 4008128 kB MemFree: 269376 kB MemAvailable: 1596324 kB 
+16:15:34 host:9347MB-avail guest: MemTotal: 4008128 kB MemFree: 249256 kB MemAvailable: 1576276 kB 
+16:15:44 host:9341MB-avail guest: MemTotal: 4008128 kB MemFree: 243460 kB MemAvailable: 1569976 kB 
+16:15:54 host:9566MB-avail guest: MemTotal: 4008128 kB MemFree: 506112 kB MemAvailable: 1803144 kB 
