@@ -104,9 +104,9 @@ jobs:
           set -e
           common=(--release --dart-define=SUPABASE_URL="$SUPABASE_URL" --dart-define=SUPABASE_PUBLISHABLE_KEY="$SUPABASE_KEY")
           if [ -n "${{ vars.WEBSITE_URL }}" ]; then common+=(--dart-define=WEBSITE_URL="${{ vars.WEBSITE_URL }}"); fi
-          flutter build apk --flavor direct "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE
+          flutter build apk --flavor direct --target-platform android-arm,android-arm64 "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE
           cp build/app/outputs/flutter-apk/app-direct-release.apk "$RUNNER_TEMP/Bytebox.apk"
-          flutter build apk --flavor direct "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE \
+          flutter build apk --flavor direct --target-platform android-arm,android-arm64 "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE \
             --dart-define=APK_REFERRER="$ADS_REFERRER"
           cp build/app/outputs/flutter-apk/app-direct-release.apk "$RUNNER_TEMP/Bytebox-ads.apk"
           flutter build appbundle --flavor play "${common[@]}" --dart-define=PLAY_STORE=true \
