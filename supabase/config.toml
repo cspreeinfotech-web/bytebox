@@ -48,3 +48,6 @@ enabled = true
 
 [analytics]
 enabled = false
+
+[functions.upi-webhook]
+verify_jwt = false

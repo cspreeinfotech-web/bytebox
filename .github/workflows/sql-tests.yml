@@ -37,3 +37,18 @@ jobs:
         run: supabase db lint --level error
       - if: always()
         run: supabase stop --no-backup
+
+  functions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Type-check Edge Functions
+        run: |
+          shopt -s nullglob
+          files=(supabase/functions/*/index.ts)
+          [ ${#files[@]} -eq 0 ] && exit 0
+          deno check "${files[@]}"
