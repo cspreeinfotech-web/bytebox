@@ -1,0 +1,49 @@
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...        910ms
+D/FlutterJNI( 6996): Sending viewport metrics to the engine.
+I/om.bytebox.play( 6996): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:37235/ZcCXitx3AD8=/
+VMServiceFlutterDriver: Isolate found with number: 289766403685391
+VMServiceFlutterDriver: Isolate 289766403685391 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 6996): 00:00 +0: Bytebox end-to-end
+I/flutter ( 6996): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+VMServiceFlutterDriver: Connected to Flutter application.
+D/EGL_emulation( 6996): app_time_stats: avg=445.96ms min=200.42ms max=1038.86ms count=5
+D/ProfileInstaller( 6996): Installing profile for com.bytebox.play
+D/EGL_emulation( 6996): app_time_stats: avg=335.14ms min=315.54ms max=372.72ms count=3
+D/EGL_emulation( 6996): app_time_stats: avg=298.57ms min=244.34ms max=319.59ms count=4
+W/OnBackInvokedCallback( 6996): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 6996): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/EGL_emulation( 6996): app_time_stats: avg=209.50ms min=14.27ms max=371.00ms count=5
+I/flutter ( 6996): E2E_SHOT:tablet7_e2e-01-consent
+D/EGL_emulation( 6996): app_time_stats: avg=117.32ms min=115.26ms max=123.14ms count=9
+D/EGL_emulation( 6996): app_time_stats: avg=116.03ms min=110.71ms max=127.60ms count=9
+D/EGL_emulation( 6996): app_time_stats: avg=116.70ms min=112.73ms max=122.00ms count=9
+D/EGL_emulation( 6996): app_time_stats: avg=168.91ms min=113.35ms max=530.27ms count=8
+Unhandled exception:
+DriverError: Failed to fulfill RequestData due to remote error
+Original error: ext.flutter.driver: (112) Service has disappeared
+Original stack trace:
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:280:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1962:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1974:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1913:14)
+#4      VMServiceFlutterDriver.sendCommand (package:flutter_driver/src/driver/vmservice_driver.dart:327:12)
+#5      FlutterDriver.requestData (package:flutter_driver/src/driver/driver.dart:585:13)
+#6      integrationDriver (package:integration_test/integration_test_driver_extended.dart:87:38)
+<asynchronous suspension>
+
+
+#0      VMServiceFlutterDriver.sendCommand (package:flutter_driver/src/driver/vmservice_driver.dart:340:7)
+<asynchronous suspension>
+#1      FlutterDriver.requestData (package:flutter_driver/src/driver/driver.dart:585:7)
+<asynchronous suspension>
+#2      integrationDriver (package:integration_test/integration_test_driver_extended.dart:87:25)
+<asynchronous suspension>
+Failed to stop app
+adb uninstall failed: ProcessException: Process exited abnormally with exit code 1:
+adb: device offline
+  Command: /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 uninstall com.bytebox.play
+Failed to uninstall app

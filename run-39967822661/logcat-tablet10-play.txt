@@ -1,0 +1,914 @@
+--------- beginning of kernel
+10-23 14:58:58.228 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7230 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+--------- beginning of main
+10-23 14:58:58.015 D/EGL_emulation( 1058): app_time_stats: avg=1002.47ms min=1002.47ms max=1002.47ms count=1
+--------- beginning of system
+10-23 14:58:58.637 W/ActivityManager(  497): Invalid packageName: com.bytebox.play
+10-23 14:58:58.662 I/abb     ( 7242): StartCommandInProcess(73657474696e67730067657400676c6f settings.get.glo [truncated])
+10-23 14:58:58.660 W/binder:497_19(  497): type=1400 audit(0.0:46): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:58.671 I/abb     ( 7242): StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+10-23 14:58:58.660 W/binder:497_19(  497): type=1400 audit(0.0:47): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:58.660 W/binder:497_19(  497): type=1400 audit(0.0:48): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:59.026 D/EGL_emulation( 1058): app_time_stats: avg=1010.34ms min=1010.34ms max=1010.34ms count=1
+10-23 14:58:59.288 W/binder:497_19(  497): type=1400 audit(0.0:49): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:59.745 I/PackageManager(  497): Integrity check passed for file:///data/app/vmdl118367164.tmp
+10-23 14:58:59.753 D/CompatibilityChangeReporter(  497): Compat change id reported: 133396946; UID -1; state: ENABLED
+10-23 14:58:59.761 I/PackageManager(  497): Permission ownership changed. Updating all permissions.
+10-23 14:59:00.000 I/logd    (    0): start watching /data/system/packages.list ...
+10-23 14:59:00.003 I/logd    (    0): ReadPackageList, total packages: 182
+10-23 14:58:59.786 D/PackageManager(  497): Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-23 14:58:59.786 D/PackageManager(  497): Clear ephemeral installer activity
+10-23 14:58:59.794 V/BackupManagerService(  497): [UserID:0] restoreAtInstall pkg=com.bytebox.play token=1 restoreSet=0
+10-23 14:58:59.795 V/BackupManagerService(  497): [UserID:0] Finishing install immediately
+10-23 14:58:59.799 D/PackageInstallerSession(  497): Marking session 118367164 as applied
+10-23 14:58:59.799 E/installd(  434): Couldn't opendir /data/app/vmdl118367164.tmp: No such file or directory
+10-23 14:58:59.799 E/installd(  434): Failed to delete /data/app/vmdl118367164.tmp: No such file or directory
+10-23 14:58:59.799 E/BackupHelper( 4739): Could not parse delayed permissions
+10-23 14:58:59.799 E/BackupHelper( 4739): java.io.FileNotFoundException: /data/user_de/0/com.google.android.permissioncontroller/files/delayed_restore_permissions.xml: open failed: ENOENT (No such file or directory)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.IoBridge.open(IoBridge.java:574)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at android.app.ContextImpl.openFileInput(ContextImpl.java:714)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at com.android.permissioncontroller.permission.service.BackupHelper.restoreDelayedState(BackupHelper.java:409)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.onRestoreDelayedRuntimePermissionsBackup(PermissionControllerServiceImpl.java:422)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.lambda$onApplyStagedRuntimePermissionBackup$4(PermissionControllerServiceImpl.java:416)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.$r8$lambda$d0Nn-xRapZQvoyXU4vSZgmIHAHQ(Unknown Source:0)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl$$ExternalSyntheticLambda10.run(Unknown Source:8)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:305)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at java.lang.Thread.run(Thread.java:1012)
+10-23 14:58:59.799 E/BackupHelper( 4739): Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.Linux.open(Native Method)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:7810)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	at libcore.io.IoBridge.open(IoBridge.java:560)
+10-23 14:58:59.799 E/BackupHelper( 4739): 	... 11 more
+10-23 14:58:59.803 D/CompatibilityChangeReporter(  497): Compat change id reported: 168419799; UID 10174; state: DISABLED
+10-23 14:58:59.803 D/CompatibilityChangeReporter(  497): Compat change id reported: 273564678; UID 10174; state: DISABLED
+10-23 14:58:59.796 W/binder:497_19(  497): type=1400 audit(0.0:50): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:59.811 I/InputReader(  497): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-23 14:58:59.812 I/Bugle   ( 2893): BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of atsi@11105ec
+10-23 14:58:59.813 V/MediaPlayerList(  990): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-23 14:58:59.813 D/MediaPlayerList(  990): Name of package changed: com.bytebox.play
+10-23 14:58:59.815 I/SdkSandboxManager(  497): No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10174, mPackageName='com.bytebox.play'}
+10-23 14:58:59.817 I/Telecom (  497): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@Ahw
+10-23 14:58:59.818 I/GsaVoiceInteractionSrv( 1669): O received Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) }
+10-23 14:58:59.818 V/BackupManagerConstants(  497): getFullBackupIntervalMilliseconds(...) returns 86400000
+10-23 14:58:59.818 V/BackupManagerConstants(  497): getFullBackupRequiredNetworkType(...) returns 2
+10-23 14:58:59.818 V/BackupManagerConstants(  497): getFullBackupRequireCharging(...) returns true
+10-23 14:58:59.819 I/RoleService(  497): Granting default roles...
+10-23 14:58:59.819 D/ControlsListingControllerImpl(  790): ServiceConfig reloaded, count: 0
+10-23 14:58:59.821 V/MediaPlayerList(  990): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-23 14:58:59.821 D/MediaPlayerList(  990): Name of package changed: com.bytebox.play
+10-23 14:58:59.832 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.packageinstaller/com.android.packageinstaller.PackageInstalledReceiver
+10-23 14:58:59.836 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.games.chimera.GamesSystemBroadcastReceiverProxy
+10-23 14:58:59.816 W/binder:497_19(  497): type=1400 audit(0.0:51): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:59.845 D/CarrierSvcBindHelper( 1021): onPackageAdded: com.bytebox.play
+10-23 14:58:59.846 D/CarrierSvcBindHelper( 1021): No carrier app for: 0
+10-23 14:58:59.850 D/ImsResolver( 1021): maybeAddedImsService, packageName: com.bytebox.play
+10-23 14:58:59.816 W/binder:497_19(  497): type=1400 audit(0.0:52): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-23 14:58:59.857 W/Binder  (  497): Caught a RuntimeException from the binder stub implementation.
+10-23 14:58:59.857 W/Binder  (  497): java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 0
+10-23 14:58:59.857 W/Binder  (  497): 	at android.util.ArraySet.valueAt(ArraySet.java:422)
+10-23 14:58:59.857 W/Binder  (  497): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.updateContentCaptureOptions(ContentCapturePerUserService.java:733)
+10-23 14:58:59.857 W/Binder  (  497): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.setContentCaptureWhitelist(ContentCapturePerUserService.java:646)
+10-23 14:58:59.857 W/Binder  (  497): 	at android.service.contentcapture.IContentCaptureServiceCallback$Stub.onTransact(IContentCaptureServiceCallback.java:115)
+10-23 14:58:59.857 W/Binder  (  497): 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-23 14:58:59.857 W/Binder  (  497): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-23 14:59:00.080 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7261 n tail=1 logMask=99 pid=0 start=0ns deadline=0ns
+10-23 14:58:59.865 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.gass.chimera.PackageChangeBroadcastReceiver
+10-23 14:58:59.865 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-23 14:58:59.865 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.googlequicksearchbox/com.google.android.apps.gsa.googlequicksearchbox.GelStubAppWatcher
+10-23 14:58:59.866 D/CompatibilityChangeReporter(  497): Compat change id reported: 168419799; UID 10079; state: DISABLED
+10-23 14:58:59.866 D/CompatibilityChangeReporter(  497): Compat change id reported: 273564678; UID 10079; state: DISABLED
+10-23 14:58:59.875 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode 1
+10-23 14:58:59.875 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode -1
+10-23 14:58:59.875 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode -1
+10-23 14:58:59.889 E/VerityUtils(  497): Failed to measure fs-verity, errno 1: /data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.apk
+10-23 14:58:59.898 I/ProvidersCache( 3860): Provider returned no roots. Possibly naughty: com.google.android.apps.docs.storage
+10-23 14:59:00.114 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7273 b tail=0 logMask=99 pid=0 start=1792767539857000000ns deadline=0ns
+10-23 14:58:59.907 I/ProximityAuth( 6172): [RecentAppsMediator] Package added: (user=UserHandle{0}) com.bytebox.play
+10-23 14:58:59.908 I/PermissionControllerServiceImpl( 4739): Updating user sensitive for uid 10174
+10-23 14:58:59.909 W/GCM     ( 6172): Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-23 14:58:59.910 W/GCM     ( 6172): Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-23 14:58:59.911 I/InputReader(  497): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-23 14:58:59.911 I/Telecom (  497): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@Ah8
+10-23 14:58:59.912 V/MediaPlayerList(  990): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-23 14:58:59.912 D/MediaPlayerList(  990): Name of package changed: com.bytebox.play
+10-23 14:58:59.914 V/MediaPlayerList(  990): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-23 14:58:59.914 D/MediaPlayerList(  990): Name of package changed: com.bytebox.play
+10-23 14:58:59.914 D/ControlsListingControllerImpl(  790): ServiceConfig reloaded, count: 0
+10-23 14:58:59.915 W/BackupTransportManager(  497): Package com.bytebox.play enabled setting: 0
+10-23 14:58:59.916 I/Bugle   ( 2893): BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of atsi@11105ec
+10-23 14:58:59.921 D/CompatibilityChangeReporter(  497): Compat change id reported: 161252188; UID 10174; state: DISABLED
+10-23 14:58:59.921 I/ActivityTaskManager(  497): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30000000 cmp=com.bytebox.play/com.bytebox.app.MainActivity (has extras)} from uid 2000
+10-23 14:58:59.922 I/ProvidersCache( 3860): Provider returned no roots. Possibly naughty: com.google.android.apps.docs.storage
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 265464455; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 265452344; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 266124927; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 265451093; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 265456536; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 255940284; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 236283604; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 263959004; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 264304459; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 264301586; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 254631730; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 273509367; UID 10174; state: DISABLED
+10-23 14:58:59.922 D/CompatibilityChangeReporter(  497): Compat change id reported: 263259275; UID 10174; state: DISABLED
+10-23 14:58:59.924 I/PermissionControllerServiceImpl( 4739): Updating user sensitive for uid 10174
+10-23 14:58:59.924 D/CompatibilityChangeReporter(  497): Compat change id reported: 194480991; UID 10174; state: ENABLED
+10-23 14:58:59.925 D/CompatibilityChangeReporter(  497): Compat change id reported: 218533173; UID 10174; state: ENABLED
+10-23 14:58:59.926 D/CarrierSvcBindHelper( 1021): onPackageModified: com.bytebox.play
+10-23 14:58:59.926 D/CarrierSvcBindHelper( 1021): No carrier app for: 0
+10-23 14:58:59.926 D/ImsResolver( 1021): maybeAddedImsService, packageName: com.bytebox.play
+10-23 14:58:59.930 D/nativeloader( 6222): Configuring classloader-namespace for other apk . target_sdk_version=33, uses_libraries=ALL, library_path=/data/user_de/0/com.google.android.gms/app_chimera/m/00000001/CronetDynamite.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+10-23 14:58:59.931 D/CompatibilityChangeReporter(  497): Compat change id reported: 174042980; UID 10174; state: DISABLED
+10-23 14:58:59.937 I/cr_CronetLibraryLoader( 6222): Cronet version: 113.0.5672.51, arch: x86_64
+10-23 14:58:59.937 D/CompatibilityChangeReporter(  497): Compat change id reported: 184838306; UID 10174; state: DISABLED
+10-23 14:58:59.937 D/CompatibilityChangeReporter(  497): Compat change id reported: 185004937; UID 10174; state: DISABLED
+10-23 14:58:59.937 D/CompatibilityChangeReporter(  497): Compat change id reported: 181136395; UID 10174; state: DISABLED
+10-23 14:58:59.937 D/CompatibilityChangeReporter(  497): Compat change id reported: 174042936; UID 10174; state: DISABLED
+10-23 14:58:59.938 D/CompatibilityChangeReporter(  497): Compat change id reported: 197654537; UID 10174; state: ENABLED
+10-23 14:58:59.938 D/CompatibilityChangeReporter(  497): Compat change id reported: 205907456; UID 10174; state: ENABLED
+10-23 14:58:59.939 D/ConnectivityService(  497): requestNetwork for uid/pid:10120/6222 activeRequest: null callbackRequest: 153 [NetworkRequest [ REQUEST id=154, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-23 14:58:59.940 D/WifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=154, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-23 14:58:59.940 D/UntrustedWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=154, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-23 14:58:59.941 D/ConnectivityService(  497): NetReassign [154 : null → 100] [c 0] [a 1] [i 1]
+10-23 14:58:59.942 D/ConnectivityService(  497): NetReassign [no changes] [c 0] [a 1] [i 0]
+10-23 14:58:59.943 D/OemPaidWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=154, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-23 14:58:59.943 D/MultiInternetWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=154, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-23 14:58:59.945 D/CompatibilityChangeReporter(  497): Compat change id reported: 194833441; UID 10174; state: ENABLED
+10-23 14:58:59.949 D/b/260135164( 1058): updateIconAlphaForHome - setIconsAlpha(0), isTaskbarPresent: true
+10-23 14:58:59.954 D/CompatibilityChangeReporter(  497): Compat change id reported: 135634846; UID 10174; state: DISABLED
+10-23 14:58:59.955 D/CompatibilityChangeReporter(  497): Compat change id reported: 143937733; UID 10174; state: ENABLED
+10-23 14:58:59.961 D/Zygote  (  300): Forked child process 7299
+10-23 14:58:59.962 D/SplashScreenView(  790): Build android.window.SplashScreenView{95a1fcb V.E...... ......ID 0,0-0,0}
+10-23 14:58:59.962 D/SplashScreenView(  790): Icon: view: android.widget.ImageView{31193a8 V.ED..... ......I. 0,0-0,0 #10204dd android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@5693ec1 size: 384
+10-23 14:58:59.962 D/SplashScreenView(  790): Branding: view: android.view.View{934b666 G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+10-23 14:58:59.966 W/Parcel  (  790): Expecting binder but got null!
+10-23 14:58:59.970 I/ActivityManager(  497): Start proc 7299:com.bytebox.play/u0a174 for next-top-activity {com.bytebox.play/com.bytebox.app.MainActivity}
+10-23 14:58:59.987 D/CoreBackPreview(  497): Window{79850ed u0 Splash Screen com.bytebox.play}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5d7b0a5, mPriority=0}
+10-23 14:58:59.991 I/Auth    ( 6222): [SupervisedAccountIntentOperation] onHandleIntent(): android.intent.action.PACKAGE_ADDED
+10-23 14:58:59.997 I/Fitness ( 6172): OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x5000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-23 14:59:00.009 W/Role    ( 4739): Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+10-23 14:59:00.014 I/BlockstoreStorage( 6222): Clearing Blockstore Data for package com.bytebox.play [CONTEXT service_id=258 ]
+10-23 14:59:00.016 I/Fitness ( 6172): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-23 14:59:00.018 I/Fitness ( 6172): OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x5000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-23 14:59:00.023 I/Fitness ( 6172): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-23 14:59:00.029 I/AiAiEcho( 1627): Predicting[0]: 
+10-23 14:59:00.032 I/AiAiEcho( 1627): Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-23 14:59:00.043 I/AiAiEcho( 1627): #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+10-23 14:59:00.043 I/AiAiEcho( 1627): #postPredictionTargets: Sending updates to UISurface home with targets# 0
+10-23 14:59:00.045 D/BoundBrokerSvc( 6222): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:00.045 D/BoundBrokerSvc( 6222): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:00.055 I/BlockstoreStorage( 6222): Keyless data not found or its IsLastInstallationData = false. [CONTEXT service_id=258 ]
+10-23 14:59:00.065 W/Looper  (  497): Slow dispatch took 116ms android.fg h=android.os.Handler c=<recycled PooledLambda@6230830> m=0
+10-23 14:59:00.147 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.157 D/EGL_emulation(  790): app_time_stats: avg=18468.48ms min=18468.48ms max=18468.48ms count=1
+10-23 14:59:00.175 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.201 W/gle.android.gms( 6222): Verification of void j$.util.concurrent.ConcurrentHashMap.a(long, int) took 167.728ms (2456.35 bytecodes/s) (10048B approximate peak alloc)
+10-23 14:59:00.207 I/om.bytebox.play( 7299): Late-enabling -Xcheck:jni
+10-23 14:59:00.209 I/Dck     ( 6222): doesDeviceHaveSupportedWirelessCapabilities: wccSysProp:0, wccMendel:3, deviceWccOverride:false [CONTEXT service_id=289 ]
+10-23 14:59:00.213 I/Dck     ( 6222): isDckModuleEligible: isAtLeastR:true, hasWccSupport:false, downloadAllowed:false [CONTEXT service_id=289 ]
+10-23 14:59:00.213 W/Dck     ( 6222): Dck module not eligible for asynchronous downloading [CONTEXT service_id=289 ]
+10-23 14:59:00.236 D/BoundBrokerSvc( 6222): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:00.327 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.328 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.404 W/gle.android.gms( 6222): Verification of int cr.a(java.lang.Object) took 199.897ms (13807.08 bytecodes/s) (43096B approximate peak alloc)
+10-23 14:59:00.419 I/om.bytebox.play( 7299): Using CollectorTypeCC GC.
+10-23 14:59:00.421 W/om.bytebox.play( 7299): Unexpected CPU variant for x86: x86_64.
+10-23 14:59:00.421 W/om.bytebox.play( 7299): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-23 14:59:00.426 I/adbd    (  394): jdwp connection from 7299
+10-23 14:59:00.584 D/EGL_emulation( 1058): app_time_stats: avg=1557.55ms min=1557.55ms max=1557.55ms count=1
+10-23 14:59:00.628 W/PackageManager(  497): Failed registering loading progress callback. Package is fully loaded.
+10-23 14:59:00.729 W/system_server(  497): Long monitor contention with owner android.anim (518) at void com.android.server.wm.WindowSurfacePlacer$Traverser.run()(WindowSurfacePlacer.java:58) waiters=0 in android.content.res.CompatibilityInfo com.android.server.wm.ActivityTaskManagerService$LocalService.compatibilityInfoForPackage(android.content.pm.ApplicationInfo) for 312ms
+10-23 14:59:00.735 W/system_server(  497): Long monitor contention with owner binder:497_6 (849) at android.content.ComponentName com.android.server.am.ActivityManagerService.startService(android.app.IApplicationThread, android.content.Intent, java.lang.String, boolean, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12593) waiters=0 in int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int) for 270ms
+10-23 14:59:00.858 D/BoundBrokerSvc( 6172): onBind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-23 14:59:00.858 D/BoundBrokerSvc( 6172): Loading bound service for intent: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-23 14:59:00.860 W/system_server(  497): Long monitor contention with owner binder:497_6 (849) at android.content.ComponentName com.android.server.am.ActivityManagerService.startService(android.app.IApplicationThread, android.content.Intent, java.lang.String, boolean, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12593) waiters=2 in android.content.Intent com.android.server.am.ActivityManagerService.registerReceiverWithFeature(android.app.IApplicationThread, java.lang.String, java.lang.String, java.lang.String, android.content.IIntentReceiver, android.content.IntentFilter, java.lang.String, int, int) for 359ms
+10-23 14:59:00.861 I/ActivityManager(  497): Background started FGS: Allowed [callingPackage: com.google.android.apps.wellbeing; callingUid: 10115; uidState: BTOP; intent: Intent { cmp=com.google.android.apps.wellbeing/com.google.apps.tiktok.concurrent.InternalForegroundService (has extras) }; code:BACKGROUND_ACTIVITY_PERMISSION; tempAllowListReason:<null>; targetSdkVersion:33; callerTargetSdkVersion:33; startForegroundCount:0; bindFromPackage:null]
+10-23 14:59:00.864 W/gle.android.gms( 6222): Long monitor contention with owner CronetInit (7296) at void il.run()(:com.google.android.gms.dynamite_cronetdynamite@231818047@23.18.18 (190800-0):3) waiters=0 in org.chromium.net.ExperimentalBidirectionalStream org.chromium.net.impl.CronetUrlRequestContext.a(java.lang.String, org.chromium.net.BidirectionalStream$Callback, java.util.concurrent.Executor, java.lang.String, java.util.List, int, boolean, java.util.Collection, boolean, int, boolean, int, long) for 328ms
+10-23 14:59:00.870 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.878 W/ChimeraUtils( 6172): Module com.google.android.gms.nearby_en missing resource null(0)
+10-23 14:59:00.913 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:00.936 I/AiAiEcho( 1627): EchoSearch: AppFetcherImpl is initialized with [19] apps [time=96, reason=com.bytebox.play is added]
+10-23 14:59:00.945 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c7350
+10-23 14:59:00.949 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c6330
+10-23 14:59:00.966 I/resolv  (  296): GetAddrInfoHandler::run: {100 786532 100 983140 10120 0}
+10-23 14:59:00.977 I/AiAiEcho( 1627): EchoSearch: WidgetFetcherImpl is initialized with [25] widgets [reason=package added for userId: 0]
+10-23 14:59:00.994 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:00.994 D/CompatibilityChangeReporter( 7299): Compat change id reported: 171979766; UID 10174; state: ENABLED
+10-23 14:59:00.995 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:01.011 D/nativeloader( 7299): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/lib/x86_64:/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-23 14:59:01.015 D/nativeloader( 7299): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/lib/x86_64:/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-23 14:59:01.015 W/ziparchive( 7299): Unable to open '/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.dm': No such file or directory
+10-23 14:59:01.015 W/ziparchive( 7299): Unable to open '/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.dm': No such file or directory
+10-23 14:59:01.040 I/resolv  (  296): res_nsend: used send_dg 176 terrno: 0
+10-23 14:59:01.040 I/resolv  (  296): doQuery: rcode=0, ancount=8, return value=176
+10-23 14:59:01.050 W/system_server(  497): Suspending all threads took: 26.524ms
+10-23 14:59:01.051 I/resolv  (  296): res_nsend: used send_dg 272 terrno: 0
+10-23 14:59:01.051 I/resolv  (  296): doQuery: rcode=0, ancount=8, return value=272
+10-23 14:59:01.052 I/OpenGLRenderer( 1058): Davey! duration=856ms; Flags=0, FrameTimelineVsyncId=8009, IntendedVsync=236143657966, Vsync=236610324614, InputEventId=0, HandleInputStart=236620217838, AnimationStart=236620218561, PerformTraversalsStart=236620218804, DrawStart=236889065457, FrameDeadline=236626991280, FrameInterval=236620214723, FrameStartTime=16666666, SyncQueued=236889124123, SyncStart=236893230719, IssueDrawCommandsStart=236893403611, SwapBuffers=236895381018, FrameCompleted=237004603188, DequeueBufferDuration=6440958, QueueBufferDuration=94883012, GpuCompleted=236998089086, SwapBuffersCompleted=237004603188, DisplayPresentTime=0, CommandSubmissionCompleted=236895381018, 
+10-23 14:59:01.058 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.069 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.073 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.078 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.087 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.099 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.101 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.115 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.118 D/TrafficStats( 6222): tagSocket(159) with statsTag=0x8004901, statsUid=10120
+10-23 14:59:01.158 I/system_server(  497): Background concurrent copying GC freed 786841(31MB) AllocSpace objects, 23(580KB) LOS objects, 50% free, 23MB/47MB, paused 6.595ms,26.674ms total 1.362s
+10-23 14:59:01.364 W/system_server(  497): Long monitor contention with owner binder:497_9 (963) at android.window.TaskSnapshot com.android.server.wm.ActivityTaskManagerService.takeTaskSnapshot(int)(ActivityTaskManagerService.java:3762) waiters=0 in void com.android.server.wm.WindowAnimator.lambda$new$1(long) for 228ms
+10-23 14:59:01.367 W/system_server(  497): Long monitor contention with owner binder:497_20 (2548) at android.content.ComponentName com.android.server.am.ActivityManagerService.startService(android.app.IApplicationThread, android.content.Intent, java.lang.String, boolean, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12593) waiters=0 in void com.android.server.am.ActivityManagerService.serviceDoneExecuting(android.os.IBinder, int, int, int) for 169ms
+10-23 14:59:01.381 I/Icing   ( 6222): IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=AppsCorpus serviceId=36
+10-23 14:59:01.400 D/BoundBrokerSvc( 6222): onBind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-23 14:59:01.400 D/BoundBrokerSvc( 6222): Loading bound service for intent: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-23 14:59:01.567 I/Icing   ( 6222): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+10-23 14:59:01.573 I/Icing   ( 6222): IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+10-23 14:59:01.580 I/AiAiStatsd( 1627): Successfully logged feature enablement for HYBRID_HOTSEAT.
+10-23 14:59:01.594 D/CompatibilityChangeReporter(  497): Compat change id reported: 161252188; UID 10174; state: DISABLED
+10-23 14:59:01.610 I/Icing   ( 6222): Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+10-23 14:59:01.649 I/DropBoxManagerService(  497): add tag=system_server_strictmode isTagEnabled=true flags=0x2
+10-23 14:59:01.653 I/DropBoxManagerService(  497): add tag=system_server_strictmode isTagEnabled=true flags=0x2
+10-23 14:59:01.663 D/nativeloader( 7299): Configuring classloader-namespace for other apk /data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/lib/x86_64:/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-23 14:59:01.671 V/GraphicsEnvironment( 7299): ANGLE Developer option for 'com.bytebox.play' set to: 'default'
+10-23 14:59:01.671 V/GraphicsEnvironment( 7299): ANGLE GameManagerService for com.bytebox.play: false
+10-23 14:59:01.671 V/GraphicsEnvironment( 7299): Neither updatable production driver nor prerelease driver is supported.
+10-23 14:59:01.673 D/NetworkSecurityConfig( 7299): No Network Security Config specified, using platform default
+10-23 14:59:01.673 D/NetworkSecurityConfig( 7299): No Network Security Config specified, using platform default
+10-23 14:59:01.709 I/AiAiStatsd( 1627): Successfully logged feature enablement for ECHO_ALL_APPS.
+10-23 14:59:01.712 I/Icing   ( 6222): Indexing com.google.android.gms-apps from com.google.android.gms
+10-23 14:59:01.746 I/FlutterActivityAndFragmentDelegate( 7299): If you are attempting to set --start-paused via Intent extras to launch a Flutter component outside of using the Flutter CLI, note that support for setting engine flags on Android via Intent will soon be dropped; see https://github.com/flutter/flutter/issues/180686 for more information on this breaking change. To migrate, set --start-paused or any other flags specified via Intent extras on the command line instead or see https://github.com/flutter/flutter/blob/main/docs/engine/Flutter-Android-Engine-Flags.md for alternative methods.
+10-23 14:59:01.762 D/libEGL  ( 7299): loaded /vendor/lib64/egl/libEGL_emulation.so
+10-23 14:59:01.769 D/libEGL  ( 7299): loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-23 14:59:01.771 D/libEGL  ( 7299): loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-23 14:59:01.773 I/cr_CronetUrlRequestContext( 6222): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@ed1dc30
+10-23 14:59:01.775 I/Icing   ( 6222): Indexing done com.google.android.gms-apps
+10-23 14:59:01.807 D/FlutterJNI( 7299): Beginning load of flutter...
+10-23 14:59:01.810 I/ResourceExtractor( 7299): Resource version mismatch res_timestamp-1-1792767539752
+10-23 14:59:01.831 D/FlutterJNI( 7299): flutter (null) was loaded normally!
+10-23 14:59:01.842 I/Icing   ( 6222): Indexing com.google.android.gms-apps from com.google.android.gms
+10-23 14:59:01.842 I/Icing   ( 6222): Indexing done com.google.android.gms-apps
+10-23 14:59:01.844 I/gle.android.gms( 6222): Background young concurrent copying GC freed 225164(8441KB) AllocSpace objects, 51(2212KB) LOS objects, 40% free, 15MB/25MB, paused 61us,40us total 111.636ms
+10-23 14:59:01.850 D/skia    ( 7299): [SkFontMgr Android Parser] '/product/etc/fonts_customization.xml' could not be opened
+10-23 14:59:02.191 I/ResourceExtractor( 7299): Extracted baseline resource assets/flutter_assets/kernel_blob.bin
+10-23 14:59:02.192 I/ResourceExtractor( 7299): Extracted baseline resource assets/flutter_assets/vm_snapshot_data
+10-23 14:59:02.253 I/ResourceExtractor( 7299): Extracted baseline resource assets/flutter_assets/isolate_snapshot_data
+10-23 14:59:02.269 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getTouchX()F (blocked, linking, denied)
+10-23 14:59:02.269 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getTouchY()F (blocked, linking, denied)
+10-23 14:59:02.270 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getProgress()F (blocked, linking, denied)
+10-23 14:59:02.270 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (blocked, linking, denied)
+10-23 14:59:02.270 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getProgress()F (blocked, linking, denied)
+10-23 14:59:02.270 W/om.bytebox.play( 7299): Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (blocked, linking, denied)
+10-23 14:59:02.268 W/om.bytebox.play( 7299): type=1400 audit(0.0:53): avc: denied { read } for name="max_map_count" dev="proc" ino=76133 scontext=u:r:untrusted_app:s0:c174,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.bytebox.play
+10-23 14:59:02.284 D/HostConnection( 7299): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:02.287 D/EGL_emulation( 7299): eglCreateContext: 0x7750e8f61490: maj 3 min 0 rcv 3
+10-23 14:59:02.289 D/EGL_emulation( 7299): eglCreateContext: 0x7750e8f619d0: maj 3 min 0 rcv 3
+10-23 14:59:02.290 D/EGL_emulation( 7299): eglMakeCurrent: 0x7750e8f619d0: ver 3 0 (tinfo 0x77531bb25080) (first time)
+10-23 14:59:02.297 I/flutter ( 7299): [IMPORTANT:flutter/shell/platform/android/android_context_gl_impeller.cc(104)] Using the Impeller rendering backend (OpenGLES).
+10-23 14:59:02.305 D/HostConnection( 7299): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:02.306 D/EGL_emulation( 7299): eglMakeCurrent: 0x7750e8f619d0: ver 3 0 (tinfo 0x77531bb25100) (first time)
+10-23 14:59:02.374 I/flutter ( 7299): The Dart VM service is listening on http://127.0.0.1:44663/hDl9MrAREpU=/
+10-23 14:59:02.564 W/om.bytebox.play( 7299): Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (unsupported,test-api, reflection, allowed)
+10-23 14:59:02.564 W/om.bytebox.play( 7299): Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (unsupported, reflection, allowed)
+10-23 14:59:02.564 W/om.bytebox.play( 7299): Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (unsupported, reflection, allowed)
+10-23 14:59:02.564 W/om.bytebox.play( 7299): Accessing hidden method Landroid/util/LongArray;->get(I)J (unsupported, reflection, allowed)
+10-23 14:59:02.568 D/AccessibilityBridge( 7299): Setting not found: accessibility_display_inversion_enabled, using default: 0
+10-23 14:59:02.575 D/FlutterRenderer( 7299): Width is zero. 0,0
+10-23 14:59:02.586 D/CompatibilityChangeReporter( 7299): Compat change id reported: 237531167; UID 10174; state: DISABLED
+10-23 14:59:02.590 W/Parcel  ( 7299): Expecting binder but got null!
+10-23 14:59:02.593 D/CoreBackPreview(  497): Window{ada27f1 u0 com.bytebox.play/com.bytebox.app.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@bdf7257, mPriority=0}
+10-23 14:59:02.595 I/Choreographer( 7299): Skipped 53 frames!  The application may be doing too much work on its main thread.
+10-23 14:59:02.646 D/FlutterRenderer( 7299): Width is zero. 0,0
+10-23 14:59:02.656 W/ServiceManager(  378): Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10174 pid=0
+10-23 14:59:02.656 D/PermissionCache(  378): checking android.permission.ACCESS_SURFACE_FLINGER for uid=10174 => denied (310 us)
+10-23 14:59:02.656 W/ServiceManager(  378): Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10174 pid=0
+10-23 14:59:02.656 D/PermissionCache(  378): checking android.permission.ROTATE_SURFACE_FLINGER for uid=10174 => denied (78 us)
+10-23 14:59:02.657 W/ServiceManager(  378): Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10174 pid=0
+10-23 14:59:02.657 D/PermissionCache(  378): checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10174 => denied (97 us)
+10-23 14:59:02.659 D/FlutterJNI( 7299): Sending viewport metrics to the engine.
+10-23 14:59:02.697 D/HostConnection( 7299): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:02.697 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:02.697 I/Gralloc4( 7299): mapper 4.x is not supported
+10-23 14:59:02.737 W/OpenGLRenderer( 7299): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-23 14:59:02.741 D/EGL_emulation( 7299): eglCreateContext: 0x7750e8f75d10: maj 3 min 0 rcv 3
+10-23 14:59:02.749 D/EGL_emulation( 7299): eglMakeCurrent: 0x7750e8f75d10: ver 3 0 (tinfo 0x77531bb25180) (first time)
+10-23 14:59:02.763 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-23 14:59:02.769 I/servicemanager(  136): Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-23 14:59:02.769 W/Gralloc4( 7299): allocator 4.x is not supported
+10-23 14:59:02.779 D/HostConnection( 7299): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:03.203 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7369 n tail=1 logMask=99 pid=0 start=0ns deadline=0ns
+10-23 14:59:03.224 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7374 b tail=0 logMask=99 pid=0 start=1792767542779000000ns deadline=0ns
+10-23 14:59:03.325 I/Choreographer( 7299): Skipped 40 frames!  The application may be doing too much work on its main thread.
+10-23 14:59:03.334 D/FlutterJNI( 7299): Sending viewport metrics to the engine.
+10-23 14:59:03.658 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+10-23 14:59:03.659 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-23 14:59:03.659 W/adbd    (  394): timeout expired while flushing socket, closing
+10-23 14:59:04.116 I/om.bytebox.play( 7299): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+10-23 14:59:04.881 I/init    (    0): Untracked pid 7273 received signal 1
+10-23 14:59:04.883 I/init    (    0): Untracked pid 7273 did not have an associated service entry and will not be reaped
+10-23 14:59:05.226 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService started execution. cause:7 exec_start_elapsed_seconds: 241 [CONTEXT service_id=218 ]
+10-23 14:59:05.237 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService finished executing. cause:7 result: 1 elapsed_millis: 31 uptime_millis: 31 exec_start_elapsed_seconds: 241 [CONTEXT service_id=218 ]
+10-23 14:59:05.252 I/resolv  (  296): GetAddrInfoHandler::run: {100 786532 100 983140 10120 0}
+10-23 14:59:05.253 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:05.253 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc226ef090
+10-23 14:59:05.253 I/resolv  (  296): doQuery: rcode=0, ancount=8, return value=260
+10-23 14:59:05.256 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:05.256 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc126eb2f0
+10-23 14:59:05.256 I/resolv  (  296): doQuery: rcode=0, ancount=8, return value=164
+10-23 14:59:05.259 D/TrafficStats( 2965): tagSocket(107) with statsTag=0x1803, statsUid=10120
+10-23 14:59:05.407 I/RemoteProvisioningService( 3613): Notify key generated ping for secLevel: 1
+10-23 14:59:05.408 D/BiometricService(  497): Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 0, cookie: 0, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+10-23 14:59:05.431 I/RemoteProvisioner( 3613): Pool status 6, 5, 0, 6
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): Pool status.
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): Total: 6
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): Attested: 6
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): Unassigned: 5
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): Expiring: 0
+10-23 14:59:05.431 I/RemoteProvisioningService.KeyPoolStats( 3613): Sufficient keys are available, no CSR needed.
+10-23 14:59:05.431 I/RemoteProvisioningService( 3613): No provisioning needed.
+10-23 14:59:05.496 D/HostConnection( 2965): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:05.498 D/EGL_emulation( 2965): eglCreateContext: 0x7750e8f61310: maj 3 min 0 rcv 3
+10-23 14:59:05.500 D/EGL_emulation( 2965): eglMakeCurrent: 0x7750e8f61310: ver 3 0 (tinfo 0x77531ba48300) (first time)
+10-23 14:59:05.646 W/libc    ( 2965): Access denied finding property "persist.adb.tls_server.enable"
+10-23 14:59:05.646 W/libc    ( 2965): Access denied finding property "service.adb.tls.port"
+10-23 14:59:05.640 W/IntentService[D( 2965): type=1400 audit(0.0:54): avc: denied { read } for name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=269 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-23 14:59:05.640 W/IntentService[D( 2965): type=1400 audit(0.0:55): avc: denied { read } for name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=61 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+10-23 14:59:05.663 W/SystemServiceRegistry( 2965): No service published for: persistent_data_block
+10-23 14:59:05.767 I/resolv  (  296): GetAddrInfoHandler::run: {100 786532 100 983140 10120 0}
+10-23 14:59:05.767 D/TrafficStats( 2965): tagSocket(115) with statsTag=0x1809, statsUid=-1
+10-23 14:59:05.768 D/TrafficStats( 2965): tagSocket(115) with statsTag=0x1809, statsUid=-1
+10-23 14:59:05.769 D/TrafficStats( 2965): tagSocket(115) with statsTag=0x1809, statsUid=-1
+10-23 14:59:05.954 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:06.056 I/flutter ( 7299): 00:00 +0: Bytebox end-to-end
+10-23 14:59:06.139 I/netd    (  296): setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.10ms>
+10-23 14:59:06.139 I/netd    (  296): setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.03ms>
+10-23 14:59:06.139 I/netd    (  296): setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.02ms>
+10-23 14:59:06.139 I/netd    (  296): setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.01ms>
+10-23 14:59:06.231 E/WakeLock( 6222): DG:service ** IS FORCE-RELEASED ON TIMEOUT **
+10-23 14:59:06.540 I/flutter ( 7299): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+10-23 14:59:06.751 W/ziparchive(  497): Unable to open '/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.dm': No such file or directory
+10-23 14:59:06.840 W/ziparchive(  497): Unable to open '/data/app/~~0TPArcbzTMrK_xniwWBCNw==/com.bytebox.play-CnlfHZHGya7k6IT7-XWtPw==/base.dm': No such file or directory
+10-23 14:59:06.847 W/Looper  (  497): Slow dispatch took 104ms android.fg h=android.os.Handler c=com.android.server.wm.ActivityMetricsLogger$$ExternalSyntheticLambda5@74273ed m=0
+10-23 14:59:06.847 I/ActivityTaskManager(  497): Displayed com.bytebox.play/com.bytebox.app.MainActivity: +6s821ms
+10-23 14:59:06.847 I/ActivityTaskManager(  497): Fully drawn com.bytebox.play/com.bytebox.app.MainActivity: +6s821ms
+10-23 14:59:06.849 I/ActivityThread( 1058): Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+10-23 14:59:06.858 D/OneSearchSuggestProvider( 1058): Shut down the binder channel
+10-23 14:59:06.870 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode 1
+10-23 14:59:06.870 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode -1
+10-23 14:59:06.870 D/BtGatt.ScanManager(  990): uid 10120 isForeground true scanMode -1
+10-23 14:59:06.870 I/s.nexuslauncher( 1058): oneway function results for code 2 on binder at 0x775078fa9310 will be dropped but finished with status UNKNOWN_TRANSACTION
+10-23 14:59:06.887 W/InputManager-JNI(  497): Input channel object '79850ed Splash Screen com.bytebox.play (client)' was disposed without first being removed with the input manager!
+10-23 14:59:06.896 I/PBSessionCacheImpl( 1705): Deleted sessionId[7500462068775009] from persistence.
+10-23 14:59:06.913 W/WindowManager(  497): Failed looking up window session=Session{35883e4 790:u0a10157} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6050 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:943 android.view.IWindowSession$Stub.onTransact:1180 
+10-23 14:59:06.913 E/WindowManager(  497): setOnBackInvokedCallback(): No window state for package:com.android.systemui
+10-23 14:59:06.934 I/A       ( 1705): Using proto config with mendel
+10-23 14:59:06.935 I/A       ( 1705): Using proto config with mendel
+10-23 14:59:06.940 W/WindowManager(  497): Attempted to set replacing window on app token with no content Token{dab4360 ActivityRecord{cb32019 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity} t8}}
+10-23 14:59:06.941 W/SearchServiceCore( 1705): Abort, client detached.
+10-23 14:59:06.953 I/MicroDetectionState( 1705): Should stop hotword detection immediately - true
+10-23 14:59:06.953 I/A       ( 1705): Using proto config with mendel
+10-23 14:59:06.953 I/A       ( 1705): Using proto config with mendel
+10-23 14:59:06.957 D/b/254119092( 1058): clearActivity
+10-23 14:59:06.957 D/b/254119092( 1058): mActivity and mContext device profiles have different values, add more logs.
+10-23 14:59:06.957 D/b/254119092( 1058): 	mActivity logs:
+10-23 14:59:06.957 D/b/254119092( 1058): 		mActivity=null
+10-23 14:59:06.957 D/b/254119092( 1058): 	mContext logs:
+10-23 14:59:06.957 D/b/254119092( 1058): 		mContext=android.window.WindowContext@8bd1192
+10-23 14:59:06.957 D/b/254119092( 1058): 		mContext.getResources().getConfiguration()={1.0 310mcc260mnc [en_US] ldltr sw800dp w1280dp h716dp 320dpi xlrg land finger qwerty/v/v -nav/h winConfig={ mBounds=Rect(0, 0 - 2560, 1600) mAppBounds=Rect(0, 0 - 2560, 1480) mMaxBounds=Rect(0, 0 - 2560, 1600) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.56 fontWeightAdjustment=0}
+10-23 14:59:06.957 D/b/254119092( 1058): 		LauncherAppState.getIDP().getDeviceProfile(mContext).isTaskbarPresent=true
+10-23 14:59:06.957 D/b/260135164( 1058): onDestroy - updateIconAlphaForHome(1)
+10-23 14:59:06.958 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c5df0
+10-23 14:59:06.958 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c7710
+10-23 14:59:06.958 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c6870
+10-23 14:59:06.958 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c6870
+10-23 14:59:06.958 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c5df0
+10-23 14:59:06.976 D/CoreBackPreview(  497): Window{de28e25 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}: Setting back callback null
+10-23 14:59:06.981 W/OnBackInvokedCallback( 1058): OnBackInvokedCallback is not enabled for the application.
+10-23 14:59:06.981 W/OnBackInvokedCallback( 1058): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-23 14:59:07.054 D/AutofillManager( 1058): Fill dialog is enabled:false, hints=[password, passwordAuto, creditCardNumber, creditCardSecurityCode, creditCardExpirationDate]
+10-23 14:59:07.056 D/DeviceSearchAlg( 1058): search timeout = %d200
+10-23 14:59:07.074 D/SearchUiPerUserService(  497): Removing all callbacks for session Id=com.google.android.apps.nexuslauncher:80cf7228-dff4-456b-9303-ceca7bcd8f79,0 and 0 callbacks.
+10-23 14:59:07.074 I/AiAiSuggestUi( 1058): Connecting to system intelligence module.
+10-23 14:59:07.078 I/AiAiSuggestUi( 1058): Successfully connected to system intelligence: 
+10-23 14:59:07.089 W/PageIndicator( 1058): Total number of pages invalid: 0. Assuming 1 page.
+10-23 14:59:07.089 W/BcSmartspaceView( 1058): Current card is not present in the Adapter; cannot log.
+10-23 14:59:07.093 I/OverviewComponentObserver( 1058): updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=false, mIsDefaultHome=true
+10-23 14:59:07.103 I/LauncherAppWidgetHostView( 1058): App widget created with id: 2
+10-23 14:59:07.103 I/LauncherAppWidgetHostView( 1058): App widget with id: 2 loaded
+10-23 14:59:07.108 D/SearchUiPerUserService(  497): Creating SearchSessionInfo for session Id=com.google.android.apps.nexuslauncher:ac2d6129-25e1-436e-9361-7f22af5617ed,0
+10-23 14:59:07.109 I/AiAiEcho( 1627): SearchContextManagerImpl::setSearchContext resultTypes=[141151] extras=[Bundle[mParcelledData.dataSize=608]] sessionId=[com.google.android.apps.nexuslauncher:ac2d6129-25e1-436e-9361-7f22af5617ed,0]
+10-23 14:59:07.181 W/Parcel  (  790): Expecting binder but got null!
+10-23 14:59:07.197 E/OpenGLRenderer(  790): Unable to match the desired swap behavior.
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): Unable to register Doze Always on content observer.
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): java.lang.SecurityException: No access to content://settings/secure/doze_always_on: Neither user 10152 nor current process has android.permission.INTERACT_ACROSS_USERS_FULL.
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3011)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Parcel.createException(Parcel.java:2995)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Parcel.readException(Parcel.java:2978)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Parcel.readException(Parcel.java:2920)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.content.IContentService$Stub$Proxy.registerContentObserver(IContentService.java:1032)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.content.ContentResolver.registerContentObserver(ContentResolver.java:2712)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.google.android.systemui.smartspace.BcSmartspaceView.onAttachedToWindow(Unknown Source:222)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.View.dispatchAttachedToWindow(View.java:21357)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3491)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:3498)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.addViewInner(ViewGroup.java:5291)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.addView(ViewGroup.java:5077)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.view.ViewGroup.addView(ViewGroup.java:5049)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.internal.policy.PhoneWindow.setContentView(PhoneWindow.java:507)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.internal.policy.PhoneWindow.setContentView(PhoneWindow.java:488)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.Activity.setContentView(Activity.java:3622)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.launcher3.Launcher.onCreate(Unknown Source:345)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.launcher3.uioverrides.QuickstepLauncher.onCreate(Unknown Source:0)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onCreate(Unknown Source:0)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.Activity.performCreate(Activity.java:8342)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.Activity.performCreate(Activity.java:8321)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3626)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3782)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.handleRelaunchActivityInner(ActivityThread.java:5783)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:5674)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.servertransaction.ActivityRelaunchItem.execute(ActivityRelaunchItem.java:71)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:45)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ClientTransactionHandler.executeTransaction(ClientTransactionHandler.java:61)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.handleRelaunchActivityLocally(ActivityThread.java:5742)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2317)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Looper.loopOnce(Looper.java:201)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.os.Looper.loop(Looper.java:288)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at java.lang.reflect.Method.invoke(Native Method)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): Caused by: android.os.RemoteException: Remote stack trace:
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ContextImpl.enforce(ContextImpl.java:2240)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2268)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.server.content.ContentService.handleIncomingUser(ContentService.java:1397)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at com.android.server.content.ContentService.registerContentObserver(ContentService.java:369)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 	at android.content.IContentService$Stub.onTransact(IContentService.java:486)
+10-23 14:59:07.207 W/BcSmartspaceView( 1058): 
+10-23 14:59:07.217 D/b/267448330( 1058): provider: ComponentInfo{com.google.android.deskclock/com.android.alarmclock.AnalogAppWidgetProvider}, paddedSizes: [220.0x304.0, 280.0x200.0], getMinMaxSizes: Rect(220, 200 - 280, 304)
+10-23 14:59:07.235 I/ContentCaptureHelper( 1058): Setting logging level to DEBUG
+10-23 14:59:07.241 D/ContentCaptureManager( 1058): setFlushViewTreeAppearingEventDisabled(): setting to false
+10-23 14:59:07.241 D/ContentCaptureManager( 1058): updateWindowAttributes(): window flags=-2137980672
+10-23 14:59:07.245 D/ContentCaptureManager( 1058): updateWindowAttributes(): window flags=-2137980672
+10-23 14:59:07.279 D/b/267448330( 1058): provider: ComponentInfo{com.google.android.deskclock/com.android.alarmclock.AnalogAppWidgetProvider}, paddedSizes: [220.0x304.0, 280.0x200.0], getMinMaxSizes: Rect(220, 200 - 280, 304)
+10-23 14:59:07.286 I/AiAiStatsd( 1627): Successfully logged feature usage for VISUAL_CORTEX.
+10-23 14:59:07.293 W/BcSmartspaceCard( 1058): No title view to update
+10-23 14:59:07.293 I/BcSmartspaceCard( 1058): setFormattedContentDescription: textView=SUBTITLE, text=null, iconDescription=null, contentDescription=null
+10-23 14:59:07.343 D/TISBindHelper( 1058): TIS service connected
+10-23 14:59:07.343 D/b/254119092( 1058): Set mActivity=com.google.android.apps.nexuslauncher.NexusLauncherActivity@416ac39
+10-23 14:59:07.343 D/b/254119092( 1058): mActivity and mContext agree taskbarIsPresent=true
+10-23 14:59:07.344 D/b/260135164( 1058): updateIconAlphaForHome - setIconsAlpha(0), isTaskbarPresent: true
+10-23 14:59:07.351 D/b/260135164( 1058): updateIconAlphaForHome - setIconsAlpha(0), isTaskbarPresent: true
+10-23 14:59:07.393 D/MainContentCaptureSession( 1058): handleScheduleFlush(act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=1 (WAITING_FOR_SERVER), disabled=false], reason=FULL): not a timeout reason because mDirectServiceInterface is not ready yet
+10-23 14:59:07.393 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c4a70
+10-23 14:59:07.393 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c51f0
+10-23 14:59:07.393 D/MainContentCaptureSession( 1058): Flushing 2 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=CONNECTED
+10-23 14:59:07.411 I/ActivityTaskManager(  497): Activity reported stop, but no longer stopping: ActivityRecord{cb32019 u0 com.google.android.apps.nexuslauncher/.NexusLauncherActivity} t8} STOPPED
+10-23 14:59:07.428 W/Parcel  ( 1705): Expecting binder but got null!
+10-23 14:59:07.433 W/PhoneWindow( 1705): Previously focused view reported id 2131435089 during save, but can't be found during restore.
+10-23 14:59:07.441 D/CoreBackPreview(  497): Window{ab76885 u0 com.google.android.googlequicksearchbox/android.app.ContextImpl}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@c1ff70b, mPriority=0}
+10-23 14:59:07.500 W/Parcel  ( 1705): Expecting binder but got null!
+10-23 14:59:07.507 W/InputManager-JNI(  497): Input channel object 'd414265 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity (client)' was disposed without first being removed with the input manager!
+10-23 14:59:07.509 D/CoreBackPreview(  497): Window{28b0801 u0 com.google.android.googlequicksearchbox/android.app.ContextImpl}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5ae8c94, mPriority=0}
+10-23 14:59:07.511 W/WindowManager(  497): Failed looking up window session=Session{28c87a6 1705:u0a10119} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6050 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:943 android.view.IWindowSession$Stub.onTransact:1180 
+10-23 14:59:07.511 E/WindowManager(  497): setOnBackInvokedCallback(): No window state for package:com.google.android.googlequicksearchbox
+10-23 14:59:07.523 D/CoreBackPreview(  497): Window{ab76885 u0 com.google.android.googlequicksearchbox/android.app.ContextImpl}: Setting back callback null
+10-23 14:59:07.527 W/InputManager-JNI(  497): Input channel object 'ab76885 com.google.android.googlequicksearchbox/android.app.ContextImpl (client)' was disposed without first being removed with the input manager!
+10-23 14:59:07.555 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c7f50
+10-23 14:59:07.555 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c6450
+10-23 14:59:07.555 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c7f50
+10-23 14:59:07.653 I/ndroid.systemui(  790): Background young concurrent copying GC freed 173257(7819KB) AllocSpace objects, 34(808KB) LOS objects, 32% free, 17MB/26MB, paused 64us,35us total 183.009ms
+10-23 14:59:07.823 I/DropBoxManagerService(  497): add tag=system_app_strictmode isTagEnabled=true flags=0x2
+10-23 14:59:08.155 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:08.158 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:08.178 I/resolv  (  296): res_nsend: used send_dg 82 terrno: 0
+10-23 14:59:08.178 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:08.201 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:08.202 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:08.222 I/resolv  (  296): res_nsend: used send_dg 117 terrno: 0
+10-23 14:59:08.223 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:08.224 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:08.225 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:08.225 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:08.225 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:08.368 D/ProfileInstaller( 7299): Installing profile for com.bytebox.play
+10-23 14:59:09.212 D/EGL_emulation( 7299): app_time_stats: avg=558.87ms min=203.45ms max=1697.22ms count=5
+10-23 14:59:09.346 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.347 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:09.347 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:09.347 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:09.347 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.348 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:09.348 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:09.348 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:09.357 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.357 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.357 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.357 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.358 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.358 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.358 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.359 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.359 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.359 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.359 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.359 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.359 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.360 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.360 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.360 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.731 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.731 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:09.731 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:09.731 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:09.750 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.750 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.750 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.750 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.751 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:09.752 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:09.752 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:09.752 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:09.825 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+10-23 14:59:09.825 W/BroadcastQueue(  497): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-23 14:59:09.924 W/OnBackInvokedCallback( 7299): OnBackInvokedCallback is not enabled for the application.
+10-23 14:59:09.924 W/OnBackInvokedCallback( 7299): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-23 14:59:10.219 D/EGL_emulation( 7299): app_time_stats: avg=251.69ms min=36.10ms max=395.76ms count=4
+10-23 14:59:10.309 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.icing.indexapi.OneoffRebuildIndexService started execution. cause:4 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:10.341 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.icing.indexapi.OneoffRebuildIndexService finished executing. cause:4 result: 1 elapsed_millis: 42 uptime_millis: 42 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:10.439 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:10.453 I/TelephonySpamChimeraSer( 6222): Running Telephony Spam Chimera Service [CONTEXT service_id=150 ]
+10-23 14:59:10.454 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 42 uptime_millis: 42 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:10.455 I/TelephonySpamChimeraSer( 6222): Cleaning SIP Header local table of old entries [CONTEXT service_id=150 ]
+10-23 14:59:10.466 I/SpamListSync( 6222): Call spam module disabled. Skipping cleaning cache sip header table. [CONTEXT service_id=150 ]
+10-23 14:59:10.466 I/TelephonySpamChimeraSer( 6222): Syncing Call Spam List [CONTEXT service_id=150 ]
+10-23 14:59:10.466 I/SpamListSync( 6222): SpamListSyncChimeraService.syncSpamList called with tag: telephonyspam.SpamListSyncOneOffTask, extras: Bundle[{SpamList Type=0, Action=1.0}] [CONTEXT service_id=150 ]
+10-23 14:59:10.467 I/SpamListSync( 6222): Call spam module disabled. Skipping spam list syncing. [CONTEXT service_id=150 ]
+10-23 14:59:10.501 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.telephonyspam.sync.SpamListSyncTaskService started execution. cause:5 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:10.503 I/NetworkScheduler.Stats( 6172): Task com.google.android.gms/com.google.android.gms.telephonyspam.sync.SpamListSyncTaskService finished executing. cause:5 result: 1 elapsed_millis: 58 uptime_millis: 58 exec_start_elapsed_seconds: 246 [CONTEXT service_id=218 ]
+10-23 14:59:11.296 D/EGL_emulation( 7299): app_time_stats: avg=117.22ms min=99.91ms max=136.57ms count=9
+10-23 14:59:11.389 I/flutter ( 7299): E2E_SHOT:tablet10_e2e-01-consent
+10-23 14:59:11.697 D/EGL_emulation(  790): app_time_stats: avg=11540.49ms min=11540.49ms max=11540.49ms count=1
+10-23 14:59:12.064 W/earchbox:search( 1705): Cleared Reference was only reachable from finalizer (only reported once)
+10-23 14:59:12.263 W/ProcessState( 7438): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:12.291 W/ServiceManager(  378): Permission failure: android.permission.CAPTURE_BLACKOUT_CONTENT from uid=2000 pid=7438
+10-23 14:59:12.292 D/PermissionCache(  378): checking android.permission.CAPTURE_BLACKOUT_CONTENT for uid=2000 => denied (9488 us)
+10-23 14:59:12.331 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:12.331 I/Gralloc4( 7438): mapper 4.x is not supported
+10-23 14:59:12.413 D/EGL_emulation( 7299): app_time_stats: avg=123.83ms min=94.89ms max=166.31ms count=9
+10-23 14:59:12.498 D/HostConnection( 7438): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:13.455 D/EGL_emulation( 7299): app_time_stats: avg=115.66ms min=102.11ms max=123.19ms count=9
+10-23 14:59:14.646 W/healthd (    0): battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+10-23 14:59:14.538 W/AudioFlinger(  375): createTrack_l(): mismatch between requested flags (00000004) and output flags (00000002)
+10-23 14:59:14.542 D/AF::TrackHandle(  375): OpPlayAudio: track:55 usage:13 not muted
+10-23 14:59:14.961 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:15.022 D/EGL_emulation( 7299): app_time_stats: avg=174.05ms min=112.50ms max=629.97ms count=9
+10-23 14:59:15.889 D/CompatibilityChangeReporter(  497): Compat change id reported: 197654537; UID 10174; state: ENABLED
+10-23 14:59:15.911 D/EGL_emulation( 7299): app_time_stats: avg=4559.07ms min=81.95ms max=9036.20ms count=2
+10-23 14:59:15.915 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(35)
+10-23 14:59:16.087 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.088 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:16.088 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:16.088 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:16.095 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.096 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:16.096 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:16.096 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:16.105 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.106 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.106 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.106 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.108 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.111 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.111 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.111 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.112 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.113 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.113 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.113 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.124 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.128 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.128 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.128 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.137 I/keystore2(  160): keystore2::watchdog: Watchdog thread idle -> terminating. Have a great day.
+10-23 14:59:16.186 D/EGL_emulation( 7299): app_time_stats: avg=288.77ms min=32.72ms max=401.35ms count=4
+10-23 14:59:16.384 D/BoundBrokerSvc( 6172): onUnbind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-23 14:59:16.538 W/OnBackInvokedCallback( 7299): OnBackInvokedCallback is not enabled for the application.
+10-23 14:59:16.538 W/OnBackInvokedCallback( 7299): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-23 14:59:16.543 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.545 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:16.545 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:16.545 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:16.552 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.553 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.553 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.553 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.554 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:16.555 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:16.555 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:16.555 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:16.573 D/BoundBrokerSvc( 6222): onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-23 14:59:17.205 E/ClipboardService(  497): Denying clipboard access to com.bytebox.play, application is not in focus nor is it a system service for user 0
+10-23 14:59:17.318 D/EGL_emulation( 7299): app_time_stats: avg=153.75ms min=43.48ms max=247.16ms count=7
+10-23 14:59:17.396 E/ClipboardService(  497): Denying clipboard access to com.bytebox.play, application is not in focus nor is it a system service for user 0
+10-23 14:59:17.576 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:17.588 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:17.588 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:17.588 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:17.620 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:17.623 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:17.623 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:17.623 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:17.634 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:17.637 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:17.637 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:17.637 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:17.762 I/netd    (  296): tetherGetStats() -> {[]} <0.62ms>
+10-23 14:59:17.764 I/netd    (  296): bandwidthSetGlobalAlert(2097152) <0.15ms>
+10-23 14:59:17.774 I/netd    (  296): bandwidthRemoveInterfaceQuota(eth0) <0.66ms>
+10-23 14:59:17.784 I/netd    (  296): bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <3.78ms>
+10-23 14:59:17.789 W/InputMethodManager( 7299): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{2098d88 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+10-23 14:59:17.823 D/AutofillInlineSuggestionsRequestSession(  497): onCreateInlineSuggestionsRequestLocked called: 1073741824:208059175@58246518
+10-23 14:59:17.925 W/InputMethodManager( 7299): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{2098d88 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+10-23 14:59:18.031 W/InputMethodManager( 7299): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{2098d88 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+10-23 14:59:18.032 W/PresentationStatsEventLogger(  497): Shouldn't be logging AutofillPresentationEventReported again for same event
+10-23 14:59:18.032 D/AutofillSession(  497): Starting partition or augmented request for view id 1073741824:142988819@58246518: 1
+10-23 14:59:18.032 W/InputMethodManager( 7299): Ignoring showSoftInput() as view=io.flutter.embedding.android.FlutterView{2098d88 VFE...... .F....ID 0,0-2560,1480 #1} is not served.
+10-23 14:59:18.036 W/AutofillInlineSuggestionsRequestSession(  497): Never received an InlineSuggestionsRequest from the IME for 1073741824:208059175@58246518
+10-23 14:59:18.036 D/AutofillInlineSuggestionsRequestSession(  497): onCreateInlineSuggestionsRequestLocked called: 1073741824:142988819@58246518
+10-23 14:59:18.037 D/AutofillInlineSuggestionsRequestSession(  497): onInlineSuggestionsSessionInvalidated() called.
+10-23 14:59:18.054 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(35)
+10-23 14:59:18.055 I/AssistStructure( 7299): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+10-23 14:59:18.057 D/AutofillSession(  497): createPendingIntent for request 2
+10-23 14:59:18.057 D/ContentCapturePerUserService(  497): Notified activity assist data for activity: Token{138f5d3 ActivityRecord{4592510 u0 com.bytebox.play/com.bytebox.app.MainActivity} t9}} without a session Id
+10-23 14:59:18.066 D/EGL_emulation( 7299): app_time_stats: avg=2154.96ms min=2154.96ms max=2154.96ms count=1
+10-23 14:59:18.068 I/AssistStructure( 7299): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+10-23 14:59:18.071 D/AutofillSession(  497): createPendingIntent for request 3
+10-23 14:59:18.071 D/ContentCapturePerUserService(  497): Notified activity assist data for activity: Token{138f5d3 ActivityRecord{4592510 u0 com.bytebox.play/com.bytebox.app.MainActivity} t9}} without a session Id
+10-23 14:59:18.118 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(4)
+10-23 14:59:18.437 D/EGL_emulation( 7299): app_time_stats: avg=159.66ms min=68.79ms max=303.01ms count=7
+10-23 14:59:19.707 D/EGL_emulation( 7299): app_time_stats: avg=317.42ms min=316.23ms max=318.24ms count=4
+10-23 14:59:20.184 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:20.803 D/EGL_emulation( 7299): app_time_stats: avg=365.61ms min=315.02ms max=418.45ms count=3
+10-23 14:59:21.838 D/EGL_emulation( 7299): app_time_stats: avg=129.26ms min=109.30ms max=189.12ms count=8
+10-23 14:59:21.962 I/WorkerManager( 1705): dispose()
+10-23 14:59:21.963 W/A       ( 1705): Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+10-23 14:59:22.880 D/EGL_emulation( 7299): app_time_stats: avg=115.61ms min=106.74ms max=119.40ms count=9
+10-23 14:59:23.929 D/EGL_emulation( 7299): app_time_stats: avg=116.55ms min=111.91ms max=120.15ms count=9
+10-23 14:59:24.983 D/EGL_emulation( 7299): app_time_stats: avg=117.13ms min=108.29ms max=125.25ms count=9
+10-23 14:59:25.187 I/flutter ( 7299): E2E_SHOT:tablet10_6-profile
+10-23 14:59:25.301 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:25.314 W/ProcessState( 7479): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:25.346 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:25.346 I/Gralloc4( 7479): mapper 4.x is not supported
+10-23 14:59:25.399 D/HostConnection( 7479): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:26.079 D/EGL_emulation( 7299): app_time_stats: avg=121.66ms min=105.78ms max=150.06ms count=9
+10-23 14:59:27.130 D/EGL_emulation( 7299): app_time_stats: avg=116.80ms min=113.39ms max=120.32ms count=9
+10-23 14:59:28.190 D/EGL_emulation( 7299): app_time_stats: avg=117.76ms min=114.36ms max=123.23ms count=9
+10-23 14:59:29.254 D/EGL_emulation( 7299): app_time_stats: avg=149.97ms min=55.66ms max=406.47ms count=7
+10-23 14:59:30.325 D/EGL_emulation( 7299): app_time_stats: avg=119.02ms min=106.46ms max=151.73ms count=9
+10-23 14:59:31.418 D/EGL_emulation( 7299): app_time_stats: avg=121.34ms min=114.75ms max=126.61ms count=9
+10-23 14:59:31.722 I/flutter ( 7299): E2E_SHOT:tablet10_2-plans
+10-23 14:59:31.835 W/ProcessState( 7489): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:31.965 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:31.966 I/Gralloc4( 7489): mapper 4.x is not supported
+10-23 14:59:31.991 D/HostConnection( 7489): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:32.490 D/EGL_emulation( 7299): app_time_stats: avg=133.19ms min=112.14ms max=174.44ms count=8
+10-23 14:59:33.556 D/EGL_emulation( 7299): app_time_stats: avg=118.28ms min=106.56ms max=130.07ms count=9
+10-23 14:59:34.635 D/EGL_emulation( 7299): app_time_stats: avg=119.81ms min=111.87ms max=124.36ms count=9
+10-23 14:59:34.882 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(43)
+10-23 14:59:35.643 D/EGL_emulation( 7299): app_time_stats: avg=140.85ms min=28.25ms max=370.09ms count=7
+10-23 14:59:35.784 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:36.672 E/android.hardware.power.stats@1.0-service-mock(  343): Failed to getEnergyData
+10-23 14:59:36.701 D/EGL_emulation( 7299): app_time_stats: avg=117.18ms min=114.56ms max=122.12ms count=9
+10-23 14:59:37.037 I/flutter ( 7299): E2E_SHOT:tablet10_1-cloud
+10-23 14:59:37.149 W/ProcessState( 7499): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:37.159 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:37.159 I/Gralloc4( 7499): mapper 4.x is not supported
+10-23 14:59:37.224 D/HostConnection( 7499): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:37.788 D/EGL_emulation( 7299): app_time_stats: avg=120.83ms min=100.88ms max=147.41ms count=9
+10-23 14:59:38.833 D/EGL_emulation( 7299): app_time_stats: avg=115.87ms min=109.74ms max=123.64ms count=9
+10-23 14:59:39.883 D/EGL_emulation( 7299): app_time_stats: avg=116.64ms min=111.55ms max=121.54ms count=9
+10-23 14:59:40.016 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(32)
+10-23 14:59:40.925 D/EGL_emulation( 7299): app_time_stats: avg=109.69ms min=57.40ms max=176.84ms count=9
+10-23 14:59:41.973 I/flutter ( 7299): E2E_SHOT:tablet10_3-explore
+10-23 14:59:42.037 D/EGL_emulation( 7299): app_time_stats: avg=137.20ms min=102.62ms max=196.67ms count=8
+10-23 14:59:42.139 W/ProcessState( 7507): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:42.197 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:42.199 I/Gralloc4( 7507): mapper 4.x is not supported
+10-23 14:59:42.327 D/HostConnection( 7507): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:43.081 D/EGL_emulation( 7299): app_time_stats: avg=123.97ms min=69.90ms max=186.97ms count=8
+10-23 14:59:44.175 D/EGL_emulation( 7299): app_time_stats: avg=120.62ms min=108.26ms max=133.14ms count=9
+10-23 14:59:45.090 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(34)
+10-23 14:59:45.237 D/EGL_emulation( 7299): app_time_stats: avg=117.84ms min=105.57ms max=129.09ms count=9
+10-23 14:59:45.250 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:45.253 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:45.253 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:45.253 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:45.303 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:45.305 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:45.325 I/resolv  (  296): res_nsend: used send_dg 117 terrno: 0
+10-23 14:59:45.325 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:45.348 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:45.349 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:45.349 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:45.349 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:46.254 D/EGL_emulation( 7299): app_time_stats: avg=112.33ms min=69.35ms max=172.70ms count=9
+10-23 14:59:47.305 D/EGL_emulation( 7299): app_time_stats: avg=116.78ms min=114.32ms max=119.65ms count=9
+10-23 14:59:48.074 D/ConnectivityService(  497): requestNetwork for uid/pid:10113/1486 activeRequest: null callbackRequest: 156 [NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-23 14:59:48.076 D/ConnectivityService(  497): NetReassign [157 : null → 100] [c 0] [a 1] [i 0]
+10-23 14:59:48.076 D/WifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+10-23 14:59:48.081 D/UntrustedWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+10-23 14:59:48.081 D/OemPaidWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+10-23 14:59:48.081 D/MultiInternetWifiNetworkFactory(  497): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10113 RequestorUid: 10113 RequestorPkg: com.google.android.dialer UnderlyingNetworks: Null] ]
+10-23 14:59:48.086 I/DialerConstellationSyncWorker( 1486): com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker.startWork:66 starting work
+10-23 14:59:48.087 I/DialerCountryCodeProvider( 1486): com.android.dialer.businessvoice.verifiedcall.impl.i18n.CountryCodeProvider.getSimCountryCodeInternal:85 returning Redacted-2-chars
+10-23 14:59:48.088 I/DialerCachedVerifiedNumberProvider( 1486): com.android.dialer.businessvoice.verifiedcall.impl.constellation.CachedVerifiedNumberProvider.refreshConstellationInfo:190 Retrieving constellation info and refreshing the cache.
+10-23 14:59:48.092 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:48.094 D/BoundBrokerSvc( 6222): onBind: Intent { act=com.google.android.gms.constellation.service.START pkg=com.google.android.gms }
+10-23 14:59:48.094 D/BoundBrokerSvc( 6222): Loading bound service for intent: Intent { act=com.google.android.gms.constellation.service.START pkg=com.google.android.gms }
+10-23 14:59:48.136 D/BoundBrokerSvc( 6222): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:48.136 D/BoundBrokerSvc( 6222): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:48.143 D/BoundBrokerSvc( 6222): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-23 14:59:48.143 E/constellation( 6222): [api_verify_phone_operation] Failed to generate Client Signature
+10-23 14:59:48.143 E/constellation( 6222): acwp: Stored private key deleted
+10-23 14:59:48.143 E/constellation( 6222): 	at acos.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+10-23 14:59:48.143 E/constellation( 6222): 	at acos.d(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+10-23 14:59:48.143 E/constellation( 6222): 	at acoa.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):22)
+10-23 14:59:48.143 E/constellation( 6222): 	at acoa.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):12)
+10-23 14:59:48.143 E/constellation( 6222): 	at avsy.eo(:com.google.android.gms@231818047@23.18.18 (190800-535401451):1)
+10-23 14:59:48.143 E/constellation( 6222): 	at avtf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):14)
+10-23 14:59:48.143 E/constellation( 6222): 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+10-23 14:59:48.143 E/constellation( 6222): 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+10-23 14:59:48.143 E/constellation( 6222): 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):7)
+10-23 14:59:48.143 E/constellation( 6222): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-23 14:59:48.143 E/constellation( 6222): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-23 14:59:48.143 E/constellation( 6222): 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+10-23 14:59:48.143 E/constellation( 6222): 	at java.lang.Thread.run(Thread.java:1012)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): com.android.dialer.businessvoice.verifiedcall.impl.constellation.VerifiedNumberProvider.lambda$getConstellationResponse$1:155 Failed to get constellation token.
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): nkq: 5004: 
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at nov.au(PG:1)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at nnf.g(PG:2)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at npo.a(Unknown Source:2)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at npy.dm(PG:9)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at ncz.onTransact(PG:4)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-23 14:59:48.153 W/DialerVerifiedNumberProvider( 1486): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-23 14:59:48.156 W/DialerConstellationSyncWorker( 1486): com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker.lambda$syncConstellation$2:110 Constellation api request failed, status code: 5004
+10-23 14:59:48.159 I/WM-WorkerWrapper( 1486): Worker result RETRY for Work [ id=3c2ec723-8bfa-4737-b716-aec064c89135, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker, TikTokWorker#com.android.dialer.businessvoice.control.worker.ConstellationSyncWorker } ]
+10-23 14:59:48.352 D/EGL_emulation( 7299): app_time_stats: avg=116.28ms min=113.32ms max=119.12ms count=9
+10-23 14:59:49.403 D/EGL_emulation( 7299): app_time_stats: avg=116.76ms min=113.48ms max=120.33ms count=9
+10-23 14:59:50.203 I/flutter ( 7299): E2E_SHOT:tablet10_5-channels
+10-23 14:59:50.333 W/ProcessState( 7525): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:50.355 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:50.355 I/Gralloc4( 7525): mapper 4.x is not supported
+10-23 14:59:50.427 D/HostConnection( 7525): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:50.484 D/EGL_emulation( 7299): app_time_stats: avg=120.02ms min=115.25ms max=143.13ms count=9
+10-23 14:59:51.522 D/EGL_emulation( 7299): app_time_stats: avg=115.32ms min=109.08ms max=120.04ms count=9
+10-23 14:59:52.569 D/EGL_emulation( 7299): app_time_stats: avg=116.26ms min=113.89ms max=118.11ms count=9
+10-23 14:59:53.172 D/AudioFlinger(  375): mixer(0x789ad7d129a0) throttle end: throttle time(42)
+10-23 14:59:53.570 D/EGL_emulation( 7299): app_time_stats: avg=99.77ms min=53.64ms max=119.48ms count=10
+10-23 14:59:53.872 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:53.876 I/resolv  (  296): res_nmkquery: (QUERY, IN, A)
+10-23 14:59:53.876 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f3730
+10-23 14:59:53.876 I/resolv  (  296): doQuery: rcode=0, ancount=2, return value=82
+10-23 14:59:53.892 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:53.893 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:53.893 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:53.893 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:53.897 I/resolv  (  296): GetAddrInfoHandler::run: {100 100 100 983140 10174 0}
+10-23 14:59:53.901 I/resolv  (  296): res_nmkquery: (QUERY, IN, AAAA)
+10-23 14:59:53.902 I/resolv  (  296): resolv_cache_lookup: FOUND IN CACHE entry=0x70cc026f44b0
+10-23 14:59:53.902 I/resolv  (  296): doQuery: rcode=0, ancount=0, return value=117
+10-23 14:59:54.429 D/OomAdjuster(  497): Not killing cached processes
+10-23 14:59:54.511 I/ChimeraConfigurator( 6222): Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+10-23 14:59:54.607 I/ChimeraConfigurator( 6222): Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2627305025100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+10-23 14:59:54.621 I/GmsDebugLogger( 6222): [73] 1801
+10-23 14:59:54.625 W/ZappDownloader( 6222): No successful module downloads for requested features [vision.ocr].
+10-23 14:59:54.625 I/GmsDebugLogger( 6222): [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:262730502100800],[MlkitOcrCommon.optional:231818100800]
+10-23 14:59:54.626 W/ChimeraConfigService( 6222): Retry attempt was throttled. [CONTEXT service_id=264 ]
+10-23 14:59:54.626 I/GmsDebugLogger( 6222): [83] 1 [vision.ocr]
+10-23 14:59:54.630 W/Vision  ( 6222): Request for optional module download of ocr failed. Request again.
+10-23 14:59:54.630 W/Vision  ( 6222): Would have logged:
+10-23 14:59:54.630 W/Vision  ( 6222): # dsae@37884fe7
+10-23 14:59:54.630 I/Vision  ( 6222): Schedule retrying download ocr at 290689 with backoff 80 seconds
+10-23 14:59:54.692 D/EGL_emulation( 7299): app_time_stats: avg=138.25ms min=111.92ms max=185.03ms count=8
+10-23 14:59:55.753 I/DialerOmtpVvmCarrierConfigHelper( 1486): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_STATUS_SMS_TIME_OUT PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.756 I/DialerRetryPolicy( 1486): com.android.voicemail.impl.scheduling.RetryPolicy.onCompleted:118 discarding deferred status [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.764 I/DialerTaskExecutor( 1486): com.android.voicemail.impl.scheduling.TaskExecutor.prepareStop:371 no more tasks, stopping service if no task are added in 5000 millis [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.766 D/EGL_emulation( 7299): app_time_stats: avg=115.85ms min=63.99ms max=138.17ms count=9
+10-23 14:59:55.767 I/DialerLogcatLoggingBindings( 1486): com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_AUTO_RETRY_ACTIVATION
+10-23 14:59:55.772 I/DialerTaskReceiver( 1486): com.android.voicemail.impl.scheduling.TaskReceiver.onReceive:68 task received [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.772 I/DialerTaskReceiver( 1486): com.android.voicemail.impl.scheduling.TaskReceiver.onReceive:73 TaskExecutor already running [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.775 I/DialerTasks( 1486): com.android.voicemail.impl.scheduling.Tasks.createTask:59 Task.createTask create task:com.android.voicemail.impl.ActivationTask [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.775 I/DialerRetryPolicy( 1486): com.android.voicemail.impl.scheduling.RetryPolicy.onCreate:81 retry #3 for com.android.voicemail.impl.ActivationTask@7b4a66c queued, executing in 5000 [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.838 I/DialerTaskExecutor( 1486): com.android.voicemail.impl.scheduling.TaskExecutor.addTask:299 com.android.voicemail.impl.ActivationTask@7b4a66c added [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.838 I/DialerTaskExecutor( 1486): com.android.voicemail.impl.scheduling.TaskExecutor.runNextTask:345 minimal wait time:4937 [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:55.839 I/DialerTaskExecutor( 1486): com.android.voicemail.impl.scheduling.TaskExecutor.sleep:355 sleep for 4937 millis [CONTEXT enable_persistent_logger=true ]
+10-23 14:59:56.892 D/EGL_emulation( 7299): app_time_stats: avg=123.39ms min=65.40ms max=163.71ms count=9
+10-23 14:59:57.956 D/EGL_emulation( 7299): app_time_stats: avg=113.84ms min=100.67ms max=127.46ms count=9
+10-23 14:59:58.362 I/flutter ( 7299): E2E_SHOT:tablet10_4-feed
+10-23 14:59:58.612 W/ProcessState( 7547): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-23 14:59:58.744 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-23 14:59:58.744 I/Gralloc4( 7547): mapper 4.x is not supported
+10-23 14:59:58.888 D/HostConnection( 7547): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-23 14:59:59.034 D/EGL_emulation( 7299): app_time_stats: avg=128.53ms min=103.23ms max=145.78ms count=8
+10-23 15:00:00.016 D/OomAdjuster(  497): Not killing cached processes
+10-23 15:00:00.025 W/PeriodicJobReceiver( 5690): refresh periodic job from action=settings.intelligence.battery.action.PERIODIC_JOB_UPDATE
+10-23 15:00:00.041 I/AiAiEcho( 1627): Predicting[0]: 
+10-23 15:00:00.045 W/PeriodicJobManager( 5690): schedule next alarm job at Oct 23,2026 16:00:00
+10-23 15:00:00.053 I/AiAiEcho( 1627): Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-23 15:00:00.057 I/AiAiEcho( 1627): #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+10-23 15:00:00.062 I/AiAiEcho( 1627): #postPredictionTargets: Sending updates to UISurface home with targets# 0
+10-23 15:00:00.090 D/BatteryBroadcastReceiver( 1159): onReceive:settings.intelligence.battery.action.FETCH_BATTERY_USAGE_DATA
+10-23 15:00:00.094 D/BatteryUsageLoaderService( 1159): loadUsageDataSafely() in the AsyncTask
+10-23 15:00:00.126 D/EGL_emulation( 7299): app_time_stats: avg=132.70ms min=98.26ms max=167.46ms count=8
+10-23 15:00:00.131 D/EGL_emulation(  790): app_time_stats: avg=48433.91ms min=48433.91ms max=48433.91ms count=1
+10-23 15:00:00.136 W/PowerProfile( 1159): ambient.on is deprecated! Use ambient.on.display0 instead.
+10-23 15:00:00.136 W/PowerProfile( 1159): screen.on is deprecated! Use screen.on.display0 instead.
+10-23 15:00:00.136 W/PowerProfile( 1159): screen.full is deprecated! Use screen.full.display0 instead.
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x0, drain:0,RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x10000000, drain:IDLE,RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x20000000, drain:RX,RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x30000000, drain:TX,level:UNKNOWN(0x0)RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x31000000, drain:TX,level:UNKNOWN(0x1000000)RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x32000000, drain:TX,level:UNKNOWN(0x2000000)RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x33000000, drain:TX,level:UNKNOWN(0x3000000)RAT:DEFAULT
+10-23 15:00:00.136 W/ModemPowerProfile( 1159): getAverageBatteryDrainMaH called with unexpected key: 0x34000000, drain:TX,level:UNKNOWN(0x4000000)RAT:DEFAULT
+10-23 15:00:00.139 W/BatteryAppListPreferenceController( 1159): shouldShowBatteryAttributionList(): 0.1
+10-23 15:00:00.139 W/BatteryUsageLoaderService( 1159): getBatteryEntryList() returns null or empty content
+10-23 15:00:00.139 D/BatteryUsageLoaderService( 1159): getBatteryUsageStats() in 28/ms
+10-23 15:00:00.224 D/DatabaseUtils( 1159): sendBatteryEntryData() size=1 in 84/ms
+10-23 15:00:00.785 I/DialerTaskExecutor( 1486): com.android.voicemail.impl.scheduling.TaskExecutor$WorkerThreadHandler.handleMessage:221 executing task com.android.voicemail.impl.ActivationTask@7b4a66c [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.795 I/DialerLogcatLoggingBindings( 1486): com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:41 Impression: VVM_ACTIVATION_STARTED
+10-23 15:00:00.809 I/DialerPreOMigrationHandler( 1486): com.android.voicemail.impl.PreOMigrationHandler.migrate:76 ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} already migrated [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.833 I/DialerOmtpVvmCarrierConfigHelper( 1486): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.isCarrierAppInstalled:637 carrier app not installed in this device [CONTEXT ratelimit_period="1 MINUTES [skipped: 4]" ]
+10-23 15:00:00.833 I/DialerVoicemailStatus( 1486): com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+10-23 15:00:00.834 I/DialerVoicemailStatusDataServiceImpl( 1486): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+10-23 15:00:00.862 I/DialerRestVoicemailEnabledFn( 1486): com.android.dialer.voicemail.service.impl.vvmclients.rest.RestVoicemailEnabledFn.isEnabled:51 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 23]" ]
+10-23 15:00:00.862 I/DialerCvvmEnabledFn( 1486): com.android.dialer.voicemail.service.impl.vvmclients.omtp.protocol.cvvm.CvvmEnabledFn.isEnabled:37 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 11]" ]
+10-23 15:00:00.878 W/Settings( 1486): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-23 15:00:00.879 I/DialerVoicemailStatusDataServiceImpl( 1486): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+10-23 15:00:00.883 I/DialerActivationTask( 1486): com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:292 VVM content provider configured - vvm_type_cvvm PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.883 I/DialerActivationTask( 1486): com.android.voicemail.impl.ActivationTask.updateVoicemailsWithIccId:477 conversion disabled [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.890 I/DialerOmtpVvmCarrierConfigHelper( 1486): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_ACTIVATING PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.890 I/DialerVoicemailStatus( 1486): com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+10-23 15:00:00.890 I/DialerVoicemailStatusDataServiceImpl( 1486): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+10-23 15:00:00.925 W/Settings( 1486): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-23 15:00:00.925 I/DialerVoicemailStatusDataServiceImpl( 1486): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@6600c263
+10-23 15:00:00.952 I/DialerActivationTask( 1486): com.android.voicemail.impl.ActivationTask.onExecuteInBackgroundThread:339 sending an activation request [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:00.960 D/SmsNumberUtils( 1021): enter filterDestAddr. destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+10-23 15:00:00.961 D/SmsNumberUtils( 1021): destAddr is not formatted.
+10-23 15:00:00.961 D/SmsNumberUtils( 1021): leave filterDestAddr, new destAddr="[BajqU4K5_YhSYbs-7QUn0dOwcmI]"
+10-23 15:00:00.988 I/DialerLogcatLoggingBindings( 1486): com.android.dialer.logging.logcat.LogcatLoggingBindings.logImpression:46 Impression: CVVM_SEND_VVM_SMS
+10-23 15:00:01.047 I/DialerStatusSmsFetcher( 1486): com.android.voicemail.impl.sms.StatusSmsFetcher.onReceive:106 Request SMS successfully sent [CONTEXT enable_persistent_logger=true ]
+10-23 15:00:01.215 D/EGL_emulation( 7299): app_time_stats: avg=119.86ms min=97.07ms max=152.20ms count=9
+10-23 15:00:01.848 I/flutter ( 7299): 00:55 +1: (tearDownAll)
+10-23 15:00:01.856 I/flutter ( 7299): 00:55 +2: All tests passed!
+10-23 15:00:01.899 I/ActivityManager(  497): Force stopping com.bytebox.play appid=10174 user=0: from pid 7557
+10-23 15:00:01.902 I/ActivityManager(  497): Killing 7299:com.bytebox.play/u0a174 (adj 0): stop com.bytebox.play due to from pid 7557
+10-23 15:00:01.905 W/ActivityTaskManager(  497): Force removing ActivityRecord{4592510 u0 com.bytebox.play/com.bytebox.app.MainActivity} t9 f}}: app died, no saved state
+10-23 15:00:01.908 W/InputManager-JNI(  497): Input channel object 'ada27f1 com.bytebox.play/com.bytebox.app.MainActivity (client)' was disposed without first being removed with the input manager!
+10-23 15:00:01.909 I/libprocessgroup(  497): Successfully killed process cgroup uid 10174 pid 7299 in 5ms
+10-23 15:00:01.918 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c8010
+10-23 15:00:01.942 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c7dd0
+10-23 15:00:01.943 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c6990
+10-23 15:00:01.943 W/TransactionTracing(  378): Could not find layer handle 0x75ca8e2c9c30
+10-23 15:00:01.955 D/CarrierSvcBindHelper( 1021): onHandleForceStop: [com.bytebox.play]
+10-23 15:00:01.959 D/CarrierSvcBindHelper( 1021): No carrier app for: 0
+10-23 15:00:01.961 D/b/260135164( 1058): updateIconAlphaForHome - setIconsAlpha(1), isTaskbarPresent: true
+10-23 15:00:02.049 V/ActivityManager(  497): Got obituary of 7299:com.bytebox.play
+10-23 15:00:02.050 D/AutofillSession(  497): handling death of Token{138f5d3 ActivityRecord{4592510 u0 com.bytebox.play/com.bytebox.app.MainActivity} t-1 f}}} when saving=false
+10-23 15:00:02.266 I/binder  (    0): undelivered transaction 689854, process died.
+10-23 15:00:02.054 I/Zygote  (  300): Process 7299 exited due to signal 9 (Killed)
+10-23 15:00:02.057 E/BpTransactionCompletedListener(  378): Failed to transact (-32)
+10-23 15:00:02.057 E/BpTransactionCompletedListener(  378): Failed to transact (-32)
+10-23 15:00:02.059 W/Looper  (  497): Slow dispatch took 158ms android.ui h=com.android.server.am.ActivityManagerService$UiHandler c=com.android.server.am.UidObserverController$$ExternalSyntheticLambda0@bbd6920 m=0
+10-23 15:00:02.059 D/AutofillUI(  497): destroySaveUiUiThread(): already destroyed
+10-23 15:00:02.063 W/ActivityManager(  497): setHasOverlayUi called on unknown pid: 7299
+10-23 15:00:02.065 I/ActivityManager(  497): Force stopping com.bytebox.play appid=10174 user=-1: deletePackageX
+10-23 15:00:02.129 I/PackageManager(  497): Removing permission com.bytebox.play.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.bytebox.play
+10-23 15:00:02.130 I/PackageManager(  497): Permission ownership changed. Updating all permissions.
+10-23 15:00:02.418 I/logd    (    0): start watching /data/system/packages.list ...
+10-23 15:00:02.423 I/logd    (    0): ReadPackageList, total packages: 181
+10-23 15:00:02.228 D/PackageManager(  497): Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-23 15:00:02.231 D/PackageManager(  497): Clear ephemeral installer activity
+10-23 15:00:02.243 I/ndroid.settings( 1159): Explicit concurrent copying GC freed 8470(498KB) AllocSpace objects, 2(104KB) LOS objects, 24% free, 4011KB/5348KB, paused 19us,19us total 17.863ms
+10-23 15:00:02.264 D/MainContentCaptureSession( 1058): Flushing 1 event(s) for act:com.google.android.apps.nexuslauncher/.NexusLauncherActivity [state=2 (ACTIVE), disabled=false], reason=FULL
+10-23 15:00:02.274 I/ndroid.settings( 1159): Explicit concurrent copying GC freed 633(51KB) AllocSpace objects, 0(0B) LOS objects, 24% free, 3993KB/5324KB, paused 16us,11us total 27.978ms
+10-23 15:00:02.274 W/DatabaseUtils( 1159): invoke clearMemory()
+10-23 15:00:02.286 W/AppSearchIcing(  497): icing-search-engine.cc:217: Error: 5, Message: Document (com.google.android.googlequicksearchbox$OneSearchZeroStateGoogleSuggestions/default, zp) not found.
+10-23 15:00:02.298 I/ActivityManager(  497): Force stopping com.bytebox.play appid=10174 user=0: pkg removed
