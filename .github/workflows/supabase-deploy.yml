@@ -29,7 +29,7 @@ jobs:
           done
       - uses: supabase/setup-cli@v1
         with:
-          version: latest
+          version: 2.120.0
       - name: Link project
         run: supabase link --project-ref "$PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
       - name: Push migrations
