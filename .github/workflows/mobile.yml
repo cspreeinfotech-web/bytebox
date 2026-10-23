@@ -139,6 +139,28 @@ jobs:
           fi
           echo "All artifact checks passed."
 
+      - name: Publish APKs to the website (main only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.SIGNED == '1'
+        env:
+          TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          URL: ${{ secrets.SUPABASE_URL }}
+        run: |
+          set -e
+          key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
+            | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
+          echo "::add-mask::$key"
+          v=$(grep '^version:' pubspec.yaml | awk '{print $2}' | tr '+' '-')
+          stamp=$(date -u +%Y%m%d%H%M)
+          up() { curl -sS -f -X POST "$URL/storage/v1/object/downloads/$2" -H "apikey: $key" -H "Authorization: Bearer $key" \
+                   -H "Content-Type: application/vnd.android.package-archive" -H "x-upsert: true" --data-binary "@$1" >/dev/null; }
+          up dist/Bytebox.apk "organic/Bytebox-$v-$stamp.apk"
+          up dist/Bytebox-ads.apk "ads/Bytebox-ads-$v-$stamp.apk"
+          curl -sS -f -X PATCH "$URL/rest/v1/site_settings?id=eq.1" -H "apikey: $key" -H "Authorization: Bearer $key" \
+            -H "Content-Type: application/json" \
+            -d "{\"organic_apk_path\": \"organic/Bytebox-$v-$stamp.apk\", \"organic_apk_version\": \"$v\", \"ads_apk_path\": \"ads/Bytebox-ads-$v-$stamp.apk\", \"ads_apk_version\": \"$v\", \"ads_apk_uploaded_at\": \"$(date -u +%FT%TZ)\"}"
+          echo "Published Bytebox $v to the website (/ and /d)."
+
       - name: Report failure log as annotation
         if: failure()
         run: |
