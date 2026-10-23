@@ -149,7 +149,15 @@ def clean():
             pass  # table exists only after Stage 8 is deployed
         rest("DELETE", "payment_orders", query=f"?user_id=eq.{uid}")
         req("DELETE", f"/auth/v1/admin/users/{uid}")
-    print(f"removed {len(demo)} demo users")
+    # Guest accounts and installs created by the emulator runs (emulator device models).
+    emu = rest("GET", "installs", query="?select=install_id&device->>model=like.sdk_gphone*")
+    for inst in emu:
+        for link in rest("GET", "install_users", query=f"?install_id=eq.{inst['install_id']}&select=user_id"):
+            u = req("GET", f"/auth/v1/admin/users/{link['user_id']}")
+            if u.get("is_anonymous"):
+                req("DELETE", f"/auth/v1/admin/users/{link['user_id']}")
+        rest("DELETE", "installs", query=f"?install_id=eq.{inst['install_id']}")
+    print(f"removed {len(demo)} demo users and {len(emu)} emulator installs")
 
 
 if __name__ == "__main__":

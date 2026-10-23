@@ -13,6 +13,9 @@ if [ "$FLAVOR" = play ]; then
 else
   args+=(--dart-define=APK_REFERRER="$ADS_REFERRER" --dart-define=ANDROID_APP_ID=com.bytebox.app)
 fi
+adb logcat -c || true
+(adb logcat -v time > "../logcat-$DEVICE-$FLAVOR.txt" 2>&1 &)
+(while true; do echo "$(date +%T) $(adb shell cat /proc/meminfo 2>/dev/null | head -3 | tr -s ' ' | tr '\n' ' ')" >> "../mem-$DEVICE-$FLAVOR.txt"; sleep 10; done &)
 flutter drive "${args[@]}" 2>&1 | tee "../e2e-$DEVICE-$FLAVOR.log"
 rc=${PIPESTATUS[0]}
 # flutter drive may fail to uninstall the flavored app afterwards; the test result is what counts.

@@ -101,6 +101,15 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
+          name: logs-${{ matrix.device }}-${{ matrix.flavor }}
+          path: |
+            e2e-*.log
+            logcat-*.txt
+            mem-*.txt
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
           name: shots-${{ matrix.device }}-${{ matrix.flavor }}
           path: mobile/build/screenshots/*.png
           if-no-files-found: ignore
@@ -126,6 +135,21 @@ jobs:
           git add docs/store docs/e2e
           git diff --cached --quiet || git commit -m "E2E: screenshots from emulator run [skip ci]"
           git push
+      - uses: actions/download-artifact@v4
+        if: always()
+        with: { path: logs, pattern: "logs-*", merge-multiple: true }
+      - name: Push run logs to branch e2e-logs (for debugging)
+        if: always()
+        run: |
+          [ -d logs ] || exit 0
+          tmp=$(mktemp -d); cp -r logs/. "$tmp"/
+          git fetch origin e2e-logs 2>/dev/null && git checkout -q -B e2e-logs origin/e2e-logs || git checkout -q --orphan e2e-logs
+          git rm -rq --cached . 2>/dev/null || true
+          find . -maxdepth 1 ! -name .git ! -name . -exec rm -rf {} + 2>/dev/null || true
+          mkdir -p run-${{ github.run_id }} && cp -r "$tmp"/. run-${{ github.run_id }}/
+          git add run-${{ github.run_id }}
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "E2E logs ${{ github.run_id }}" && git push -q origin e2e-logs
+          git checkout -q ${{ github.head_ref || github.ref_name }}
       - name: Service key
         if: always()
         env:
