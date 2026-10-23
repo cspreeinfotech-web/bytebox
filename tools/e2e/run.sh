@@ -18,7 +18,13 @@ adb logcat -v time > "../logcat-$DEVICE-$FLAVOR.txt" 2>&1 &
 LOGCAT=$!
 (while true; do echo "$(date +%T) $(adb shell cat /proc/meminfo 2>/dev/null | head -3 | tr -s ' ' | tr '\n' ' ')" >> "../mem-$DEVICE-$FLAVOR.txt"; sleep 10; done) &
 MEM=$!
-flutter drive "${args[@]}" 2>&1 | tee "../e2e-$DEVICE-$FLAVOR.log"
+mkdir -p build/screenshots
+flutter drive "${args[@]}" 2>&1 | tee "../e2e-$DEVICE-$FLAVOR.log" | while IFS= read -r line; do
+  case "$line" in
+    *E2E_SHOT:*) name=${line##*E2E_SHOT:}; name=${name%%[[:space:]]*}
+                 adb exec-out screencap -p > "build/screenshots/$name.png" && echo "captured $name" ;;
+  esac
+done
 rc=${PIPESTATUS[0]}
 # flutter drive may fail to uninstall the flavored app afterwards; the test result is what counts.
 if [ $rc -ne 0 ] && grep -q "All tests passed" "../e2e-$DEVICE-$FLAVOR.log"; then rc=0; fi

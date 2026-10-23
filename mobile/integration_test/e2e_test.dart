@@ -33,9 +33,13 @@ Future<void> settle(WidgetTester t, [int ms = 1500]) async {
   }
 }
 
+/// The host (tools/e2e/run.sh) watches for this marker and grabs the screen with `adb screencap`.
+/// (Flutter's in-process screenshot crashes the emulator's software GPU on phone profiles.)
 Future<void> shot(WidgetTester t, String name) async {
   await settle(t, 1200);
-  await binding.takeScreenshot('${shotPrefix}_$name');
+  // ignore: avoid_print
+  print('E2E_SHOT:${shotPrefix}_$name');
+  await settle(t, 2500);
 }
 
 Future<void> boot(WidgetTester t) async {
@@ -66,7 +70,6 @@ void main() {
   binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('Bytebox end-to-end', (t) async {
-    await binding.convertFlutterSurfaceToImage();
     await boot(t);
     expect(session.isGuest, isTrue);
 
