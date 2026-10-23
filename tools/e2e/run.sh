@@ -21,6 +21,13 @@ pkill -f KotlinCompileDaemon 2>/dev/null || true
 free -m || true
 APK=$(ls build/app/outputs/flutter-apk/app-$FLAVOR-debug.apk)
 args+=(--use-application-binary "$APK")
+# Only the pixel_tablet emulator image is stable on CI runners; phone/7" layouts are produced by
+# resizing its display (a real phone-sized screen and density for the app).
+case "$DEVICE" in
+  phone)   adb shell wm size 1080x1920; adb shell wm density 420 ;;
+  tablet7) adb shell wm size 1200x1920; adb shell wm density 320 ;;
+esac
+adb shell wm size; adb shell wm density
 adb logcat -c || true
 adb logcat -v time > "../logcat-$DEVICE-$FLAVOR.txt" 2>&1 &
 LOGCAT=$!

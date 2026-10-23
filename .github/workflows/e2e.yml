@@ -52,9 +52,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { device: phone, profile: pixel_5, flavor: direct }
-          - { device: phone, profile: pixel_5, flavor: play }
-          - { device: tablet7, profile: "Nexus 7 2013", flavor: play }
+          - { device: phone, profile: pixel_tablet, flavor: direct }
+          - { device: phone, profile: pixel_tablet, flavor: play }
+          - { device: tablet7, profile: pixel_tablet, flavor: play }
           - { device: tablet10, profile: pixel_tablet, flavor: play }
     steps:
       - uses: actions/checkout@v5
@@ -85,7 +85,7 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: ${{ matrix.profile }}
-          ram-size: 3072M
+          ram-size: 4096M
           heap-size: 576M
           disk-size: 6000M
           disable-animations: true
