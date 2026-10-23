@@ -27,6 +27,7 @@ jobs:
     defaults:
       run:
         working-directory: mobile
+        shell: bash
     steps:
       - uses: actions/checkout@v4
 
@@ -44,7 +45,7 @@ jobs:
           cache: true
 
       - name: Pub get
-        run: flutter pub get
+        run: flutter pub get 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
 
       - name: Generate launcher icons + splash (all flavors)
         run: |
@@ -69,10 +70,10 @@ jobs:
           grep -q 'android:scheme="mailto"' $m || { echo "::error::missing mailto query"; exit 1; }
 
       - name: Analyze
-        run: flutter analyze --no-fatal-infos
+        run: flutter analyze --no-fatal-infos 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
 
       - name: Test
-        run: flutter test
+        run: flutter test 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
 
       - name: Signing key
         env:
@@ -99,6 +100,8 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
         run: |
+          exec > >(tee -a "$RUNNER_TEMP/ci.log") 2>&1
+          set -e
           common=(--release --dart-define=SUPABASE_URL="$SUPABASE_URL" --dart-define=SUPABASE_PUBLISHABLE_KEY="$SUPABASE_KEY")
           if [ -n "${{ vars.WEBSITE_URL }}" ]; then common+=(--dart-define=WEBSITE_URL="${{ vars.WEBSITE_URL }}"); fi
           flutter build apk --flavor direct "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE
@@ -135,6 +138,15 @@ jobs:
             echo "::error::AAB must not request AD_ID"; exit 1
           fi
           echo "All artifact checks passed."
+
+      - name: Report failure log as annotation
+        if: failure()
+        run: |
+          [ -f "$RUNNER_TEMP/ci.log" ] || exit 0
+          msg=$(grep -vE '^\s*$|Download|Downloading|Resolving dependencies' "$RUNNER_TEMP/ci.log" | grep -iE -B2 -A6 'error|exception|failed|what went wrong|e: ' | tail -n 120)
+          [ -z "$msg" ] && msg=$(tail -n 80 "$RUNNER_TEMP/ci.log")
+          msg="${msg//'%'/'%25'}"; msg="${msg//$'\r'/}"; msg="${msg//$'\n'/'%0A'}"
+          echo "::error title=CI log tail::$msg"
 
       - uses: actions/upload-artifact@v4
         with:
