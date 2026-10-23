@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { AdminShell } from "@/components/shell";
-import { Flash, PageHeader, Stat } from "@/components/ui";
+import { Badge, Flash, PageHeader, Stat } from "@/components/ui";
 import { one, requireAdmin, type SP } from "@/lib/admin";
 import { rupees } from "@/lib/format";
 
-type Dash = Record<string, number | boolean>;
+type Dash = Record<string, number | boolean | string | Record<string, unknown>>;
+const n2 = (v: unknown, k: string) => Number((v as Record<string, unknown> | undefined)?.[k] ?? 0);
 
 export default async function Dashboard({ searchParams }: { searchParams: SP }) {
   const sp = await searchParams;
@@ -15,7 +16,14 @@ export default async function Dashboard({ searchParams }: { searchParams: SP }) 
   const n = (k: string) => Number(d[k] ?? 0).toLocaleString("en-IN");
   return (
     <AdminShell counters={counters} email={user.email}>
-      <PageHeader title="Dashboard" subtitle={d.free_mode ? "Free mode is ON" : "Paid mode"} />
+      <PageHeader title="Dashboard" />
+      <div className="mb-5 flex flex-wrap gap-2">
+        <Badge color={d.free_mode ? "green" : "gray"}>Free mode {d.free_mode ? "ON" : "OFF"}</Badge>
+        <Badge color={d.free_plans_for && d.free_plans_for !== "none" ? "blue" : "gray"}>
+          Free plans: {({ none: "Off", organic: "Organic", ads: "Ads", everyone: "Everyone" } as Record<string, string>)[String(d.free_plans_for ?? "none")]}
+        </Badge>
+        <Badge color={d.payments_live ? "green" : "red"}>{d.payments_live ? "Payments live" : "Payments off"}</Badge>
+      </div>
       <Flash ok={one(sp.ok) || undefined} err={one(sp.err) || undefined} />
       {Number(d.pending_channels) > 0 && owner && (
         <Link href="/admin/approvals" className="mb-6 flex items-center justify-between rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 font-semibold text-amber-800">
@@ -28,7 +36,8 @@ export default async function Dashboard({ searchParams }: { searchParams: SP }) 
           <>
             <Stat label="Activated today — verify against bank" value={n("activated_today")} href="/admin/payments?filter=activated_today" tone={Number(d.activated_today) > 0 ? "amber" : undefined} />
             <Stat label="Revenue today" value={rupees(Number(d.revenue_today_paise))} />
-            <Stat label="Revenue (30 days)" value={rupees(Number(d.revenue_30d_paise))} />
+            <Stat label="Revenue this month" value={rupees(Number(d.revenue_month_paise))} />
+            <Stat label="Free plans claimed" value={`organic ${n2(d.free_claims, "organic")} · ads ${n2(d.free_claims, "ads")}`} href="/admin/payments?source=free_promo" />
             <Stat label="Active Premium" value={n("active_premium")} />
             <Stat label="Payments to verify" value={n("pending_payments")} href="/admin/payments?filter=pending" />
             <Stat label="Access requests" value={n("pending_requests")} href="/admin/requests" />

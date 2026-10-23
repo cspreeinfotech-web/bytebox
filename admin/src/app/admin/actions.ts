@@ -91,12 +91,12 @@ export async function handleReport(form: FormData) {
 
 // ---------------- payments
 export async function markPaid(form: FormData) {
-  await rpc(`/admin/payments?filter=${s(form, "filter") || "all"}`, "admin_mark_paid",
+  await rpc(`/admin/payments?${s(form, "qs")}`, "admin_mark_paid",
     { p_order_id: s(form, "id"), p_utr: s(form, "utr") }, "Payment marked as paid; plan activated.");
 }
 
 export async function revokePayment(form: FormData) {
-  await rpc(`/admin/payments?filter=${s(form, "filter") || "all"}`, "admin_revoke_payment",
+  await rpc(`/admin/payments?${s(form, "qs")}`, "admin_revoke_payment",
     { p_order_id: s(form, "id"), p_reason: s(form, "reason") }, "Payment reversed; plan ended and transaction id blocked.");
 }
 
@@ -107,53 +107,46 @@ export async function setAccess(form: FormData) {
     s(form, "status") === "approved" ? "Full access approved." : "Access updated.");
 }
 
-// ---------------- plans + modes
-export async function toggleFreeMode(form: FormData) {
-  const supabase = await createClient();
+// ---------------- plans + modes (all through validated, audited owner functions)
+const lines = (v: string) => v.split("\n").map((p) => p.trim()).filter(Boolean);
+
+export async function setFreeMode(form: FormData) {
   const on = s(form, "free_mode") === "on";
-  const { error } = await supabase.from("app_mode").update({ free_mode: on, updated_at: new Date().toISOString() }).eq("id", 1);
-  if (error) back("/admin/plans", { err: error.message });
-  revalidatePath("/admin", "layout");
-  back("/admin/plans", { ok: on ? "Free mode is ON — no plans or prices in the app." : "Free mode is OFF — paid plans are back." });
+  await rpc("/admin/plans", "admin_set_free_mode", { p_on: on },
+    on ? "Free mode is ON — no prices or payments in the app." : "Free mode is OFF — paid plans are back.");
 }
 
-function planFields(form: FormData) {
-  return {
-    name: s(form, "name"),
-    price_inr: Number(s(form, "price_inr")),
-    duration_days: Number(s(form, "duration_days")),
-    perks: s(form, "perks").split("\n").map((p) => p.trim()).filter(Boolean),
-    badge: s(form, "badge") || null,
-    position: Number(s(form, "position") || 0),
-    active: s(form, "active") === "on",
-    updated_at: new Date().toISOString(),
-  };
+export async function setFreePlans(form: FormData) {
+  await rpc("/admin/plans", "admin_set_free_plans", { p_for: s(form, "free_plans_for") }, "Free plans updated. The app refreshes within seconds.");
 }
 
 export async function savePlan(form: FormData) {
-  const supabase = await createClient();
-  const { error } = await supabase.from("plans").update(planFields(form)).eq("id", Number(s(form, "id")));
-  if (error) back("/admin/plans", { err: error.message });
-  revalidatePath("/admin/plans");
-  back("/admin/plans", { ok: "Plan saved. The app updates live." });
+  await rpc("/admin/plans", "admin_update_plan", {
+    p_plan_id: Number(s(form, "id")), p_name: s(form, "name"), p_price_inr: Number(s(form, "price_inr")),
+    p_duration_days: Number(s(form, "duration_days")), p_perks: lines(s(form, "perks")), p_badge: s(form, "badge"),
+    p_position: Number(s(form, "position") || 0), p_active: s(form, "active") === "on",
+    p_free_eligible: s(form, "free_eligible") === "on",
+  }, "Plan saved. The app updates live.");
 }
 
 export async function addPlan(form: FormData) {
-  const supabase = await createClient();
-  const { error } = await supabase.from("plans").insert({ code: s(form, "code").toLowerCase(), ...planFields(form) });
-  if (error) back("/admin/plans", { err: error.message });
-  revalidatePath("/admin/plans");
-  back("/admin/plans", { ok: "Plan added." });
+  await rpc("/admin/plans", "admin_create_plan", {
+    p_code: s(form, "code"), p_name: s(form, "name"), p_price_inr: Number(s(form, "price_inr")),
+    p_duration_days: Number(s(form, "duration_days")), p_perks: lines(s(form, "perks")), p_badge: s(form, "badge"),
+    p_position: Number(s(form, "position") || 0), p_active: s(form, "active") === "on",
+    p_free_eligible: s(form, "free_eligible") === "on",
+  }, "Plan added.");
 }
 
-export async function savePaymentSettings(form: FormData) {
-  const supabase = await createClient();
-  const { error } = await supabase.from("payment_settings").update({
-    upi_id: s(form, "upi_id"), payee_name: s(form, "payee_name"), enabled: s(form, "enabled") === "on",
-    activation_mode: s(form, "activation_mode"), updated_at: new Date().toISOString(),
-  }).eq("id", 1);
-  if (error) back("/admin/plans", { err: error.message });
-  back("/admin/plans", { ok: "Payment settings saved." });
+export async function setUpi(form: FormData) {
+  await rpc("/admin/payments", "admin_set_upi", {
+    p_upi_id: s(form, "upi_id"), p_payee_name: s(form, "payee_name"), p_enabled: s(form, "enabled") === "on",
+    p_activation_mode: s(form, "activation_mode"),
+  }, "UPI settings saved. New payments use them immediately.");
+}
+
+export async function clearUpi() {
+  await rpc("/admin/payments", "admin_clear_upi", {}, "UPI ID cleared — payments are paused in the app.");
 }
 
 // ---------------- admins

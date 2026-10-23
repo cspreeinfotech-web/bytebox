@@ -19,7 +19,14 @@ class Payments {
     session.afterAuthHooks.add(flushSavedResults);
   }
 
-  static Future<Json> createOrder(String planCode) async {
+  /// Server copies price, duration and the current UPI account into the order.
+  static Future<Json> createOrder(int planId) async {
+    final r = await db.rpc('create_payment_order', params: {'p_plan_id': planId});
+    return (r as Map).cast<String, dynamic>();
+  }
+
+  /// For orders that only know their plan code (older orders).
+  static Future<Json> createOrderByCode(String planCode) async {
     final r = await db.rpc('create_payment_order', params: {'p_plan_code': planCode});
     return (r as Map).cast<String, dynamic>();
   }

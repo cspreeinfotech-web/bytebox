@@ -73,7 +73,7 @@ jobs:
         run: flutter analyze --no-fatal-infos 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
 
       - name: Test
-        run: flutter test 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+        run: flutter test --exclude-tags screenshots 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
 
       - name: Signing key
         env:
@@ -153,3 +153,31 @@ jobs:
           name: Bytebox-apks
           path: mobile/dist/*
           retention-days: 30
+
+  screenshots:
+    # Renders the Plans screen states with the real widgets and commits the PNGs to the PR branch.
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - name: Render
+        working-directory: mobile
+        run: |
+          flutter pub get
+          flutter test --tags screenshots --update-goldens
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/live-controls
+          git diff --cached --quiet || (git commit -m "Screenshots: Plans screen states" && git push)
