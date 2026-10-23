@@ -65,6 +65,7 @@ class _BootScreenState extends State<BootScreen> {
       setState(() {});
       return;
     }
+    if (!mounted) return;
     if (!session.consentAccepted) await showConsentDialog(context);
     if (!mounted) return;
     Navigator.of(context).pushReplacement(PageRouteBuilder(
