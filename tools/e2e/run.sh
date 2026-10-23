@@ -13,10 +13,18 @@ if [ "$FLAVOR" = play ]; then
 else
   args+=(--dart-define=APK_REFERRER="$ADS_REFERRER" --dart-define=ANDROID_APP_ID=com.bytebox.app)
 fi
+# Build first, then stop Gradle/Kotlin daemons so the emulator keeps enough host memory.
+build_args=(); for a in "${args[@]}"; do case "$a" in --driver=*|--target=*|-d|emulator-5554) ;; *) build_args+=("$a");; esac; done
+flutter build apk --debug --target=integration_test/e2e_test.dart "${build_args[@]}" || exit 1
+(cd android && ./gradlew --stop >/dev/null 2>&1 || true)
+pkill -f KotlinCompileDaemon 2>/dev/null || true
+free -m || true
+APK=$(ls build/app/outputs/flutter-apk/app-$FLAVOR-debug.apk)
+args+=(--use-application-binary "$APK")
 adb logcat -c || true
 adb logcat -v time > "../logcat-$DEVICE-$FLAVOR.txt" 2>&1 &
 LOGCAT=$!
-(while true; do echo "$(date +%T) $(adb shell cat /proc/meminfo 2>/dev/null | head -3 | tr -s ' ' | tr '\n' ' ')" >> "../mem-$DEVICE-$FLAVOR.txt"; sleep 10; done) &
+(while true; do echo "$(date +%T) host:$(free -m | awk '/Mem:/{print $7}')MB-avail guest: $(adb shell cat /proc/meminfo 2>/dev/null | head -3 | tr -s ' ' | tr '\n' ' ')" >> "../mem-$DEVICE-$FLAVOR.txt"; sleep 10; done) &
 MEM=$!
 mkdir -p build/screenshots
 flutter drive "${args[@]}" 2>&1 | tee "../e2e-$DEVICE-$FLAVOR.log" | while IFS= read -r line; do
