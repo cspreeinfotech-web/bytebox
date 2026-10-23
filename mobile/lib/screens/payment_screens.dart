@@ -190,8 +190,8 @@ class _PaymentStatusScreenState extends State<PaymentStatusScreen> with WidgetsB
 
   Widget _row(String label, Widget value, {String? copy}) => Row(children: [
         Text(label, style: const TextStyle(color: AppColors.textMuted)),
-        const Spacer(),
-        value,
+        const SizedBox(width: 12),
+        Expanded(child: Align(alignment: Alignment.centerRight, child: value)),
         if (copy != null)
           IconButton(
             visualDensity: VisualDensity.compact,

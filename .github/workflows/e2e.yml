@@ -142,7 +142,7 @@ jobs:
         if: always()
         run: |
           [ -d logs ] || exit 0
-          tmp=$(mktemp -d); cp -r logs/. "$tmp"/
+          tmp=$(mktemp -d); cp -r logs/. "$tmp"/; [ -d raw ] && mkdir -p "$tmp/screens" && cp raw/*.png "$tmp/screens/" 2>/dev/null || true
           git fetch origin e2e-logs 2>/dev/null && git checkout -q -B e2e-logs origin/e2e-logs || git checkout -q --orphan e2e-logs
           git rm -rq --cached . 2>/dev/null || true
           find . -maxdepth 1 ! -name .git ! -name . -exec rm -rf {} + 2>/dev/null || true

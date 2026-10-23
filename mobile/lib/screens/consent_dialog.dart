@@ -31,7 +31,11 @@ class _ConsentDialogState extends State<_ConsentDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Row(children: [BrandMark(size: 32), SizedBox(width: 12), Text('Welcome to Bytebox')]),
+      title: const Row(children: [
+        BrandMark(size: 32),
+        SizedBox(width: 12),
+        Flexible(child: Text('Welcome to Bytebox', overflow: TextOverflow.ellipsis)),
+      ]),
       content: Text.rich(
         TextSpan(
           style: const TextStyle(color: AppColors.textMuted, height: 1.5),
