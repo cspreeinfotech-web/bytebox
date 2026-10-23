@@ -1,0 +1,183 @@
+name: e2e
+
+# Seeds labelled demo data, runs the app on Android emulators (phone + 7" + 10" tablets),
+# captures the E2E evidence + Play screenshots, commits them to the PR branch, then removes the demo data.
+on:
+  pull_request:
+    paths: ["tools/e2e/**", "mobile/integration_test/**", ".github/workflows/e2e.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: e2e
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: "3.47.7"
+  ADS_REFERRER: "utm_source=meta&utm_medium=paid_social&utm_campaign=apk_download"
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      password: ${{ steps.seed.outputs.DEMO_PASSWORD }}
+      viewer: ${{ steps.seed.outputs.DEMO_VIEWER_EMAIL }}
+      title: ${{ steps.seed.outputs.DEMO_PREMIUM_TITLE }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tools (ffmpeg, pillow)
+        timeout-minutes: 6
+        run: |
+          for i in 1 2 3; do
+            timeout 150 bash -c 'sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null' && break
+            echo "apt attempt $i timed out/failed, retrying"; sleep 5
+          done
+          command -v ffmpeg
+          pip install -q pillow
+      - name: Service key (Management API, never printed)
+        env:
+          TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+        run: |
+          key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
+            | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
+          echo "::add-mask::$key"
+          echo "SERVICE_KEY=$key" >> "$GITHUB_ENV"
+      - id: seed
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        run: |
+          python3 tools/e2e/seed.py clean
+          python3 tools/e2e/seed.py seed | tee -a "$GITHUB_OUTPUT"
+
+  run:
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { device: phone, profile: pixel_tablet, flavor: direct }
+          - { device: phone, profile: pixel_tablet, flavor: play }
+          - { device: tablet7, profile: pixel_tablet, flavor: play }
+          - { device: tablet10, profile: pixel_tablet, flavor: play }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with: { distribution: temurin, java-version: "21", cache: gradle, cache-dependency-path: "mobile/android/**/*.gradle*" }
+      - uses: subosito/flutter-action@v2
+        with: { flutter-version: "${{ env.FLUTTER_VERSION }}", channel: stable, cache: true }
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+      - name: Prepare
+        working-directory: mobile
+        run: |
+          flutter pub get
+          dart run flutter_launcher_icons
+          dart run flutter_native_splash:create
+      - name: Run on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          DEMO_VIEWER_EMAIL: ${{ needs.seed.outputs.viewer }}
+          DEMO_PASSWORD: ${{ needs.seed.outputs.password }}
+        with:
+          api-level: 33
+          cores: 3
+          target: google_apis
+          arch: x86_64
+          profile: ${{ matrix.profile }}
+          ram-size: 4096M
+          heap-size: 576M
+          disk-size: 6000M
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot -no-metrics
+          script: bash tools/e2e/run.sh ${{ matrix.device }} ${{ matrix.flavor }}
+      - name: Report failure
+        if: failure()
+        run: |
+          f=$(ls e2e-*.log 2>/dev/null | head -1); [ -n "$f" ] || exit 0
+          msg=$(grep -iE -B3 -A10 'error|exception|failed|timed out' "$f" | tail -n 120 || true)
+          [ -z "$msg" ] && msg=$(tail -n 80 "$f")
+          msg="${msg//'%'/'%25'}"; msg="${msg//$'\n'/'%0A'}"; echo "::error title=e2e ${{ matrix.device }}/${{ matrix.flavor }}::$msg"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs-${{ matrix.device }}-${{ matrix.flavor }}
+          path: |
+            e2e-*.log
+            logcat-*.txt
+            mem-*.txt
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shots-${{ matrix.device }}-${{ matrix.flavor }}
+          path: mobile/build/screenshots/*.png
+          if-no-files-found: ignore
+
+  publish:
+    needs: [seed, run]
+    if: always() && needs.seed.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/download-artifact@v4
+        with: { path: shots, pattern: "shots-*" }
+      - name: Merge screenshots (play run wins for shared phone names)
+        run: |
+          mkdir -p raw
+          for d in shots/shots-phone-direct shots/shots-tablet7-play shots/shots-tablet10-play shots/shots-phone-play; do
+            [ -d "$d" ] && cp "$d"/*.png raw/ 2>/dev/null || true
+          done
+          ls raw | wc -l
+      - run: pip install -q pillow
+      - name: Frame screenshots
+        run: python3 tools/e2e/frame.py raw
+      - name: Commit screenshots to the branch
+        if: needs.run.result == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/store docs/e2e
+          git diff --cached --quiet || git commit -m "E2E: screenshots from emulator run [skip ci]"
+          git push
+      - uses: actions/download-artifact@v4
+        if: always()
+        with: { path: logs, pattern: "logs-*", merge-multiple: true }
+      - name: Push run logs to branch e2e-logs (for debugging)
+        if: always()
+        run: |
+          [ -d logs ] || exit 0
+          tmp=$(mktemp -d); cp -r logs/. "$tmp"/; [ -d raw ] && mkdir -p "$tmp/screens" && cp raw/*.png "$tmp/screens/" 2>/dev/null || true
+          git fetch origin e2e-logs 2>/dev/null && git checkout -q -B e2e-logs origin/e2e-logs || git checkout -q --orphan e2e-logs
+          git rm -rq --cached . 2>/dev/null || true
+          find . -maxdepth 1 ! -name .git ! -name . -exec rm -rf {} + 2>/dev/null || true
+          mkdir -p run-${{ github.run_id }} && cp -r "$tmp"/. run-${{ github.run_id }}/
+          git add run-${{ github.run_id }}
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "E2E logs ${{ github.run_id }}" && git push -q origin e2e-logs
+          git checkout -q ${{ github.head_ref || github.ref_name }}
+      - name: Service key
+        if: always()
+        env:
+          TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+        run: |
+          key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
+            | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
+          echo "::add-mask::$key"
+          echo "SERVICE_KEY=$key" >> "$GITHUB_ENV"
+      - name: Remove demo data
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        run: python3 tools/e2e/seed.py clean
