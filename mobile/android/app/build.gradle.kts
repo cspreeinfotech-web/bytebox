@@ -37,13 +37,11 @@ android {
             dimension = "store"
             applicationId = "com.bytebox.app"
             manifestPlaceholders["loginScheme"] = "com.bytebox.app"
-            resValue("string", "app_name", "Bytebox")
         }
         create("play") {
             dimension = "store"
             applicationId = "com.bytebox.play"
             manifestPlaceholders["loginScheme"] = "com.bytebox.play"
-            resValue("string", "app_name", "Bytebox")
         }
     }
 
