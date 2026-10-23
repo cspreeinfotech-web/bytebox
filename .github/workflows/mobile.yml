@@ -53,7 +53,7 @@ jobs:
 
       - name: Theme check — colours only in lib/theme.dart
         run: |
-          if grep -rnE "Color\(0x|Colors\.[a-z]" lib --include=*.dart | grep -v "^lib/theme.dart"; then
+          if grep -rnE "Color\(0x|(^|[^A-Za-z])Colors\.[a-z]" lib --include=*.dart | grep -v "^lib/theme.dart"; then
             echo "::error::Hard-coded colours found outside lib/theme.dart"; exit 1
           fi
 
