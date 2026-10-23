@@ -59,6 +59,26 @@ class _PlansScreenState extends State<PlansScreen> {
       final ok = await requireLogin(context, message: 'Log in or create an account to buy a plan.');
       if (!ok || !mounted) return; // after login we come back here with the plan selected and continue
     }
+    if (AppConfig.playStore) {
+      // User Choice Billing (India): the user picks Google Play or UPI.
+      final choice = await showModalBottomSheet<String>(
+        context: context,
+        builder: (c) => SafeArea(
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            const ListTile(title: Text('Choose how to pay', style: TextStyle(fontWeight: FontWeight.w700))),
+            ListTile(leading: const Icon(Icons.shop_outlined), title: const Text('Pay with Google Play'),
+                onTap: () => Navigator.pop(c, 'play')),
+            ListTile(leading: const Icon(Icons.account_balance_outlined), title: const Text('Pay with UPI'),
+                onTap: () => Navigator.pop(c, 'upi')),
+          ]),
+        ),
+      );
+      if (choice == null || !mounted) return;
+      if (choice == 'play') {
+        showSnack(context, 'Google Play billing is not available in this version yet. Please use UPI.');
+        return;
+      }
+    }
     setState(() => _opening = true);
     try {
       final order = await Payments.createOrder(_selected!);

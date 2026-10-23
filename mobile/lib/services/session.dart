@@ -44,6 +44,7 @@ class AppSession extends ChangeNotifier {
   bool consentAccepted = false;
   Map<String, dynamic> status = {};
   bool freeMode = false;
+  bool playBilling = false; // User Choice Billing (Play build) — server flag, OFF by default
   List<Map<String, dynamic>> plans = [];
   RealtimeChannel? _live;
 
@@ -67,8 +68,9 @@ class AppSession extends ChangeNotifier {
   int get usedBytes => (status['used_bytes'] as num?)?.toInt() ?? 0;
   bool get ownsApprovedChannel => status['owns_approved_channel'] == true;
 
-  /// Free experience: free mode switched on by the owner, or the Google Play build.
-  bool get noPayments => freeMode || AppConfig.playStore;
+  /// Free experience: free mode switched on by the owner, or the Google Play build
+  /// (unless User Choice Billing has been switched on for it).
+  bool get noPayments => freeMode || (AppConfig.playStore && !playBilling);
 
   // --------------------------------------------------------------------- boot
   Future<void> boot() async {
@@ -134,8 +136,9 @@ class AppSession extends ChangeNotifier {
   }
 
   Future<void> _loadMode() async {
-    final row = await db.from('app_mode').select('free_mode').eq('id', 1).maybeSingle();
+    final row = await db.from('app_mode').select('free_mode, play_billing_enabled').eq('id', 1).maybeSingle();
     freeMode = row?['free_mode'] == true;
+    playBilling = row?['play_billing_enabled'] == true;
   }
 
   Future<void> loadPlans() async {
