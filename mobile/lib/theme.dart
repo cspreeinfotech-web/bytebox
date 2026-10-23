@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-/// THE ONLY place colours are defined. Theme A · Royal Violet.
+/// THE ONLY place colours are defined. Bytebox brand · Electric Blue on Midnight Navy (from the app icon).
 class AppColors {
-  static const primary = Color(0xFF7C5CFF);
-  static const accent = Color(0xFFFF5CA8);
-  static const background = Color(0xFF0A0A14);
-  static const surface = Color(0xFF14142A);
-  static const surfaceHigh = Color(0xFF1E1E38);
-  static const outline = Color(0xFF2E2E52);
-  static const text = Color(0xFFF4F3FF);
-  static const textMuted = Color(0xFF9C9AC0);
+  static const primary = Color(0xFF1E8CFF);
+  static const accent = Color(0xFF19D3FF);
+  static const background = Color(0xFF050A1A);
+  static const surface = Color(0xFF0D1530);
+  static const surfaceHigh = Color(0xFF141E40);
+  static const outline = Color(0xFF233158);
+  static const text = Color(0xFFEEF4FF);
+  static const textMuted = Color(0xFF8D9AC2);
   static const premium = Color(0xFFFFC94D); // gold — Premium only
   static const success = Color(0xFF34D399);
   static const warning = Color(0xFFFBBF24);
@@ -19,13 +19,14 @@ class AppColors {
   static const onPrimary = Color(0xFFFFFFFF);
   static const transparent = Color(0x00000000);
 
+  static const deepBlue = Color(0xFF1240F0);
   static const brandGradient = LinearGradient(
-    colors: [primary, accent],
+    colors: [accent, primary, deepBlue],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   static const premiumGradient = LinearGradient(
-    colors: [Color(0xFF3A2A8C), primary, accent],
+    colors: [Color(0xFF0B1A4A), deepBlue, accent],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

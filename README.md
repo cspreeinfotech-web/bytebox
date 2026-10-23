@@ -17,7 +17,7 @@ Guest-first Android app for personal **cloud storage** plus creator **video chan
 | SHORT_CODE | BB |
 | DIRECT_PACKAGE | com.bytebox.app |
 | PLAY_PACKAGE | com.bytebox.play |
-| THEME | A — Royal Violet |
+| THEME | Bytebox Electric Blue on Midnight Navy (#1E8CFF / #19D3FF on #050A1A) — from the brand icon |
 | START_MODE | PAID |
 | Supabase project ref | `riynqwuaadnccvwamhoa` (Mumbai, ap-south-1) |
 

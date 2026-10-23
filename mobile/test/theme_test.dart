@@ -3,7 +3,7 @@ import 'package:bytebox/widgets/common.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('theme uses Royal Violet tokens', () {
+  test('theme uses Bytebox brand tokens', () {
     final t = AppTheme.dark();
     expect(t.colorScheme.primary, AppColors.primary);
     expect(t.scaffoldBackgroundColor, AppColors.background);
