@@ -34,7 +34,7 @@ class _ConsentDialogState extends State<_ConsentDialog> {
       title: const Row(children: [
         BrandMark(size: 32),
         SizedBox(width: 12),
-        Flexible(child: Text('Welcome to Bytebox', overflow: TextOverflow.ellipsis)),
+        Flexible(child: Text('Welcome to Bytebox')),
       ]),
       content: Text.rich(
         TextSpan(

@@ -123,10 +123,17 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref_name }}
       - uses: actions/download-artifact@v4
-        with: { path: raw, pattern: "shots-*", merge-multiple: true }
+        with: { path: shots, pattern: "shots-*" }
+      - name: Merge screenshots (play run wins for shared phone names)
+        run: |
+          mkdir -p raw
+          for d in shots/shots-phone-direct shots/shots-tablet7-play shots/shots-tablet10-play shots/shots-phone-play; do
+            [ -d "$d" ] && cp "$d"/*.png raw/ 2>/dev/null || true
+          done
+          ls raw | wc -l
       - run: pip install -q pillow
       - name: Frame screenshots
-        run: ls raw 2>/dev/null && python3 tools/e2e/frame.py raw || echo "no screenshots"
+        run: python3 tools/e2e/frame.py raw
       - name: Commit screenshots to the branch
         if: needs.run.result == 'success'
         run: |

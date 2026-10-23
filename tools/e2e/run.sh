@@ -26,8 +26,15 @@ args+=(--use-application-binary "$APK" --no-enable-impeller)  # Impeller GLES cr
 case "$DEVICE" in
   phone)   adb shell wm size 1080x1920; adb shell wm density 420 ;;
   tablet7) adb shell wm size 1200x1920; adb shell wm density 320 ;;
+  tablet10) adb shell wm size 1600x2560; adb shell wm density 320 ;;
 esac
 adb shell wm size; adb shell wm density
+# Portrait, no system launcher (its ANR dialog and tablet taskbar otherwise land in screenshots).
+adb shell settings put system accelerometer_rotation 0 || true
+adb shell settings put system user_rotation 0 || true
+adb shell settings put global hide_error_dialogs 1 || true
+adb shell pm disable-user --user 0 com.google.android.apps.nexuslauncher || true
+adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS || true
 adb logcat -c || true
 adb logcat -v time > "../logcat-$DEVICE-$FLAVOR.txt" 2>&1 &
 LOGCAT=$!
@@ -37,6 +44,7 @@ mkdir -p build/screenshots
 flutter drive "${args[@]}" 2>&1 | tee "../e2e-$DEVICE-$FLAVOR.log" | while IFS= read -r line; do
   case "$line" in
     *E2E_SHOT:*) name=${line##*E2E_SHOT:}; name=${name%%[[:space:]]*}
+                 adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS >/dev/null 2>&1 || true
                  adb exec-out screencap -p > "build/screenshots/$name.png" && echo "captured $name" ;;
   esac
 done

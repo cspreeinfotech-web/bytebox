@@ -52,6 +52,11 @@ def main(raw):
     os.makedirs(E2E, exist_ok=True)
     for path in sorted(glob.glob(os.path.join(raw, "*.png"))):
         base = os.path.basename(path)[:-4]
+        try:
+            Image.open(path).load()
+        except Exception as e:  # truncated capture — skip rather than abort the batch
+            print("skip unreadable", base, e)
+            continue
         device, _, name = base.partition("_")
         if name.startswith("e2e-"):
             Image.open(path).save(os.path.join(E2E, f"{device}-{name}.png"))
