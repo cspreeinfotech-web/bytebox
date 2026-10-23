@@ -7,6 +7,7 @@ import 'config.dart';
 import 'screens/consent_dialog.dart';
 import 'screens/home_shell.dart';
 import 'screens/login_screen.dart';
+import 'services/payments.dart';
 import 'services/session.dart';
 import 'theme.dart';
 import 'widgets/common.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (AppConfig.isConfigured) {
     await Supabase.initialize(url: AppConfig.supabaseUrl, anonKey: AppConfig.supabaseKey);
+    Payments.install();
   }
   runApp(const Bytebox());
 }
