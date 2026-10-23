@@ -1,0 +1,143 @@
+name: mobile
+
+on:
+  pull_request:
+    paths: ["mobile/**", ".github/workflows/mobile.yml"]
+  push:
+    branches: [main]
+    paths: ["mobile/**", ".github/workflows/mobile.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: "3.47.7"
+  DIRECT_PACKAGE: com.bytebox.app
+  PLAY_PACKAGE: com.bytebox.play
+  # SHA-256 of the permanent release certificate (public value, see docs/setup.md)
+  RELEASE_CERT_SHA256: 8c8cf97a74c01f7dd03c46042880d1b977f8a1d7b7e19333b58aef61dcbf090d
+  ADS_REFERRER: "utm_source=meta&utm_medium=paid_social&utm_campaign=apk_download"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+          cache-dependency-path: mobile/android/**/*.gradle*
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Pub get
+        run: flutter pub get
+
+      - name: Generate launcher icons + splash (all flavors)
+        run: |
+          dart run flutter_launcher_icons
+          dart run flutter_native_splash:create
+
+      - name: Theme check — colours only in lib/theme.dart
+        run: |
+          if grep -rnE "Color\(0x|Colors\.[a-z]" lib --include=*.dart | grep -v "^lib/theme.dart"; then
+            echo "::error::Hard-coded colours found outside lib/theme.dart"; exit 1
+          fi
+
+      - name: UPI manifest check (source)
+        run: |
+          m=android/app/src/main/AndroidManifest.xml
+          for p in com.google.android.apps.nbu.paisa.user com.phonepe.app net.one97.paytm in.org.npci.upiapp \
+                   in.amazon.mShop.android.shopping com.dreamplug.androidapp com.mobikwik_new \
+                   com.csam.icici.bank.imobile com.bandhan.mbanking; do
+            grep -q "android:name=\"$p\"" $m || { echo "::error::missing <queries> package $p"; exit 1; }
+          done
+          grep -q 'android:scheme="upi"' $m || { echo "::error::missing upi scheme query"; exit 1; }
+          grep -q 'android:scheme="mailto"' $m || { echo "::error::missing mailto query"; exit 1; }
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        run: flutter test
+
+      - name: Signing key
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KS_B64" ]; then
+            echo "::warning::ANDROID_KEYSTORE_BASE64 not set — building with the debug key"; exit 0
+          fi
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          cat > android/key.properties <<EOF
+          storeFile=$RUNNER_TEMP/release.jks
+          storePassword=$KS_PASS
+          keyAlias=$KEY_ALIAS
+          keyPassword=$KEY_PASS
+          EOF
+          sed -i 's/^ *//' android/key.properties
+          echo "SIGNED=1" >> "$GITHUB_ENV"
+
+      - name: Build APKs (direct flavor) + AAB (play flavor)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          common=(--release --dart-define=SUPABASE_URL="$SUPABASE_URL" --dart-define=SUPABASE_PUBLISHABLE_KEY="$SUPABASE_KEY")
+          if [ -n "${{ vars.WEBSITE_URL }}" ]; then common+=(--dart-define=WEBSITE_URL="${{ vars.WEBSITE_URL }}"); fi
+          flutter build apk --flavor direct "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE
+          cp build/app/outputs/flutter-apk/app-direct-release.apk "$RUNNER_TEMP/Bytebox.apk"
+          flutter build apk --flavor direct "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE \
+            --dart-define=APK_REFERRER="$ADS_REFERRER"
+          cp build/app/outputs/flutter-apk/app-direct-release.apk "$RUNNER_TEMP/Bytebox-ads.apk"
+          flutter build appbundle --flavor play "${common[@]}" --dart-define=PLAY_STORE=true \
+            --dart-define=ANDROID_APP_ID=$PLAY_PACKAGE
+          cp build/app/outputs/bundle/playRelease/app-play-release.aab "$RUNNER_TEMP/Bytebox-play.aab"
+          mkdir -p dist && cp "$RUNNER_TEMP"/Bytebox* dist/ && ls -la dist
+
+      - name: Verify package names, callback schemes, UPI queries, signing
+        run: |
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          for apk in dist/Bytebox.apk dist/Bytebox-ads.apk; do
+            "$BT/aapt2" dump badging "$apk" | grep -q "package: name='$DIRECT_PACKAGE'" \
+              || { echo "::error::$apk package is not $DIRECT_PACKAGE"; exit 1; }
+            xml=$("$BT/aapt2" dump xmltree --file AndroidManifest.xml "$apk")
+            echo "$xml" | grep -q "\"$DIRECT_PACKAGE\" (Raw: \"$DIRECT_PACKAGE\")" || true
+            echo "$xml" | grep -A1 'A: http://schemas.android.com/apk/res/android:scheme' | grep -q "$DIRECT_PACKAGE" \
+              || { echo "::error::$apk missing $DIRECT_PACKAGE://login-callback"; exit 1; }
+            echo "$xml" | grep -q 'com.bandhan.mbanking' || { echo "::error::$apk missing UPI <queries>"; exit 1; }
+            if [ "$SIGNED" = "1" ]; then
+              d=$("$BT/apksigner" verify --print-certs "$apk" | grep -m1 'SHA-256 digest' | awk '{print $NF}')
+              [ "$d" = "$RELEASE_CERT_SHA256" ] || { echo "::error::$apk not signed with the release key ($d)"; exit 1; }
+            fi
+          done
+          # AAB: protobuf manifest — check strings
+          unzip -p dist/Bytebox-play.aab base/manifest/AndroidManifest.xml > "$RUNNER_TEMP/play-manifest.pb"
+          grep -aq "$PLAY_PACKAGE" "$RUNNER_TEMP/play-manifest.pb" || { echo "::error::AAB package is not $PLAY_PACKAGE"; exit 1; }
+          grep -aq "com.bandhan.mbanking" "$RUNNER_TEMP/play-manifest.pb" || { echo "::error::AAB missing UPI <queries>"; exit 1; }
+          if grep -aq "com.google.android.gms.permission.AD_ID" "$RUNNER_TEMP/play-manifest.pb"; then
+            echo "::error::AAB must not request AD_ID"; exit 1
+          fi
+          echo "All artifact checks passed."
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Bytebox-apks
+          path: mobile/dist/*
+          retention-days: 30
