@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DocPage } from "@/components/site";
 import { SUPPORT_EMAIL } from "@/lib/env";
 
-export const metadata: Metadata = { title: "Terms, Refunds & Community Guidelines" };
+export const metadata: Metadata = { title: "Terms, Refunds and Community Guidelines" };
 
 export default function Terms() {
   return (
