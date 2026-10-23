@@ -77,23 +77,19 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          DEMO_VIEWER_EMAIL: ${{ needs.seed.outputs.viewer }}
+          DEMO_PASSWORD: ${{ needs.seed.outputs.password }}
         with:
           api-level: 34
           target: google_apis
           arch: x86_64
           profile: ${{ matrix.profile }}
+          ram-size: 4096M
+          heap-size: 576M
+          disk-size: 6000M
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          working-directory: mobile
-          script: >-
-            flutter drive --driver=test_driver/integration_test.dart --target=integration_test/e2e_test.dart
-            --flavor ${{ matrix.flavor }} -d emulator-5554
-            --dart-define=SUPABASE_URL=$SUPABASE_URL --dart-define=SUPABASE_PUBLISHABLE_KEY=$SUPABASE_KEY
-            --dart-define=DEMO_VIEWER_EMAIL=${{ needs.seed.outputs.viewer }}
-            --dart-define=DEMO_PASSWORD=${{ needs.seed.outputs.password }}
-            --dart-define=SHOT_PREFIX=${{ matrix.device }}
-            ${{ matrix.flavor == 'play' && '--dart-define=PLAY_STORE=true --dart-define=ANDROID_APP_ID=com.bytebox.play' || format('--dart-define=APK_REFERRER={0} --dart-define=ANDROID_APP_ID=com.bytebox.app', env.ADS_REFERRER) }}
-            2>&1 | tee ../e2e-${{ matrix.device }}-${{ matrix.flavor }}.log; exit ${PIPESTATUS[0]}
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 4096
+          script: bash tools/e2e/run.sh ${{ matrix.device }} ${{ matrix.flavor }}
       - name: Report failure
         if: failure()
         run: |
