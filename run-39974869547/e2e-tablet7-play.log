@@ -1,0 +1,86 @@
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...      1,156ms
+I/Choreographer( 7366): Skipped 43 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+I/om.bytebox.play( 7366): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:45355/NcGf2eHoTR8=/
+VMServiceFlutterDriver: Isolate found with number: 6843339659201335
+VMServiceFlutterDriver: Isolate 6843339659201335 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 7366): 00:00 +0: Bytebox end-to-end
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter ( 7366): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/ProfileInstaller( 7366): Installing profile for com.bytebox.play
+D/EGL_emulation( 7366): app_time_stats: avg=500.12ms min=210.58ms max=1292.52ms count=5
+D/EGL_emulation( 7366): app_time_stats: avg=358.17ms min=313.06ms max=445.61ms count=3
+W/OnBackInvokedCallback( 7366): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7366): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/EGL_emulation( 7366): app_time_stats: avg=118.56ms min=19.81ms max=316.88ms count=9
+I/flutter ( 7366): E2E_SHOT:tablet7_e2e-01-consent
+D/EGL_emulation( 7366): app_time_stats: avg=117.45ms min=107.10ms max=133.30ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=115.77ms min=108.40ms max=118.89ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=116.71ms min=114.54ms max=119.40ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=292.66ms min=27.50ms max=721.29ms count=4
+D/EGL_emulation( 7366): app_time_stats: avg=4596.16ms min=47.25ms max=9145.07ms count=2
+W/OnBackInvokedCallback( 7366): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7366): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 7366): app_time_stats: avg=177.44ms min=37.69ms max=400.99ms count=6
+D/InputMethodManager( 7366): showSoftInput() view=io.flutter.embedding.android.FlutterView{f2de53b VFE...... .F....ID 0,0-1200,1800 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputMethodManager( 7366): showSoftInput() view=io.flutter.embedding.android.FlutterView{f2de53b VFE...... .F....ID 0,0-1200,1800 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 7366): app_time_stats: avg=1450.12ms min=1450.12ms max=1450.12ms count=1
+I/AssistStructure( 7366): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
+D/EGL_emulation( 7366): app_time_stats: avg=184.88ms min=32.91ms max=409.50ms count=6
+D/InputMethodManager( 7366): showSoftInput() view=io.flutter.embedding.android.FlutterView{f2de53b VFE...... .F...... 0,0-1200,1800 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputMethodManager( 7366): showSoftInput() view=io.flutter.embedding.android.FlutterView{f2de53b VFE...... .F...... 0,0-1200,1800 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/AssistStructure( 7366): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+D/EGL_emulation( 7366): app_time_stats: avg=288.07ms min=129.96ms max=360.64ms count=4
+D/InsetsController( 7366): show(ime(), fromIme=true)
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/EGL_emulation( 7366): app_time_stats: avg=2064.75ms min=2064.75ms max=2064.75ms count=1
+D/InsetsController( 7366): show(ime(), fromIme=true)
+D/InsetsController( 7366): show(ime(), fromIme=true)
+D/InsetsController( 7366): show(ime(), fromIme=true)
+D/InsetsController( 7366): show(ime(), fromIme=true)
+D/EGL_emulation( 7366): app_time_stats: avg=297.53ms min=104.11ms max=538.74ms count=4
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/EGL_emulation( 7366): app_time_stats: avg=802.67ms min=40.33ms max=1565.01ms count=2
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/FlutterJNI( 7366): Sending viewport metrics to the engine.
+D/EGL_emulation( 7366): app_time_stats: avg=328.79ms min=279.66ms max=408.01ms count=4
+D/EGL_emulation( 7366): app_time_stats: avg=126.87ms min=114.03ms max=169.03ms count=8
+D/EGL_emulation( 7366): app_time_stats: avg=116.63ms min=113.27ms max=118.42ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=116.60ms min=114.35ms max=119.43ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=116.66ms min=113.01ms max=118.30ms count=9
+I/flutter ( 7366): E2E_SHOT:tablet7_6-profile
+D/EGL_emulation( 7366): app_time_stats: avg=116.70ms min=109.50ms max=125.36ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=116.60ms min=113.01ms max=119.03ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=116.85ms min=110.81ms max=122.23ms count=9
+D/EGL_emulation( 7366): app_time_stats: avg=169.04ms min=40.34ms max=639.59ms count=6
+Unhandled exception:
+DriverError: Failed to fulfill RequestData due to remote error
+Original error: ext.flutter.driver: (112) Service has disappeared
+Original stack trace:
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:280:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1962:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1974:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1913:14)
+#4      VMServiceFlutterDriver.sendCommand (package:flutter_driver/src/driver/vmservice_driver.dart:327:12)
+#5      FlutterDriver.requestData (package:flutter_driver/src/driver/driver.dart:585:13)
+#6      integrationDriver (package:integration_test/integration_test_driver_extended.dart:87:38)
+<asynchronous suspension>
+
+
+#0      VMServiceFlutterDriver.sendCommand (package:flutter_driver/src/driver/vmservice_driver.dart:340:7)
+<asynchronous suspension>
+#1      FlutterDriver.requestData (package:flutter_driver/src/driver/driver.dart:585:7)
+<asynchronous suspension>
+#2      integrationDriver (package:integration_test/integration_test_driver_extended.dart:87:25)
+<asynchronous suspension>
+Failed to stop app
+adb uninstall failed: ProcessException: Process exited abnormally with exit code 1:
+adb: device offline
+  Command: /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 uninstall com.bytebox.play
+Failed to uninstall app

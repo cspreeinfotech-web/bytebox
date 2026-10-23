@@ -1,27 +1,21 @@
-Installing build/app/outputs/flutter-apk/app-play-debug.apk...        910ms
-D/FlutterJNI( 6996): Sending viewport metrics to the engine.
-I/om.bytebox.play( 6996): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
-VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:37235/ZcCXitx3AD8=/
-VMServiceFlutterDriver: Isolate found with number: 289766403685391
-VMServiceFlutterDriver: Isolate 289766403685391 is runnable.
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...      2,172ms
+D/FlutterJNI( 6956): Sending viewport metrics to the engine.
+I/om.bytebox.play( 6956): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:44551/BW_SraYfJ2o=/
+VMServiceFlutterDriver: Isolate found with number: 1675075661960307
+VMServiceFlutterDriver: Isolate 1675075661960307 is runnable.
 VMServiceFlutterDriver: Isolate is paused at start.
 VMServiceFlutterDriver: Attempting to resume isolate
-I/flutter ( 6996): 00:00 +0: Bytebox end-to-end
-I/flutter ( 6996): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+I/flutter ( 6956): 00:00 +0: Bytebox end-to-end
+I/flutter ( 6956): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
 VMServiceFlutterDriver: Connected to Flutter application.
-D/EGL_emulation( 6996): app_time_stats: avg=445.96ms min=200.42ms max=1038.86ms count=5
-D/ProfileInstaller( 6996): Installing profile for com.bytebox.play
-D/EGL_emulation( 6996): app_time_stats: avg=335.14ms min=315.54ms max=372.72ms count=3
-D/EGL_emulation( 6996): app_time_stats: avg=298.57ms min=244.34ms max=319.59ms count=4
-W/OnBackInvokedCallback( 6996): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 6996): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 6956): app_time_stats: avg=358.42ms min=224.69ms max=628.00ms count=5
+D/ProfileInstaller( 6956): Installing profile for com.bytebox.play
+D/EGL_emulation( 6956): app_time_stats: avg=316.38ms min=314.69ms max=317.94ms count=4
+W/OnBackInvokedCallback( 6956): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 6956): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 6956): app_time_stats: avg=252.59ms min=13.96ms max=368.52ms count=4
 VMServiceFlutterDriver: request_data message is taking a long time to complete...
-D/EGL_emulation( 6996): app_time_stats: avg=209.50ms min=14.27ms max=371.00ms count=5
-I/flutter ( 6996): E2E_SHOT:tablet7_e2e-01-consent
-D/EGL_emulation( 6996): app_time_stats: avg=117.32ms min=115.26ms max=123.14ms count=9
-D/EGL_emulation( 6996): app_time_stats: avg=116.03ms min=110.71ms max=127.60ms count=9
-D/EGL_emulation( 6996): app_time_stats: avg=116.70ms min=112.73ms max=122.00ms count=9
-D/EGL_emulation( 6996): app_time_stats: avg=168.91ms min=113.35ms max=530.27ms count=8
 Unhandled exception:
 DriverError: Failed to fulfill RequestData due to remote error
 Original error: ext.flutter.driver: (112) Service has disappeared

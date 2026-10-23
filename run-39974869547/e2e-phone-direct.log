@@ -1,20 +1,20 @@
-Installing build/app/outputs/flutter-apk/app-play-debug.apk...      1,232ms
-I/Choreographer( 7171): Skipped 50 frames!  The application may be doing too much work on its main thread.
-D/FlutterJNI( 7171): Sending viewport metrics to the engine.
-I/om.bytebox.play( 7171): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
-VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:36995/zHW3x6Zz57Y=/
-VMServiceFlutterDriver: Isolate found with number: 3773023666843471
-VMServiceFlutterDriver: Isolate 3773023666843471 is runnable.
+Installing build/app/outputs/flutter-apk/app-direct-debug.apk...         3.1s
+I/Choreographer( 7190): Skipped 41 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 7190): Sending viewport metrics to the engine.
+I/com.bytebox.app( 7190): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:43251/KLO6FwcegFw=/
+VMServiceFlutterDriver: Isolate found with number: 4179575687233679
+VMServiceFlutterDriver: Isolate 4179575687233679 is runnable.
 VMServiceFlutterDriver: Isolate is paused at start.
 VMServiceFlutterDriver: Attempting to resume isolate
-I/flutter ( 7171): 00:00 +0: Bytebox end-to-end
+I/flutter ( 7190): 00:00 +0: Bytebox end-to-end
 VMServiceFlutterDriver: Connected to Flutter application.
-I/flutter ( 7171): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
-D/ProfileInstaller( 7171): Installing profile for com.bytebox.play
-D/EGL_emulation( 7171): app_time_stats: avg=483.94ms min=220.66ms max=1249.84ms count=5
-D/EGL_emulation( 7171): app_time_stats: avg=315.06ms min=311.26ms max=316.88ms count=4
-W/OnBackInvokedCallback( 7171): OnBackInvokedCallback is not enabled for the application.
-W/OnBackInvokedCallback( 7171): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/flutter ( 7190): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/ProfileInstaller( 7190): Installing profile for com.bytebox.app
+D/EGL_emulation( 7190): app_time_stats: avg=430.55ms min=190.19ms max=965.99ms count=5
+D/EGL_emulation( 7190): app_time_stats: avg=337.84ms min=313.25ms max=398.17ms count=4
+W/OnBackInvokedCallback( 7190): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7190): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
 VMServiceFlutterDriver: request_data message is taking a long time to complete...
 Unhandled exception:
 DriverError: Failed to fulfill RequestData due to remote error
@@ -39,5 +39,5 @@ Original stack trace:
 Failed to stop app
 adb uninstall failed: ProcessException: Process exited abnormally with exit code 1:
 adb: device offline
-  Command: /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 uninstall com.bytebox.play
+  Command: /usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 uninstall com.bytebox.app
 Failed to uninstall app
