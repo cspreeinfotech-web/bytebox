@@ -14,8 +14,10 @@ enum _Rotation { auto, landscape, portrait }
 /// Full-screen player. Pops `true` when playback reached the end.
 /// Retry always fetches a NEW signed URL and resumes from the last position.
 class PlayerScreen extends StatefulWidget {
-  const PlayerScreen({super.key, required this.mediaKey, required this.title, this.postId, this.isTrailer = false});
+  const PlayerScreen(
+      {super.key, required this.mediaKey, required this.title, this.postId, this.isTrailer = false, this.bucket = 'media'});
   final String mediaKey;
+  final String bucket;
   final String title;
   final String? postId;
   final bool isTrailer;
@@ -47,7 +49,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
     old?.removeListener(_tick);
     await old?.dispose();
     try {
-      final url = await Content.signedUrl(widget.mediaKey, fresh: fresh);
+      final url = await Content.signedUrl(widget.mediaKey, fresh: fresh, bucket: widget.bucket);
       final c = VideoPlayerController.networkUrl(Uri.parse(url));
       await c.initialize();
       if (_resumeAt > Duration.zero) await c.seekTo(_resumeAt);

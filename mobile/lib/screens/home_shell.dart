@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../services/session.dart';
+import 'cloud_screen.dart';
 import 'content/explore_screen.dart';
 import 'content/feed_channels_screens.dart';
 import 'plans_screen.dart';
-import '../theme.dart';
-import '../widgets/common.dart';
 
 /// Five tabs; Explore is the default. The Profile tab opens the Plans screen.
 class HomeShell extends StatefulWidget {
@@ -36,7 +35,7 @@ class _HomeShellState extends State<HomeShell> with WidgetsBindingObserver {
   }
 
   Widget _tab(int i) => switch (i) {
-        0 => const _Placeholder('Cloud', Icons.cloud_outlined),
+        0 => const CloudScreen(),
         1 => const FeedScreen(),
         2 => const ExploreScreen(),
         3 => const ChannelsScreen(),
@@ -75,16 +74,4 @@ class _HomeShellState extends State<HomeShell> with WidgetsBindingObserver {
       },
     );
   }
-}
-
-class _Placeholder extends StatelessWidget {
-  const _Placeholder(this.title, this.icon);
-  final String title;
-  final IconData icon;
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text(title)),
-        body: EmptyState(text: '$title is coming in the next stage.', icon: icon),
-        backgroundColor: AppColors.background,
-      );
 }

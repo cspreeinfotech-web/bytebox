@@ -18,6 +18,10 @@ String friendlyError(Object e) {
   if (e is PostgrestException) return e.message;
   if (e is AuthException) return e.message;
   if (e is StorageException) return e.message;
+  if (e is FunctionException) {
+    final d = e.details;
+    return (d is Map && d['error'] != null) ? '${d['error']}' : (e.reasonPhrase ?? 'Request failed');
+  }
   if (e is SocketException) return 'No internet connection. Please try again.';
   final s = e.toString();
   return s.startsWith('Exception: ') ? s.substring(11) : s;

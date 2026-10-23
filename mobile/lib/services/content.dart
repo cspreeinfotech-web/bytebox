@@ -5,7 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../config.dart';
 import 'session.dart';
 
-typedef Json = Map<String, dynamic>;
+import 'json.dart';
+export 'json.dart';
+
 
 /// Channels, posts, media URLs, reports, device-level blocks.
 class Content {
@@ -15,15 +17,16 @@ class Content {
 
   // ---------------------------------------------------------------- media
   /// Signed URL valid for 3600 s; only issued when can_read_media() allows it.
-  static Future<String> signedUrl(String key, {bool fresh = false}) async {
-    final hit = _urlCache[key];
+  static Future<String> signedUrl(String key, {bool fresh = false, String bucket = 'media'}) async {
+    final cacheKey = '$bucket/$key';
+    final hit = _urlCache[cacheKey];
     if (!fresh && hit != null && hit.$2.isAfter(DateTime.now())) return hit.$1;
-    final url = await db.storage.from('media').createSignedUrl(key, AppConfig.signedUrlSeconds);
-    _urlCache[key] = (url, DateTime.now().add(const Duration(minutes: 50)));
+    final url = await db.storage.from(bucket).createSignedUrl(key, AppConfig.signedUrlSeconds);
+    _urlCache[cacheKey] = (url, DateTime.now().add(const Duration(minutes: 50)));
     return url;
   }
 
-  static void forget(String key) => _urlCache.remove(key);
+  static void forget(String key, {String bucket = 'media'}) => _urlCache.remove('$bucket/$key');
 
   // ----------------------------------------------------------- categories
   static Future<List<Json>> categories() async {
