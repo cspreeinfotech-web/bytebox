@@ -33,6 +33,7 @@ adb shell wm size; adb shell wm density
 adb shell settings put system accelerometer_rotation 0 || true
 adb shell settings put system user_rotation 0 || true
 adb shell settings put global hide_error_dialogs 1 || true
+adb shell settings put secure immersive_mode_confirmations confirmed || true
 adb shell pm disable-user --user 0 com.google.android.apps.nexuslauncher || true
 adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS || true
 adb logcat -c || true
