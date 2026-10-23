@@ -52,8 +52,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { device: phone, profile: pixel_6, flavor: direct }
-          - { device: phone, profile: pixel_6, flavor: play }
+          - { device: phone, profile: pixel_5, flavor: direct }
+          - { device: phone, profile: pixel_5, flavor: play }
           - { device: tablet7, profile: "Nexus 7 2013", flavor: play }
           - { device: tablet10, profile: pixel_tablet, flavor: play }
     steps:
@@ -80,7 +80,8 @@ jobs:
           DEMO_VIEWER_EMAIL: ${{ needs.seed.outputs.viewer }}
           DEMO_PASSWORD: ${{ needs.seed.outputs.password }}
         with:
-          api-level: 34
+          api-level: 33
+          cores: 3
           target: google_apis
           arch: x86_64
           profile: ${{ matrix.profile }}
@@ -88,7 +89,7 @@ jobs:
           heap-size: 576M
           disk-size: 6000M
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 4096
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot -no-metrics
           script: bash tools/e2e/run.sh ${{ matrix.device }} ${{ matrix.flavor }}
       - name: Report failure
         if: failure()

@@ -97,7 +97,7 @@ void main() {
 
       // Emulators have no UPI app: the chooser either opens empty or reports "No UPI app found".
       // Simulate the UPI app's SUCCESS answer for a fresh ₹49 order through the same server path.
-      final order = await Payments.createOrder('trial');
+      final order = await Payments.createOrderByCode('trial');
       final ref = order['reference'];
       await db.rpc('report_payment_result', params: {
         'p_order_id': order['order_id'],
