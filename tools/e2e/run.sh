@@ -27,6 +27,7 @@ case "$DEVICE" in
   phone)   adb shell wm size 1080x1920; adb shell wm density 420 ;;
   tablet7) adb shell wm size 1200x1920; adb shell wm density 320 ;;
   tablet10) adb shell wm size 1600x2560; adb shell wm density 320 ;;
+  tablet10land) adb shell wm size 2560x1600; adb shell wm density 320 ;;
 esac
 adb shell wm size; adb shell wm density
 # Portrait, no system launcher (its ANR dialog and tablet taskbar otherwise land in screenshots).

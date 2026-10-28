@@ -38,6 +38,15 @@ class _LoginScreenState extends State<LoginScreen> {
   final _password = TextEditingController();
   bool _obscure = true;
   bool _busy = false;
+  bool _googleOn = false; // the button only appears when Google sign-in is enabled in Supabase Auth
+
+  @override
+  void initState() {
+    super.initState();
+    session.googleEnabled().then((on) {
+      if (mounted && on) setState(() => _googleOn = true);
+    });
+  }
 
   @override
   void dispose() {
@@ -88,7 +97,8 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!mounted) return;
     setState(() => _busy = false);
     if (!enabled) {
-      showSnack(context, 'Google sign-in is coming soon. Please log in with email.');
+      setState(() => _googleOn = false);
+      showSnack(context, 'Google sign-in is not available right now. Please log in with email.');
       return;
     }
     try {
@@ -158,12 +168,14 @@ class _LoginScreenState extends State<LoginScreen> {
             else
               const SizedBox(height: 16),
             GradientButton(label: _create ? 'Create account' : 'Log in', busy: _busy, onPressed: _submit),
-            const SizedBox(height: 14),
-            OutlinedButton.icon(
-              onPressed: _busy ? null : _google,
-              icon: const Icon(Icons.g_mobiledata, size: 28),
-              label: const Text('Continue with Google'),
-            ),
+            if (_googleOn) ...[
+              const SizedBox(height: 14),
+              OutlinedButton.icon(
+                onPressed: _busy ? null : _google,
+                icon: const Icon(Icons.g_mobiledata, size: 28),
+                label: const Text('Continue with Google'),
+              ),
+            ],
             const SizedBox(height: 20),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(_create ? 'Already have an account?' : 'New to Bytebox?',

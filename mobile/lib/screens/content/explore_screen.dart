@@ -23,6 +23,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   final List<Json> _posts = [];
   bool _loading = true;
   bool _more = true;
+  int _offset = 0;
   String? _error;
   final _scroll = ScrollController();
 
@@ -49,6 +50,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
       _loading = true;
       _error = null;
       _posts.clear();
+      _offset = 0;
       _more = true;
     });
     await _loadMore(force: true);
@@ -58,11 +60,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     if (!_more || (!force && _loading)) return;
     _loading = true;
     try {
-      final page = await Content.posts(category: _category, offset: _posts.length, limit: 20);
+      final page = await Content.postsPage(category: _category, offset: _offset, limit: 20);
       if (!mounted) return;
       setState(() {
-        _posts.addAll(page);
-        _more = page.length == 20;
+        _posts.addAll(page.posts);
+        _offset += page.raw; // server rows, so blocked channels don't shift the next page
+        _more = page.raw == 20;
       });
     } catch (e) {
       if (mounted) setState(() => _error = friendlyError(e));
@@ -82,7 +85,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             icon: const Icon(Icons.search),
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SearchScreen())),
           ),
-          CrownButton(onTap: () => openPlans(context)),
+          if (!session.hidePaid) CrownButton(onTap: () => openPlans(context)),
         ],
       ),
       body: RefreshIndicator(
@@ -113,12 +116,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
             const SliverFillRemaining(child: EmptyState(text: 'No Record Found'))
           else
             SliverList.builder(
-              itemCount: _posts.length + (_more ? 1 : 0),
-              itemBuilder: (c, i) => i >= _posts.length
+              itemCount: postRowCount(_posts.length, postColumns(context)) + (_more ? 1 : 0),
+              itemBuilder: (c, i) => i >= postRowCount(_posts.length, postColumns(context))
                   ? const Padding(padding: EdgeInsets.all(24), child: Center(child: CircularProgressIndicator()))
                   : Padding(
                       padding: const EdgeInsets.fromLTRB(16, 0, 16, 22),
-                      child: PostCard(post: _posts[i], onTap: () => PostScreen.open(context, '${_posts[i]['id']}')),
+                      child: PostRow(
+                          posts: _posts,
+                          row: i,
+                          columns: postColumns(context),
+                          onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                     ),
             ),
         ]),
@@ -197,10 +204,14 @@ class _SearchScreenState extends State<SearchScreen> {
                     ? const EmptyState(text: 'No Record Found')
                     : ListView.builder(
                         padding: const EdgeInsets.all(16),
-                        itemCount: _results!.length,
+                        itemCount: postRowCount(_results!.length, postColumns(context)),
                         itemBuilder: (c, i) => Padding(
                           padding: const EdgeInsets.only(bottom: 20),
-                          child: PostCard(post: _results![i], onTap: () => PostScreen.open(context, '${_results![i]['id']}')),
+                          child: PostRow(
+                              posts: _results!,
+                              row: i,
+                              columns: postColumns(context),
+                              onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                         ),
                       ),
       );

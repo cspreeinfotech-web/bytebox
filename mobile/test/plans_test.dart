@@ -88,4 +88,13 @@ void main() {
       expect(PlanLogic.priceNotice(plan(), {'price_inr': 259, 'amount': '259.00'}), isNull);
     });
   });
+
+  group('Play build without Play billing', () {
+    test('only plans free for the user are listed', () {
+      final all = [plan(id: 1), plan(id: 2, mode: 'free', free: true), plan(id: 3, mode: 'unavailable')];
+      expect(PlanLogic.visiblePlans(all, hidePaid: true).map((p) => p['id']), [2]);
+      expect(PlanLogic.visiblePlans(all, hidePaid: false).length, 3);
+      expect(PlanLogic.visiblePlans([plan()], hidePaid: true), isEmpty);
+    });
+  });
 }

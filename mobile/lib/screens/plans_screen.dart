@@ -72,9 +72,9 @@ class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
     try {
       final fresh = await PlansService.plansForMe();
       if (!mounted) return;
-      final r = PlanLogic.reconcile(_selected, fresh);
+      final r = PlanLogic.reconcile(_selected, PlanLogic.visiblePlans(fresh, hidePaid: session.hidePaid));
       setState(() {
-        _plans = fresh;
+        _plans = PlanLogic.visiblePlans(fresh, hidePaid: session.hidePaid);
         _selected = r.selected;
         _error = null;
       });
@@ -194,10 +194,12 @@ class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
     final perks = const ['Full premium videos', '2 TB cloud storage', 'Downloads', 'Early access to new channels'];
     final anyFree = PlanLogic.anyFree(_plans);
     final unavailable = _plans.isNotEmpty && _plans.every((p) => p['pay_mode'] == 'unavailable');
+    // Play build without Play billing and nothing free to claim: this is just the account page.
+    final accountOnly = session.hidePaid && _plans.isEmpty && !_loading;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: !widget.asTab,
-        title: const Text('Premium'),
+        title: Text(accountOnly ? 'Account' : 'Premium'),
         actions: [
           IconButton(
             tooltip: 'Account',
@@ -215,7 +217,7 @@ class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
           _banner(),
           if (!freeMode && anyFree)
             const _Banner(color: AppColors.success, icon: Icons.card_giftcard, text: 'Plans are free for you for a limited time'),
-          Container(
+          if (!accountOnly) Container(
             margin: const EdgeInsets.only(top: 8),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(gradient: AppColors.premiumGradient, borderRadius: BorderRadius.circular(AppRadius.card)),
@@ -265,7 +267,7 @@ class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
       return const [Padding(padding: EdgeInsets.all(32), child: Center(child: CircularProgressIndicator()))];
     }
     if (_error != null && _plans.isEmpty) return [ErrorRetry(message: _error!, onRetry: _load)];
-    if (_plans.isEmpty) return [const EmptyState(text: 'No plans available right now')];
+    if (_plans.isEmpty) return session.hidePaid ? const [] : [const EmptyState(text: 'No plans available right now')];
     return [
       RadioGroup<String>(
         groupValue: _selected == null ? null : '${_selected!['id']}',
@@ -284,12 +286,10 @@ class _PlansScreenState extends State<PlansScreen> with WidgetsBindingObserver {
         ]),
       ),
       const SizedBox(height: 4),
-      Text(
+      if (!session.hidePaid) Text(
         unavailable
             ? 'Payments are paused. Please try again later.'
-            : AppConfig.playStore
-                ? 'Paid plans are not available in this version.'
-                : 'Pay securely with any UPI app. Your plan starts as soon as the payment is confirmed.',
+            : 'Pay securely with any UPI app. Your plan starts as soon as the payment is confirmed.',
         textAlign: TextAlign.center,
         style: const TextStyle(color: AppColors.textMuted, fontSize: 12),
       ),
@@ -361,8 +361,12 @@ class FreeAccountCard extends StatefulWidget {
 class _FreeAccountCardState extends State<FreeAccountCard> {
   bool _busy = false;
 
+  // `const FreeAccountCard()` is not rebuilt by its parent, so it listens to the session itself
+  // (otherwise it keeps showing "Log in" after the user has logged in).
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(listenable: session, builder: (context, _) => _card(context));
+
+  Widget _card(BuildContext context) {
     final quota = session.quotaBytes;
     final used = session.usedBytes;
     final status = session.accessStatus;

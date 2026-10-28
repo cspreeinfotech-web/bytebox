@@ -37,6 +37,9 @@ Future<void> settle(WidgetTester t, [int ms = 1500]) async {
 /// (Flutter's in-process screenshot crashes the emulator's software GPU on phone profiles.)
 Future<void> shot(WidgetTester t, String name) async {
   await settle(t, 1200);
+  // Never accept a screen that shows a load error (e.g. a missing database function).
+  expect(find.text('Retry'), findsNothing, reason: 'error screen at $name');
+  expect(find.textContaining('schema cache'), findsNothing, reason: 'server error at $name');
   // ignore: avoid_print
   print('E2E_SHOT:${shotPrefix}_$name');
   await settle(t, 2500);
@@ -130,6 +133,7 @@ void main() {
       await shot(t, '6-profile');
       await t.pageBack();
       await settle(t);
+      expect(find.text('Log in to get free cloud storage.'), findsNothing, reason: 'account card must refresh after login');
       await shot(t, '2-plans');
 
       await t.tap(find.text('Cloud').last);
@@ -138,6 +142,9 @@ void main() {
 
       await t.tap(find.text('Explore').last);
       await pumpUntil(t, find.text('Latest'));
+      await pumpUntil(t, find.text('Hidden Waterfalls of Kerala')); // a free demo video must be listed
+      await settle(t, 1500);
+      expect(find.byType(CircularProgressIndicator), findsNothing, reason: 'Explore must not keep loading');
       await shot(t, '3-explore');
       await t.tap(find.text('Channels').last);
       await settle(t, 3000);

@@ -65,6 +65,8 @@ jobs:
           - { device: phone, profile: pixel_tablet, flavor: play }
           - { device: tablet7, profile: pixel_tablet, flavor: play }
           - { device: tablet10, profile: pixel_tablet, flavor: play }
+          # Android 16 (target 36) ignores orientation locks on tablets: verify landscape too.
+          - { device: tablet10land, profile: pixel_tablet, flavor: play }
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-java@v5
@@ -136,7 +138,7 @@ jobs:
       - name: Merge screenshots (play run wins for shared phone names)
         run: |
           mkdir -p raw
-          for d in shots/shots-phone-direct shots/shots-tablet7-play shots/shots-tablet10-play shots/shots-phone-play; do
+          for d in shots/shots-phone-direct shots/shots-tablet7-play shots/shots-tablet10-play shots/shots-tablet10land-play shots/shots-phone-play; do
             [ -d "$d" ] && cp "$d"/*.png raw/ 2>/dev/null || true
           done
           ls raw | wc -l

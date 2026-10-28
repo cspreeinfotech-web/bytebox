@@ -111,10 +111,14 @@ class _ChannelScreenState extends State<ChannelScreen> {
                       : GradientButton(label: 'Join channel', busy: _busy, onPressed: _toggleJoin),
                 const SizedBox(height: 20),
                 if (_posts.isEmpty) const EmptyState(text: 'No posts yet'),
-                for (final p in _posts)
+                for (var r = 0; r < postRowCount(_posts.length, postColumns(context)); r++)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20),
-                    child: PostCard(post: p, onTap: () => PostScreen.open(context, '${p['id']}')),
+                    child: PostRow(
+                        posts: _posts,
+                        row: r,
+                        columns: postColumns(context),
+                        onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                   ),
               ]),
             ),

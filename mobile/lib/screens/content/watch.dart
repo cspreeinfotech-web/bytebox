@@ -24,6 +24,11 @@ class Watch {
       await _openMain(context, post);
       return;
     }
+    if (session.hidePaid && !session.freeMode) {
+      // Play build without Play billing: premium videos can't be unlocked in this app.
+      showSnack(context, 'This video is not available for your account.');
+      return;
+    }
     if (session.hasAdsAccess && post['trailer_key'] != null) {
       await trailer(context, post);
       return;
@@ -83,6 +88,10 @@ class Watch {
 
   /// Downloads only for premium / full access.
   static Future<void> download(BuildContext context, Json post) async {
+    if (!session.isPremium && session.hidePaid && !session.freeMode) {
+      showSnack(context, 'Downloads are not available for your account.');
+      return;
+    }
     if (!session.isPremium) {
       final free = session.noPayments;
       final go = await showDialog<bool>(

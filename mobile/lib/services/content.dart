@@ -42,6 +42,19 @@ class Content {
     bool feed = false,
     int limit = 20,
     int offset = 0,
+  }) async =>
+      (await postsPage(query: query, category: category, channelId: channelId, feed: feed, limit: limit, offset: offset))
+          .posts;
+
+  /// One page of posts plus the number of rows the server returned before device-level channel blocks
+  /// were applied — use [raw] for the next offset and for "is there more".
+  static Future<({List<Json> posts, int raw})> postsPage({
+    String? query,
+    String? category,
+    String? channelId,
+    bool feed = false,
+    int limit = 20,
+    int offset = 0,
   }) async {
     final rows = await db.rpc('search_posts', params: {
       'p_query': (query?.trim().isEmpty ?? true) ? null : query!.trim(),
@@ -50,9 +63,11 @@ class Content {
       'p_feed': feed,
       'p_limit': limit,
       'p_offset': offset,
+      if (session.hidePaid && !session.isPremium) 'p_hide_premium': true,
     });
     final blocked = await blockedChannels();
-    return List<Json>.from(rows as List).where((p) => !blocked.contains(p['channel_id'])).toList();
+    final all = List<Json>.from(rows as List);
+    return (posts: all.where((p) => !blocked.contains(p['channel_id'])).toList(), raw: all.length);
   }
 
   static Future<Json?> post(String id) async => await db
