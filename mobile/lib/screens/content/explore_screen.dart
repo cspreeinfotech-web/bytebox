@@ -23,6 +23,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   final List<Json> _posts = [];
   bool _loading = true;
   bool _more = true;
+  int _offset = 0;
   String? _error;
   final _scroll = ScrollController();
 
@@ -49,6 +50,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
       _loading = true;
       _error = null;
       _posts.clear();
+      _offset = 0;
       _more = true;
     });
     await _loadMore(force: true);
@@ -58,11 +60,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     if (!_more || (!force && _loading)) return;
     _loading = true;
     try {
-      final page = await Content.posts(category: _category, offset: _posts.length, limit: 20);
+      final page = await Content.postsPage(category: _category, offset: _offset, limit: 20);
       if (!mounted) return;
       setState(() {
-        _posts.addAll(page);
-        _more = page.isNotEmpty; // client-side channel blocks can shorten a page, so stop only on an empty one
+        _posts.addAll(page.posts);
+        _offset += page.raw; // server rows, so blocked channels don't shift the next page
+        _more = page.raw == 20;
       });
     } catch (e) {
       if (mounted) setState(() => _error = friendlyError(e));

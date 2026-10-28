@@ -143,6 +143,8 @@ void main() {
       await t.tap(find.text('Explore').last);
       await pumpUntil(t, find.text('Latest'));
       await pumpUntil(t, find.text('Hidden Waterfalls of Kerala')); // a free demo video must be listed
+      await settle(t, 1500);
+      expect(find.byType(CircularProgressIndicator), findsNothing, reason: 'Explore must not keep loading');
       await shot(t, '3-explore');
       await t.tap(find.text('Channels').last);
       await settle(t, 3000);
