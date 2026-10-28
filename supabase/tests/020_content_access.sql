@@ -96,6 +96,7 @@ select tests.ok(count(*) = 0, 'category filter') from public.search_posts(null, 
 select tests.ok(count(*) = 0, 'feed empty before join') from public.search_posts(p_feed => true);
 select public.join_channel(:'ch');
 select tests.ok(count(*) = 2, 'feed after join') from public.search_posts(p_feed => true);
+select tests.ok(count(*) = 1 and bool_and(not is_premium), 'Play build: premium hidden') from public.search_posts(p_feed => true, p_hide_premium => true);
 select tests.throws($q$select public.submit_report('other', p_post_id => null, p_channel_id => null)$q$, 'Nothing to report');
 select tests.throws(format($q$select public.submit_report('other', %L)$q$, :'p_free'), 'add some details');
 select public.submit_report('spam', :'p_free');
