@@ -1,0 +1,90 @@
+Installing build/app/outputs/flutter-apk/app-play-debug.apk...        842ms
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+I/om.bytebox.play( 7527): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:45047/Q6PFedAP9lo=/
+VMServiceFlutterDriver: Isolate found with number: 8328844889638819
+VMServiceFlutterDriver: Isolate 8328844889638819 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 7527): 00:00 +0: Bytebox end-to-end
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter ( 7527): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/EGL_emulation( 7527): app_time_stats: avg=411.14ms min=199.36ms max=1007.29ms count=5
+D/ProfileInstaller( 7527): Installing profile for com.bytebox.play
+D/EGL_emulation( 7527): app_time_stats: avg=317.19ms min=315.58ms max=319.88ms count=4
+W/OnBackInvokedCallback( 7527): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7527): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 7527): app_time_stats: avg=166.36ms min=28.69ms max=380.86ms count=6
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+I/flutter ( 7527): E2E_SHOT:tablet10land_e2e-01-consent
+D/EGL_emulation( 7527): app_time_stats: avg=115.88ms min=110.34ms max=119.04ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.67ms min=94.45ms max=133.09ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.82ms min=115.21ms max=117.96ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=126.84ms min=43.30ms max=319.49ms count=8
+D/EGL_emulation( 7527): app_time_stats: avg=4631.78ms min=28.20ms max=9235.36ms count=2
+D/EGL_emulation( 7527): app_time_stats: avg=294.03ms min=81.91ms max=451.82ms count=4
+W/OnBackInvokedCallback( 7527): OnBackInvokedCallback is not enabled for the application.
+W/OnBackInvokedCallback( 7527): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/InputMethodManager( 7527): showSoftInput() view=io.flutter.embedding.android.FlutterView{734c926 VFE...... .F....ID 0,0-2560,1600 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 7527): app_time_stats: avg=113.65ms min=32.80ms max=228.92ms count=9
+D/InputMethodManager( 7527): showSoftInput() view=io.flutter.embedding.android.FlutterView{734c926 VFE...... .F....ID 0,0-2560,1600 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 7527): app_time_stats: avg=1296.41ms min=1296.41ms max=1296.41ms count=1
+I/AssistStructure( 7527): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
+D/InputMethodManager( 7527): showSoftInput() view=io.flutter.embedding.android.FlutterView{734c926 VFE...... .F...... 0,0-2560,1600 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputMethodManager( 7527): showSoftInput() view=io.flutter.embedding.android.FlutterView{734c926 VFE...... .F...... 0,0-2560,1600 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/AssistStructure( 7527): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+D/EGL_emulation( 7527): app_time_stats: avg=169.79ms min=67.10ms max=356.05ms count=7
+D/InsetsController( 7527): show(ime(), fromIme=true)
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/EGL_emulation( 7527): app_time_stats: avg=1568.34ms min=1568.34ms max=1568.34ms count=1
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/FlutterJNI( 7527): Sending viewport metrics to the engine.
+D/EGL_emulation( 7527): app_time_stats: avg=406.33ms min=274.47ms max=563.18ms count=3
+D/EGL_emulation( 7527): app_time_stats: avg=130.41ms min=109.78ms max=218.56ms count=8
+D/EGL_emulation( 7527): app_time_stats: avg=116.52ms min=114.74ms max=120.73ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.78ms min=115.38ms max=117.92ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.62ms min=113.29ms max=119.68ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_6-profile
+D/EGL_emulation( 7527): app_time_stats: avg=121.96ms min=109.41ms max=173.24ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.75ms min=115.29ms max=119.70ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.96ms min=116.04ms max=117.71ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=96.32ms min=29.35ms max=121.06ms count=11
+D/EGL_emulation( 7527): app_time_stats: avg=116.66ms min=112.07ms max=119.80ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_2-plans
+D/EGL_emulation( 7527): app_time_stats: avg=117.20ms min=116.17ms max=120.07ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.00ms min=112.31ms max=123.23ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.74ms min=115.53ms max=118.11ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=133.10ms min=116.07ms max=245.47ms count=8
+D/EGL_emulation( 7527): app_time_stats: avg=115.38ms min=21.14ms max=282.03ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_1-cloud
+D/EGL_emulation( 7527): app_time_stats: avg=117.19ms min=90.01ms max=147.45ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.25ms min=105.88ms max=124.05ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.46ms min=102.98ms max=131.60ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=101.98ms min=27.59ms max=175.51ms count=10
+D/EGL_emulation( 7527): app_time_stats: avg=116.60ms min=114.32ms max=117.85ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_3-explore
+D/EGL_emulation( 7527): app_time_stats: avg=116.67ms min=100.39ms max=137.19ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.66ms min=114.81ms max=118.58ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=117.03ms min=114.74ms max=119.35ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=102.95ms min=24.35ms max=249.81ms count=10
+D/EGL_emulation( 7527): app_time_stats: avg=116.59ms min=112.92ms max=120.09ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.70ms min=115.29ms max=118.46ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.65ms min=114.99ms max=118.04ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_5-channels
+D/EGL_emulation( 7527): app_time_stats: avg=116.96ms min=90.55ms max=143.65ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.43ms min=108.34ms max=124.26ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.40ms min=98.94ms max=134.86ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=115.74ms min=31.67ms max=335.08ms count=11
+D/EGL_emulation( 7527): app_time_stats: avg=99.50ms min=50.19ms max=119.11ms count=10
+D/EGL_emulation( 7527): app_time_stats: avg=121.11ms min=113.09ms max=157.01ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=111.50ms min=57.37ms max=171.36ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.84ms min=115.50ms max=119.70ms count=9
+I/flutter ( 7527): E2E_SHOT:tablet10land_4-feed
+D/EGL_emulation( 7527): app_time_stats: avg=118.81ms min=106.23ms max=162.85ms count=9
+D/EGL_emulation( 7527): app_time_stats: avg=116.51ms min=112.72ms max=119.08ms count=9
+I/flutter ( 7527): 00:52 +1: (tearDownAll)
+I/flutter ( 7527): 00:52 +2: All tests passed!
+All tests passed.

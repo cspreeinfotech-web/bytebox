@@ -1,0 +1,1325 @@
+--------- beginning of main
+10-28 07:18:30.031 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:30.036 I/FontLog ( 6307): Updating from directory version 0 to 25 from disk [CONTEXT service_id=132 ]
+10-28 07:18:30.042 I/FontLog ( 6307): Received query Google Sans, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-28 07:18:30.043 I/FontLog ( 6307): Query [Google Sans] resolved to {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:30.043 W/SQLiteLog( 1839): (28) double-quoted string literal: "MAIN_FEED"
+10-28 07:18:30.043 W/SQLiteLog( 1839): (28) double-quoted string literal: "Session::Current"
+10-28 07:18:30.043 W/SQLiteLog( 1839): (28) double-quoted string literal: "MAIN_FEED"
+10-28 07:18:30.043 W/SQLiteLog( 1839): (28) double-quoted string literal: "Session::Current"
+10-28 07:18:30.046 I/FontLog ( 6307): Received query Google Sans:500, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-28 07:18:30.049 I/FontLog ( 6307): Query [Google Sans:500] resolved to {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:30.059 I/FontLog ( 6307): Using directory in FlatBuffer format [CONTEXT service_id=132 ]
+10-28 07:18:30.060 I/FontLog ( 6307): Font PFD returned from cache for {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:30.060 I/FontLog ( 6307): Fetch {Google Sans, wdth 100.0, wght 500, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-28 07:18:30.068 I/FontLog ( 6307): Font PFD returned from cache for {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:30.068 I/FontLog ( 6307): Fetch {Google Sans, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-28 07:18:30.073 I/FontLog ( 6307): Pulling font file for id = 1, cache size = 2 [CONTEXT service_id=132 ]
+10-28 07:18:30.076 I/FontLog ( 6307): Pulling font file for id = 2, cache size = 2 [CONTEXT service_id=132 ]
+--------- beginning of kernel
+10-28 07:18:30.311 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7302 b tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+10-28 07:18:30.455 D/CCodecBufferChannel(  435): [c2.android.vorbis.decoder#785] buffers after EOS ignored (0 us)
+10-28 07:18:30.455 D/CCodecBufferChannel(  435): [c2.android.vorbis.decoder#785] buffers after EOS ignored (0 us)
+10-28 07:18:30.455 D/AudioTrack(  435): stop(15): called with 82980 frames delivered
+10-28 07:18:30.474 D/OverviewProxyService(  798): disconnectFromLauncherService bound?: false currentProxy: null disconnectReason: runnable: startConnectionToCurrentUser
+10-28 07:18:30.474 D/OverviewProxyService(  798): java.lang.Throwable
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at com.android.systemui.recents.OverviewProxyService.disconnectFromLauncherService(OverviewProxyService.java:35)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at com.android.systemui.recents.OverviewProxyService.internalConnectToCurrentUser(OverviewProxyService.java:0)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at com.android.wm.shell.pip.phone.PipMenuView$$ExternalSyntheticLambda8.run(R8$$SyntheticClass:109)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at android.os.Handler.handleCallback(Handler.java:942)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at android.os.Looper.loopOnce(Looper.java:201)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at android.os.Looper.loop(Looper.java:288)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at java.lang.reflect.Method.invoke(Native Method)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-28 07:18:30.474 D/OverviewProxyService(  798): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+10-28 07:18:30.474 V/OverviewProxyService(  798): Cannot attempt connection, is enabled false
+10-28 07:18:30.532 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+--------- beginning of system
+10-28 07:18:30.691 W/ActivityManager(  499): Invalid packageName: com.bytebox.play
+10-28 07:18:30.732 I/abb     ( 7314): StartCommandInProcess(73657474696e67730067657400676c6f settings.get.glo [truncated])
+10-28 07:18:30.736 I/abb     ( 7314): StartCommandInProcess(7061636b61676500696e7374616c6c00 package.install. [truncated])
+10-28 07:18:30.732 W/binder:499_14(  499): type=1400 audit(0.0:44): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:30.732 W/binder:499_14(  499): type=1400 audit(0.0:45): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:30.732 W/binder:499_14(  499): type=1400 audit(0.0:46): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:31.007 I/MediaFocusControl(  499): abandonAudioFocus() from uid/pid 10157/798 clientId=android.media.AudioManager@d6317b9
+10-28 07:18:31.008 V/MediaPlayer(  798): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+10-28 07:18:31.008 V/MediaPlayer(  798): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+10-28 07:18:31.008 D/NuPlayerDriver(  435): reset(0x7a28c6222110) at state 6
+10-28 07:18:31.009 I/hw-BpHwBinder(  435): onLastStrongRef automatically unlinking death recipients
+10-28 07:18:31.009 I/hw-BpHwBinder(  442): onLastStrongRef automatically unlinking death recipients
+10-28 07:18:31.009 I/hw-BpHwBinder(  442): onLastStrongRef automatically unlinking death recipients
+10-28 07:18:31.010 V/C2Store (  442): in ~ComponentModule
+10-28 07:18:31.010 V/C2Store (  442): unloading dll
+10-28 07:18:31.010 D/MediaCodec(  435): flushMediametrics
+10-28 07:18:31.011 D/NuPlayerDriver(  435): notifyResetComplete(0x7a28c6222110)
+10-28 07:18:31.011 W/AMessage(  435): failed to post message as target looper for handler 0 is gone.
+10-28 07:18:31.034 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:31.236 I/system_server(  499): Explicit concurrent copying GC freed 287278(12MB) AllocSpace objects, 29(728KB) LOS objects, 49% free, 19MB/39MB, paused 34us,34us total 69.309ms
+10-28 07:18:31.308 W/binder:499_14(  499): type=1400 audit(0.0:47): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:31.318 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+10-28 07:18:31.318 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-28 07:18:31.535 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:31.803 I/PackageManager(  499): Integrity check passed for file:///data/app/vmdl1412011482.tmp
+10-28 07:18:31.807 D/CompatibilityChangeReporter(  499): Compat change id reported: 133396946; UID -1; state: ENABLED
+10-28 07:18:31.816 I/PackageManager(  499): Permission ownership changed. Updating all permissions.
+10-28 07:18:31.840 D/PackageManager(  499): Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 07:18:31.840 D/PackageManager(  499): Clear ephemeral installer activity
+10-28 07:18:32.067 I/logd    (    0): start watching /data/system/packages.list ...
+10-28 07:18:32.069 I/logd    (    0): ReadPackageList, total packages: 182
+10-28 07:18:31.850 V/BackupManagerService(  499): [UserID:0] restoreAtInstall pkg=com.bytebox.play token=1 restoreSet=0
+10-28 07:18:31.850 V/BackupManagerService(  499): [UserID:0] Finishing install immediately
+10-28 07:18:31.851 D/PackageInstallerSession(  499): Marking session 1412011482 as applied
+10-28 07:18:31.852 E/installd(  432): Couldn't opendir /data/app/vmdl1412011482.tmp: No such file or directory
+10-28 07:18:31.852 E/installd(  432): Failed to delete /data/app/vmdl1412011482.tmp: No such file or directory
+10-28 07:18:31.852 W/PackageManager(  499): Default package for ROLE_HOME is not set in RoleManager
+10-28 07:18:31.852 W/binder:499_14(  499): type=1400 audit(0.0:48): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:31.863 D/CompatibilityChangeReporter(  499): Compat change id reported: 168419799; UID 10174; state: DISABLED
+10-28 07:18:31.864 D/CompatibilityChangeReporter(  499): Compat change id reported: 273564678; UID 10174; state: DISABLED
+10-28 07:18:31.860 W/binder:499_14(  499): type=1400 audit(0.0:49): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:31.875 I/SdkSandboxManager(  499): No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10174, mPackageName='com.bytebox.play'}
+10-28 07:18:31.876 E/BackupHelper( 4787): Could not parse delayed permissions
+10-28 07:18:31.876 E/BackupHelper( 4787): java.io.FileNotFoundException: /data/user_de/0/com.google.android.permissioncontroller/files/delayed_restore_permissions.xml: open failed: ENOENT (No such file or directory)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.IoBridge.open(IoBridge.java:574)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at android.app.ContextImpl.openFileInput(ContextImpl.java:714)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at com.android.permissioncontroller.permission.service.BackupHelper.restoreDelayedState(BackupHelper.java:409)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.onRestoreDelayedRuntimePermissionsBackup(PermissionControllerServiceImpl.java:422)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.lambda$onApplyStagedRuntimePermissionBackup$4(PermissionControllerServiceImpl.java:416)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl.$r8$lambda$d0Nn-xRapZQvoyXU4vSZgmIHAHQ(Unknown Source:0)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at com.android.permissioncontroller.permission.service.PermissionControllerServiceImpl$$ExternalSyntheticLambda10.run(Unknown Source:8)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:305)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at java.lang.Thread.run(Thread.java:1012)
+10-28 07:18:31.876 E/BackupHelper( 4787): Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.Linux.open(Native Method)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:7810)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	at libcore.io.IoBridge.open(IoBridge.java:560)
+10-28 07:18:31.876 E/BackupHelper( 4787): 	... 11 more
+10-28 07:18:31.868 W/binder:499_14(  499): type=1400 audit(0.0:50): avc: denied { getopt } for scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+10-28 07:18:31.888 I/RoleService(  499): Granting default roles...
+10-28 07:18:31.894 I/InputReader(  499): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-28 07:18:31.896 V/MediaPlayerList(  999): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-28 07:18:31.896 D/MediaPlayerList(  999): Name of package changed: com.bytebox.play
+10-28 07:18:31.897 V/MediaPlayerList(  999): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_ADDED
+10-28 07:18:31.897 D/MediaPlayerList(  999): Name of package changed: com.bytebox.play
+10-28 07:18:31.898 I/Telecom (  499): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@Ad4
+10-28 07:18:31.898 D/ControlsListingControllerImpl(  798): ServiceConfig reloaded, count: 0
+10-28 07:18:31.903 I/Bugle   ( 2017): BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of atsi@87c96b5
+10-28 07:18:31.904 I/GsaVoiceInteractionSrv( 1720): O received Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) }
+10-28 07:18:31.906 V/BackupManagerConstants(  499): getFullBackupIntervalMilliseconds(...) returns 86400000
+10-28 07:18:31.906 V/BackupManagerConstants(  499): getFullBackupRequiredNetworkType(...) returns 2
+10-28 07:18:31.907 V/BackupManagerConstants(  499): getFullBackupRequireCharging(...) returns true
+10-28 07:18:31.910 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.packageinstaller/com.android.packageinstaller.PackageInstalledReceiver
+10-28 07:18:31.915 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.games.chimera.GamesSystemBroadcastReceiverProxy
+10-28 07:18:31.918 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.gass.chimera.PackageChangeBroadcastReceiver
+10-28 07:18:32.159 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7339 n tail=1 logMask=99 pid=0 start=0ns deadline=0ns
+10-28 07:18:31.937 W/GCM     ( 6307): Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-28 07:18:31.937 W/GCM     ( 6307): Unexpected forwarded intent: Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) }
+10-28 07:18:31.938 I/ProximityAuth( 6307): [RecentAppsMediator] Package added: (user=UserHandle{0}) com.bytebox.play
+10-28 07:18:31.942 I/ProvidersCache( 3898): Provider returned no roots. Possibly naughty: com.google.android.apps.docs.storage
+10-28 07:18:31.944 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-28 07:18:31.945 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_ADDED dat=package: flg=0x4000010 (has extras) } to com.google.android.googlequicksearchbox/com.google.android.apps.gsa.googlequicksearchbox.GelStubAppWatcher
+10-28 07:18:31.949 E/VerityUtils(  499): Failed to measure fs-verity, errno 1: /data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.apk
+10-28 07:18:31.957 I/Auth    ( 6388): [SupervisedAccountIntentOperation] onHandleIntent(): android.intent.action.PACKAGE_ADDED
+10-28 07:18:31.965 I/BlockstoreStorage( 6388): Clearing Blockstore Data for package com.bytebox.play [CONTEXT service_id=258 ]
+10-28 07:18:32.197 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7345 b tail=0 logMask=99 pid=0 start=1793171911918000000ns deadline=0ns
+10-28 07:18:31.974 D/CarrierSvcBindHelper( 1030): onPackageAdded: com.bytebox.play
+10-28 07:18:31.974 D/CarrierSvcBindHelper( 1030): No carrier app for: 0
+10-28 07:18:31.976 D/ImsResolver( 1030): maybeAddedImsService, packageName: com.bytebox.play
+10-28 07:18:31.977 D/CompatibilityChangeReporter(  499): Compat change id reported: 168419799; UID 10079; state: DISABLED
+10-28 07:18:31.979 D/CompatibilityChangeReporter(  499): Compat change id reported: 273564678; UID 10079; state: DISABLED
+10-28 07:18:31.980 W/Role    ( 4787): Default holder doesn't have required signing certificate: com.google.android.apps.work.clouddpc:23962F4B43B9857638EA66F4D419518EAE282491ACDA4B94707BD59003C45E58
+10-28 07:18:31.986 I/PermissionControllerServiceImpl( 4787): Updating user sensitive for uid 10174
+10-28 07:18:31.987 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:31.987 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:31.990 D/CompatibilityChangeReporter(  499): Compat change id reported: 218533173; UID 10174; state: ENABLED
+10-28 07:18:31.991 I/Bugle   ( 2017): BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of atsi@87c96b5
+10-28 07:18:31.994 V/MediaPlayerList(  999): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 07:18:31.994 D/MediaPlayerList(  999): Name of package changed: com.bytebox.play
+10-28 07:18:31.994 V/MediaPlayerList(  999): mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+10-28 07:18:31.994 D/MediaPlayerList(  999): Name of package changed: com.bytebox.play
+10-28 07:18:31.995 I/InputReader(  499): Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-28 07:18:31.995 D/CompatibilityChangeReporter(  499): Compat change id reported: 161252188; UID 10174; state: DISABLED
+10-28 07:18:31.995 I/ActivityTaskManager(  499): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x30000000 cmp=com.bytebox.play/com.bytebox.app.MainActivity (has extras)} from uid 2000
+10-28 07:18:31.996 I/Telecom (  499): DefaultDialerCache: Refreshing default dialer for user 0: now com.google.android.dialer: DDC.oR@AeE
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 265464455; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 265452344; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 266124927; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 265451093; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 265456536; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 255940284; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 236283604; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 263959004; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 264304459; UID 10174; state: DISABLED
+10-28 07:18:31.997 D/CompatibilityChangeReporter(  499): Compat change id reported: 264301586; UID 10174; state: DISABLED
+10-28 07:18:31.998 D/CompatibilityChangeReporter(  499): Compat change id reported: 254631730; UID 10174; state: DISABLED
+10-28 07:18:31.998 D/CompatibilityChangeReporter(  499): Compat change id reported: 273509367; UID 10174; state: DISABLED
+10-28 07:18:31.998 D/CompatibilityChangeReporter(  499): Compat change id reported: 263259275; UID 10174; state: DISABLED
+10-28 07:18:32.006 D/CompatibilityChangeReporter(  499): Compat change id reported: 194480991; UID 10174; state: ENABLED
+10-28 07:18:32.008 D/CompatibilityChangeReporter(  499): Compat change id reported: 174042980; UID 10174; state: DISABLED
+10-28 07:18:32.009 W/BackupTransportManager(  499): Package com.bytebox.play enabled setting: 0
+10-28 07:18:32.009 D/ControlsListingControllerImpl(  798): ServiceConfig reloaded, count: 0
+10-28 07:18:32.009 D/CompatibilityChangeReporter(  499): Compat change id reported: 184838306; UID 10174; state: DISABLED
+10-28 07:18:32.009 D/CompatibilityChangeReporter(  499): Compat change id reported: 185004937; UID 10174; state: DISABLED
+10-28 07:18:32.009 D/CompatibilityChangeReporter(  499): Compat change id reported: 181136395; UID 10174; state: DISABLED
+10-28 07:18:32.012 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:32.012 D/CompatibilityChangeReporter(  499): Compat change id reported: 174042936; UID 10174; state: DISABLED
+10-28 07:18:32.013 D/CompatibilityChangeReporter(  499): Compat change id reported: 197654537; UID 10174; state: ENABLED
+10-28 07:18:32.015 D/CompatibilityChangeReporter(  499): Compat change id reported: 205907456; UID 10174; state: ENABLED
+10-28 07:18:32.019 D/CompatibilityChangeReporter(  499): Compat change id reported: 194833441; UID 10174; state: ENABLED
+10-28 07:18:32.029 I/Fitness ( 6307): OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x5000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-28 07:18:32.039 W/Parcel  (  798): Expecting binder but got null!
+10-28 07:18:32.042 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:32.042 I/BlockstoreStorage( 6388): Keyless data not found or its IsLastInstallationData = false. [CONTEXT service_id=258 ]
+10-28 07:18:32.045 D/CompatibilityChangeReporter(  499): Compat change id reported: 135634846; UID 10174; state: DISABLED
+10-28 07:18:32.045 D/CompatibilityChangeReporter(  499): Compat change id reported: 143937733; UID 10174; state: ENABLED
+10-28 07:18:32.061 D/Zygote  (  299): Forked child process 7359
+10-28 07:18:32.062 I/ActivityManager(  499): Start proc 7359:com.bytebox.play/u0a174 for next-top-activity {com.bytebox.play/com.bytebox.app.MainActivity}
+10-28 07:18:32.064 I/ProvidersCache( 3898): Provider returned no roots. Possibly naughty: com.google.android.apps.docs.storage
+10-28 07:18:32.065 I/Dck     ( 6388): doesDeviceHaveSupportedWirelessCapabilities: wccSysProp:0, wccMendel:3, deviceWccOverride:false [CONTEXT service_id=289 ]
+10-28 07:18:32.065 I/Dck     ( 6388): isDckModuleEligible: isAtLeastR:true, hasWccSupport:false, downloadAllowed:false [CONTEXT service_id=289 ]
+10-28 07:18:32.068 W/Dck     ( 6388): Dck module not eligible for asynchronous downloading [CONTEXT service_id=289 ]
+10-28 07:18:32.069 D/CoreBackPreview(  499): Window{feb69ed u0 Splash Screen com.bytebox.play}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2f91870, mPriority=0}
+10-28 07:18:32.070 I/PermissionControllerServiceImpl( 4787): Updating user sensitive for uid 10174
+10-28 07:18:32.089 D/CarrierSvcBindHelper( 1030): onPackageModified: com.bytebox.play
+10-28 07:18:32.089 D/CarrierSvcBindHelper( 1030): No carrier app for: 0
+10-28 07:18:32.094 D/ImsResolver( 1030): maybeAddedImsService, packageName: com.bytebox.play
+10-28 07:18:32.094 D/BoundBrokerSvc( 6307): onBind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-28 07:18:32.094 D/BoundBrokerSvc( 6307): Loading bound service for intent: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-28 07:18:32.097 I/Fitness ( 6307): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-28 07:18:32.102 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+10-28 07:18:32.109 I/om.bytebox.play( 7359): Late-enabling -Xcheck:jni
+10-28 07:18:32.119 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-28 07:18:32.165 D/SplashScreenView(  798): Build android.window.SplashScreenView{d044c0f V.E...... ......ID 0,0-0,0}
+10-28 07:18:32.165 D/SplashScreenView(  798): Icon: view: android.widget.ImageView{c9b249c V.ED..... ......I. 0,0-0,0 #10204dd android:id/splashscreen_icon_view} drawable: com.android.wm.shell.startingsurface.SplashscreenIconDrawableFactory$ImmobileIconDrawable@fde4ea5 size: 384
+10-28 07:18:32.165 D/SplashScreenView(  798): Branding: view: android.view.View{63bf27a G.ED..... ......I. 0,0-0,0 #10204dc android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+10-28 07:18:32.176 I/om.bytebox.play( 7359): Using CollectorTypeCC GC.
+10-28 07:18:32.176 W/om.bytebox.play( 7359): Unexpected CPU variant for x86: x86_64.
+10-28 07:18:32.176 W/om.bytebox.play( 7359): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-28 07:18:32.198 I/Icing   ( 6388): Indexing com.google.android.gms-apps from com.google.android.gms
+10-28 07:18:32.202 I/Icing   ( 6388): Indexing done com.google.android.gms-apps
+10-28 07:18:32.211 W/PackageManager(  499): Failed registering loading progress callback. Package is fully loaded.
+10-28 07:18:32.223 I/adbd    (  393): jdwp connection from 7359
+10-28 07:18:32.250 I/system_server(  499): Background concurrent copying GC freed 147585(7397KB) AllocSpace objects, 4(80KB) LOS objects, 49% free, 22MB/45MB, paused 52us,47us total 398.663ms
+10-28 07:18:32.251 D/CompatibilityChangeReporter( 7359): Compat change id reported: 171979766; UID 10174; state: ENABLED
+10-28 07:18:32.258 D/CompatibilityChangeReporter(  499): Compat change id reported: 161252188; UID 10174; state: DISABLED
+10-28 07:18:32.263 D/nativeloader( 7359): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/lib/x86_64:/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-28 07:18:32.265 D/nativeloader( 7359): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/lib/x86_64:/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-28 07:18:32.267 W/ziparchive( 7359): Unable to open '/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.dm': No such file or directory
+10-28 07:18:32.267 I/DropBoxManagerService(  499): add tag=system_server_strictmode isTagEnabled=true flags=0x2
+10-28 07:18:32.267 W/ogle.android.as( 1703): Long monitor contention with owner aiai-min-shared-0 (2268) at bsp bxi.c()(PG:10) waiters=0 in bsp bxi.c() for 288ms
+10-28 07:18:32.270 W/ziparchive( 7359): Unable to open '/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.dm': No such file or directory
+10-28 07:18:32.332 I/AiAiEcho( 1703): EchoSearch: AppFetcherImpl is initialized with [19] apps [time=51, reason=com.bytebox.play is added]
+10-28 07:18:32.349 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.360 I/Fitness ( 6307): OnPackageChangedOperation got intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x5000010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.PersistentIntentOperationService (has extras) } [CONTEXT service_id=17 ]
+10-28 07:18:32.368 I/Fitness ( 6307): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_CHANGED [CONTEXT service_id=17 ]
+10-28 07:18:32.370 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.410 W/Binder  (  499): Caught a RuntimeException from the binder stub implementation.
+10-28 07:18:32.410 W/Binder  (  499): java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 0
+10-28 07:18:32.410 W/Binder  (  499): 	at android.util.ArraySet.valueAt(ArraySet.java:422)
+10-28 07:18:32.410 W/Binder  (  499): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.updateContentCaptureOptions(ContentCapturePerUserService.java:733)
+10-28 07:18:32.410 W/Binder  (  499): 	at com.android.server.contentcapture.ContentCapturePerUserService$ContentCaptureServiceRemoteCallback.setContentCaptureWhitelist(ContentCapturePerUserService.java:646)
+10-28 07:18:32.410 W/Binder  (  499): 	at android.service.contentcapture.IContentCaptureServiceCallback$Stub.onTransact(IContentCaptureServiceCallback.java:115)
+10-28 07:18:32.410 W/Binder  (  499): 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-28 07:18:32.410 W/Binder  (  499): 	at android.os.Binder.execTransact(Binder.java:1244)
+10-28 07:18:32.423 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e14f0
+10-28 07:18:32.423 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e1eb0
+10-28 07:18:32.435 I/AiAiEcho( 1703): EchoSearch: WidgetFetcherImpl is initialized with [25] widgets [reason=package added for userId: 0]
+10-28 07:18:32.465 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.470 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.485 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.490 W/ChimeraUtils( 6307): Module com.google.android.gms.nearby_en missing resource null(0)
+10-28 07:18:32.513 D/nativeloader( 6388): Configuring classloader-namespace for other apk . target_sdk_version=33, uses_libraries=ALL, library_path=/data/user_de/0/com.google.android.gms/app_chimera/m/00000001/CronetDynamite.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+10-28 07:18:32.519 I/cr_CronetLibraryLoader( 6388): Cronet version: 113.0.5672.51, arch: x86_64
+10-28 07:18:32.526 D/ConnectivityService(  499): requestNetwork for uid/pid:10120/6388 activeRequest: null callbackRequest: 156 [NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-28 07:18:32.528 D/WifiNetworkFactory(  499): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-28 07:18:32.530 D/ConnectivityService(  499): NetReassign [157 : null → 101] [c 0] [a 1] [i 1]
+10-28 07:18:32.533 D/UntrustedWifiNetworkFactory(  499): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-28 07:18:32.534 D/OemPaidWifiNetworkFactory(  499): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-28 07:18:32.534 D/MultiInternetWifiNetworkFactory(  499): got request NetworkRequest [ REQUEST id=157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10120 RequestorUid: 10120 RequestorPkg: com.google.android.gms UnderlyingNetworks: Null] ]
+10-28 07:18:32.538 I/Icing   ( 6388): Indexing com.google.android.gms-apps from com.google.android.gms
+10-28 07:18:32.539 D/ConnectivityService(  499): NetReassign [no changes] [c 0] [a 4] [i 4]
+10-28 07:18:32.543 I/Icing   ( 6388): Indexing done com.google.android.gms-apps
+10-28 07:18:32.544 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:32.554 I/resolv  (  295): GetAddrInfoHandler::run: {101 786533 101 983141 10120 0}
+10-28 07:18:32.555 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:32.561 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:32.576 I/resolv  (  295): res_nsend: used send_dg 272 terrno: 0
+10-28 07:18:32.576 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=272
+10-28 07:18:32.580 I/resolv  (  295): res_nsend: used send_dg 176 terrno: 0
+10-28 07:18:32.580 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=176
+10-28 07:18:32.582 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.584 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.585 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.587 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.589 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.590 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.592 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.594 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.595 D/TrafficStats( 6388): tagSocket(148) with statsTag=0x8004901, statsUid=10120
+10-28 07:18:32.648 D/nativeloader( 7359): Configuring classloader-namespace for other apk /data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/lib/x86_64:/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.bytebox.play
+10-28 07:18:32.655 V/GraphicsEnvironment( 7359): ANGLE Developer option for 'com.bytebox.play' set to: 'default'
+10-28 07:18:32.656 V/GraphicsEnvironment( 7359): ANGLE GameManagerService for com.bytebox.play: false
+10-28 07:18:32.656 V/GraphicsEnvironment( 7359): Neither updatable production driver nor prerelease driver is supported.
+10-28 07:18:32.658 D/NetworkSecurityConfig( 7359): No Network Security Config specified, using platform default
+10-28 07:18:32.659 D/NetworkSecurityConfig( 7359): No Network Security Config specified, using platform default
+10-28 07:18:32.675 D/libEGL  ( 7359): loaded /vendor/lib64/egl/libEGL_emulation.so
+10-28 07:18:32.677 D/libEGL  ( 7359): loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-28 07:18:32.680 D/libEGL  ( 7359): loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-28 07:18:32.683 I/FlutterActivityAndFragmentDelegate( 7359): If you are attempting to set --start-paused via Intent extras to launch a Flutter component outside of using the Flutter CLI, note that support for setting engine flags on Android via Intent will soon be dropped; see https://github.com/flutter/flutter/issues/180686 for more information on this breaking change. To migrate, set --start-paused or any other flags specified via Intent extras on the command line instead or see https://github.com/flutter/flutter/blob/main/docs/engine/Flutter-Android-Engine-Flags.md for alternative methods.
+10-28 07:18:32.690 I/ResourceExtractor( 7359): Resource version mismatch res_timestamp-1-1793171911807
+10-28 07:18:32.694 D/FlutterJNI( 7359): Beginning load of flutter...
+10-28 07:18:32.711 D/FlutterJNI( 7359): flutter (null) was loaded normally!
+10-28 07:18:32.722 D/skia    ( 7359): [SkFontMgr Android Parser] '/product/etc/fonts_customization.xml' could not be opened
+10-28 07:18:33.025 I/ResourceExtractor( 7359): Extracted baseline resource assets/flutter_assets/kernel_blob.bin
+10-28 07:18:33.026 I/ResourceExtractor( 7359): Extracted baseline resource assets/flutter_assets/vm_snapshot_data
+10-28 07:18:33.044 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:33.096 I/ResourceExtractor( 7359): Extracted baseline resource assets/flutter_assets/isolate_snapshot_data
+10-28 07:18:33.160 I/cr_CronetUrlRequestContext( 6388): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@1793347
+10-28 07:18:33.168 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getTouchX()F (blocked, linking, denied)
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getTouchY()F (blocked, linking, denied)
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getProgress()F (blocked, linking, denied)
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (blocked, linking, denied)
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getProgress()F (blocked, linking, denied)
+10-28 07:18:33.170 W/om.bytebox.play( 7359): Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (blocked, linking, denied)
+10-28 07:18:33.176 I/flutter ( 7359): [IMPORTANT:flutter/shell/common/shell.cc(528)] [Action Required]: Impeller opt-out deprecated.
+10-28 07:18:33.176 I/flutter ( 7359):     The application opted out of Impeller by either using the
+10-28 07:18:33.176 I/flutter ( 7359):     `--no-enable-impeller` flag or the
+10-28 07:18:33.176 I/flutter ( 7359):     `io.flutter.embedding.android.EnableImpeller` `AndroidManifest.xml` entry.
+10-28 07:18:33.176 I/flutter ( 7359):     These options are going to go away in an upcoming Flutter release. Remove
+10-28 07:18:33.176 I/flutter ( 7359):     the explicit opt-out. If you need to opt-out, please report a bug describing
+10-28 07:18:33.176 I/flutter ( 7359):     the issue.
+10-28 07:18:33.176 I/flutter ( 7359): 
+10-28 07:18:33.176 I/flutter ( 7359):     https://github.com/flutter/flutter/issues/new?template=02_bug.yml
+10-28 07:18:33.176 I/flutter ( 7359): 
+10-28 07:18:33.182 D/HostConnection( 7359): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:33.172 W/om.bytebox.play( 7359): type=1400 audit(0.0:51): avc: denied { read } for name="max_map_count" dev="proc" ino=79788 scontext=u:r:untrusted_app:s0:c174,c256,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.bytebox.play
+10-28 07:18:33.184 D/EGL_emulation( 7359): eglCreateContext: 0x799b6262abd0: maj 3 min 0 rcv 3
+10-28 07:18:33.186 D/EGL_emulation( 7359): eglCreateContext: 0x799b6262aa50: maj 3 min 0 rcv 3
+10-28 07:18:33.195 D/HostConnection( 7359): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:33.195 D/EGL_emulation( 7359): eglMakeCurrent: 0x799b6262aa50: ver 3 0 (tinfo 0x799d8b5c0100) (first time)
+10-28 07:18:33.278 I/flutter ( 7359): The Dart VM service is listening on http://127.0.0.1:42679/NiTahGVlazQ=/
+10-28 07:18:33.464 W/om.bytebox.play( 7359): Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (unsupported,test-api, reflection, allowed)
+10-28 07:18:33.464 W/om.bytebox.play( 7359): Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (unsupported, reflection, allowed)
+10-28 07:18:33.465 W/om.bytebox.play( 7359): Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (unsupported, reflection, allowed)
+10-28 07:18:33.465 W/om.bytebox.play( 7359): Accessing hidden method Landroid/util/LongArray;->get(I)J (unsupported, reflection, allowed)
+10-28 07:18:33.468 D/AccessibilityBridge( 7359): Setting not found: accessibility_display_inversion_enabled, using default: 0
+10-28 07:18:33.475 D/FlutterRenderer( 7359): Width is zero. 0,0
+10-28 07:18:33.483 D/CompatibilityChangeReporter( 7359): Compat change id reported: 237531167; UID 10174; state: DISABLED
+10-28 07:18:33.491 W/Parcel  ( 7359): Expecting binder but got null!
+10-28 07:18:33.494 D/CoreBackPreview(  499): Window{b0a9f28 u0 com.bytebox.play/com.bytebox.app.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@6456de6, mPriority=0}
+10-28 07:18:33.497 I/Choreographer( 7359): Skipped 48 frames!  The application may be doing too much work on its main thread.
+10-28 07:18:33.536 D/FlutterRenderer( 7359): Width is zero. 0,0
+10-28 07:18:33.540 E/OverviewProxyService(  798): Failed to get overview proxy for system bar attr change.
+10-28 07:18:33.541 W/ServiceManager(  381): Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10174 pid=7359
+10-28 07:18:33.541 D/PermissionCache(  381): checking android.permission.ACCESS_SURFACE_FLINGER for uid=10174 => denied (209 us)
+10-28 07:18:33.541 W/ServiceManager(  381): Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10174 pid=0
+10-28 07:18:33.541 D/PermissionCache(  381): checking android.permission.ACCESS_SURFACE_FLINGER for uid=10174 => denied (516 us)
+10-28 07:18:33.541 W/ServiceManager(  381): Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10174 pid=7359
+10-28 07:18:33.541 D/PermissionCache(  381): checking android.permission.ROTATE_SURFACE_FLINGER for uid=10174 => denied (269 us)
+10-28 07:18:33.542 W/ServiceManager(  381): Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10174 pid=0
+10-28 07:18:33.542 D/PermissionCache(  381): checking android.permission.ROTATE_SURFACE_FLINGER for uid=10174 => denied (336 us)
+10-28 07:18:33.542 W/ServiceManager(  381): Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10174 pid=7359
+10-28 07:18:33.542 D/PermissionCache(  381): checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10174 => denied (260 us)
+10-28 07:18:33.542 W/ServiceManager(  381): Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10174 pid=0
+10-28 07:18:33.542 D/PermissionCache(  381): checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10174 => denied (174 us)
+10-28 07:18:33.543 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:33.546 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:33.548 D/HostConnection( 7359): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:33.548 W/OpenGLRenderer( 7359): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 07:18:33.548 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:18:33.550 D/EGL_emulation( 7359): eglCreateContext: 0x799b626197d0: maj 3 min 0 rcv 3
+10-28 07:18:33.554 D/EGL_emulation( 7359): eglMakeCurrent: 0x799b626197d0: ver 3 0 (tinfo 0x799d8b5c0180) (first time)
+10-28 07:18:33.558 I/Gralloc4( 7359): mapper 4.x is not supported
+10-28 07:18:33.569 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e3890
+10-28 07:18:33.584 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-28 07:18:33.584 I/servicemanager(  137): Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 07:18:33.584 W/Gralloc4( 7359): allocator 4.x is not supported
+10-28 07:18:33.595 D/HostConnection( 7359): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:33.604 D/HostConnection( 7359): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:33.605 D/EGL_emulation( 7359): eglMakeCurrent: 0x799b6262abd0: ver 3 0 (tinfo 0x799d8b5c0200) (first time)
+10-28 07:18:33.608 D/EGL_emulation( 7359): eglCreateContext: 0x799b6261ae50: maj 3 min 0 rcv 3
+10-28 07:18:33.636 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:33.971 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7425 n tail=1 logMask=99 pid=0 start=0ns deadline=0ns
+10-28 07:18:33.992 I/logd    (    0): logdr: UID=2000 GID=2000 PID=7430 b tail=0 logMask=99 pid=0 start=1793171913636000000ns deadline=0ns
+10-28 07:18:33.969 D/BufferPoolAccessor2.0(  435): evictor expired: 1, evicted: 0
+10-28 07:18:34.048 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:34.271 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+10-28 07:18:34.271 W/BroadcastQueue(  499): Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+10-28 07:18:34.370 I/om.bytebox.play( 7359): Compiler allocated 4355KB to compile void android.view.ViewRootImpl.performTraversals()
+10-28 07:18:34.372 W/adbd    (  393): timeout expired while flushing socket, closing
+10-28 07:18:34.603 W/logd    (    0): SocketClient: write error (Broken pipe)
+10-28 07:18:34.549 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:35.051 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:35.604 I/init    (    0): Untracked pid 7345 received signal 1
+10-28 07:18:35.607 I/init    (    0): Untracked pid 7345 did not have an associated service entry and will not be reaped
+10-28 07:18:35.553 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:35.962 D/BufferPoolAccessor2.0(  442): bufferpool2 0x72130ce742e8 : 0(0 size) total buffers - 0(0 size) used buffers - 93/97 (recycle/alloc) - 4/96 (fetch/transfer)
+10-28 07:18:35.962 D/BufferPoolAccessor2.0(  442): evictor expired: 1, evicted: 1
+10-28 07:18:35.970 D/BufferPoolAccessor2.0(  435): bufferpool2 0x7a28e62189a8 : 0(0 size) total buffers - 0(0 size) used buffers - 95/103 (recycle/alloc) - 8/198 (fetch/transfer)
+10-28 07:18:35.970 D/BufferPoolAccessor2.0(  435): evictor expired: 1, evicted: 1
+10-28 07:18:36.055 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:36.558 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:36.624 I/resolv  (  295): GetAddrInfoHandler::run: {101 786533 101 983141 10120 0}
+10-28 07:18:36.624 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:36.624 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:36.645 I/resolv  (  295): res_nsend: used send_dg 269 terrno: 0
+10-28 07:18:36.645 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=269
+10-28 07:18:36.652 I/resolv  (  295): res_nsend: used send_dg 173 terrno: 0
+10-28 07:18:36.652 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=173
+10-28 07:18:36.996 W/earchbox:search( 1839): Cleared Reference was only reachable from finalizer (only reported once)
+10-28 07:18:37.059 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:37.134 I/flutter ( 7359): 00:00 +0: Bytebox end-to-end
+10-28 07:18:37.560 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:37.645 I/flutter ( 7359): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+10-28 07:18:37.693 I/netd    (  295): setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.09ms>
+10-28 07:18:37.693 I/netd    (  295): setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.05ms>
+10-28 07:18:37.694 I/netd    (  295): setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.06ms>
+10-28 07:18:37.694 I/netd    (  295): setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.01ms>
+10-28 07:18:37.800 D/EGL_emulation(  798): app_time_stats: avg=2924.24ms min=14.47ms max=8054.41ms count=3
+10-28 07:18:37.807 W/ziparchive(  499): Unable to open '/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.dm': No such file or directory
+10-28 07:18:37.808 I/ActivityTaskManager(  499): Displayed com.bytebox.play/com.bytebox.app.MainActivity: +5s811ms
+10-28 07:18:37.808 I/ActivityTaskManager(  499): Fully drawn com.bytebox.play/com.bytebox.app.MainActivity: +5s811ms
+10-28 07:18:37.808 W/ziparchive(  499): Unable to open '/data/app/~~UGjnphe7BFgwchBAaKUB_w==/com.bytebox.play-7N8m_oKT6Yuit5DRpjlAfw==/base.dm': No such file or directory
+10-28 07:18:37.839 D/CompatibilityChangeReporter(  499): Compat change id reported: 214016041; UID 10174; state: ENABLED
+10-28 07:18:37.839 D/CoreBackPreview(  499): Window{feb69ed u0 Splash Screen com.bytebox.play EXITING}: Setting back callback null
+10-28 07:18:37.840 W/InputManager-JNI(  499): Input channel object 'feb69ed Splash Screen com.bytebox.play (client)' was disposed without first being removed with the input manager!
+10-28 07:18:37.852 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onFinishInput():3227 
+10-28 07:18:37.856 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+10-28 07:18:37.856 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=-1 fieldName=null extras=null}, false)
+10-28 07:18:37.856 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:18:37.856 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e1610
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57d8130
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e32f0
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e1610
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57d8130
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e32f0
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e32f0
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57d8130
+10-28 07:18:37.867 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e32f0
+10-28 07:18:37.875 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e18b0
+10-28 07:18:38.061 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:38.564 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:38.569 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:38.572 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:38.574 D/ProfileInstaller( 7359): Installing profile for com.bytebox.play
+10-28 07:18:38.581 I/resolv  (  295): res_nsend: used send_dg 82 terrno: 0
+10-28 07:18:38.581 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:18:38.584 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:38.589 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:38.616 I/resolv  (  295): res_nsend: used send_dg 117 terrno: 0
+10-28 07:18:38.616 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:38.618 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:38.621 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:38.622 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:38.622 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:39.065 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:39.176 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:18:39.468 V/NotificationListeners(  499): binding: Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener (has extras) }
+10-28 07:18:39.468 W/ActivityManager(  499): Unable to start service Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener } U=0: not found
+10-28 07:18:39.468 W/NotificationListeners(  499): Unable to bind notification listener service: Intent { act=android.service.notification.NotificationListenerService cmp=com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener (has extras) } in user 0
+10-28 07:18:39.566 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:39.691 D/EGL_emulation( 7359): app_time_stats: avg=440.12ms min=128.32ms max=1038.37ms count=5
+10-28 07:18:40.067 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:40.568 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:40.958 D/EGL_emulation( 7359): app_time_stats: avg=316.71ms min=314.18ms max=319.17ms count=4
+10-28 07:18:41.069 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:41.268 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.268 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.268 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:41.268 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:18:41.268 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:18:41.269 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:41.269 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:18:41.269 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:18:41.284 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.284 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:41.284 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:41.284 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:41.285 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.285 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:41.285 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:41.285 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:41.288 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.288 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:41.288 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:41.288 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:41.289 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:41.289 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:41.289 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:41.289 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:41.571 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:41.813 E/android.hardware.power.stats@1.0-service-mock(  325): Failed to getEnergyData
+10-28 07:18:41.938 I/WorkerManager( 1839): dispose()
+10-28 07:18:41.938 W/A       ( 1839): Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+10-28 07:18:42.072 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:42.137 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:42.137 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:42.137 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:18:42.137 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:18:42.153 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:42.153 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:42.153 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:42.153 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:42.154 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:42.154 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:42.154 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:42.154 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:42.316 W/OnBackInvokedCallback( 7359): OnBackInvokedCallback is not enabled for the application.
+10-28 07:18:42.316 W/OnBackInvokedCallback( 7359): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-28 07:18:42.323 D/EGL_emulation( 7359): app_time_stats: avg=341.12ms min=309.43ms max=417.92ms count=4
+10-28 07:18:42.412 I/keystore2(  161): keystore2::watchdog: Watchdog thread idle -> terminating. Have a great day.
+10-28 07:18:42.572 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:43.074 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:43.414 D/EGL_emulation( 7359): app_time_stats: avg=119.71ms min=21.45ms max=368.05ms count=9
+10-28 07:18:43.575 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:43.751 I/flutter ( 7359): E2E_SHOT:tablet7_e2e-01-consent
+10-28 07:18:43.781 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:18:43.783 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:18:44.076 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:44.079 W/ProcessState( 7480): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:18:44.081 W/ServiceManager(  381): Permission failure: android.permission.CAPTURE_BLACKOUT_CONTENT from uid=2000 pid=7480
+10-28 07:18:44.081 D/PermissionCache(  381): checking android.permission.CAPTURE_BLACKOUT_CONTENT for uid=2000 => denied (221 us)
+10-28 07:18:44.094 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:18:44.095 I/Gralloc4( 7480): mapper 4.x is not supported
+10-28 07:18:44.179 D/HostConnection( 7480): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:44.419 I/netd    (  295): tetherGetStats() -> {[]} <0.51ms>
+10-28 07:18:44.421 I/netd    (  295): bandwidthSetGlobalAlert(2097152) <0.09ms>
+10-28 07:18:44.423 I/netd    (  295): bandwidthRemoveInterfaceQuota(eth0) <0.51ms>
+10-28 07:18:44.423 I/netd    (  295): bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.44ms>
+10-28 07:18:44.465 D/EGL_emulation( 7359): app_time_stats: avg=116.72ms min=108.20ms max=121.97ms count=9
+10-28 07:18:44.506 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:18:44.549 D/BoundBrokerSvc( 6307): onUnbind: Intent { act=com.google.android.gms.auth.account.data.service.START pkg=com.google.android.gms }
+10-28 07:18:44.579 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:44.854 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-28 07:18:45.081 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:45.402 I/DialerOmtpVvmCarrierConfigHelper( 1493): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.handleEvent:527 OmtpEvent:CONFIG_STATUS_SMS_TIME_OUT PhoneAccountHandle: [ComponentName: com.android.phone/com.android.services.telephony.TelephonyConnectionService subId: 1] [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:45.403 I/DialerRetryPolicy( 1493): com.android.voicemail.impl.scheduling.RetryPolicy.onCompleted:106 Retry limit for com.android.voicemail.impl.ActivationTask@8485a6a reached [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:45.403 I/DialerRetryPolicy( 1493): com.android.voicemail.impl.scheduling.RetryPolicy.onCompleted:108 committing deferred status [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:45.405 I/DialerTaskExecutor( 1493): com.android.voicemail.impl.scheduling.TaskExecutor.prepareStop:371 no more tasks, stopping service if no task are added in 5000 millis [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:45.405 I/DialerVoicemailStatus( 1493): com.android.voicemail.impl.VoicemailStatus$Editor.apply:112 enter
+10-28 07:18:45.408 I/DialerVoicemailStatusDataServiceImpl( 1493): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.insertOrUpdateVoicemailStatus:196 enter
+10-28 07:18:45.432 I/DialerRestVoicemailEnabledFn( 1493): com.android.dialer.voicemail.service.impl.vvmclients.rest.RestVoicemailEnabledFn.isEnabled:51 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 23]" ]
+10-28 07:18:45.432 I/DialerCvvmEnabledFn( 1493): com.android.dialer.voicemail.service.impl.vvmclients.omtp.protocol.cvvm.CvvmEnabledFn.isEnabled:37 disabled by flag [CONTEXT ratelimit_period="1 MINUTES [skipped: 11]" ]
+10-28 07:18:45.440 I/DialerOmtpVvmCarrierConfigHelper( 1493): com.android.voicemail.impl.OmtpVvmCarrierConfigHelper.isCarrierAppInstalled:637 carrier app not installed in this device [CONTEXT ratelimit_period="1 MINUTES [skipped: 4]" ]
+10-28 07:18:45.448 W/Settings( 1493): Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-28 07:18:45.450 I/DialerVoicemailStatusDataServiceImpl( 1493): com.android.dialer.voicemailstatus.dataservice.impl.VoicemailStatusDataServiceImpl.lambda$insertOrUpdateVoicemailStatus$5:213 merged status: # kee@5cbbd7c4
+10-28 07:18:45.518 D/EGL_emulation( 7359): app_time_stats: avg=116.96ms min=114.23ms max=120.07ms count=9
+10-28 07:18:45.582 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:46.083 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:46.569 D/EGL_emulation( 7359): app_time_stats: avg=116.81ms min=113.93ms max=121.32ms count=9
+10-28 07:18:46.588 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:46.784 W/AudioFlinger(  378): createTrack_l(): mismatch between requested flags (00000004) and output flags (00000002)
+10-28 07:18:46.785 D/AF::TrackHandle(  378): OpPlayAudio: track:56 usage:13 not muted
+10-28 07:18:47.090 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:47.194 D/BoundBrokerSvc( 6307): onUnbind: Intent { act=com.google.android.gms.nearby.exposurenotification.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps }
+10-28 07:18:47.591 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:47.885 D/CompatibilityChangeReporter(  499): Compat change id reported: 197654537; UID 10174; state: ENABLED
+10-28 07:18:47.886 D/EGL_emulation( 7359): app_time_stats: avg=258.82ms min=22.72ms max=461.06ms count=5
+10-28 07:18:47.904 D/EGL_emulation( 7359): app_time_stats: avg=5049.34ms min=31.90ms max=10066.77ms count=2
+10-28 07:18:47.915 D/AudioFlinger(  378): mixer(0x724883c0f9a0) throttle end: throttle time(35)
+10-28 07:18:48.093 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:48.339 W/OnBackInvokedCallback( 7359): OnBackInvokedCallback is not enabled for the application.
+10-28 07:18:48.339 W/OnBackInvokedCallback( 7359): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-28 07:18:48.595 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:48.868 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:48.869 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:48.869 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:18:48.869 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:18:48.993 D/EGL_emulation( 7359): app_time_stats: avg=103.79ms min=21.17ms max=240.26ms count=10
+10-28 07:18:49.026 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:49.027 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:49.027 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:49.027 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:49.030 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:18:49.030 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:49.030 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:18:49.030 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:18:49.102 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:49.141 D/InputMethodManager( 7359): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb872a0 VFE...... .F....ID 0,0-1200,1920 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+10-28 07:18:49.142 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onFinishInput():3227 
+10-28 07:18:49.151 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+10-28 07:18:49.151 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8021(EmailAddress) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, false)
+10-28 07:18:49.152 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:18:49.152 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.155 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInputView():1995 onStartInputView(EditorInfo{inputType=0x8021(EmailAddress) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, false)
+10-28 07:18:49.157 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.159 D/InputMethodManager( 7359): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb872a0 VFE...... .F....ID 0,0-1200,1920 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+10-28 07:18:49.160 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.163 D/AutofillInlineSuggestionsRequestSession(  499): onCreateInlineSuggestionsRequestLocked called: 1073741824:-1302802695@1725260135
+10-28 07:18:49.164 D/EGL_emulation( 7359): app_time_stats: avg=1256.08ms min=1256.08ms max=1256.08ms count=1
+10-28 07:18:49.168 W/ModuleManager( 1586): ModuleManager.loadModule():450 Module erj is not available
+10-28 07:18:49.177 I/AssistStructure( 7359): Flattened final assist data: 412 bytes, containing 1 windows, 3 views
+10-28 07:18:49.177 D/AutofillSession(  499): createPendingIntent for request 2
+10-28 07:18:49.179 D/ContentCapturePerUserService(  499): Notified activity assist data for activity: Token{fed62dc ActivityRecord{d650561 u0 com.bytebox.play/com.bytebox.app.MainActivity} t10}} without a session Id
+10-28 07:18:49.203 I/putmethod.latin( 1586): JIT allocated 106KB for compiled code of boolean drz.a(ikb, java.lang.Object[])
+10-28 07:18:49.204 I/putmethod.latin( 1586): Compiler allocated 5216KB to compile boolean drz.a(ikb, java.lang.Object[])
+10-28 07:18:49.325 W/InputConnectionWrapper( 1586): InputConnectionWrapper.recordDuration():1451 IPC IC_GET_SURROUNDING_TEXT took 153 ms
+10-28 07:18:49.326 I/InputContextChangeTracker( 1586): InputContextChangeTracker.fixLyingSelectionRangeFromSurroundingText():1497 fixLyingSelectionRangeFromSurroundingText(): [-1, -1]([-1, -1]) -> [0, 0]([0, 0])
+10-28 07:18:49.328 I/KeyboardViewUtil( 1586): KeyboardViewUtil.getKeyboardHeightRatio():189 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+10-28 07:18:49.332 W/MetricsManager( 1586): MetricsManager.addProcessorImpl():614 Processor dzr@f538267 already exists.
+10-28 07:18:49.333 I/LatinIme( 1586): LatinIme.<init>():328 Language = en-US
+10-28 07:18:49.339 I/Delight5Facilitator( 1586): Delight5Facilitator.initializeForIme():777 initializeForIme() : Locale = [en_US], layout = qwerty
+10-28 07:18:49.339 I/Delight5Facilitator( 1586): Delight5Facilitator.resetDecoder():954 resetDecoder() : Locale = [en_US]
+10-28 07:18:49.345 I/Delight5Decoder( 1586): Delight5DecoderWrapper.createOrResetDecoder():341 Decoder reset
+10-28 07:18:49.359 I/AndroidIME( 1586): AbstractIme.onActivate():86 LatinIme.onActivate() : EditorInfo = inputType=0x8021(EmailAddress) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null, IncognitoMode = false, DeviceLocked = false
+10-28 07:18:49.360 D/InputMethodManager( 7359): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb872a0 VFE...... .F...... 0,0-1200,1920 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+10-28 07:18:49.361 I/VoiceInputManagerWrapper( 1586): VoiceInputManagerWrapper.cancelShutdown():55 cancelShutdown()
+10-28 07:18:49.361 I/VoiceInputManagerWrapper( 1586): VoiceInputManagerWrapper.syncLanguagePacks():67 syncLanguagePacks()
+10-28 07:18:49.362 I/MainLanguageModelLoader( 1586): MainLanguageModelLoader.call():145 Running LM loader for [en_US]
+10-28 07:18:49.363 I/SpeechFactory( 1586): SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():205 maybeScheduleAutoPackDownloadForFallback()
+10-28 07:18:49.363 W/PresentationStatsEventLogger(  499): Shouldn't be logging AutofillPresentationEventReported again for same event
+10-28 07:18:49.363 I/FallbackOnDeviceRecognitionProvider( 1586): FallbackOnDeviceRecognitionProvider.maybeScheduleAutoPackDownload():195 maybeScheduleAutoPackDownload() for language tag en-US
+10-28 07:18:49.363 D/AutofillSession(  499): Starting partition or augmented request for view id 1073741824:-1958777365@1725260135: 1
+10-28 07:18:49.364 D/InputMethodManager( 7359): showSoftInput() view=io.flutter.embedding.android.FlutterView{bb872a0 VFE...... .F...... 0,0-1200,1920 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+10-28 07:18:49.364 I/LatinIme( 1586): LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1003 inline flag updated to:false
+10-28 07:18:49.364 W/AutofillInlineSuggestionsRequestSession(  499): Never received an InlineSuggestionsRequest from the IME for 1073741824:-1302802695@1725260135
+10-28 07:18:49.364 D/AutofillInlineSuggestionsRequestSession(  499): onCreateInlineSuggestionsRequestLocked called: 1073741824:-1958777365@1725260135
+10-28 07:18:49.366 I/JobSchedulerImpl( 1586): JobSchedulerImpl.cancel():125 Cancel task: DlamTrainingTask. Not pending.
+10-28 07:18:49.369 I/AssistStructure( 7359): Flattened final assist data: 404 bytes, containing 1 windows, 3 views
+10-28 07:18:49.369 D/AutofillSession(  499): createPendingIntent for request 3
+10-28 07:18:49.369 D/ContentCapturePerUserService(  499): Notified activity assist data for activity: Token{fed62dc ActivityRecord{d650561 u0 com.bytebox.play/com.bytebox.app.MainActivity} t10}} without a session Id
+10-28 07:18:49.387 I/KeyboardWrapper( 1586): KeyboardWrapper.consumeEvent():275 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=false)
+10-28 07:18:49.388 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-840 already exists
+10-28 07:18:49.388 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:49.390 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:49.390 I/KeyboardManager( 1586): KeyboardManager.requestKeyboard():146 Creating keyboard prime, imeId=ime_english_united_states, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_materiallight_tablet
+10-28 07:18:49.391 I/DelightDataFileManagerLanguageModelProvider( 1586): DelightDataFileManagerLanguageModelProvider.fetchLanguageModel():73 find data en-840 delight
+10-28 07:18:49.392 I/LmManager( 1586): LmManager.asyncUpdateEnabledLanguageModels():90 asyncUpdateEnabledLanguageModels()
+10-28 07:18:49.392 I/SuperDelight( 1586): SuperDelightManager.initializeDelightSuperpacks():340 initializeDelightSuperpacks()
+10-28 07:18:49.392 I/SuperDelight( 1586): SuperDelightManager.getDelightMetadataUriAndVersion():1011 getDelightMetadataUriAndVersion(): Phenotype : 2023020919 : https://www.gstatic.com/android/keyboard/dictionarypack/Omei-normal/metadata.json
+10-28 07:18:49.393 I/SuperDelight( 1586): SuperDelightManager.initializeBundledDelightSuperpacks():376 initializeBundledDelightSuperpacks()
+10-28 07:18:49.393 I/SuperDelight( 1586): SuperDelightManager.lambda$registerAndUpgradeSuperpacks$5():476 SuperDelightManager#registerAndUpgradeSuperpacks(delight): current 2023020919, required 2023020919
+10-28 07:18:49.393 I/SuperDelight( 1586): SuperDelightAppsSuperpacksManager.initializeDelightAppsSuperpacks():92 initializeDelightAppsSuperpacks()
+10-28 07:18:49.393 I/SuperDelight( 1586): SuperDelightManager.initializeOverridesSuperpacks():402 initializeOverridesSuperpacks()
+10-28 07:18:49.393 I/DelightDataFileManagerLanguageModelProvider( 1586): DelightDataFileManagerLanguageModelProvider.fetchLanguageModel():73 find data en-US delight
+10-28 07:18:49.394 I/SP      ( 1586): Registering bundled_delight.2022101700, url: null, constraints: *:*:*:*, flags: *, requested: 2022101700, current: 2022101700
+10-28 07:18:49.395 I/LmManager( 1586): LmManager.asyncUpdateEnabledLanguageModels():90 asyncUpdateEnabledLanguageModels()
+10-28 07:18:49.395 I/SuperDelight( 1586): SuperDelightManager.initializeDelightSuperpacks():340 initializeDelightSuperpacks()
+10-28 07:18:49.395 I/SuperDelight( 1586): SuperDelightManager.getDelightMetadataUriAndVersion():1011 getDelightMetadataUriAndVersion(): Phenotype : 2023020919 : https://www.gstatic.com/android/keyboard/dictionarypack/Omei-normal/metadata.json
+10-28 07:18:49.395 I/SuperDelight( 1586): SuperDelightManager.lambda$syncDownloadableLanguageModels$8():568 SuperDelightManager#syncDownloadableLanguageModels(delight): [OnDevice] Syncing for version 2023020919
+10-28 07:18:49.395 I/SuperDelight( 1586): SuperDelightManager.initializeBundledDelightSuperpacks():376 initializeBundledDelightSuperpacks()
+10-28 07:18:49.395 I/SuperDelight( 1586): SuperDelightManager.lambda$syncOverridesLanguageModels$14():689 SuperDelightManager#syncOverridesLanguageModels(): Superpack delight_overrides not found or negative version provided
+10-28 07:18:49.396 I/SP      ( 1586): Registering bundled_delight.2022101700, url: null, constraints: *:*:*:*, flags: *, requested: 2022101700, current: 2022101700
+10-28 07:18:49.396 I/SuperDelight( 1586): SuperDelightAppsSuperpacksManager.initializeDelightAppsSuperpacks():92 initializeDelightAppsSuperpacks()
+10-28 07:18:49.396 I/SuperDelight( 1586): SuperDelightManager.initializeOverridesSuperpacks():402 initializeOverridesSuperpacks()
+10-28 07:18:49.396 I/MainLanguageModelLoader( 1586): MainLanguageModelLoader.updateLmAvailableState():392 updateLmAvailableState(): locale? en_US prevState? UNKNOWN
+10-28 07:18:49.396 I/MainLanguageModelLoader( 1586): MainLanguageModelLoader.updateLmAvailableState():428 updateLmAvailableState(): locale? en_US newState? AVAILABLE
+10-28 07:18:49.396 I/Delight5Facilitator( 1586): BlocklistLoader.call():37 Running blocklist loader
+10-28 07:18:49.396 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():649 loadLanguageModel() : 1, version [2022102600]
+10-28 07:18:49.397 I/Delight5Facilitator( 1586): ContactsLanguageModelLoader.call():35 Running contacts language model loader
+10-28 07:18:49.398 I/Delight5Facilitator( 1586): PersonalLanguageModelLoader.call():44 Running personal language model loader
+10-28 07:18:49.399 I/SuperDelight( 1586): SuperDelightManager.lambda$syncBundledLanguageModels$16():774 SuperDelightManager#syncBundledLanguageModels(): Syncing for version 2022101700
+10-28 07:18:49.400 I/Delight5Facilitator( 1586): UserHistoryLanguageModelLoader.call():82 Running user history language model loader
+10-28 07:18:49.400 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 delight_overrides sync success, adding to data file manager
+10-28 07:18:49.400 I/SuperDelight( 1586): SuperDelightManager.lambda$registerAndUpgradeSuperpacks$5():476 SuperDelightManager#registerAndUpgradeSuperpacks(delight): current 2023020919, required 2023020919
+10-28 07:18:49.400 I/SuperDelight( 1586): SuperDelightManager.lambda$syncOverridesLanguageModels$14():689 SuperDelightManager#syncOverridesLanguageModels(): Superpack delight_overrides not found or negative version provided
+10-28 07:18:49.401 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.401 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=false
+10-28 07:18:49.402 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.402 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.405 I/SuperDelight( 1586): SuperDelightDownloadSlicingStrategy.getSlices():68 DownloadSlicing#getSlices() : Locale = [en_US]
+10-28 07:18:49.410 I/SuperDelight( 1586): SuperDelightDownloadSlicingStrategy.getSlices():125 DownloadSlicing#getSlices(): result {slices=[{delight:main_en_840_2022102600_1, m:*:*:*, fg}], last batch=true, sync metadata=false}
+10-28 07:18:49.410 I/SP      ( 1586): Syncing delight (2023020919) with slices: [{main_en_840_2022102600_1, m:*:*:*, fg}], metadata: false
+10-28 07:18:49.415 I/EmojiShortcutsLoader( 1586): EmojiShortcutsLoader.getEmojiShortcuts():117 Reading en_US emoji shortcuts
+10-28 07:18:49.415 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=tablet_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-28 07:18:49.419 I/FeaturePermissionsManager( 1586): FeaturePermissionsManager.disableFeaturesWithDeniedPermissions():780 disableFeaturesWithDeniedPermissions() : Disable import_user_contacts
+10-28 07:18:49.420 I/FeaturePermissionsManager( 1586): FeaturePermissionsManager.onPreferenceChanged():551 Disable FeatureInfo : Description = 2132019058 : Permissions=[android.permission.READ_CONTACTS] : Listeners=[hbz@5d8a64e, cih@e3ec36f]
+10-28 07:18:49.427 I/SuperDelight( 1586): SuperDelightManager.lambda$syncBundledLanguageModels$16():774 SuperDelightManager#syncBundledLanguageModels(): Syncing for version 2022101700
+10-28 07:18:49.427 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 delight_overrides sync success, adding to data file manager
+10-28 07:18:49.428 I/SuperDelight( 1586): SuperDelightManager.lambda$syncDownloadableLanguageModels$8():568 SuperDelightManager#syncDownloadableLanguageModels(delight): [OnDevice] Syncing for version 2023020919
+10-28 07:18:49.428 I/CurrentMicStatusHolder( 1586): CurrentMicStatusHolder.onStartInputView():79 Current Mic status = {MicIconHidden-EmailInputType,}
+10-28 07:18:49.431 I/VoiceImeExtension( 1586): VoiceImeExtension.shouldStartVoiceInputAutomatically():383 No private IME option set to start voice input.
+10-28 07:18:49.432 W/FDL     ( 1586): FDL logging failed. Add a dependency for Firebase Analytics to your app to enable logging of Dynamic Link events.
+10-28 07:18:49.444 W/ServiceManager(  381): Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10136 pid=0
+10-28 07:18:49.444 D/PermissionCache(  381): checking android.permission.ACCESS_SURFACE_FLINGER for uid=10136 => denied (115 us)
+10-28 07:18:49.444 W/ServiceManager(  381): Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10136 pid=0
+10-28 07:18:49.444 D/PermissionCache(  381): checking android.permission.ROTATE_SURFACE_FLINGER for uid=10136 => denied (72 us)
+10-28 07:18:49.444 W/ServiceManager(  381): Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10136 pid=0
+10-28 07:18:49.444 D/PermissionCache(  381): checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10136 => denied (717 us)
+10-28 07:18:49.447 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+10-28 07:18:49.447 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+10-28 07:18:49.467 I/EmojiShortcutsLoader( 1586): EmojiShortcutsLoader.getEmojiShortcuts():134 Read en_US emoji shortcuts successfully.
+10-28 07:18:49.478 D/CoreBackPreview(  499): Window{b0a9f28 u0 com.bytebox.play/com.bytebox.app.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@d8e70a6, mPriority=0}
+10-28 07:18:49.489 D/libEGL  ( 1586): loaded /vendor/lib64/egl/libEGL_emulation.so
+10-28 07:18:49.493 D/libEGL  ( 1586): loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-28 07:18:49.519 D/libEGL  ( 1586): loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-28 07:18:49.525 D/CompatibilityChangeReporter( 1586): Compat change id reported: 210923482; UID 10136; state: ENABLED
+10-28 07:18:49.532 I/EmojiShortcutsLoader( 1586): EmojiShortcutsLoader.call():63 1 emoji shortcut maps loaded.
+10-28 07:18:49.548 D/AutofillInlineSuggestionsRequestSession(  499): onInlineSuggestionsRequest() received: InlineSuggestionsRequest { maxSuggestionCount = 9, inlinePresentationSpecs = [InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }], hostPackageName = com.google.android.inputmethod.latin, supportedLocales = [en_US], extras = Bundle[EMPTY_PARCEL], hostInputToken = android.os.BinderProxy@cb41d66, hostDisplayId = 0, inlineTooltipPresentationSpec = null }
+10-28 07:18:49.550 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, true)
+10-28 07:18:49.551 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:18:49.554 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.554 W/SessionManager( 1586): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+10-28 07:18:49.555 I/EmojiShortcutsLoader( 1586): EmojiShortcutsLoader.call():72 Finished loading emoji shortcuts
+10-28 07:18:49.555 I/Delight5Facilitator( 1586): EmailLanguageModelLoader.call():30 Running email language model loader
+10-28 07:18:49.555 W/SessionManager( 1586): SessionManager.endSession():96 Child session [INPUT_VIEW_SESSION] is not ended while ending session [{INPUT_VIEW_SESSION=1793171929156, IME_SESSION=1793171929329, TRAINING_CACHE_SESSION=1793171929360, INPUT_SESSION=1793171929152}], ending it now.
+10-28 07:18:49.555 I/Delight5Facilitator( 1586): KeyCorrectionTfliteModelLoader.call():29 Running Key Correction Tflite Model loader
+10-28 07:18:49.556 I/Delight5Facilitator( 1586): RankingModelLoader.call():28 Running Ranking Model loader
+10-28 07:18:49.556 W/SessionManager( 1586): SessionManager.endSession():96 Child session [IME_SESSION] is not ended while ending session [{INPUT_VIEW_SESSION=1793171929156, IME_SESSION=1793171929329, TRAINING_CACHE_SESSION=1793171929360, INPUT_SESSION=1793171929152}], ending it now.
+10-28 07:18:49.559 I/InputBundle( 1586): InputBundle.consumeEvent():923 Skip consuming an event as keyboard status is 0
+10-28 07:18:49.561 I/KeyboardWrapper( 1586): KeyboardWrapper.consumeEvent():275 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=false)
+10-28 07:18:49.564 I/VoiceInputManagerWrapper( 1586): VoiceInputManagerWrapper.shutdown():77 shutdown()
+10-28 07:18:49.565 E/native  ( 1586): E0000 00:00:1793171929.564789    1586 key-correction-manager.cc:322] User feature cache is not ready for key correction!
+10-28 07:18:49.567 I/AndroidIME( 1586): AbstractIme.onDeactivate():207 LatinIme.onDeactivate()
+10-28 07:18:49.570 W/SessionManager( 1586): SessionManager.endSession():88 Try to end a not begun session [IME_SESSION].
+10-28 07:18:49.571 E/SessionManager( 1586): SessionManager.beginSession():60 Try to begin a session [IME_SESSION] whose parent [INPUT_VIEW_SESSION] hasn't begun.
+10-28 07:18:49.571 I/AndroidIME( 1586): AbstractIme.onActivate():86 PasswordIme.onActivate() : EditorInfo = inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null, IncognitoMode = false, DeviceLocked = false
+10-28 07:18:49.572 I/KeyboardManager( 1586): KeyboardManager.requestKeyboard():146 Creating keyboard prime, imeId=password, cacheKey=theme_border_stylesheet_noshadow_gsans_pillkey_silkpopup_materiallight_tablet
+10-28 07:18:49.572 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInputView():1995 onStartInputView(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, true)
+10-28 07:18:49.577 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.577 W/ModuleManager( 1586): ModuleManager.loadModule():450 Module erj is not available
+10-28 07:18:49.581 W/ModuleManager( 1586): ModuleManager.loadModule():450 Module jjj is not available
+10-28 07:18:49.581 I/tflite  ( 1586): Initialized TensorFlow Lite runtime.
+10-28 07:18:49.604 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:49.614 D/HostConnection( 1586): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:49.622 W/OpenGLRenderer( 1586): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-28 07:18:49.624 D/EGL_emulation( 1586): eglCreateContext: 0x799b6267d0d0: maj 3 min 0 rcv 3
+10-28 07:18:49.625 I/KeyboardViewUtil( 1586): KeyboardViewUtil.getKeyboardHeightRatio():189 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+10-28 07:18:49.625 I/AndroidIME( 1586): AbstractIme.onDeactivate():207 PasswordIme.onDeactivate()
+10-28 07:18:49.626 I/AndroidIME( 1586): AbstractIme.onActivate():86 PasswordIme.onActivate() : EditorInfo = inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null, IncognitoMode = false, DeviceLocked = false
+10-28 07:18:49.626 I/KeyboardManager( 1586): KeyboardManager.requestKeyboard():128 Using cached keyboard prime, imeId=password
+10-28 07:18:49.627 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.627 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.627 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:49.627 I/putmethod.latin( 1586): Background young concurrent copying GC freed 189243(6628KB) AllocSpace objects, 7(664KB) LOS objects, 50% free, 13MB/27MB, paused 784us,19us total 213.712ms
+10-28 07:18:49.628 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:49.628 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:49.628 I/SuperDelight( 1586): SuperDelightBundledSlicingStrategy.getSlices():39 BundledSlicing#getSlices() : Locale = [en_US]
+10-28 07:18:49.629 I/SuperDelight( 1586): SuperDelightBundledSlicingStrategy.getSlices():65 BundledSlicing#getSlices(): result {slices=[bundled_delight:main_en_us_2022051700_2], last batch=true, sync metadata=false}
+10-28 07:18:49.629 I/SP      ( 1586): Syncing bundled_delight (2022101700) with slices: [main_en_us_2022051700_2], metadata: false
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[4]
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[4]
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[8]
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[4]
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[8]
+10-28 07:18:49.629 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[4]
+10-28 07:18:49.629 I/SP      ( 1586): Registering kc_tflite_model.20220919, url: https://www.gstatic.com/android/keyboard/kc_triggering_model/superpacks-manifest-20220805_235142.json, constraints: W:*:*:*, flags: bg, requested: 20220919, current: -1
+10-28 07:18:49.629 I/SP      ( 1586): Registering kc_tflite_model.20220919, url: https://www.gstatic.com/android/keyboard/kc_triggering_model/superpacks-manifest-20220805_235142.json, constraints: W:*:*:*, flags: bg, requested: 20220919, current: -1
+10-28 07:18:49.630 I/SP      ( 1586): Registering kc_tflite_model.20220919, url: https://www.gstatic.com/android/keyboard/kc_triggering_model/superpacks-manifest-20220805_235142.json, constraints: W:*:*:*, flags: bg, requested: 20220919, current: -1
+10-28 07:18:49.638 I/NebulaeTrainingCacheMetricsProcessor( 1586): NebulaeTrainingCacheMetricsProcessor.processEndSession():447 No input action collection in this session, skip logging.
+10-28 07:18:49.646 D/EGL_emulation( 1586): eglMakeCurrent: 0x799b6267d0d0: ver 3 0 (tinfo 0x799d8b598080) (first time)
+10-28 07:18:49.646 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.680 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=false
+10-28 07:18:49.682 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.682 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.683 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=tablet_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-28 07:18:49.684 I/VoiceImeExtension( 1586): VoiceImeExtension.shouldStartVoiceInputAutomatically():383 No private IME option set to start voice input.
+10-28 07:18:49.690 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.690 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x80081(Password) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, true)
+10-28 07:18:49.690 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:18:49.692 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.692 W/SessionManager( 1586): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+10-28 07:18:49.692 W/SessionManager( 1586): SessionManager.endSession():96 Child session [INPUT_VIEW_SESSION] is not ended while ending session [{INPUT_VIEW_SESSION=1793171929574, IME_SESSION=1793171929625, INPUT_SESSION=1793171929557}], ending it now.
+10-28 07:18:49.692 W/SessionManager( 1586): SessionManager.endSession():96 Child session [IME_SESSION] is not ended while ending session [{INPUT_VIEW_SESSION=1793171929574, IME_SESSION=1793171929625, INPUT_SESSION=1793171929557}], ending it now.
+10-28 07:18:49.692 I/HardKeyTracker( 1586): HardKeyTracker.unregisterKeySequence():88 Unregister key sequence hox{callback=bxi@67fc13c, lastModifier=0, keyCodes=[57, 57], actions=[1, 0]}
+10-28 07:18:49.693 I/HardKeyTracker( 1586): HardKeyTracker.unregisterKeySequence():88 Unregister key sequence hox{callback=bxi@67fc13c, lastModifier=0, keyCodes=[58, 58], actions=[1, 0]}
+10-28 07:18:49.693 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInputView():1995 onStartInputView(EditorInfo{inputType=0x80081(Password) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, true)
+10-28 07:18:49.693 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:49.693 W/ModuleManager( 1586): ModuleManager.loadModule():450 Module erj is not available
+10-28 07:18:49.712 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:18:49.712 I/Gralloc4( 1586): mapper 4.x is not supported
+10-28 07:18:49.731 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-28 07:18:49.734 I/servicemanager(  137): Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-28 07:18:49.735 W/Gralloc4( 1586): allocator 4.x is not supported
+10-28 07:18:49.737 I/InputContextChangeTracker( 1586): InputContextChangeTracker.fixLyingSelectionRangeFromSurroundingText():1497 fixLyingSelectionRangeFromSurroundingText(): [-1, -1]([-1, -1]) -> [0, 0]([0, 0])
+10-28 07:18:49.739 I/KeyboardViewUtil( 1586): KeyboardViewUtil.getKeyboardHeightRatio():189 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+10-28 07:18:49.741 I/AndroidIME( 1586): AbstractIme.onDeactivate():207 PasswordIme.onDeactivate()
+10-28 07:18:49.741 W/SessionManager( 1586): SessionManager.endSession():88 Try to end a not begun session [IME_SESSION].
+10-28 07:18:49.742 I/AndroidIME( 1586): AbstractIme.onActivate():86 PasswordIme.onActivate() : EditorInfo = inputType=0x80081(Password) imeOptions=0x2000006 privateImeOptions=null actionName=DONE actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null, IncognitoMode = false, DeviceLocked = false
+10-28 07:18:49.744 I/KeyboardManager( 1586): KeyboardManager.requestKeyboard():128 Using cached keyboard prime, imeId=password
+10-28 07:18:49.745 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.745 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():364 setInputView() : supportsOneHandedMode=false
+10-28 07:18:49.747 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.748 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:49.750 I/KeyboardModeManager( 1586): KeyboardModeManager.setInputView():356 setInputView() : entry=hwn{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_device=tablet_device_size=default_enable_adaptive_text_editing=true_enable_inline_suggestions_on_client_side=false_enable_large_tablet_batch_1=false_enable_large_tablet_batch_2=false_enable_more_candidates_view_for_multilingual=false_enable_nav_redesign=false_enable_number_row=false_enable_preemptive_decode=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_orientation=portrait_physical_keyboard=qwerty_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, imeDef.languageTag=en-US}
+10-28 07:18:49.753 I/CurrentMicStatusHolder( 1586): CurrentMicStatusHolder.onStartInputView():79 Current Mic status = {MicIconHidden-SettingOff,MicIconHidden-PasswordOrNumberOrDateInputType,}
+10-28 07:18:49.753 I/VoiceImeExtension( 1586): VoiceImeExtension.shouldStartVoiceInputAutomatically():383 No private IME option set to start voice input.
+10-28 07:18:49.758 D/AutofillInlineSuggestionsRequestSession(  499): onInlineSuggestionsSessionInvalidated() called.
+10-28 07:18:49.761 D/AutofillInlineSuggestionsRequestSession(  499): onInlineSuggestionsRequest() received: InlineSuggestionsRequest { maxSuggestionCount = 9, inlinePresentationSpecs = [InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }, InlinePresentationSpec { minSize = 108x108, maxSize = 480x108, style = Bundle[mParcelledData.dataSize=2816] }], hostPackageName = com.google.android.inputmethod.latin, supportedLocales = [en_US], extras = Bundle[EMPTY_PARCEL], hostInputToken = android.os.BinderProxy@cb41d66, hostDisplayId = 0, inlineTooltipPresentationSpec = null }
+10-28 07:18:49.764 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:18:49.771 D/HostConnection( 1586): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:49.774 I/SuperDelight( 1586): SuperDelightBundledSlicingStrategy.getSlices():39 BundledSlicing#getSlices() : Locale = [en_US]
+10-28 07:18:49.774 I/SuperDelight( 1586): SuperDelightBundledSlicingStrategy.getSlices():65 BundledSlicing#getSlices(): result {slices=[bundled_delight:main_en_us_2022051700_2], last batch=true, sync metadata=false}
+10-28 07:18:49.778 I/GmsCoreXrpcWrapper( 6307): Returning a channel provider with trafficStatsTag=18692 trafficStatsUid=-1
+10-28 07:18:49.801 I/SP      ( 1586): Syncing bundled_delight (2022101700) with slices: [main_en_us_2022051700_2], metadata: false
+10-28 07:18:49.808 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:49.830 E/native  ( 1586): E0000 00:00:1793171929.830753    2132 scoped-file.cc:106] open() failed for /data/user/0/com.google.android.inputmethod.latin/files/personal/adapt_state.en.dat: No such file or directory [2]
+10-28 07:18:49.831 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():671 Loaded main LM 1.en
+10-28 07:18:49.831 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():649 loadLanguageModel() : 7, version [n/a]
+10-28 07:18:49.835 D/CompatibilityChangeReporter(  499): Compat change id reported: 135634846; UID 10120; state: DISABLED
+10-28 07:18:49.838 I/native  ( 1586): I0000 00:00:1793171929.838647    2132 blocklist-assembly.cc:121] LoadBlocklist en
+10-28 07:18:49.838 E/native  ( 1586): E0000 00:00:1793171929.838738    2132 scoped-file.cc:106] open() failed for /data/user/0/com.google.android.inputmethod.latin/files/personal/blacklist.en_us.list: No such file or directory [2]
+10-28 07:18:49.838 I/native  ( 1586): I0000 00:00:1793171929.838764    2132 blocklist.cc:224] No blocklist file for a language. (This is OK if the language is loaded for the first time.) /data/user/0/com.google.android.inputmethod.latin/files/personal/blacklist.en_us.list
+10-28 07:18:49.838 E/native  ( 1586): E0000 00:00:1793171929.838780    2132 android-decoder-jni.cc:476] Failed to load dynamic LM from /data/user/0/com.google.android.inputmethod.latin/files/personal/blacklist.en_us.list
+10-28 07:18:49.839 W/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():697 Failed to load dynamic LM 7.en
+10-28 07:18:49.839 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():649 loadLanguageModel() : 4, version [n/a]
+10-28 07:18:49.842 D/CompatibilityChangeReporter(  499): Compat change id reported: 143937733; UID 10120; state: ENABLED
+10-28 07:18:49.844 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.844 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.845 W/AutofillChimeraService( 6307): Pending fill request while another request in the same session was triggered. [CONTEXT service_id=177 ]
+10-28 07:18:49.853 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():690 Loaded dynamic LM 4.en
+10-28 07:18:49.856 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():649 loadLanguageModel() : 3, version [n/a]
+10-28 07:18:49.856 W/native  ( 1586): W0000 00:00:1793171929.856482    2132 dynamic-lm.cc:768] Cannot load dynamic lm from /data/user/0/com.google.android.inputmethod.latin/files/personal/userhistory/UserHistory.en_US.dict, openBuffer failed.
+10-28 07:18:49.856 I/Delight5Decoder( 1586): Delight5DecoderWrapper.loadLanguageModel():690 Loaded dynamic LM 3.en
+10-28 07:18:49.858 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.866 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.866 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.868 D/Zygote  (  299): Forked child process 7510
+10-28 07:18:49.868 I/ActivityManager(  499): Start proc 7510:com.google.android.gms.ui/u0a120 for service {com.google.android.gms/com.google.android.gms.chimera.UiIntentOperationService}
+10-28 07:18:49.873 I/.android.gms.ui( 7510): Using CollectorTypeCC GC.
+10-28 07:18:49.873 W/.android.gms.ui( 7510): Unexpected CPU variant for x86: x86_64.
+10-28 07:18:49.873 W/.android.gms.ui( 7510): Known variants: atom, sandybridge, silvermont, kabylake, default
+10-28 07:18:49.876 I/SP      ( 1586): Scheduling job with delay of 0s for {W:b:u:l, bg}, 1 candidates
+10-28 07:18:49.880 I/SP      ( 1586): Scheduling: download registered, 0 started, 0 paused, 1 scheduled, 1 pending: manifests:kc_tflite_model-20220919 * {W:b:u:l, bg}
+10-28 07:18:49.881 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.885 I/adbd    (  393): jdwp connection from 7510
+10-28 07:18:49.888 I/SP      ( 1586): Registering next-word-predictor.20230317, url: https://www.gstatic.com/android/keyboard/next_word_predictor/prod/superpacks-manifest-20230309_154225.json, constraints: *:*:*:*, flags: *, requested: 20230317, current: -1
+10-28 07:18:49.889 I/SuperpacksManagerImpl( 1586): SuperpacksManagerImpl$3$1.onFailure():577 kc_tflite_model.registerManifest() cancelled
+10-28 07:18:49.889 I/SuperpacksManagerImpl( 1586): SuperpacksManagerImpl$3$1.onFailure():577 kc_tflite_model.registerManifest() cancelled
+10-28 07:18:49.891 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.891 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.892 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.894 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.894 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.896 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:49.896 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.897 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:49.899 I/SpBackgroundTask( 1586): SuperpacksBackgroundJobService.onStartJob():23 onStartJob: android.app.job.JobParameters@1a1f0e2
+10-28 07:18:49.900 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.900 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.902 I/SP      ( 1586): ====> Starting job {W:b:u:l, bg}
+10-28 07:18:49.903 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.910 D/CompatibilityChangeReporter(  499): Compat change id reported: 181136395; UID 10174; state: DISABLED
+10-28 07:18:49.910 D/CompatibilityChangeReporter(  499): Compat change id reported: 174042936; UID 10174; state: DISABLED
+10-28 07:18:49.911 I/SuperDelight( 1586): SuperDelightDownloadSlicingStrategy.getSlices():68 DownloadSlicing#getSlices() : Locale = [en_US]
+10-28 07:18:49.919 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.919 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.921 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.gms.common.BIND_SHARED_PREFS pkg=com.google.android.gms }
+10-28 07:18:49.930 I/SuperDelight( 1586): SuperDelightDownloadSlicingStrategy.getSlices():125 DownloadSlicing#getSlices(): result {slices=[{delight:main_en_840_2022102600_1, m:*:*:*, fg}], last batch=true, sync metadata=false}
+10-28 07:18:49.930 I/SP      ( 1586): Syncing delight (2023020919) with slices: [{main_en_840_2022102600_1, m:*:*:*, fg}], metadata: false
+10-28 07:18:49.930 I/SuperDelight( 1586): SuperDelightMergingStrategy.merge():55 SuperDelightMergingStrategy#merge(): selected[[main_en_840_2022102600_1, main_en_us_2022101700_1]] synced[[main_en_840_2022102600_1]]
+10-28 07:18:49.935 I/FontLog ( 6307): Received query Google Sans Text, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-28 07:18:49.935 I/FontLog ( 6307): Query [Google Sans Text] resolved to {Google Sans Text, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:49.937 I/FontLog ( 6307): Font PFD returned from cache for {Google Sans Text, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:49.937 I/FontLog ( 6307): Fetch {Google Sans Text, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-28 07:18:49.937 D/CompatibilityChangeReporter( 7510): Compat change id reported: 171979766; UID 10120; state: ENABLED
+10-28 07:18:49.939 D/CompatibilityChangeReporter( 1586): Compat change id reported: 171228096; UID 10136; state: ENABLED
+10-28 07:18:49.942 D/nativeloader( 7510): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+10-28 07:18:49.943 I/FontLog ( 6307): Pulling font file for id = 3, cache size = 3 [CONTEXT service_id=132 ]
+10-28 07:18:49.944 D/nativeloader( 7510): Configuring classloader-namespace for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+10-28 07:18:49.947 D/nativeloader( 7510): Configuring classloader-namespace for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+10-28 07:18:49.949 D/nativeloader( 7510): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+10-28 07:18:49.950 D/nativeloader( 7510): Configuring classloader-namespace for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+10-28 07:18:49.952 I/SP      ( 1586): Scheduling: job start ({W:b:u:l, bg}), 1 started, 0 paused, 0 scheduled, 1 pending: manifests:kc_tflite_model-20220919 @ * {W:b:u:l, bg}
+10-28 07:18:49.952 I/KeyboardViewHelper( 1586): KeyboardViewHelper.getView():170 Get view with height ratio:1.000000
+10-28 07:18:49.952 I/SP      ( 1586): Sync for delight succeeded in 553 ms: no changes
+10-28 07:18:49.952 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/next_word_predictor/prod/superpacks-manifest-20230309_154225.json to next-word-predictor-20230317.fetched (constraints: m:b:u:l)
+10-28 07:18:49.953 I/SP      ( 1586): GC for 'bundled_delight' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:49.955 I/LmManager( 1586): LmManager$1.onFailure():81 Bundled delight sync failed
+10-28 07:18:49.955 I/LmManager( 1586): java.util.concurrent.CancellationException: Task was cancelled.
+10-28 07:18:49.955 I/LmManager( 1586): 	at mrp.s(PG:3)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mrp.get(PG:4)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mgr.Q(PG:1)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mfu.V(PG:2)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mtg.run(PG:4)
+10-28 07:18:49.955 I/LmManager( 1586): 	at msq.execute(PG:1)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mrp.q(PG:1)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mrp.k(PG:12)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mrp.p(PG:5)
+10-28 07:18:49.955 I/LmManager( 1586): 	at msm.c(PG:2)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mso.e(PG:2)
+10-28 07:18:49.955 I/LmManager( 1586): 	at mtr.run(PG:8)
+10-28 07:18:49.955 I/LmManager( 1586): 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463)
+10-28 07:18:49.955 I/LmManager( 1586): 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-28 07:18:49.955 I/LmManager( 1586): 	at hbs.run(PG:2)
+10-28 07:18:49.955 I/LmManager( 1586): 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-28 07:18:49.955 I/LmManager( 1586): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-28 07:18:49.955 I/LmManager( 1586): 	at java.lang.Thread.run(Thread.java:1012)
+10-28 07:18:49.955 I/LmManager( 1586): 	at hbf.run(PG:2)
+10-28 07:18:49.955 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/kc_triggering_model/superpacks-manifest-20220805_235142.json to kc_tflite_model-20220919.fetched (constraints: W:b:u:l)
+10-28 07:18:49.958 D/nativeloader( 7510): Configuring vendor-classloader-namespace for unbundled product apk /product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms:/product/lib64:/system/product/lib64
+10-28 07:18:49.970 D/BoundBrokerSvc( 6388): onBind: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-28 07:18:49.970 D/BoundBrokerSvc( 6388): Loading bound service for intent: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-28 07:18:49.973 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10136 0}
+10-28 07:18:49.975 V/GraphicsEnvironment( 7510): ANGLE Developer option for 'com.google.android.gms' set to: 'default'
+10-28 07:18:49.975 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:18:49.975 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79019993fa50
+10-28 07:18:49.975 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=257
+10-28 07:18:49.976 V/GraphicsEnvironment( 7510): ANGLE GameManagerService for com.google.android.gms: false
+10-28 07:18:49.977 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:18:49.978 V/GraphicsEnvironment( 7510): Neither updatable production driver nor prerelease driver is supported.
+10-28 07:18:49.980 I/SP      ( 1586): GC for 'delight' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:49.982 I/AbstractSyncResultCallback( 1586): AbstractSyncResultCallback.onFailure():36 onFailure(): bundled_delight.sync cancelled; expected if new request supersedes pending one.
+10-28 07:18:49.982 D/NetworkSecurityConfig( 7510): Using Network Security Config from resource network_security_config debugBuild: false
+10-28 07:18:49.983 I/resolv  (  295): res_nsend: used send_dg 161 terrno: 0
+10-28 07:18:49.983 I/resolv  (  295): doQuery: rcode=0, ancount=8, return value=161
+10-28 07:18:49.984 I/SP      ( 1586): Registering expressive_concepts_triggering.2022062400, url: https://www.gstatic.com/android/keyboard/modelpack/expressive_concepts_triggering/2022062400/superpacks_manifest.json, constraints: *:*:*:*, flags: *, requested: 2022062400, current: -1
+10-28 07:18:49.985 D/TrafficStats( 1586): tagSocket(6) with statsTag=0xffffffff, statsUid=-1
+10-28 07:18:49.987 D/NetworkSecurityConfig( 7510): Using Network Security Config from resource network_security_config debugBuild: false
+10-28 07:18:49.987 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 bundled_delight sync success, adding to data file manager
+10-28 07:18:49.988 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/ConscryptEngineSocket;->setUseSessionTickets(Z)V (max-target-q,core-platform-api, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setUseSessionTickets(Z)V (max-target-q,core-platform-api, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setUseSessionTickets(Z)V (max-target-q, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/ConscryptEngineSocket;->setHostname(Ljava/lang/String;)V (max-target-q,core-platform-api, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setHostname(Ljava/lang/String;)V (max-target-q,core-platform-api, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setHostname(Ljava/lang/String;)V (max-target-q, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/OpenSSLSocketImpl;->setAlpnProtocols([B)V (max-target-q,core-platform-api, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Accessing hidden method Lcom/android/org/conscrypt/AbstractConscryptSocket;->setAlpnProtocols([B)V (max-target-q, reflection, denied)
+10-28 07:18:49.990 W/putmethod.latin( 1586): Reached maximum number of hidden api access warnings.
+10-28 07:18:49.993 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 delight sync success, adding to data file manager
+10-28 07:18:49.994 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-840 already exists
+10-28 07:18:49.994 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:50.003 I/KeyboardViewUtil( 1586): KeyboardViewUtil.calculateMaxKeyboardBodyHeight():40 leave 270 height for app when screen height:1920, header height:108 and isFullscreenMode:false, so the max keyboard body height is:1542
+10-28 07:18:50.003 I/SoftKeyboardView( 1586): SoftKeyboardView.setMaxHeight():731 Set max keyboard height:1542.
+10-28 07:18:50.006 I/FontLog ( 6307): Received query Google Sans Text:500, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-28 07:18:50.006 I/FontLog ( 6307): Query [Google Sans Text:500] resolved to {Google Sans Text, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:50.007 I/FontLog ( 6307): Font PFD returned from cache for {Google Sans Text, wdth 100.0, wght 500, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:50.009 I/FontLog ( 6307): Fetch {Google Sans Text, wdth 100.0, wght 500, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-28 07:18:50.010 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3483 setKeyboardViewShown() : type = HEADER, shownType = SHOW_MANDATORY
+10-28 07:18:50.010 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3530 setKeyboardViewShown() : shouldShow = true
+10-28 07:18:50.010 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3483 setKeyboardViewShown() : type = BODY, shownType = SHOW_MANDATORY
+10-28 07:18:50.010 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3530 setKeyboardViewShown() : shouldShow = true
+10-28 07:18:50.010 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3483 setKeyboardViewShown() : type = FLOATING_CANDIDATES, shownType = HIDE
+10-28 07:18:50.011 I/GoogleInputMethodService( 1586): GoogleInputMethodService.setKeyboardViewShown():3530 setKeyboardViewShown() : shouldShow = false
+10-28 07:18:50.013 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:50.014 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:50.015 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:50.015 I/KeyboardViewUtil( 1586): KeyboardViewUtil.calculateMaxKeyboardBodyHeight():40 leave 270 height for app when screen height:1920, header height:108 and isFullscreenMode:false, so the max keyboard body height is:1542
+10-28 07:18:50.015 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/modelpack/expressive_concepts_triggering/2022062400/superpacks_manifest.json to expressive_concepts_triggering-2022062400.fetched (constraints: m:b:u:l)
+10-28 07:18:50.017 I/DeviceModeUtil( 1586): DeviceModeUtil.getDeviceMode():122 Get device mode tablet by ui mode:1 and smallestScreenWidthDp:600
+10-28 07:18:50.023 I/FontLog ( 6307): Pulling font file for id = 4, cache size = 4 [CONTEXT service_id=132 ]
+10-28 07:18:50.032 I/SP      ( 1586): Sync for bundled_delight succeeded in 402 ms: no changes
+10-28 07:18:50.033 I/SP      ( 1586): GC for 'bundled_delight' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:50.033 I/LmManager( 1586): LmManager$1.onSuccess():76 Bundled delight sync success
+10-28 07:18:50.034 I/SuperDelight( 1586): SuperDelightMergingStrategy.merge():55 SuperDelightMergingStrategy#merge(): selected[[main_en_840_2022102600_1, main_en_us_2022101700_1]] synced[[main_en_840_2022102600_1]]
+10-28 07:18:50.034 I/SP      ( 1586): Sync for delight succeeded in 145 ms: no changes
+10-28 07:18:50.035 I/SP      ( 1586): GC for 'delight' (10) with ttl of 0 ms took 1 ms (0/1/0)
+10-28 07:18:50.037 I/AndroidIME( 1586): KeyboardViewManager.updateKeyboardBackgroundFrameVisibility():357 Set background frame visibility. old:8, new:8
+10-28 07:18:50.042 W/ProviderHelper( 7510): Unknown dynamite feature providerinstaller.dynamite
+10-28 07:18:50.044 I/DynamiteModule( 7510): Considering local module com.google.android.gms.providerinstaller.dynamite:1 and remote module com.google.android.gms.providerinstaller.dynamite:0
+10-28 07:18:50.044 I/DynamiteModule( 7510): Selected local version of com.google.android.gms.providerinstaller.dynamite
+10-28 07:18:50.051 D/AutofillSession(  499): clearPendingIntentLocked
+10-28 07:18:50.051 D/AutofillUI(  499): destroySaveUiUiThread(): already destroyed
+10-28 07:18:50.052 D/AutofillInlineSuggestionsRequestSession(  499): onInlineSuggestionsResponseLocked called for:1073741824:-1958777365@1725260135
+10-28 07:18:50.052 D/AutofillInlineSuggestionsRequestSession(  499): maybeNotifyFillUiEventLoked(): hasSuggestionToShow=false, mPreviousHasNonPinSuggestionShow=false
+10-28 07:18:50.052 D/AutofillInlineSuggestionsRequestSession(  499): Send inline response: 0
+10-28 07:18:50.056 V/NativeCrypto( 7510): Registering com/google/android/gms/org/conscrypt/NativeCrypto's 295 native methods...
+10-28 07:18:50.057 V/InlineSuggestionRenderService( 1606): handleDestroySuggestionViews called for 0:1725260135
+10-28 07:18:50.057 I/.gms.persistent( 6307): oneway function results for code 1 on binder at 0x799af26ca020 will be dropped but finished with status UNKNOWN_TRANSACTION and reply parcel size 80
+10-28 07:18:50.067 I/ProviderInstaller( 7510): Installed default security provider GmsCore_OpenSSL
+10-28 07:18:50.110 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:50.114 D/CompatibilityChangeReporter( 7510): Compat change id reported: 183155436; UID 10120; state: ENABLED
+10-28 07:18:50.114 I/GmsApplication( 7510): [gms_startup_benchmark] Static start time (ms): 407562, Startup latency (ms): 118, Is system user: true
+10-28 07:18:50.117 D/EGL_emulation( 7359): app_time_stats: avg=140.43ms min=48.61ms max=304.29ms count=8
+10-28 07:18:50.117 I/cuir    ( 7510): Primes not initialized, returning default (no-op) Primes instance which will ignore all calls. Please call Primes.initialize(...) before using any Primes API.
+10-28 07:18:50.118 I/GMS_MM_Logger( 7510): Start time: 217186
+10-28 07:18:50.118 I/GMS_MM_Logger( 7510): Started.
+10-28 07:18:50.125 D/StrictMode( 7510): StrictMode policy violation: android.os.strictmode.NonSdkApiUsedViolation: Landroid/os/UserHandle;->getUserId(I)I
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.os.StrictMode.lambda$static$1(StrictMode.java:419)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.os.StrictMode$$ExternalSyntheticLambda2.accept(Unknown Source:2)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at java.lang.Class.getDeclaredMethodInternal(Native Method)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at java.lang.Class.getPublicMethodRecursive(Class.java:2110)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at java.lang.Class.getMethod(Class.java:2097)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at java.lang.Class.getMethod(Class.java:1724)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at achx.<clinit>(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at zdg.onCreate(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:4486)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2161)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.os.Looper.loopOnce(Looper.java:201)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.os.Looper.loop(Looper.java:288)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at java.lang.reflect.Method.invoke(Native Method)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-28 07:18:50.125 D/StrictMode( 7510): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+10-28 07:18:50.146 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:50.147 I/CrankEngineLocales( 1586): CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-28 07:18:50.148 I/SP      ( 1586): Registering transformer_expression.2023012522, url: https://www.gstatic.com/android/keyboard/modelpack/transformer_expression/2023012522/superpacks_manifest.json, constraints: *:*:*:*, flags: *, requested: 2023012522, current: -1
+10-28 07:18:50.149 I/Delight5Facilitator( 1586): ContactsLanguageModelLoader.call():35 Running contacts language model loader
+10-28 07:18:50.149 I/Delight5Facilitator( 1586): ContactsLanguageModelLoader.call():47 Contacts language model is unloaded: preferences=false, deviceLocked=false
+10-28 07:18:50.204 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/modelpack/transformer_expression/2023012522/superpacks_manifest.json to transformer_expression-2023012522.fetched (constraints: m:b:u:l)
+10-28 07:18:50.207 D/CompatibilityChangeReporter( 7510): Compat change id reported: 160794467; UID 10120; state: ENABLED
+10-28 07:18:50.310 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 bundled_delight sync success, adding to data file manager
+10-28 07:18:50.310 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:50.310 I/SuperDelight( 1586): SuperDelightManager$2.onSuccess():635 delight sync success, adding to data file manager
+10-28 07:18:50.310 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-840 already exists
+10-28 07:18:50.310 I/DataFileManager( 1586): DataFileManager.addDataWithoutNotify():162 data en-US already exists
+10-28 07:18:50.311 D/TrafficStats( 1586): tagSocket(116) with statsTag=0xffffffff, statsUid=-1
+10-28 07:18:50.352 I/SP      ( 1586): Successfully got manifest for next-word-predictor-manifest: manifests:next-word-predictor-20230317
+10-28 07:18:50.356 I/SP      ( 1586): Syncing next-word-predictor (20230317) with slices: [tflite-nwp-be541314788c7304827a9710c3ac4edb], metadata: false
+10-28 07:18:50.387 I/SP      ( 1586): Scheduling job with delay of 0s for {m:b:u:l, bg}, 1 candidates
+10-28 07:18:50.392 I/SP      ( 1586): Scheduling: download registered, 0 started, 0 paused, 1 scheduled, 2 pending: manifests:kc_tflite_model-20220919 @ {W:b:u:l, bg}, next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb * {m:b:u:l, bg}
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[12]
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[8]
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[8]
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[12]
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[8]
+10-28 07:18:50.395 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[8]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[12]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[8]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022101700_1[12]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_840_2022102600_1[8]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: 2023011913_en[3]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: 2023011913_en[3]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[8]
+10-28 07:18:50.396 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: main_en_us_2022051700_2[8]
+10-28 07:18:50.406 I/DialerTaskExecutor( 1493): com.android.voicemail.impl.scheduling.TaskExecutor.lambda$new$0:152 Stopping service [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:50.407 I/DialerTaskExecutor( 1493): com.android.voicemail.impl.scheduling.TaskExecutor.finishJobAsync:461 finishing Job [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:50.407 I/DialerTaskSchedulerJobService( 1493): com.android.voicemail.impl.scheduling.TaskSchedulerJobService.finishAsync:195 finishing job [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:50.410 I/DialerTaskExecutor( 1493): com.android.voicemail.impl.scheduling.TaskExecutor$JobFinishedPoller.run:189 JobFinishedPoller.run Job finished [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:50.410 I/DialerTaskExecutor( 1493): com.android.voicemail.impl.scheduling.TaskExecutor.terminate:287 terminated [CONTEXT enable_persistent_logger=true ]
+10-28 07:18:50.612 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:50.674 I/Choreographer( 1586): Skipped 38 frames!  The application may be doing too much work on its main thread.
+10-28 07:18:50.675 D/InsetsController( 7359): show(ime(), fromIme=true)
+10-28 07:18:50.676 W/JobInfoUtil( 1586): JobInfoUtil.setJobInfo():56 The max execution delay will be ignored for periodic task: daily_ping_task
+10-28 07:18:50.676 I/JobSchedulerImpl( 1586): JobSchedulerImpl.schedule():91 Schedule task: daily_ping_task (id=-1305128564). Success.
+10-28 07:18:50.676 I/LstmExtension( 1586): LstmExtension.onCreate():110 onCreate(): Finished in 0 ms
+10-28 07:18:50.679 I/AndroidIME( 1586): KeyboardViewManager.updateKeyboardBodyViewHolderPaddingBottom():604 Set finalPaddingBottom = 0 while keyboardBottomGapFromScreen = 0; navigationHeight = 0
+10-28 07:18:50.679 I/AndroidIME( 1586): KeyboardViewManager.saveKeyboardBottomGap():282 realScreenHeight: 0 screenHeightInInches: 6.000000
+10-28 07:18:50.679 I/AndroidIME( 1586): keyboardHolderHeight: 674 navigationHeight: 0
+10-28 07:18:50.679 I/AndroidIME( 1586): getKeyboardBodyViewHolderPaddingBottom(): 0 getKeyboardBottomGapFromScreen(): 0
+10-28 07:18:50.679 I/AndroidIME( 1586): keyboardBottomGap: 0 bodyViewHolderBottomPadding: 0
+10-28 07:18:50.679 I/AndroidIME( 1586): decorViewStableInsetBottom: 0 updated: true
+10-28 07:18:50.680 I/SpBackgroundTask( 1586): SuperpacksBackgroundJobService.onStartJob():23 onStartJob: android.app.job.JobParameters@1c2118e
+10-28 07:18:50.680 I/SP      ( 1586): ====> Starting job {m:b:u:l, bg}
+10-28 07:18:50.681 I/NormalModeController( 1586): NormalModeController.getKeyboardBodyViewHolderPaddingBottom():116 currentPrimeKeyboardType:SOFT systemPaddingBottom:-1
+10-28 07:18:50.684 I/LstmExtension( 1586): LstmExtension.onCreateServiceInternal():120 onCreateServiceInternal()
+10-28 07:18:50.685 I/LstmExtension( 1586): LstmExtension.onCreateServiceInternal():127 onCreateServiceInternal(): Finished in 0 ms
+10-28 07:18:50.687 I/SP      ( 1586): Scheduling: job start ({m:b:u:l, bg}), 1 started, 0 paused, 0 scheduled, 2 pending: manifests:kc_tflite_model-20220919 @ {W:b:u:l, bg}, next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ * {m:b:u:l, bg}
+10-28 07:18:50.687 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/next_word_predictor/prod/tflite-nwp-20230309_154225.zip to tflite-nwp-be541314788c7304827a9710c3ac4edb.zip.fetched (constraints: m:b:u:l)
+10-28 07:18:50.689 I/FontLog ( 6307): Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-28 07:18:50.689 I/FontLog ( 6307): Query [Noto Color Emoji Compat] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} [CONTEXT service_id=132 ]
+10-28 07:18:50.689 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:50.689 E/OverviewProxyService(  798): Failed to get overview proxy for system bar attr change.
+10-28 07:18:50.691 I/OpenGLRenderer( 1586): Davey! duration=766ms; Flags=1, FrameTimelineVsyncId=15252, IntendedVsync=407485791205, Vsync=407585791201, InputEventId=0, HandleInputStart=407595932719, AnimationStart=407595933320, PerformTraversalsStart=407595933520, DrawStart=407612283785, FrameDeadline=407502457871, FrameInterval=407595930334, FrameStartTime=16666666, SyncQueued=407614900748, SyncStart=407615446297, IssueDrawCommandsStart=407615661670, SwapBuffers=408110794039, FrameCompleted=408252728198, DequeueBufferDuration=2876, QueueBufferDuration=192239, GpuCompleted=408252728198, SwapBuffersCompleted=408241025614, DisplayPresentTime=0, CommandSubmissionCompleted=408110794039, 
+10-28 07:18:50.694 I/FontLog ( 6307): Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-28 07:18:50.701 D/EGL_emulation( 7359): app_time_stats: avg=1536.98ms min=1536.98ms max=1536.98ms count=1
+10-28 07:18:50.708 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:50.709 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:50.726 I/FontLog ( 6307): Pulling font file for id = 5, cache size = 5 [CONTEXT service_id=132 ]
+10-28 07:18:50.812 I/FontLog ( 6307): Pulling font file for id = 5, cache size = 5 [CONTEXT service_id=132 ]
+10-28 07:18:50.856 I/SP      ( 1586): <==== Finishing job {W:b:u:l, bg}, 177 ms. elapsed since start
+10-28 07:18:50.857 I/SP      ( 1586): Download stopped: manifests:kc_tflite_model-20220919, succeeded, size: 509
+10-28 07:18:50.879 I/SP      ( 1586): Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 1 pending: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ {m:b:u:l, bg}
+10-28 07:18:50.940 I/SP      ( 1586): Successfully got manifest for kc_tflite_model-manifest: manifests:kc_tflite_model-20220919
+10-28 07:18:50.962 I/SP      ( 1586): Successfully got manifest for expressive_concepts_triggering-manifest: manifests:expressive_concepts_triggering-2022062400
+10-28 07:18:50.967 I/SP      ( 1586): Syncing kc_tflite_model (20220919) with slices: [{tflite-kc-en_us_secagg-20220805_235142, m:*:*:*, fg}], metadata: false
+10-28 07:18:51.006 I/SP      ( 1586): Scheduling job with delay of 0s for {m:b:u:l, fg}, 1 candidates
+10-28 07:18:51.013 I/SuperpacksForegroundTaskService( 1586): SuperpacksForegroundTaskService.onStartCommand():41 SuperpacksForegroundTaskService.onStartCommand(): 1
+10-28 07:18:51.016 I/SP      ( 1586): ====> Starting job {m:b:u:l, fg}
+10-28 07:18:51.023 I/SP      ( 1586): Scheduling: download registered, 0 started, 0 paused, 1 scheduled, 2 pending: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ {m:b:u:l, bg}, kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142 * {m:b:u:l, fg}
+10-28 07:18:51.024 I/SP      ( 1586): Successfully got manifest for transformer_expression-manifest: manifests:transformer_expression-2023012522
+10-28 07:18:51.055 I/SP      ( 1586): Scheduling: job start ({m:b:u:l, fg}), 1 started, 0 paused, 0 scheduled, 2 pending: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ {m:b:u:l, bg}, kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142 @ * {m:b:u:l, fg}
+10-28 07:18:51.056 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/kc_triggering_model/tflite-kc-en_us_secagg-20220805_235142.zip to tflite-kc-en_us_secagg-20220805_235142.zip.fetched (constraints: m:b:u:l)
+10-28 07:18:51.058 I/SP      ( 1586): Syncing expressive_concepts_triggering (2022062400) with slices: [2022011819_en], metadata: false
+10-28 07:18:51.115 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:51.119 D/EGL_emulation( 7359): app_time_stats: avg=334.09ms min=308.93ms max=365.42ms count=3
+10-28 07:18:51.182 I/SP      ( 1586): Scheduling: download registered, 1 started, 0 paused, 0 scheduled, 3 pending: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ {m:b:u:l, bg}, kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142 @ {m:b:u:l, fg}, expressive_concepts_triggering:2022011819_en @ * {m:b:u:l, bg}
+10-28 07:18:51.184 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/modelpack/expressive_concepts_triggering/2022011819/en.zip to 2022011819_en.zip.fetched (constraints: m:b:u:l)
+10-28 07:18:51.184 I/SP      ( 1586): Syncing transformer_expression (2023012522) with slices: [2023012316_en], metadata: false
+10-28 07:18:51.235 I/SP      ( 1586): Scheduling: download registered, 1 started, 0 paused, 0 scheduled, 4 pending: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb @ {m:b:u:l, bg}, kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142 @ {m:b:u:l, fg}, expressive_concepts_triggering:2022011819_en @ {m:b:u:l, bg}, transformer_expression:2023012316_en @ * {m:b:u:l, bg}
+10-28 07:18:51.235 I/SP      ( 1586): Requesting download of URL https://www.gstatic.com/android/keyboard/modelpack/transformer_expression/2023012316/en.zip to 2023012316_en.zip.fetched (constraints: m:b:u:l)
+10-28 07:18:51.273 I/SP      ( 1586): Download stopped: next-word-predictor:tflite-nwp-be541314788c7304827a9710c3ac4edb, succeeded, size: 1950106
+10-28 07:18:51.275 D/TrafficStats( 1586): tagSocket(136) with statsTag=0xffffffff, statsUid=-1
+10-28 07:18:51.282 I/SP      ( 1586): Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 3 pending: kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142 @ {m:b:u:l, fg}, expressive_concepts_triggering:2022011819_en @ {m:b:u:l, bg}, transformer_expression:2023012316_en @ {m:b:u:l, bg}
+10-28 07:18:51.334 I/SP      ( 1586): Sync for next-word-predictor succeeded in 979 ms: {added: [tflite-nwp-be541314788c7304827a9710c3ac4edb], metadata: false
+10-28 07:18:51.342 I/SP      ( 1586): GC for 'next-word-predictor' (10) with ttl of 0 ms took 1 ms (0/1/0)
+10-28 07:18:51.403 I/SP      ( 1586): <==== Finishing job {m:b:u:l, fg}, 387 ms. elapsed since start
+10-28 07:18:51.403 I/SuperpacksForegroundTaskService( 1586): SuperpacksForegroundTaskService.finishJob():54 SuperpacksForegroundTaskService.finishJob()
+10-28 07:18:51.404 W/LatinCommonCountersMetricsProcessor( 1586): LatinCommonCountersMetricsProcessor.processSuperpacksForegroundDownload():1082 processSuperpacksForegroundDownload(): undesired kc_tflite_model
+10-28 07:18:51.405 I/SP      ( 1586): Download stopped: kc_tflite_model:tflite-kc-en_us_secagg-20220805_235142, succeeded foreground, size: 38169
+10-28 07:18:51.412 I/SP      ( 1586): Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 2 pending: expressive_concepts_triggering:2022011819_en @ {m:b:u:l, bg}, transformer_expression:2023012316_en @ {m:b:u:l, bg}
+10-28 07:18:51.514 I/SP      ( 1586): Sync for kc_tflite_model succeeded in 547 ms: {added: [tflite-kc-en_us_secagg-20220805_235142], metadata: false
+10-28 07:18:51.541 I/SP      ( 1586): GC for 'kc_tflite_model' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:51.593 I/SP      ( 1586): Download stopped: expressive_concepts_triggering:2022011819_en, succeeded, size: 1097741
+10-28 07:18:51.604 I/SP      ( 1586): Scheduling: download stopped, 0 started, 0 paused, 0 scheduled, 1 pending: transformer_expression:2023012316_en @ {m:b:u:l, bg}
+10-28 07:18:51.616 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:51.668 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onFinishInputView():2241 
+10-28 07:18:51.668 W/TooltipLifecycleManager( 1586): TooltipLifecycleManager.dismissTooltips():159 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+10-28 07:18:51.669 I/AndroidIME( 1586): AbstractIme.onDeactivate():207 PasswordIme.onDeactivate()
+10-28 07:18:51.678 E/OverviewProxyService(  798): Failed to get overview proxy for system bar attr change.
+10-28 07:18:51.682 D/CoreBackPreview(  499): Window{b0a9f28 u0 com.bytebox.play/com.bytebox.app.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a6e27dd, mPriority=0}
+10-28 07:18:51.690 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:51.708 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:51.712 D/FlutterJNI( 7359): Sending viewport metrics to the engine.
+10-28 07:18:51.718 D/EGL_emulation( 7359): app_time_stats: avg=502.94ms min=16.75ms max=989.12ms count=2
+10-28 07:18:51.730 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.bytebox.play fieldId=1 fieldName=null extras=null}, true)
+10-28 07:18:51.730 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:18:51.731 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:18:51.731 W/SessionManager( 1586): SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+10-28 07:18:51.732 I/HardKeyTracker( 1586): HardKeyTracker.registerKeySequence():62 Register key sequence hox{callback=eac@82afc4e, lastModifier=0, keyCodes=[57, 57], actions=[1, 0]}
+10-28 07:18:51.732 I/HardKeyTracker( 1586): HardKeyTracker.registerKeySequence():62 Register key sequence hox{callback=eac@c7d305, lastModifier=0, keyCodes=[58, 58], actions=[1, 0]}
+10-28 07:18:51.839 I/SP      ( 1586): Sync for expressive_concepts_triggering succeeded in 783 ms: {added: [2022011819_en], metadata: false
+10-28 07:18:51.903 I/SP      ( 1586): GC for 'expressive_concepts_triggering' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:51.942 I/SP      ( 1586): <==== Finishing job {m:b:u:l, bg}, 1262 ms. elapsed since start
+10-28 07:18:51.945 I/SP      ( 1586): Download stopped: transformer_expression:2023012316_en, succeeded, size: 2270669
+10-28 07:18:52.090 I/SP      ( 1586): Sync for transformer_expression succeeded in 906 ms: {added: [2023012316_en], metadata: false
+10-28 07:18:52.102 I/SP      ( 1586): GC for 'transformer_expression' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-28 07:18:52.117 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:52.183 D/EGL_emulation( 7359): app_time_stats: avg=354.60ms min=146.66ms max=604.47ms count=3
+10-28 07:18:52.276 I/netd    (  295): tetherGetStats() -> {[]} <0.49ms>
+10-28 07:18:52.278 I/netd    (  295): bandwidthSetGlobalAlert(2097152) <0.14ms>
+10-28 07:18:52.476 I/GMS_MM_Logger( 6388): Memory Metric Logging not allowed. Stopping.
+10-28 07:18:52.618 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:53.123 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:53.245 D/EGL_emulation( 7359): app_time_stats: avg=117.97ms min=114.82ms max=125.94ms count=9
+10-28 07:18:53.624 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:54.125 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:54.293 D/EGL_emulation( 7359): app_time_stats: avg=116.48ms min=113.28ms max=117.72ms count=9
+10-28 07:18:54.626 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:55.099 I/netd    (  295): setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.05ms>
+10-28 07:18:55.099 I/netd    (  295): setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.02ms>
+10-28 07:18:55.099 I/netd    (  295): setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.06ms>
+10-28 07:18:55.100 I/netd    (  295): setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.02ms>
+10-28 07:18:55.132 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:55.344 D/EGL_emulation( 7359): app_time_stats: avg=116.73ms min=115.01ms max=118.62ms count=9
+10-28 07:18:55.634 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:56.032 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:18:56.135 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:56.383 I/flutter ( 7359): E2E_SHOT:tablet7_6-profile
+10-28 07:18:56.398 D/EGL_emulation( 7359): app_time_stats: avg=117.09ms min=113.87ms max=121.40ms count=9
+10-28 07:18:56.410 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:18:56.414 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:18:56.424 E/adbd    (  393): error reading output FD 108: Connection reset by peer
+10-28 07:18:56.477 W/ProcessState( 7568): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:18:56.489 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:18:56.489 I/Gralloc4( 7568): mapper 4.x is not supported
+10-28 07:18:56.523 D/HostConnection( 7568): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:18:56.638 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:56.733 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: tflite-nwp-be541314788c7304827a9710c3ac4edb[3]
+10-28 07:18:56.733 W/SP      ( 1586): File ref is being finalized but wasn't closed, file: tflite-nwp-be541314788c7304827a9710c3ac4edb[3]
+10-28 07:18:57.140 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:57.476 D/EGL_emulation( 7359): app_time_stats: avg=119.80ms min=114.60ms max=134.48ms count=9
+10-28 07:18:57.642 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:58.143 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:58.526 D/EGL_emulation( 7359): app_time_stats: avg=116.69ms min=113.52ms max=119.86ms count=9
+10-28 07:18:58.647 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:59.149 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:18:59.423 D/AudioFlinger(  378): mixer(0x724883c0f9a0) throttle end: throttle time(31)
+10-28 07:18:59.607 D/EGL_emulation( 7359): app_time_stats: avg=98.19ms min=33.20ms max=119.78ms count=11
+10-28 07:18:59.650 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:00.020 I/AiAiEcho( 1703): Predicting[0]: 
+10-28 07:19:00.020 I/AiAiEcho( 1703): Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-28 07:19:00.021 I/AiAiEcho( 1703): #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+10-28 07:19:00.038 I/AiAiEcho( 1703): Predicting[0]: 
+10-28 07:19:00.038 I/AiAiEcho( 1703): Ranked targets strategy: SORT, count: 0, ranking metadata: 
+10-28 07:19:00.039 I/AiAiEcho( 1703): #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0
+10-28 07:19:00.043 D/EGL_emulation(  798): app_time_stats: avg=22242.90ms min=22242.90ms max=22242.90ms count=1
+10-28 07:19:00.151 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:00.656 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:00.660 D/EGL_emulation( 7359): app_time_stats: avg=117.04ms min=112.59ms max=119.84ms count=9
+10-28 07:19:01.157 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:01.658 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:01.706 D/EGL_emulation( 7359): app_time_stats: avg=116.22ms min=113.77ms max=117.25ms count=9
+10-28 07:19:02.159 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:02.517 I/flutter ( 7359): E2E_SHOT:tablet7_2-plans
+10-28 07:19:02.555 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:19:02.556 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:19:02.557 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:19:02.612 W/ProcessState( 7584): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:19:02.620 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:19:02.621 I/Gralloc4( 7584): mapper 4.x is not supported
+10-28 07:19:02.660 D/HostConnection( 7584): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:19:02.666 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:02.760 D/EGL_emulation( 7359): app_time_stats: avg=117.04ms min=107.46ms max=127.67ms count=9
+10-28 07:19:03.168 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:03.669 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:03.808 D/EGL_emulation( 7359): app_time_stats: avg=116.38ms min=113.91ms max=119.30ms count=9
+10-28 07:19:04.173 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:04.675 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:04.857 D/EGL_emulation( 7359): app_time_stats: avg=116.49ms min=114.33ms max=118.37ms count=9
+10-28 07:19:04.930 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+10-28 07:19:05.065 D/BoundBrokerSvc( 6388): onUnbind: Intent { act=com.google.android.mdd.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-28 07:19:05.176 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:05.677 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:06.129 D/EGL_emulation( 7359): app_time_stats: avg=139.98ms min=12.75ms max=338.33ms count=9
+10-28 07:19:06.178 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:06.679 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:07.181 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:07.190 D/EGL_emulation( 7359): app_time_stats: avg=117.79ms min=53.19ms max=163.10ms count=9
+10-28 07:19:07.533 I/flutter ( 7359): E2E_SHOT:tablet7_1-cloud
+10-28 07:19:07.572 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:19:07.572 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:19:07.576 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:19:07.630 W/ProcessState( 7597): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:19:07.642 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:19:07.642 I/Gralloc4( 7597): mapper 4.x is not supported
+10-28 07:19:07.675 D/HostConnection( 7597): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:19:07.687 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:08.188 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:08.239 D/EGL_emulation( 7359): app_time_stats: avg=116.60ms min=108.52ms max=127.01ms count=9
+10-28 07:19:08.690 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:09.192 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:09.289 D/EGL_emulation( 7359): app_time_stats: avg=116.59ms min=114.89ms max=117.50ms count=9
+10-28 07:19:09.566 I/VoiceInputManagerWrapper( 1586): VoiceInputManagerWrapper.shutdownVoiceInternal():95 shutdownVoiceInternal()
+10-28 07:19:09.694 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:10.195 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:10.339 D/EGL_emulation( 7359): app_time_stats: avg=116.72ms min=115.15ms max=119.03ms count=9
+10-28 07:19:10.477 D/AudioFlinger(  378): mixer(0x724883c0f9a0) throttle end: throttle time(35)
+10-28 07:19:10.696 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:11.196 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:11.373 D/EGL_emulation( 7359): app_time_stats: avg=103.19ms min=20.46ms max=209.29ms count=10
+10-28 07:19:11.698 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:12.183 I/flutter ( 7359): E2E_SHOT:tablet7_3-explore
+10-28 07:19:12.206 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:12.226 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:19:12.227 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:19:12.283 W/ProcessState( 7610): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:19:12.291 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:19:12.293 I/Gralloc4( 7610): mapper 4.x is not supported
+10-28 07:19:12.322 D/HostConnection( 7610): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:19:12.426 D/EGL_emulation( 7359): app_time_stats: avg=117.01ms min=96.88ms max=138.43ms count=9
+10-28 07:19:12.708 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:13.209 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:13.606 W/healthd (    0): battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+10-28 07:19:13.473 D/EGL_emulation( 7359): app_time_stats: avg=116.29ms min=112.89ms max=118.89ms count=9
+10-28 07:19:13.711 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:14.212 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:14.521 D/EGL_emulation( 7359): app_time_stats: avg=116.48ms min=113.81ms max=119.68ms count=9
+10-28 07:19:14.714 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:15.135 D/AudioFlinger(  378): mixer(0x724883c0f9a0) throttle end: throttle time(33)
+10-28 07:19:15.185 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:15.186 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:19:15.186 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:19:15.187 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:19:15.215 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:15.527 D/EGL_emulation( 7359): app_time_stats: avg=98.58ms min=12.36ms max=174.99ms count=10
+10-28 07:19:15.716 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:16.218 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:16.719 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:16.732 D/EGL_emulation( 7359): app_time_stats: avg=133.98ms min=114.00ms max=274.37ms count=9
+10-28 07:19:17.223 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:17.725 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:17.790 D/EGL_emulation( 7359): app_time_stats: avg=105.00ms min=14.13ms max=118.25ms count=10
+10-28 07:19:18.226 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:18.728 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:18.841 D/EGL_emulation( 7359): app_time_stats: avg=116.70ms min=112.54ms max=119.86ms count=9
+10-28 07:19:19.230 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:19.731 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:19.890 D/EGL_emulation( 7359): app_time_stats: avg=116.60ms min=114.02ms max=118.78ms count=9
+10-28 07:19:20.117 I/flutter ( 7359): E2E_SHOT:tablet7_5-channels
+10-28 07:19:20.157 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:19:20.159 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:19:20.160 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:19:20.215 W/ProcessState( 7626): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:19:20.225 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:19:20.226 I/Gralloc4( 7626): mapper 4.x is not supported
+10-28 07:19:20.233 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:20.263 D/HostConnection( 7626): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:19:20.735 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:20.942 D/EGL_emulation( 7359): app_time_stats: avg=116.87ms min=106.44ms max=124.15ms count=9
+10-28 07:19:21.236 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:21.738 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:21.990 D/EGL_emulation( 7359): app_time_stats: avg=116.43ms min=114.42ms max=118.03ms count=9
+10-28 07:19:22.243 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:22.745 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:23.042 D/EGL_emulation( 7359): app_time_stats: avg=116.85ms min=115.36ms max=118.55ms count=9
+10-28 07:19:23.065 D/AudioFlinger(  378): mixer(0x724883c0f9a0) throttle end: throttle time(35)
+10-28 07:19:23.246 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:23.562 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:23.562 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:19:23.563 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:19:23.563 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:19:23.748 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:23.912 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:23.914 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:19:23.914 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:19:23.915 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:19:24.020 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.020 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:19:24.020 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:19:24.020 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:19:24.033 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.033 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:19:24.044 I/resolv  (  295): res_nsend: used send_dg 117 terrno: 0
+10-28 07:19:24.045 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:19:24.045 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.045 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:19:24.045 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:19:24.045 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:19:24.150 D/EGL_emulation( 7359): app_time_stats: avg=91.13ms min=13.94ms max=367.33ms count=12
+10-28 07:19:24.249 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:24.254 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.254 I/resolv  (  295): res_nmkquery: (QUERY, IN, A)
+10-28 07:19:24.254 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993e110
+10-28 07:19:24.254 I/resolv  (  295): doQuery: rcode=0, ancount=2, return value=82
+10-28 07:19:24.266 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.267 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:19:24.267 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:19:24.267 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:19:24.267 I/resolv  (  295): GetAddrInfoHandler::run: {101 101 101 983141 10174 0}
+10-28 07:19:24.268 I/resolv  (  295): res_nmkquery: (QUERY, IN, AAAA)
+10-28 07:19:24.268 I/resolv  (  295): resolv_cache_lookup: FOUND IN CACHE entry=0x79017993d810
+10-28 07:19:24.268 I/resolv  (  295): doQuery: rcode=0, ancount=0, return value=117
+10-28 07:19:24.750 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:25.252 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:25.296 D/EGL_emulation( 7359): app_time_stats: avg=127.21ms min=114.69ms max=209.52ms count=9
+10-28 07:19:25.753 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:26.257 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:26.392 D/EGL_emulation( 7359): app_time_stats: avg=109.61ms min=59.23ms max=119.86ms count=10
+10-28 07:19:26.759 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:27.261 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:27.444 D/EGL_emulation( 7359): app_time_stats: avg=116.94ms min=113.41ms max=120.50ms count=9
+10-28 07:19:27.762 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:28.000 I/flutter ( 7359): E2E_SHOT:tablet7_4-feed
+10-28 07:19:28.037 D/OomAdjuster(  499): Not killing cached processes
+10-28 07:19:28.037 D/AutofillManagerService(  499): Close system dialogs
+10-28 07:19:28.039 I/vol.VolumeDialogImpl(  798): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:2
+10-28 07:19:28.110 W/ProcessState( 7660): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-28 07:19:28.162 I/hwservicemanager(  138): getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-28 07:19:28.162 I/Gralloc4( 7660): mapper 4.x is not supported
+10-28 07:19:28.199 D/HostConnection( 7660): HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_multi_configs ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0 
+10-28 07:19:28.265 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:28.500 D/EGL_emulation( 7359): app_time_stats: avg=117.25ms min=107.93ms max=130.32ms count=9
+10-28 07:19:28.767 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:29.268 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:29.544 D/EGL_emulation( 7359): app_time_stats: avg=115.97ms min=110.80ms max=120.25ms count=9
+10-28 07:19:29.770 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:30.271 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:30.595 D/EGL_emulation( 7359): app_time_stats: avg=116.72ms min=113.91ms max=119.97ms count=9
+10-28 07:19:30.772 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:31.012 I/flutter ( 7359): 00:53 +1: (tearDownAll)
+10-28 07:19:31.017 I/flutter ( 7359): 00:53 +2: All tests passed!
+10-28 07:19:31.092 I/ActivityManager(  499): Force stopping com.bytebox.play appid=10174 user=0: from pid 7668
+10-28 07:19:31.093 I/ActivityManager(  499): Killing 7359:com.bytebox.play/u0a174 (adj 0): stop com.bytebox.play due to from pid 7668
+10-28 07:19:31.093 W/ActivityTaskManager(  499): Force removing ActivityRecord{d650561 u0 com.bytebox.play/com.bytebox.app.MainActivity} t10 f}}: app died, no saved state
+10-28 07:19:31.098 W/InputManager-JNI(  499): Input channel object 'b0a9f28 com.bytebox.play/com.bytebox.app.MainActivity (client)' was disposed without first being removed with the input manager!
+10-28 07:19:31.102 I/libprocessgroup(  499): Successfully killed process cgroup uid 10174 pid 7359 in 9ms
+10-28 07:19:31.111 V/WindowManager(  499): Unknown focus tokens, dropping reportFocusChanged
+10-28 07:19:31.116 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e3d70
+10-28 07:19:31.116 W/TransactionTracing(  381): Could not find layer handle 0x7df0d57e4bb0
+10-28 07:19:31.120 D/CarrierSvcBindHelper( 1030): onHandleForceStop: [com.bytebox.play]
+10-28 07:19:31.120 E/OverviewProxyService(  798): Failed to get overview proxy for system bar attr change.
+10-28 07:19:31.120 D/CarrierSvcBindHelper( 1030): No carrier app for: 0
+10-28 07:19:31.154 E/OverviewProxyService(  798): Failed to get overview proxy for system bar attr change.
+10-28 07:19:31.194 V/ActivityManager(  499): Got obituary of 7359:com.bytebox.play
+10-28 07:19:31.421 I/binder  (    0): undelivered transaction 739114, process died.
+10-28 07:19:31.202 I/Zygote  (  299): Process 7359 exited due to signal 9 (Killed)
+10-28 07:19:31.206 W/ActivityManager(  499): setHasOverlayUi called on unknown pid: 7359
+10-28 07:19:31.211 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onFinishInput():3227 
+10-28 07:19:31.216 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+10-28 07:19:31.216 I/GoogleInputMethodService( 1586): GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.android.settings fieldId=-1 fieldName=null extras=null}, false)
+10-28 07:19:31.216 I/GoogleInputMethodService( 1586): GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+10-28 07:19:31.217 I/GoogleInputMethodService( 1586): GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+10-28 07:19:31.222 E/BpTransactionCompletedListener(  381): Failed to transact (-32)
+10-28 07:19:31.222 E/BpTransactionCompletedListener(  381): Failed to transact (-32)
+10-28 07:19:31.250 I/ActivityManager(  499): Force stopping com.bytebox.play appid=10174 user=-1: deletePackageX
+10-28 07:19:31.274 D/FallbackHome( 1133): User unlocked but no home; let's hope someone enables one soon?
+10-28 07:19:31.291 I/PackageManager(  499): Removing permission com.bytebox.play.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.bytebox.play
+10-28 07:19:31.291 I/PackageManager(  499): Permission ownership changed. Updating all permissions.
+10-28 07:19:31.543 I/logd    (    0): start watching /data/system/packages.list ...
+10-28 07:19:31.546 I/logd    (    0): ReadPackageList, total packages: 181
+10-28 07:19:31.320 D/PackageManager(  499): Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+10-28 07:19:31.320 D/PackageManager(  499): Clear ephemeral installer activity
+10-28 07:19:31.332 I/ActivityManager(  499): Force stopping com.bytebox.play appid=10174 user=0: pkg removed
