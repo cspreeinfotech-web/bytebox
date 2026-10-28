@@ -361,8 +361,12 @@ class FreeAccountCard extends StatefulWidget {
 class _FreeAccountCardState extends State<FreeAccountCard> {
   bool _busy = false;
 
+  // `const FreeAccountCard()` is not rebuilt by its parent, so it listens to the session itself
+  // (otherwise it keeps showing "Log in" after the user has logged in).
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(listenable: session, builder: (context, _) => _card(context));
+
+  Widget _card(BuildContext context) {
     final quota = session.quotaBytes;
     final used = session.usedBytes;
     final status = session.accessStatus;
