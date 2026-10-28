@@ -50,6 +50,7 @@ class Content {
       'p_feed': feed,
       'p_limit': limit,
       'p_offset': offset,
+      if (session.hidePaid && !session.isPremium) 'p_hide_premium': true,
     });
     final blocked = await blockedChannels();
     return List<Json>.from(rows as List).where((p) => !blocked.contains(p['channel_id'])).toList();

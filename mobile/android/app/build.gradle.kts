@@ -15,7 +15,8 @@ val hasReleaseKey = keyProps.getProperty("storeFile") != null
 
 android {
     namespace = "com.bytebox.app"
-    compileSdk = flutter.compileSdkVersion
+    // Google Play requires target API 36 (Android 16) for new apps and updates from 31 Aug 2026.
+    compileSdk = maxOf(flutter.compileSdkVersion, 36)
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -26,7 +27,7 @@ android {
     defaultConfig {
         applicationId = "com.bytebox.app"
         minSdk = maxOf(flutter.minSdkVersion, 24)
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = maxOf(flutter.targetSdkVersion, 36)
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

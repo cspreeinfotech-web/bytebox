@@ -82,7 +82,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             icon: const Icon(Icons.search),
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SearchScreen())),
           ),
-          CrownButton(onTap: () => openPlans(context)),
+          if (!session.hidePaid) CrownButton(onTap: () => openPlans(context)),
         ],
       ),
       body: RefreshIndicator(

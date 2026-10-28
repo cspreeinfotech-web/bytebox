@@ -102,7 +102,8 @@ jobs:
         run: |
           exec > >(tee -a "$RUNNER_TEMP/ci.log") 2>&1
           set -e
-          common=(--release --dart-define=SUPABASE_URL="$SUPABASE_URL" --dart-define=SUPABASE_PUBLISHABLE_KEY="$SUPABASE_KEY")
+          # versionCode must grow with every upload to Play: use the workflow run number.
+          common=(--release --build-number=${{ github.run_number }} --dart-define=SUPABASE_URL="$SUPABASE_URL" --dart-define=SUPABASE_PUBLISHABLE_KEY="$SUPABASE_KEY")
           if [ -n "${{ vars.WEBSITE_URL }}" ]; then common+=(--dart-define=WEBSITE_URL="${{ vars.WEBSITE_URL }}"); fi
           flutter build apk --flavor direct --target-platform android-arm,android-arm64 "${common[@]}" --dart-define=ANDROID_APP_ID=$DIRECT_PACKAGE
           cp build/app/outputs/flutter-apk/app-direct-release.apk "$RUNNER_TEMP/Bytebox.apk"
@@ -130,6 +131,20 @@ jobs:
               [ "$d" = "$RELEASE_CERT_SHA256" ] || { echo "::error::$apk not signed with the release key ($d)"; exit 1; }
             fi
           done
+          # Play: target API 36 + 16 KB page-size alignment of native libraries
+          for apk in dist/Bytebox.apk; do
+            t=$("$BT/aapt2" dump badging "$apk" | sed -n "s/.*targetSdkVersion:'\([0-9]*\)'.*/\1/p")
+            echo "targetSdkVersion=$t"
+            [ "${t:-0}" -ge 36 ] || { echo "::error::targetSdkVersion $t < 36 (Google Play requirement)"; exit 1; }
+            "$BT/zipalign" -c -P 16 -v 4 "$apk" > "$RUNNER_TEMP/zipalign.txt" \
+              || { tail -20 "$RUNNER_TEMP/zipalign.txt"; echo "::error::$apk is not 16 KB aligned"; exit 1; }
+            tmp=$(mktemp -d); unzip -q -o "$apk" 'lib/arm64-v8a/*.so' -d "$tmp"
+            for so in "$tmp"/lib/arm64-v8a/*.so; do
+              objdump -p "$so" | awk '/LOAD/ {print $NF}' | grep -qv '2\*\*1[4-9]' \
+                && { echo "::error::$(basename $so) has LOAD segments aligned below 16 KB"; exit 1; }
+            done
+            echo "16 KB alignment OK"
+          done
           # AAB: protobuf manifest — check strings
           unzip -p dist/Bytebox-play.aab base/manifest/AndroidManifest.xml > "$RUNNER_TEMP/play-manifest.pb"
           grep -aq "$PLAY_PACKAGE" "$RUNNER_TEMP/play-manifest.pb" || { echo "::error::AAB package is not $PLAY_PACKAGE"; exit 1; }
@@ -150,7 +165,7 @@ jobs:
           key=$(curl -sS "https://api.supabase.com/v1/projects/$REF/api-keys?reveal=true" -H "Authorization: Bearer $TOKEN" \
             | python3 -c "import sys,json; k=[x for x in json.load(sys.stdin) if x.get('name')=='service_role' or x.get('type')=='secret']; print(k[0]['api_key'])")
           echo "::add-mask::$key"
-          v=$(grep '^version:' pubspec.yaml | awk '{print $2}' | tr '+' '-')
+          v="$(grep '^version:' pubspec.yaml | awk '{print $2}' | cut -d+ -f1)-${{ github.run_number }}"
           stamp=$(date -u +%Y%m%d%H%M)
           up() { curl -sS -f -X POST "$URL/storage/v1/object/downloads/$2" -H "apikey: $key" -H "Authorization: Bearer $key" \
                    -H "Content-Type: application/vnd.android.package-archive" -H "x-upsert: true" --data-binary "@$1" >/dev/null; }

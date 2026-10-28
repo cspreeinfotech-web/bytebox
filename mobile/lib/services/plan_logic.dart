@@ -51,5 +51,9 @@ class PlanLogic {
     return 'Price updated to ₹$orderPrice';
   }
 
+  /// Plans to list. In the Play build without Play billing only plans free for this user are shown.
+  static List<Json> visiblePlans(List<Json> plans, {required bool hidePaid}) =>
+      hidePaid ? plans.where((p) => p['pay_mode'] == 'free').toList() : plans;
+
   static bool anyFree(List<Json> plans) => plans.any((p) => p['free_for_me'] == true);
 }

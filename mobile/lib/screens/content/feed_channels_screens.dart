@@ -27,7 +27,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Feed'), actions: [CrownButton(onTap: () => openPlans(context))]),
+        appBar: AppBar(title: const Text('Feed'), actions: [if (!session.hidePaid) CrownButton(onTap: () => openPlans(context))]),
         body: RefreshIndicator(
           onRefresh: _reload,
           child: FutureBuilder<List<Json>>(
@@ -103,7 +103,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Channels'), actions: [CrownButton(onTap: () => openPlans(context))]),
+        appBar: AppBar(title: const Text('Channels'), actions: [if (!session.hidePaid) CrownButton(onTap: () => openPlans(context))]),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () async {
             await CreateChannelScreen.open(context);

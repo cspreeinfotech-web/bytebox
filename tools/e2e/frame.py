@@ -58,7 +58,7 @@ def main(raw):
             print("skip unreadable", base, e)
             continue
         device, _, name = base.partition("_")
-        if name.startswith("e2e-"):
+        if name.startswith("e2e-") or device not in SIZES:  # evidence only (e.g. landscape tablet)
             Image.open(path).save(os.path.join(E2E, f"{device}-{name}.png"))
             continue
         if name not in CAPTIONS or device not in SIZES:

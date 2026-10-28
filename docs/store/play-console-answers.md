@@ -3,8 +3,11 @@
 Answers match what the **Play build** actually does. Re-check before each release.
 
 ## App access
-Most features work without login (guest). Cloud storage needs a free account → provide reviewer credentials:
-create an account in the app (e.g. `playreview@<your-domain>`) and enter it under **App access → All or some functionality is restricted**.
+Most features work without login (guest). Cloud storage and watching videos need a free account →
+**App access → All or some functionality is restricted** and give the reviewer an email + password login:
+1. In the installed app: Profile → Log in / Create account → *Create account* (e.g. `playreview.bytebox@gmail.com`, a strong password). Accounts are confirmed instantly.
+2. Paste the same email + password into Play Console with the note: *"Log in from Profile → Log in / Create account. No OTP or 2-step verification."*
+3. Do not delete this account while the app is in review.
 
 ## Ads
 **Does your app contain ads? → No.**
@@ -14,7 +17,7 @@ create an account in the app (e.g. `playreview@<your-domain>`) and enter it unde
 - User-generated content: **Yes** — users can upload videos/photos to channels; content is moderated (channel review, reports, blocking)
 - Users can interact/communicate: **No direct messaging**
 - Shares user location: **No**
-- Digital purchases: **No** (Play build has no purchases while `play_billing_enabled` is off)
+- Digital purchases: **No** (Play build has no purchases while `play_billing_enabled` is off; it shows no prices and hides premium videos)
 - Violence / sexual content / profanity / drugs / gambling: **No** (prohibited by Community Guidelines)
 
 ## Target audience and content
@@ -25,6 +28,7 @@ create an account in the app (e.g. `playreview@<your-domain>`) and enter it unde
 | Data type | Collected | Shared | Purpose | Optional |
 |---|---|---|---|---|
 | Email address | Yes (when creating an account) | No | Account management | Yes |
+| Name (display name) | Yes (optional, user-entered) | No | App functionality | Yes |
 | User IDs (account ID) | Yes | No | App functionality, account management | No |
 | Photos and videos | Yes (user uploads to cloud/channels) | No | App functionality | Yes |
 | Files and docs | Yes (cloud uploads) | No | App functionality | Yes |
@@ -32,7 +36,7 @@ create an account in the app (e.g. `playreview@<your-domain>`) and enter it unde
 | Device or other IDs | Yes (random install ID; **no advertising ID**) | No | Fraud prevention, app functionality | No |
 
 - Data encrypted in transit: **Yes** (HTTPS only)
-- Users can request deletion: **Yes** — in app (Settings → Delete Account) and at `https://<vercel-domain>/delete-account`
+- Users can request deletion: **Yes** — in app (Settings → Delete Account) and at `https://bytebox-ejim.vercel.app/delete-account`
 - Committed to Play Families policy: **N/A** (18+)
 
 > Meta Conversions API events are sent only for installs from the **website/ads APK**, not from the Play build (Play installs are organic and have no referrer).
@@ -47,7 +51,10 @@ No · No · No
 No
 
 ## Account deletion URL
-`https://<vercel-domain>/delete-account`
+`https://bytebox-ejim.vercel.app/delete-account`
+
+## Privacy policy URL
+`https://bytebox-ejim.vercel.app/privacy`
 
 ## Permissions declarations
 - `INTERNET` only (plus `WRITE_EXTERNAL_STORAGE` max SDK 28 for downloads on old Android). No SMS, call log, location or accessibility.
@@ -58,4 +65,6 @@ User Choice Billing (India) is **prepared but off** (`app_mode.play_billing_enab
 ## Release
 - Upload `Bytebox-play.aab` (CI artifact **Bytebox-apks**), signed with the upload key; enrol in **Play App Signing**
 - After enrolment, copy **App signing key certificate → SHA-256** into Vercel env `ANDROID_CERT_SHA256` (comma-separated with the upload key) for `assetlinks.json`
-- Target API: latest (from Flutter); 16 KB page size supported
+- Target API: **36 (Android 16)** — pinned in `build.gradle.kts` and checked in CI (Play requirement since 31 Aug 2026)
+- 16 KB page size: native libraries aligned — checked in CI (`zipalign -P 16` + ELF segment alignment)
+- versionCode = CI run number, so every new AAB can be uploaded (Play rejects a repeated versionCode)

@@ -73,6 +73,10 @@ class AppSession extends ChangeNotifier {
   /// (unless User Choice Billing has been switched on for it).
   bool get noPayments => freeMode || (AppConfig.playStore && !playBilling);
 
+  /// Google Play build without Play billing: never show prices or content that can't be unlocked in-app
+  /// (Play Payments policy). Plans that are free for this user are still shown.
+  bool get hidePaid => AppConfig.playStore && !playBilling;
+
   // --------------------------------------------------------------------- boot
   Future<void> boot() async {
     bootError = null;
