@@ -62,7 +62,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
       if (!mounted) return;
       setState(() {
         _posts.addAll(page);
-        _more = page.length == 20;
+        _more = page.isNotEmpty; // client-side channel blocks can shorten a page, so stop only on an empty one
       });
     } catch (e) {
       if (mounted) setState(() => _error = friendlyError(e));
@@ -113,12 +113,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
             const SliverFillRemaining(child: EmptyState(text: 'No Record Found'))
           else
             SliverList.builder(
-              itemCount: _posts.length + (_more ? 1 : 0),
-              itemBuilder: (c, i) => i >= _posts.length
+              itemCount: postRowCount(_posts.length, postColumns(context)) + (_more ? 1 : 0),
+              itemBuilder: (c, i) => i >= postRowCount(_posts.length, postColumns(context))
                   ? const Padding(padding: EdgeInsets.all(24), child: Center(child: CircularProgressIndicator()))
                   : Padding(
                       padding: const EdgeInsets.fromLTRB(16, 0, 16, 22),
-                      child: PostCard(post: _posts[i], onTap: () => PostScreen.open(context, '${_posts[i]['id']}')),
+                      child: PostRow(
+                          posts: _posts,
+                          row: i,
+                          columns: postColumns(context),
+                          onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                     ),
             ),
         ]),
@@ -197,10 +201,14 @@ class _SearchScreenState extends State<SearchScreen> {
                     ? const EmptyState(text: 'No Record Found')
                     : ListView.builder(
                         padding: const EdgeInsets.all(16),
-                        itemCount: _results!.length,
+                        itemCount: postRowCount(_results!.length, postColumns(context)),
                         itemBuilder: (c, i) => Padding(
                           padding: const EdgeInsets.only(bottom: 20),
-                          child: PostCard(post: _results![i], onTap: () => PostScreen.open(context, '${_results![i]['id']}')),
+                          child: PostRow(
+                              posts: _results!,
+                              row: i,
+                              columns: postColumns(context),
+                              onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                         ),
                       ),
       );

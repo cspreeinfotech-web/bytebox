@@ -156,3 +156,36 @@ class PostCard extends StatelessWidget {
     );
   }
 }
+
+/// Post lists use 1 column on phones, 2 on small tablets / landscape phones, 3 on wide tablets.
+int postColumns(BuildContext context) {
+  final w = MediaQuery.sizeOf(context).width;
+  return w >= 1100 ? 3 : (w >= 680 ? 2 : 1);
+}
+
+/// Number of rows needed to show [count] posts in [columns] columns.
+int postRowCount(int count, int columns) => (count + columns - 1) ~/ columns;
+
+/// One row of up to [columns] post cards (empty cells keep the column widths equal).
+class PostRow extends StatelessWidget {
+  const PostRow({super.key, required this.posts, required this.row, required this.columns, required this.onOpen});
+  final List<Json> posts;
+  final int row;
+  final int columns;
+  final void Function(Json post) onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    final start = row * columns;
+    return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      for (var c = 0; c < columns; c++) ...[
+        if (c > 0) const SizedBox(width: 16),
+        Expanded(
+          child: start + c < posts.length
+              ? PostCard(post: posts[start + c], onTap: () => onOpen(posts[start + c]))
+              : const SizedBox.shrink(),
+        ),
+      ],
+    ]);
+  }
+}

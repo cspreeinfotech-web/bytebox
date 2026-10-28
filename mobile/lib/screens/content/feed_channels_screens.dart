@@ -47,10 +47,14 @@ class _FeedScreenState extends State<FeedScreen> {
               }
               return ListView.builder(
                 padding: const EdgeInsets.all(16),
-                itemCount: posts.length,
+                itemCount: postRowCount(posts.length, postColumns(context)),
                 itemBuilder: (c, i) => Padding(
                   padding: const EdgeInsets.only(bottom: 22),
-                  child: PostCard(post: posts[i], onTap: () => PostScreen.open(context, '${posts[i]['id']}')),
+                  child: PostRow(
+                      posts: posts,
+                      row: i,
+                      columns: postColumns(context),
+                      onOpen: (p) => PostScreen.open(context, '${p['id']}')),
                 ),
               );
             },
