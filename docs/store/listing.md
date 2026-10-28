@@ -30,7 +30,7 @@ Start as a guest in seconds — no sign-up needed to look around. Create a free 
 Bytebox is for users aged 18+.
 
 **Category:** Productivity · **Tags:** cloud storage, backup, file manager, video
-**Contact email:** cs.preeinfotech@gmail.com · **Website:** https://<vercel-domain> · **Privacy policy:** https://<vercel-domain>/privacy
+**Contact email:** help.byteboxx@gmail.com · **Website:** https://bytebox-ejim.vercel.app · **Privacy policy:** https://bytebox-ejim.vercel.app/privacy
 
 ## Graphics in this folder
 | File | Use |

@@ -28,11 +28,11 @@ After adding the Supabase secrets, run **Actions → supabase-deploy → Run wor
 - Google provider: leave OFF for now — the app shows "Google sign-in is coming soon".
 
 ## 3. Make yourself the owner
-1. Install the app and **create an account** with `cs.preeinfotech@gmail.com`.
+1. Install the app and **create an account** with the owner email (`perfumwala@gmail.com`).
 2. Supabase → SQL Editor → run:
 ```sql
 insert into public.admins (user_id, role)
-select id, 'owner' from auth.users where email = 'cs.preeinfotech@gmail.com'
+select id, 'owner' from auth.users where email = 'perfumwala@gmail.com'
 on conflict (user_id) do update set role = 'owner';
 ```
 

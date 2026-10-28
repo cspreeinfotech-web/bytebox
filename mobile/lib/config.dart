@@ -14,7 +14,7 @@ class AppConfig {
   static const androidAppId = String.fromEnvironment('ANDROID_APP_ID', defaultValue: 'com.bytebox.app');
 
   static const websiteUrl = String.fromEnvironment('WEBSITE_URL', defaultValue: 'https://bytebox-ejim.vercel.app');
-  static const supportEmail = String.fromEnvironment('SUPPORT_EMAIL', defaultValue: 'cs.preeinfotech@gmail.com');
+  static const supportEmail = String.fromEnvironment('SUPPORT_EMAIL', defaultValue: 'help.byteboxx@gmail.com');
 
   static String get loginCallback => '$androidAppId://login-callback';
   static const consentVersion = 'v1';

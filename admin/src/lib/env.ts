@@ -1,7 +1,7 @@
 export const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 export const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://bytebox-ejim.vercel.app").replace(/\/$/, "");
-export const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "cs.preeinfotech@gmail.com";
+export const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "help.byteboxx@gmail.com";
 export const APP_NAME = "Bytebox";
 export const SHORT_CODE = "BB";
 export const DIRECT_PACKAGE = "com.bytebox.app";

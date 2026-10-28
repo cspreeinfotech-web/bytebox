@@ -4,10 +4,14 @@ Answers match what the **Play build** actually does. Re-check before each releas
 
 ## App access
 Most features work without login (guest). Cloud storage and watching videos need a free account →
-**App access → All or some functionality is restricted** and give the reviewer an email + password login:
-1. In the installed app: Profile → Log in / Create account → *Create account* (e.g. `playreview.bytebox@gmail.com`, a strong password). Accounts are confirmed instantly.
-2. Paste the same email + password into Play Console with the note: *"Log in from Profile → Log in / Create account. No OTP or 2-step verification."*
-3. Do not delete this account while the app is in review.
+**App access → All or some functionality is restricted**, add instructions:
+- Email: `help.byteboxx@gmail.com` (normal organic user, confirmed, 15 GB free cloud)
+- Password: *(kept outside the repo — see the owner)*
+- Note: *"Open the app → Profile tab → Log in / Create account → Log in. No OTP or 2-step verification."*
+- Do not delete the account or change its password while the app is in review.
+
+## Support email (Play Console → Store settings → Contact details)
+`help.byteboxx@gmail.com`
 
 ## Ads
 **Does your app contain ads? → No.**
