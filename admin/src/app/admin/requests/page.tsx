@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import { setAccess } from "@/app/admin/actions";
 import { ConfirmSubmit } from "@/components/confirm-submit";
 import { AdminShell } from "@/components/shell";
@@ -28,7 +29,7 @@ export default async function Requests({ searchParams }: { searchParams: SP }) {
                   <td className="px-4 py-3">{r.plan_name ? <Badge color="green">{r.plan_name}</Badge> : r.paid ? <Badge>paid before</Badge> : "—"}</td>
                   <td className="px-4 py-3">
                     <form action={setAccess} className="flex justify-end gap-2">
-                      <input type="hidden" name="id" value={r.id} /><input type="hidden" name="back" value="/admin/requests" />
+                      <input type="hidden" name="id" value={r.id} /><input type="hidden" name="back" value={ADMIN + "/requests"} />
                       <button name="status" value="approved" className={btn.success}>Approve</button>
                       <ConfirmSubmit name="status" value="rejected" message="Reject this request?" className={btn.secondary}>Reject</ConfirmSubmit>
                     </form>

@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import Link from "next/link";
 import { AdminShell } from "@/components/shell";
 import { Badge, Flash, PageHeader, Stat } from "@/components/ui";
@@ -26,7 +27,7 @@ export default async function Dashboard({ searchParams }: { searchParams: SP }) 
       </div>
       <Flash ok={one(sp.ok) || undefined} err={one(sp.err) || undefined} />
       {Number(d.pending_channels) > 0 && owner && (
-        <Link href="/admin/approvals" className="mb-6 flex items-center justify-between rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 font-semibold text-amber-800">
+        <Link href={ADMIN + "/approvals"} className="mb-6 flex items-center justify-between rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 font-semibold text-amber-800">
           <span>{n("pending_channels")} channel{Number(d.pending_channels) === 1 ? "" : "s"} waiting for approval</span>
           <span>Review →</span>
         </Link>
@@ -34,23 +35,23 @@ export default async function Dashboard({ searchParams }: { searchParams: SP }) 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {owner && (
           <>
-            <Stat label="Activated today — verify against bank" value={n("activated_today")} href="/admin/payments?filter=activated_today" tone={Number(d.activated_today) > 0 ? "amber" : undefined} />
+            <Stat label="Activated today — verify against bank" value={n("activated_today")} href={ADMIN + "/payments?filter=activated_today"} tone={Number(d.activated_today) > 0 ? "amber" : undefined} />
             <Stat label="Revenue today" value={rupees(Number(d.revenue_today_paise))} />
             <Stat label="Revenue this month" value={rupees(Number(d.revenue_month_paise))} />
-            <Stat label="Free plans claimed" value={`organic ${n2(d.free_claims, "organic")} · ads ${n2(d.free_claims, "ads")}`} href="/admin/payments?source=free_promo" />
+            <Stat label="Free plans claimed" value={`organic ${n2(d.free_claims, "organic")} · ads ${n2(d.free_claims, "ads")}`} href={ADMIN + "/payments?source=free_promo"} />
             <Stat label="Active Premium" value={n("active_premium")} />
-            <Stat label="Payments to verify" value={n("pending_payments")} href="/admin/payments?filter=pending" />
-            <Stat label="Access requests" value={n("pending_requests")} href="/admin/requests" />
-            <Stat label="Accounts (logged in)" value={n("users")} href="/admin/users" />
+            <Stat label="Payments to verify" value={n("pending_payments")} href={ADMIN + "/payments?filter=pending"} />
+            <Stat label="Access requests" value={n("pending_requests")} href={ADMIN + "/requests"} />
+            <Stat label="Accounts (logged in)" value={n("users")} href={ADMIN + "/users"} />
             <Stat label="Guests" value={n("guests")} />
             <Stat label="Ads users" value={n("ads_users")} />
             <Stat label="Organic users" value={n("organic_users")} />
             <Stat label="Installs today" value={n("installs_today")} />
           </>
         )}
-        <Stat label="Live channels" value={n("channels")} href="/admin/channels" />
-        <Stat label="Published posts" value={n("posts")} href="/admin/posts" />
-        <Stat label="Open reports" value={n("open_reports")} href="/admin/posts?tab=reports" tone={Number(d.open_reports) > 0 ? "amber" : undefined} />
+        <Stat label="Live channels" value={n("channels")} href={ADMIN + "/channels"} />
+        <Stat label="Published posts" value={n("posts")} href={ADMIN + "/posts"} />
+        <Stat label="Open reports" value={n("open_reports")} href={ADMIN + "/posts?tab=reports"} tone={Number(d.open_reports) > 0 ? "amber" : undefined} />
       </div>
     </AdminShell>
   );

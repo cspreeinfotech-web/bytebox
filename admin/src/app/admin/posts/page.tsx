@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import Link from "next/link";
 import { deletePost, handleReport, updatePost } from "@/app/admin/actions";
 import { ConfirmSubmit } from "@/components/confirm-submit";
@@ -26,8 +27,8 @@ export default async function Posts({ searchParams }: { searchParams: SP }) {
   const { supabase, user, counters } = await requireAdmin();
   const tabs = (
     <div className="mb-5 flex gap-2">
-      <Link href="/admin/posts" className={tab === "posts" ? btn.primary : btn.secondary}>Posts</Link>
-      <Link href="/admin/posts?tab=reports" className={tab === "reports" ? btn.primary : btn.secondary}>
+      <Link href={ADMIN + "/posts"} className={tab === "posts" ? btn.primary : btn.secondary}>Posts</Link>
+      <Link href={ADMIN + "/posts?tab=reports"} className={tab === "reports" ? btn.primary : btn.secondary}>
         Reports {counters.reports ? `(${counters.reports})` : ""}
       </Link>
     </div>

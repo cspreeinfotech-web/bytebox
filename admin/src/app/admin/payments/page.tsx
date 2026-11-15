@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import Link from "next/link";
 import { clearUpi, markPaid, revokePayment, setUpi } from "@/app/admin/actions";
 import { ConfirmSubmit } from "@/components/confirm-submit";
@@ -48,7 +49,7 @@ export default async function Payments({ searchParams }: { searchParams: SP }) {
   const rows = (data ?? []) as Order[];
   const total = rows[0]?.total ?? 0;
   const upi = (upiData ?? {}) as Upi;
-  const link = (over: Record<string, string>) => `/admin/payments?${new URLSearchParams({ filter, q, source: src, user: ut, ...over }).toString()}`;
+  const link = (over: Record<string, string>) => `${ADMIN}/payments?${new URLSearchParams({ filter, q, source: src, user: ut, ...over }).toString()}`;
 
   return (
     <AdminShell counters={counters} email={user.email}>

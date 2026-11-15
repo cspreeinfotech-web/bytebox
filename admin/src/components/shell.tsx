@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import type { ReactNode } from "react";
 import { NavLink } from "@/components/nav-link";
 import type { Counters } from "@/lib/admin";
@@ -19,18 +20,18 @@ export function AdminShell({ counters, email, children }: { counters: Counters; 
           </div>
         </div>
         <nav className="flex gap-1 overflow-x-auto px-3 pb-3 lg:flex-col lg:overflow-visible">
-          <NavLink href="/admin">Dashboard</NavLink>
-          <NavLink href="/admin/channels">Channels</NavLink>
-          <NavLink href="/admin/posts" count={counters.reports}>Posts</NavLink>
+          <NavLink href={ADMIN}>Dashboard</NavLink>
+          <NavLink href={ADMIN + "/channels"}>Channels</NavLink>
+          <NavLink href={ADMIN + "/posts"} count={counters.reports}>Posts</NavLink>
           {owner && (
             <>
-              <NavLink href="/admin/approvals" count={counters.approvals}>Approvals</NavLink>
-              <NavLink href="/admin/payments" count={counters.payments}>Payments</NavLink>
-              <NavLink href="/admin/meta">Meta Pixel</NavLink>
-              <NavLink href="/admin/users">Users</NavLink>
-              <NavLink href="/admin/requests" count={counters.requests}>Requests</NavLink>
-              <NavLink href="/admin/plans">Plans</NavLink>
-              <NavLink href="/admin/admins">Admins</NavLink>
+              <NavLink href={ADMIN + "/approvals"} count={counters.approvals}>Approvals</NavLink>
+              <NavLink href={ADMIN + "/payments"} count={counters.payments}>Payments</NavLink>
+              <NavLink href={ADMIN + "/meta"}>Meta Pixel</NavLink>
+              <NavLink href={ADMIN + "/users"}>Users</NavLink>
+              <NavLink href={ADMIN + "/requests"} count={counters.requests}>Requests</NavLink>
+              <NavLink href={ADMIN + "/plans"}>Plans</NavLink>
+              <NavLink href={ADMIN + "/admins"}>Admins</NavLink>
             </>
           )}
         </nav>

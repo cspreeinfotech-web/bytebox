@@ -5,7 +5,9 @@ import type { ReactNode } from "react";
 
 export function NavLink({ href, children, count }: { href: string; children: ReactNode; count?: number | null }) {
   const path = usePathname();
-  const active = href === "/admin" ? path === "/admin" : path.startsWith(href);
+  // Compare the part after the panel prefix, so /admin/plans and /workspace-…/plans both match "plans".
+  const rest = (p: string) => p.split("/").filter(Boolean).slice(1).join("/");
+  const active = rest(href) === "" ? rest(path) === "" : rest(path).startsWith(rest(href));
   return (
     <Link
       href={href}
