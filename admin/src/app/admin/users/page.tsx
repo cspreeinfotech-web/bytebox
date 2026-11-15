@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import Link from "next/link";
 import { setAccess } from "@/app/admin/actions";
 import { AdminShell } from "@/components/shell";
@@ -20,13 +21,13 @@ export default async function Users({ searchParams }: { searchParams: SP }) {
   const { data, error } = await supabase.rpc("admin_users", { p_search: q || null, p_filter: filter, p_limit: 50, p_offset: (page - 1) * 50 });
   const rows = (data ?? []) as U[];
   const total = rows[0]?.total ?? 0;
-  const here = `/admin/users?filter=${filter}&q=${encodeURIComponent(q)}&page=${page}`;
+  const here = `${ADMIN}/users?filter=${filter}&q=${encodeURIComponent(q)}&page=${page}`;
   return (
     <AdminShell counters={counters} email={user.email}>
       <PageHeader title="Users" subtitle={`${total.toLocaleString("en-IN")} matching`} />
       <Flash ok={one(sp.ok) || undefined} err={one(sp.err) || error?.message} />
       <div className="mb-4 flex flex-wrap gap-2">
-        {filters.map(([k, l]) => <Link key={k} href={`/admin/users?filter=${k}`} className={filter === k ? btn.primary : btn.secondary}>{l}</Link>)}
+        {filters.map(([k, l]) => <Link key={k} href={`${ADMIN}/users?filter=${k}`} className={filter === k ? btn.primary : btn.secondary}>{l}</Link>)}
       </div>
       <form className="mb-4 flex gap-2"><input type="hidden" name="filter" value={filter} />
         <input name="q" defaultValue={q} placeholder="Email, name or user id" className={`${input} max-w-sm`} /><button className={btn.secondary}>Search</button></form>
@@ -64,8 +65,8 @@ export default async function Users({ searchParams }: { searchParams: SP }) {
       </Card>
       {total > 50 && (
         <div className="mt-4 flex gap-2">
-          {page > 1 && <Link className={btn.secondary} href={`/admin/users?filter=${filter}&q=${q}&page=${page - 1}`}>Previous</Link>}
-          {page * 50 < total && <Link className={btn.secondary} href={`/admin/users?filter=${filter}&q=${q}&page=${page + 1}`}>Next</Link>}
+          {page > 1 && <Link className={btn.secondary} href={`${ADMIN}/users?filter=${filter}&q=${q}&page=${page - 1}`}>Previous</Link>}
+          {page * 50 < total && <Link className={btn.secondary} href={`${ADMIN}/users?filter=${filter}&q=${q}&page=${page + 1}`}>Next</Link>}
         </div>
       )}
     </AdminShell>

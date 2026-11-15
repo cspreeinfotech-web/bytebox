@@ -1,4 +1,5 @@
 "use server";
+import { ADMIN } from "@/lib/admin-path";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { back } from "@/lib/admin";
@@ -18,20 +19,20 @@ async function rpc(path: string, fn: string, args: Record<string, unknown>, ok: 
 export async function signIn(form: FormData) {
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({ email: s(form, "email"), password: s(form, "password") });
-  if (error) back("/admin/login", { err: error.message });
-  redirect("/admin");
+  if (error) back(ADMIN + "/login", { err: error.message });
+  redirect(ADMIN);
 }
 
 export async function signOut() {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  redirect("/admin/login");
+  redirect(ADMIN + "/login");
 }
 
 // ---------------- channels
 export async function reviewChannel(form: FormData) {
   const approve = s(form, "decision") === "approve";
-  await rpc("/admin/approvals", "admin_review_channel", {
+  await rpc(ADMIN + "/approvals", "admin_review_channel", {
     p_channel_id: s(form, "id"), p_approve: approve, p_audience: s(form, "audience") || "all",
     p_reason: s(form, "reason") || null,
   }, approve ? "Channel approved and published." : "Channel rejected.");
@@ -39,14 +40,14 @@ export async function reviewChannel(form: FormData) {
 
 export async function createChannel(form: FormData) {
   const tags = s(form, "tags").split(",").map((t) => t.trim()).filter(Boolean);
-  await rpc("/admin/channels", "admin_create_channel", {
+  await rpc(ADMIN + "/channels", "admin_create_channel", {
     p_name: s(form, "name"), p_category: s(form, "category"), p_description: s(form, "description"),
     p_tags: tags, p_audience: s(form, "audience") || "all",
   }, "Channel created (approved).");
 }
 
 export async function updateChannel(form: FormData) {
-  await rpc("/admin/channels", "admin_update_channel", {
+  await rpc(ADMIN + "/channels", "admin_update_channel", {
     p_channel_id: s(form, "id"), p_audience: s(form, "audience"), p_publish_state: s(form, "publish_state"),
   }, "Channel updated.");
 }
@@ -63,12 +64,12 @@ export async function deleteChannel(form: FormData) {
   const { data: icons } = await supabase.storage.from("media").list(`channels/${id}`);
   for (const o of icons ?? []) keys.push(`channels/${id}/${o.name}`);
   if (keys.length) await supabase.storage.from("media").remove(keys);
-  await rpc("/admin/channels", "delete_channel", { p_channel_id: id }, "Channel deleted.");
+  await rpc(ADMIN + "/channels", "delete_channel", { p_channel_id: id }, "Channel deleted.");
 }
 
 // ---------------- posts + reports
 export async function updatePost(form: FormData) {
-  await rpc("/admin/posts", "admin_set_post", {
+  await rpc(ADMIN + "/posts", "admin_set_post", {
     p_post_id: s(form, "id"), p_status: s(form, "status"), p_audience: s(form, "audience"),
     p_is_premium: s(form, "is_premium") === "on",
   }, "Post updated.");
@@ -80,29 +81,29 @@ export async function deletePost(form: FormData) {
   const { data } = await supabase.storage.from("media").list(`posts/${id}`);
   const keys = (data ?? []).map((o) => `posts/${id}/${o.name}`);
   if (keys.length) await supabase.storage.from("media").remove(keys);
-  await rpc("/admin/posts", "delete_post", { p_post_id: id }, "Post deleted.");
+  await rpc(ADMIN + "/posts", "delete_post", { p_post_id: id }, "Post deleted.");
 }
 
 export async function handleReport(form: FormData) {
-  await rpc("/admin/posts?tab=reports", "admin_handle_report", {
+  await rpc(ADMIN + "/posts?tab=reports", "admin_handle_report", {
     p_report_id: Number(s(form, "id")), p_status: s(form, "status"),
   }, "Report updated.");
 }
 
 // ---------------- payments
 export async function markPaid(form: FormData) {
-  await rpc(`/admin/payments?${s(form, "qs")}`, "admin_mark_paid",
+  await rpc(`${ADMIN}/payments?${s(form, "qs")}`, "admin_mark_paid",
     { p_order_id: s(form, "id"), p_utr: s(form, "utr") }, "Payment marked as paid; plan activated.");
 }
 
 export async function revokePayment(form: FormData) {
-  await rpc(`/admin/payments?${s(form, "qs")}`, "admin_revoke_payment",
+  await rpc(`${ADMIN}/payments?${s(form, "qs")}`, "admin_revoke_payment",
     { p_order_id: s(form, "id"), p_reason: s(form, "reason") }, "Payment reversed; plan ended and transaction id blocked.");
 }
 
 // ---------------- users / requests
 export async function setAccess(form: FormData) {
-  const path = s(form, "back") || "/admin/requests";
+  const path = s(form, "back") || ADMIN + "/requests";
   await rpc(path, "admin_set_access", { p_user_id: s(form, "id"), p_status: s(form, "status") },
     s(form, "status") === "approved" ? "Full access approved." : "Access updated.");
 }
@@ -112,16 +113,16 @@ const lines = (v: string) => v.split("\n").map((p) => p.trim()).filter(Boolean);
 
 export async function setFreeMode(form: FormData) {
   const on = s(form, "free_mode") === "on";
-  await rpc("/admin/plans", "admin_set_free_mode", { p_on: on },
+  await rpc(ADMIN + "/plans", "admin_set_free_mode", { p_on: on },
     on ? "Free mode is ON — no prices or payments in the app." : "Free mode is OFF — paid plans are back.");
 }
 
 export async function setFreePlans(form: FormData) {
-  await rpc("/admin/plans", "admin_set_free_plans", { p_for: s(form, "free_plans_for") }, "Free plans updated. The app refreshes within seconds.");
+  await rpc(ADMIN + "/plans", "admin_set_free_plans", { p_for: s(form, "free_plans_for") }, "Free plans updated. The app refreshes within seconds.");
 }
 
 export async function savePlan(form: FormData) {
-  await rpc("/admin/plans", "admin_update_plan", {
+  await rpc(ADMIN + "/plans", "admin_update_plan", {
     p_plan_id: Number(s(form, "id")), p_name: s(form, "name"), p_price_inr: Number(s(form, "price_inr")),
     p_duration_days: Number(s(form, "duration_days")), p_perks: lines(s(form, "perks")), p_badge: s(form, "badge"),
     p_position: Number(s(form, "position") || 0), p_active: s(form, "active") === "on",
@@ -130,7 +131,7 @@ export async function savePlan(form: FormData) {
 }
 
 export async function addPlan(form: FormData) {
-  await rpc("/admin/plans", "admin_create_plan", {
+  await rpc(ADMIN + "/plans", "admin_create_plan", {
     p_code: s(form, "code"), p_name: s(form, "name"), p_price_inr: Number(s(form, "price_inr")),
     p_duration_days: Number(s(form, "duration_days")), p_perks: lines(s(form, "perks")), p_badge: s(form, "badge"),
     p_position: Number(s(form, "position") || 0), p_active: s(form, "active") === "on",
@@ -139,36 +140,36 @@ export async function addPlan(form: FormData) {
 }
 
 export async function setUpi(form: FormData) {
-  await rpc("/admin/payments", "admin_set_upi", {
+  await rpc(ADMIN + "/payments", "admin_set_upi", {
     p_upi_id: s(form, "upi_id"), p_payee_name: s(form, "payee_name"), p_enabled: s(form, "enabled") === "on",
     p_activation_mode: s(form, "activation_mode"),
   }, "UPI settings saved. New payments use them immediately.");
 }
 
 export async function clearUpi() {
-  await rpc("/admin/payments", "admin_clear_upi", {}, "UPI ID cleared — payments are paused in the app.");
+  await rpc(ADMIN + "/payments", "admin_clear_upi", {}, "UPI ID cleared — payments are paused in the app.");
 }
 
 // ---------------- admins
 export async function addAdmin(form: FormData) {
-  await rpc("/admin/admins", "admin_add_admin", { p_email: s(form, "email"), p_role: s(form, "role") }, "Admin saved.");
+  await rpc(ADMIN + "/admins", "admin_add_admin", { p_email: s(form, "email"), p_role: s(form, "role") }, "Admin saved.");
 }
 
 export async function removeAdmin(form: FormData) {
   const supabase = await createClient();
   const { error } = await supabase.from("admins").delete().eq("user_id", s(form, "id"));
-  if (error) back("/admin/admins", { err: error.message });
-  back("/admin/admins", { ok: "Admin removed." });
+  if (error) back(ADMIN + "/admins", { err: error.message });
+  back(ADMIN + "/admins", { ok: "Admin removed." });
 }
 
 // ---------------- meta
 export async function configureMeta(form: FormData) {
-  await rpc("/admin/meta", "admin_meta_configure", {
+  await rpc(ADMIN + "/meta", "admin_meta_configure", {
     p_pixel_id: s(form, "pixel_id"), p_token: s(form, "token"), p_test_event_code: s(form, "test_event_code"),
     p_graph_version: s(form, "graph_version"), p_enabled: s(form, "enabled") === "on",
   }, "Meta settings saved.");
 }
 
 export async function sendMetaTest() {
-  await rpc("/admin/meta", "admin_meta_test_event", {}, "Test event queued — it is sent within a minute.");
+  await rpc(ADMIN + "/meta", "admin_meta_test_event", {}, "Test event queued — it is sent within a minute.");
 }

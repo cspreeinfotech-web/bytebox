@@ -1,3 +1,4 @@
+import { ADMIN } from "@/lib/admin-path";
 import { addPlan, savePlan, setFreeMode, setFreePlans } from "@/app/admin/actions";
 import { ConfirmSubmit } from "@/components/confirm-submit";
 import { ConfirmSelect, PlanForm, type PlanValues } from "@/components/settings-forms";
@@ -76,7 +77,7 @@ export default async function Plans({ searchParams }: { searchParams: SP }) {
           <PlanForm action={addPlan} isNew />
         </Card>
       </div>
-      <p className="text-sm text-gray-500">UPI ID, payee name and activation mode are on the <a className="text-accent underline" href="/admin/payments">Payments</a> page.</p>
+      <p className="text-sm text-gray-500">UPI ID, payee name and activation mode are on the <a className="text-accent underline" href={ADMIN + "/payments"}>Payments</a> page.</p>
     </AdminShell>
   );
 }
